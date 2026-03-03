@@ -40,3 +40,21 @@ h3, h4, h5, h6 {
   background: #C17A3A;
   border-radius: 4px;
 }
+
+/* Responsive text sizing utilities */
+@layer utilities {
+  .text-hero-headline {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1.1;
+  }
+
+  .text-hero-subtext {
+    font-size: clamp(1.1rem, 2vw, 1.375rem);
+    line-height: 1.6;
+  }
+
+  .text-section-heading {
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    line-height: 1.2;
+  }
+}

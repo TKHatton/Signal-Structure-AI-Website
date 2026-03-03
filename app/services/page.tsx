@@ -20,10 +20,10 @@ export default function ServicesPage() {
         <div className="relative z-10 max-w-content mx-auto px-6">
           <FadeIn className="text-center">
             <SectionLabel variant="light">PRICING & PACKAGES</SectionLabel>
-            <h1 className="font-display text-4xl md:text-5xl mb-6">
+            <h1 className="font-display text-hero-headline mb-6">
               AI Knowledge Services
             </h1>
-            <p className="text-white/70 text-lg max-w-3xl mx-auto">
+            <p className="text-white/70 text-hero-subtext max-w-3xl mx-auto">
               Clear pricing for two things that matter: making sure AI can find
               your business, and making sure it describes you correctly when it does.
             </p>
@@ -111,7 +111,7 @@ export default function ServicesPage() {
       <section className="py-24 md:py-32 bg-stone-dark">
         <div className="max-w-content mx-auto px-6">
           <FadeIn className="mb-12">
-            <h2 className="font-display text-3xl md:text-4xl text-navy mb-4 text-center">
+            <h2 className="font-display text-section-heading text-navy mb-4 text-center">
               Add-Ons
             </h2>
             <p className="text-warmgray text-lg text-center max-w-2xl mx-auto">
@@ -184,7 +184,7 @@ export default function ServicesPage() {
         <GridTexture />
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="font-display text-3xl md:text-4xl mb-8">
+            <h2 className="font-display text-section-heading mb-8">
               Ready to start getting the referrals you have been missing?
             </h2>
             <Button href={BOOKING_URL} variant="primary" className="mb-4">

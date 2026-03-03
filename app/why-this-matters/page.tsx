@@ -19,10 +19,10 @@ export default function WhyThisMattersPage() {
         <div className="relative z-10 max-w-content mx-auto px-6">
           <FadeIn className="text-center">
             <SectionLabel variant="light">STRATEGIC CONTEXT</SectionLabel>
-            <h1 className="font-display text-4xl md:text-5xl mb-6">
+            <h1 className="font-display text-hero-headline mb-6">
               Why This Matters
             </h1>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-hero-subtext max-w-2xl mx-auto">
               How people find and evaluate businesses has fundamentally changed.
               Most businesses have not adjusted yet.
             </p>
@@ -35,7 +35,7 @@ export default function WhyThisMattersPage() {
         <div className="max-w-prose mx-auto px-6">
           <FadeIn>
             <SectionLabel>THE NEW REFERRAL</SectionLabel>
-            <h2 className="font-display text-3xl md:text-4xl text-navy mb-6">
+            <h2 className="font-display text-section-heading text-navy mb-6">
               People did not stop asking for recommendations. They stopped asking Google.
             </h2>
             <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
@@ -67,7 +67,7 @@ export default function WhyThisMattersPage() {
       <section className="py-24 md:py-32 bg-stone-dark">
         <div className="max-w-content mx-auto px-6">
           <FadeIn>
-            <h2 className="font-display text-3xl md:text-4xl text-navy mb-12 text-center">
+            <h2 className="font-display text-section-heading text-navy mb-12 text-center">
               Two things keep businesses out of the AI referral conversation.
             </h2>
           </FadeIn>
@@ -125,7 +125,7 @@ export default function WhyThisMattersPage() {
         <div className="relative z-10 max-w-content mx-auto px-6">
           <FadeIn className="text-center mb-12">
             <SectionLabel variant="light">THE TECHNICAL REALITY</SectionLabel>
-            <h2 className="font-display text-3xl md:text-4xl mb-6">
+            <h2 className="font-display text-section-heading mb-6">
               This is not a mystery. Here is exactly why AI gets businesses wrong.
             </h2>
             <p className="text-white/70 text-lg max-w-3xl mx-auto">
@@ -167,7 +167,7 @@ export default function WhyThisMattersPage() {
         <div className="max-w-prose mx-auto px-6">
           <FadeIn>
             <SectionLabel>THE RESULT</SectionLabel>
-            <h2 className="font-display text-3xl md:text-4xl text-navy mb-6">
+            <h2 className="font-display text-section-heading text-navy mb-6">
               What happens when this gets fixed.
             </h2>
             <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
@@ -201,7 +201,7 @@ export default function WhyThisMattersPage() {
         <GridTexture />
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="font-display text-3xl md:text-4xl mb-8">
+            <h2 className="font-display text-section-heading mb-8">
               AI is giving referrals in your space every day. The question
               is whether your business is one of them.
             </h2>

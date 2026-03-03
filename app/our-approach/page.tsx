@@ -18,10 +18,10 @@ export default function OurApproachPage() {
         <div className="relative z-10 max-w-content mx-auto px-6">
           <FadeIn className="text-center">
             <SectionLabel variant="light">PHILOSOPHY</SectionLabel>
-            <h1 className="font-display text-4xl md:text-5xl mb-6">
+            <h1 className="font-display text-hero-headline mb-6">
               Our Approach
             </h1>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-hero-subtext max-w-2xl mx-auto">
               We build the foundation that makes AI referrals possible and keeps
               them coming.
             </p>
@@ -34,7 +34,7 @@ export default function OurApproachPage() {
         <div className="max-w-prose mx-auto px-6">
           <FadeIn>
             <SectionLabel>HOW WE THINK</SectionLabel>
-            <h2 className="font-display text-3xl md:text-4xl text-navy mb-6">
+            <h2 className="font-display text-section-heading text-navy mb-6">
               Smart shortcuts come from understanding the system, not gaming it.
             </h2>
             <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
@@ -63,7 +63,7 @@ export default function OurApproachPage() {
         <div className="max-w-prose mx-auto px-6">
           <FadeIn>
             <SectionLabel>PERSPECTIVE</SectionLabel>
-            <h2 className="font-display text-3xl md:text-4xl text-navy mb-6">
+            <h2 className="font-display text-section-heading text-navy mb-6">
               Your current setup is not broken. It was built for a different system.
             </h2>
             <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
@@ -101,11 +101,11 @@ export default function OurApproachPage() {
         <div className="relative z-10 max-w-prose mx-auto px-6 text-center">
           <FadeIn>
             <SectionLabel variant="light">CORE ASSUMPTION</SectionLabel>
-            <h2 className="font-display text-3xl md:text-4xl text-white mb-6 max-w-3xl mx-auto">
+            <h2 className="font-display text-section-heading text-white mb-6 max-w-3xl mx-auto">
               Your business already knows what it does. AI just needs to be able to
               find that and make sense of it.
             </h2>
-            <p className="text-white/70 text-lg">
+            <p className="text-white/70 text-hero-subtext">
               We do not reinvent your business for AI. We take what is already true
               about what you do and organize it so AI can find it, trust it, and share
               it with the people asking.
@@ -119,7 +119,7 @@ export default function OurApproachPage() {
         <div className="max-w-prose mx-auto px-6">
           <FadeIn>
             <SectionLabel>OUR PROMISE</SectionLabel>
-            <h2 className="font-display text-3xl md:text-4xl text-navy mb-6">
+            <h2 className="font-display text-section-heading text-navy mb-6">
               We build toward your independence, not your dependency.
             </h2>
             <div className="font-body text-lg text-warmgray leading-relaxed space-y-4 mb-8">
@@ -157,7 +157,7 @@ export default function OurApproachPage() {
         <div className="max-w-prose mx-auto px-6">
           <FadeIn>
             <SectionLabel>THE LANDSCAPE</SectionLabel>
-            <h2 className="font-display text-3xl md:text-4xl text-navy mb-6">
+            <h2 className="font-display text-section-heading text-navy mb-6">
               This is not a one-time fix. AI changes every week.
             </h2>
             <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
@@ -189,7 +189,7 @@ export default function OurApproachPage() {
         <div className="max-w-prose mx-auto px-6">
           <FadeIn>
             <SectionLabel>WHY US</SectionLabel>
-            <h2 className="font-display text-3xl md:text-4xl text-navy mb-6">
+            <h2 className="font-display text-section-heading text-navy mb-6">
               Why {COMPANY_NAME}
             </h2>
             <div className="font-body text-lg text-warmgray leading-relaxed space-y-4 mb-8">
@@ -221,7 +221,7 @@ export default function OurApproachPage() {
         <GridTexture />
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="font-display text-3xl md:text-4xl mb-8">
+            <h2 className="font-display text-section-heading mb-8">
               The next step is a 30-minute conversation. We will show you
               exactly where you stand and talk about what it would take to change it.
             </h2>

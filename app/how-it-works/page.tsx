@@ -21,10 +21,10 @@ export default function HowItWorksPage() {
         <div className="relative z-10 max-w-content mx-auto px-6">
           <FadeIn className="text-center">
             <SectionLabel variant="light">OUR PROCESS</SectionLabel>
-            <h1 className="font-display text-4xl md:text-5xl mb-6">
+            <h1 className="font-display text-hero-headline mb-6">
               How It Works
             </h1>
-            <p className="text-white/70 text-lg max-w-3xl mx-auto">
+            <p className="text-white/70 text-hero-subtext max-w-3xl mx-auto">
               A clear process for getting your business into the AI referral
               conversation and making sure the details are right when it happens.
             </p>
@@ -36,7 +36,7 @@ export default function HowItWorksPage() {
       <section className="py-24 md:py-32">
         <div className="max-w-prose mx-auto px-6">
           <FadeIn>
-            <h2 className="font-display text-3xl md:text-4xl text-navy mb-6 text-center">
+            <h2 className="font-display text-section-heading text-navy mb-6 text-center">
               You do not need more content. You need a different kind of structure.
             </h2>
             <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
@@ -255,7 +255,7 @@ export default function HowItWorksPage() {
         <GridTexture />
         <div className="relative z-10 max-w-content mx-auto px-6">
           <FadeIn className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl">
+            <h2 className="font-display text-section-heading">
               What this process protects.
             </h2>
           </FadeIn>
@@ -338,7 +338,7 @@ export default function HowItWorksPage() {
         <GridTexture />
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="font-display text-3xl md:text-4xl mb-8">
+            <h2 className="font-display text-section-heading mb-8">
               If referrals drive your business, AI should be sending them your way.
             </h2>
             <Button href={BOOKING_URL} variant="primary">

@@ -19,14 +19,14 @@ export default function HomePage() {
         <GridTexture />
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <FadeIn delay={0.1}>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6">
+            <h1 className="font-display text-hero-headline mb-6">
               AI is sending referrals in your industry every day.
               Is it sending them to you?
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto mb-8">
+            <p className="text-white/70 text-hero-subtext max-w-3xl mx-auto mb-8">
               People stopped Googling and started asking AI. When someone asks
               "Who should I hire for this?" AI gives a direct answer. If it does
               not know your business exists, or gets the details wrong, that
@@ -54,7 +54,7 @@ export default function HomePage() {
             {/* Left column - Text */}
             <FadeIn>
               <SectionLabel>WHAT CHANGED</SectionLabel>
-              <h2 className="font-display text-3xl md:text-4xl text-navy mb-6">
+              <h2 className="font-display text-section-heading text-navy mb-6">
                 Google used to be the middleman. Now AI is.
               </h2>
               <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
@@ -141,7 +141,7 @@ export default function HomePage() {
         <div className="max-w-content mx-auto px-6">
           <FadeIn className="text-center mb-12">
             <SectionLabel>SERVICES</SectionLabel>
-            <h2 className="font-display text-3xl md:text-4xl text-navy">
+            <h2 className="font-display text-section-heading text-navy">
               Three ways to get into the AI referral conversation.
             </h2>
           </FadeIn>
@@ -214,10 +214,10 @@ export default function HomePage() {
         <div className="relative z-10 max-w-5xl mx-auto px-6">
           <FadeIn className="text-center mb-12">
             <SectionLabel variant="light">SIGNAL SCORE</SectionLabel>
-            <h2 className="font-display text-3xl md:text-4xl mb-6">
+            <h2 className="font-display text-section-heading mb-6">
               We do not just fix it. We prove it.
             </h2>
-            <p className="text-white/70 text-lg max-w-3xl mx-auto">
+            <p className="text-white/70 text-hero-subtext max-w-3xl mx-auto">
               Every engagement starts with a baseline and ends with proof. Our
               Signal Score™ measures how accurately and consistently AI represents
               your business across every major platform.
@@ -275,7 +275,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn>
               <SectionLabel>WHY IT HAPPENS</SectionLabel>
-              <h2 className="font-display text-3xl md:text-4xl text-navy mb-6">
+              <h2 className="font-display text-section-heading text-navy mb-6">
                 Here is what most people do not realize about how AI works.
               </h2>
               <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
