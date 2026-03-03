@@ -15,15 +15,15 @@ export default function ServicesPage() {
   return (
     <main>
       {/* Section 1: Page Header */}
-      <section className="relative bg-navy text-white py-40 md:py-48">
+      <section className="relative bg-navy text-white py-24">
         <GridTexture />
-        <div className="relative z-10 max-w-content mx-auto px-6">
-          <FadeIn className="text-center">
+        <div className="relative z-10 hero-container px-6">
+          <FadeIn>
             <SectionLabel variant="light">PRICING & PACKAGES</SectionLabel>
-            <h1 className="font-display text-hero-headline mb-6">
+            <h1 className="text-hero-headline text-white mb-6">
               AI Knowledge Services
             </h1>
-            <p className="text-white/70 text-hero-subtext max-w-3xl mx-auto">
+            <p className="text-white/80 text-hero-subtext">
               Clear pricing for two things that matter: making sure AI can find
               your business, and making sure it describes you correctly when it does.
             </p>

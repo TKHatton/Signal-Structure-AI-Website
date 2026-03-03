@@ -14,15 +14,15 @@ export default function WhyThisMattersPage() {
   return (
     <main>
       {/* Section 1: Page Header */}
-      <section className="relative bg-navy text-white py-40 md:py-48">
+      <section className="relative bg-navy text-white py-24">
         <GridTexture />
-        <div className="relative z-10 max-w-content mx-auto px-6">
-          <FadeIn className="text-center">
+        <div className="relative z-10 hero-container px-6">
+          <FadeIn>
             <SectionLabel variant="light">STRATEGIC CONTEXT</SectionLabel>
-            <h1 className="font-display text-hero-headline mb-6">
+            <h1 className="text-hero-headline text-white mb-6">
               Why This Matters
             </h1>
-            <p className="text-white/70 text-hero-subtext max-w-2xl mx-auto">
+            <p className="text-white/80 text-hero-subtext">
               How people find and evaluate businesses has fundamentally changed.
               Most businesses have not adjusted yet.
             </p>

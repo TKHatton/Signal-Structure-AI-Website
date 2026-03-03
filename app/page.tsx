@@ -15,18 +15,18 @@ export default function HomePage() {
   return (
     <main>
       {/* Section 1: Hero */}
-      <section className="relative bg-navy text-white py-40 md:py-48">
+      <section className="relative bg-navy text-white py-24">
         <GridTexture />
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div className="relative z-10 hero-container px-6">
           <FadeIn delay={0.1}>
-            <h1 className="font-display text-hero-headline mb-6">
+            <h1 className="text-hero-headline text-white mb-6">
               AI is sending referrals in your industry every day.
               Is it sending them to you?
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <p className="text-white/70 text-hero-subtext max-w-3xl mx-auto mb-8">
+            <p className="text-white/80 text-hero-subtext mb-8">
               People stopped Googling and started asking AI. When someone asks
               "Who should I hire for this?" AI gives a direct answer. If it does
               not know your business exists, or gets the details wrong, that
