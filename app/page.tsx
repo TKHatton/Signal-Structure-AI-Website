@@ -20,10 +20,7 @@ export default function HomePage() {
         <div className="relative z-10 hero-container">
           <FadeIn delay={0.1}>
             <h1 className="hero-headline-main text-white mb-8">
-              People stopped Googling and started asking AI. When someone asks
-              "Who should I hire for this?" AI gives a direct answer. If it does
-              not know your business exists, or gets the details wrong, that
-              referral goes to someone else.
+              AI is sending referrals in your industry every day. Is it sending them to you?
             </h1>
           </FadeIn>
 
