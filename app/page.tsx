@@ -311,7 +311,7 @@ export default function HomePage() {
         <GridTexture />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
-            <h2 className="font-display text-3xl md:text-4xl mb-8">
+            <h2 className="font-display text-3xl md:text-4xl mb-8 text-white">
               AI is giving referrals in your space every day. Make sure yours is
               one of them.
             </h2>

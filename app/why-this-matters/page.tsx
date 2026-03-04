@@ -198,7 +198,7 @@ export default function WhyThisMattersPage() {
         <GridTexture />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
-            <h2 className="font-display text-section-heading mb-8">
+            <h2 className="font-display text-section-heading mb-8 text-white">
               AI is giving referrals in your space every day. The question
               is whether your business is one of them.
             </h2>

@@ -218,7 +218,7 @@ export default function OurApproachPage() {
         <GridTexture />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
-            <h2 className="font-display text-section-heading mb-8">
+            <h2 className="font-display text-section-heading mb-8 text-white">
               The next step is a 30-minute conversation. We will show you
               exactly where you stand and talk about what it would take to change it.
             </h2>

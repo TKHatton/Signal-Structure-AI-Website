@@ -181,7 +181,7 @@ export default function ServicesPage() {
         <GridTexture />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
-            <h2 className="font-display text-section-heading mb-8">
+            <h2 className="font-display text-section-heading mb-8 text-white">
               Ready to start getting the referrals you have been missing?
             </h2>
             <Button href={BOOKING_URL} variant="primary" className="mb-4">
