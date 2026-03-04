@@ -26,7 +26,7 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   return (
     <div
-      className={`relative bg-white rounded-card shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 p-8 ${
+      className={`relative bg-white rounded-card shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 p-8 flex flex-col h-full ${
         featured ? 'border-l-4 border-copper' : 'border-t-4 border-copper'
       }`}
     >
@@ -50,7 +50,7 @@ export default function ServiceCard({
       </div>
 
       {/* Features */}
-      <ul className="space-y-3 mb-8">
+      <ul className="space-y-3 mb-8 flex-grow">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start gap-3">
             <SignalDot size={7} className="mt-1.5 flex-shrink-0" />

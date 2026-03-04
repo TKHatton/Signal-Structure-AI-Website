@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --space-sm: 2rem;
+  --space-md: 4rem;
+  --space-lg: 5rem;
+  --space-section: 5rem 2rem;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -63,5 +70,13 @@ h3, h4, h5, h6 {
     max-width: 700px;
     margin: 0 auto;
     text-align: center;
+  }
+
+  .section-padding {
+    padding: var(--space-lg) 2rem;
+  }
+
+  .section-padding-sm {
+    padding: var(--space-md) 2rem;
   }
 }

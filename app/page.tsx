@@ -15,9 +15,9 @@ export default function HomePage() {
   return (
     <main>
       {/* Section 1: Hero */}
-      <section className="relative bg-navy text-white py-24">
+      <section className="relative bg-navy text-white section-padding">
         <GridTexture />
-        <div className="relative z-10 hero-container px-6">
+        <div className="relative z-10 hero-container">
           <FadeIn delay={0.1}>
             <h1 className="text-hero-headline text-white mb-6">
               AI is sending referrals in your industry every day.
@@ -48,8 +48,8 @@ export default function HomePage() {
       </section>
 
       {/* Section 2: The Shift */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-content mx-auto px-6">
+      <section className="section-padding">
+        <div className="max-w-content mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left column - Text */}
             <FadeIn>
@@ -137,8 +137,8 @@ export default function HomePage() {
       </section>
 
       {/* Section 3: Service Cards */}
-      <section className="py-24 md:py-32 bg-stone-dark">
-        <div className="max-w-content mx-auto px-6">
+      <section className="section-padding bg-stone-dark">
+        <div className="max-w-content mx-auto">
           <FadeIn className="text-center mb-12">
             <SectionLabel>SERVICES</SectionLabel>
             <h2 className="font-display text-section-heading text-navy">
@@ -146,7 +146,7 @@ export default function HomePage() {
             </h2>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 items-stretch">
             <FadeIn delay={0.1}>
               <ServiceCard
                 title="AI Business Profile"
@@ -209,12 +209,12 @@ export default function HomePage() {
       </section>
 
       {/* Section 4: Signal Score Demo */}
-      <section className="relative bg-navy text-white py-24 md:py-32">
+      <section className="relative bg-navy text-white section-padding-sm">
         <GridTexture />
-        <div className="relative z-10 max-w-5xl mx-auto px-6">
-          <FadeIn className="text-center mb-12">
+        <div className="relative z-10 max-w-5xl mx-auto">
+          <FadeIn className="text-center mb-8">
             <SectionLabel variant="light">SIGNAL SCORE</SectionLabel>
-            <h2 className="font-display text-section-heading mb-6">
+            <h2 className="font-display text-section-heading mb-4">
               We do not just fix it. We prove it.
             </h2>
             <p className="text-white/70 text-hero-subtext max-w-3xl mx-auto">
@@ -229,7 +229,7 @@ export default function HomePage() {
           </FadeIn>
 
           {/* Three stat cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
             <FadeIn delay={0.3}>
               <div className="bg-white/10 rounded-lg p-6 text-center">
                 <div className="text-copper text-xs font-body font-semibold uppercase tracking-wider mb-2">
@@ -261,7 +261,7 @@ export default function HomePage() {
             </FadeIn>
           </div>
 
-          <FadeIn delay={0.6} className="text-center mt-12">
+          <FadeIn delay={0.6} className="text-center mt-8">
             <Button href={BOOKING_URL} variant="primary">
               See How Your Business Scores
             </Button>
@@ -270,8 +270,8 @@ export default function HomePage() {
       </section>
 
       {/* Section 5: Expertise Block */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-content mx-auto px-6">
+      <section className="section-padding">
+        <div className="max-w-content mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn>
               <SectionLabel>WHY IT HAPPENS</SectionLabel>
@@ -317,9 +317,9 @@ export default function HomePage() {
       </section>
 
       {/* Section 6: Bottom CTA */}
-      <section className="relative bg-navy text-white py-24 md:py-32">
+      <section className="relative bg-navy text-white section-padding">
         <GridTexture />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-display text-3xl md:text-4xl mb-8">
               AI is giving referrals in your space every day. Make sure yours is

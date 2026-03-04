@@ -32,8 +32,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Section 2: Three Service Tiers */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-content mx-auto px-6">
+      <section className="section-padding">
+        <div className="max-w-content mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <FadeIn delay={0.1}>
               <ServiceCard
@@ -108,8 +108,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Section 3: Add-Ons */}
-      <section className="py-24 md:py-32 bg-stone-dark">
-        <div className="max-w-content mx-auto px-6">
+      <section className="section-padding bg-stone-dark">
+        <div className="max-w-content mx-auto">
           <FadeIn className="mb-12">
             <h2 className="font-display text-section-heading text-navy mb-4 text-center">
               Add-Ons
@@ -180,9 +180,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Section 4: Bottom CTA */}
-      <section className="relative bg-navy text-white py-24 md:py-32">
+      <section className="relative bg-navy text-white section-padding">
         <GridTexture />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-display text-section-heading mb-8">
               Ready to start getting the referrals you have been missing?

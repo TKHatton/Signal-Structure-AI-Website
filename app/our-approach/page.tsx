@@ -30,8 +30,8 @@ export default function OurApproachPage() {
       </section>
 
       {/* Section 2: Philosophy */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-prose mx-auto px-6">
+      <section className="section-padding">
+        <div className="max-w-prose mx-auto">
           <FadeIn>
             <SectionLabel>HOW WE THINK</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-6">
@@ -59,8 +59,8 @@ export default function OurApproachPage() {
       </section>
 
       {/* Section 3: The Real Problem */}
-      <section className="py-24 md:py-32 bg-stone-dark">
-        <div className="max-w-prose mx-auto px-6">
+      <section className="section-padding bg-stone-dark">
+        <div className="max-w-prose mx-auto">
           <FadeIn>
             <SectionLabel>PERSPECTIVE</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-6">
@@ -96,9 +96,9 @@ export default function OurApproachPage() {
       </section>
 
       {/* Section 4: Core Assumption Block */}
-      <section className="relative bg-navy text-white py-16 md:py-20">
+      <section className="relative bg-navy text-white section-padding-sm">
         <GridTexture />
-        <div className="relative z-10 max-w-prose mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-prose mx-auto text-center">
           <FadeIn>
             <SectionLabel variant="light">CORE ASSUMPTION</SectionLabel>
             <h2 className="font-display text-section-heading text-white mb-6 max-w-3xl mx-auto">
@@ -115,8 +115,8 @@ export default function OurApproachPage() {
       </section>
 
       {/* Section 5: Independence Philosophy */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-prose mx-auto px-6">
+      <section className="section-padding">
+        <div className="max-w-prose mx-auto">
           <FadeIn>
             <SectionLabel>OUR PROMISE</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-6">
@@ -153,8 +153,8 @@ export default function OurApproachPage() {
       </section>
 
       {/* Section 6: AI Changes Constantly */}
-      <section className="py-24 md:py-32 bg-stone-dark">
-        <div className="max-w-prose mx-auto px-6">
+      <section className="section-padding bg-stone-dark">
+        <div className="max-w-prose mx-auto">
           <FadeIn>
             <SectionLabel>THE LANDSCAPE</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-6">
@@ -185,8 +185,8 @@ export default function OurApproachPage() {
       </section>
 
       {/* Section 7: Why Signal & Structure AI */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-prose mx-auto px-6">
+      <section className="section-padding">
+        <div className="max-w-prose mx-auto">
           <FadeIn>
             <SectionLabel>WHY US</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-6">
@@ -217,9 +217,9 @@ export default function OurApproachPage() {
       </section>
 
       {/* Section 8: Bottom CTA */}
-      <section className="relative bg-navy text-white py-24 md:py-32">
+      <section className="relative bg-navy text-white section-padding">
         <GridTexture />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-display text-section-heading mb-8">
               The next step is a 30-minute conversation. We will show you

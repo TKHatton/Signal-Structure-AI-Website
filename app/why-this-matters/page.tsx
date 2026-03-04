@@ -31,8 +31,8 @@ export default function WhyThisMattersPage() {
       </section>
 
       {/* Section 2: The Shift */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-prose mx-auto px-6">
+      <section className="section-padding">
+        <div className="max-w-prose mx-auto">
           <FadeIn>
             <SectionLabel>THE NEW REFERRAL</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-6">
@@ -64,8 +64,8 @@ export default function WhyThisMattersPage() {
       </section>
 
       {/* Section 3: Two Problems */}
-      <section className="py-24 md:py-32 bg-stone-dark">
-        <div className="max-w-content mx-auto px-6">
+      <section className="section-padding bg-stone-dark">
+        <div className="max-w-content mx-auto">
           <FadeIn>
             <h2 className="font-display text-section-heading text-navy mb-12 text-center">
               Two things keep businesses out of the AI referral conversation.
@@ -120,9 +120,9 @@ export default function WhyThisMattersPage() {
       </section>
 
       {/* Section 4: Why AI Gets It Wrong */}
-      <section className="relative bg-navy text-white py-24 md:py-32">
+      <section className="relative bg-navy text-white section-padding">
         <GridTexture />
-        <div className="relative z-10 max-w-content mx-auto px-6">
+        <div className="relative z-10 max-w-content mx-auto">
           <FadeIn className="text-center mb-12">
             <SectionLabel variant="light">THE TECHNICAL REALITY</SectionLabel>
             <h2 className="font-display text-section-heading mb-6">
@@ -163,8 +163,8 @@ export default function WhyThisMattersPage() {
       </section>
 
       {/* Section 5: What Changes */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-prose mx-auto px-6">
+      <section className="section-padding">
+        <div className="max-w-prose mx-auto">
           <FadeIn>
             <SectionLabel>THE RESULT</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-6">
@@ -197,9 +197,9 @@ export default function WhyThisMattersPage() {
       </section>
 
       {/* Section 6: Bottom CTA */}
-      <section className="relative bg-navy text-white py-24 md:py-32">
+      <section className="relative bg-navy text-white section-padding">
         <GridTexture />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-display text-section-heading mb-8">
               AI is giving referrals in your space every day. The question

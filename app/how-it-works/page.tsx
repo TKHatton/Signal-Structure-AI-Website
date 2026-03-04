@@ -33,8 +33,8 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Section 2: Intro */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-prose mx-auto px-6">
+      <section className="section-padding">
+        <div className="max-w-prose mx-auto">
           <FadeIn>
             <h2 className="font-display text-section-heading text-navy mb-6 text-center">
               You do not need more content. You need a different kind of structure.
@@ -64,8 +64,8 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Section 3: The Five Steps */}
-      <section className="py-24 md:py-32 bg-stone-dark">
-        <div className="max-w-content mx-auto px-6 space-y-32">
+      <section className="section-padding bg-stone-dark">
+        <div className="max-w-content mx-auto space-y-32">
           {/* Step 1: Discovery */}
           <StepCard
             stepNumber="01"
@@ -251,9 +251,9 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Section 4: Why It Matters Block */}
-      <section className="relative bg-navy text-white py-24 md:py-32">
+      <section className="relative bg-navy text-white section-padding">
         <GridTexture />
-        <div className="relative z-10 max-w-content mx-auto px-6">
+        <div className="relative z-10 max-w-content mx-auto">
           <FadeIn className="text-center mb-12">
             <h2 className="font-display text-section-heading">
               What this process protects.
@@ -290,8 +290,8 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Section 5: Best For / Not For */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-content mx-auto px-6">
+      <section className="section-padding">
+        <div className="max-w-content mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <FadeIn>
               <h3 className="font-body text-2xl font-semibold text-navy mb-6">
@@ -334,9 +334,9 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Section 6: Bottom CTA */}
-      <section className="relative bg-navy text-white py-24 md:py-32">
+      <section className="relative bg-navy text-white section-padding">
         <GridTexture />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-display text-section-heading mb-8">
               If referrals drive your business, AI should be sending them your way.
