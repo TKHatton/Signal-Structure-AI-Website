@@ -187,7 +187,7 @@ export default function ServicesPage() {
             <Button href={BOOKING_URL} variant="primary" className="mb-4">
               Book a Signal Check
             </Button>
-            <p className="text-white/40 text-sm max-w-2xl mx-auto">
+            <p className="text-white/70 text-sm max-w-2xl mx-auto">
               30 minutes. We look at what AI currently says about your business
               and whether it recommends you at all. No pressure. Just a clear picture.
             </p>

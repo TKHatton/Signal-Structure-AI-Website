@@ -225,7 +225,7 @@ export default function OurApproachPage() {
             <Button href={BOOKING_URL} variant="primary" className="mb-4">
               Book a Signal Check
             </Button>
-            <p className="text-white/40 text-sm">
+            <p className="text-white/70 text-sm">
               No pressure. Just clarity.
             </p>
           </FadeIn>

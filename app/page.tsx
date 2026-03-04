@@ -29,7 +29,7 @@ export default function HomePage() {
               <Button href={BOOKING_URL} variant="primary" className="text-lg px-8 py-4">
                 Book a Signal Check
               </Button>
-              <p className="text-white/40 text-sm">
+              <p className="text-white/70 text-sm">
                 30 minutes. See exactly how AI describes your business today.
               </p>
             </div>
@@ -318,7 +318,7 @@ export default function HomePage() {
             <Button href={BOOKING_URL} variant="primary" className="mb-4">
               Book a Signal Check
             </Button>
-            <p className="text-white/40 text-sm">
+            <p className="text-white/70 text-sm">
               30 minutes. No pressure. Just clarity.
             </p>
           </FadeIn>
