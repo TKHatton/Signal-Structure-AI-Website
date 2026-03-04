@@ -1,4 +1,4 @@
-export const BOOKING_URL = "https://calendly.com/PLACEHOLDER";
+export const BOOKING_URL = "https://calendly.com/ltkenney13/30min";
 export const EMAIL = "hello@signalstructureai.com";
 export const LINKEDIN = "https://linkedin.com/company/signal-structure-ai";
 export const LOCATION = "Durham, NC";
