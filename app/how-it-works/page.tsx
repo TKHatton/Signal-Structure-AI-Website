@@ -16,15 +16,15 @@ export default function HowItWorksPage() {
   return (
     <main>
       {/* Section 1: Page Header */}
-      <section className="relative bg-navy text-white py-24">
+      <section className="relative bg-navy text-white section-padding">
         <GridTexture />
-        <div className="relative z-10 hero-container px-6">
+        <div className="relative z-10 hero-container">
           <FadeIn>
             <SectionLabel variant="light">OUR PROCESS</SectionLabel>
-            <h1 className="text-hero-headline text-white mb-6">
+            <h1 className="inner-page-title text-white mb-4">
               How It Works
             </h1>
-            <p className="text-white/80 text-hero-subtext">
+            <p className="inner-page-subtitle text-white/80">
               A clear process for getting your business into the AI referral
               conversation and making sure the details are right when it happens.
             </p>

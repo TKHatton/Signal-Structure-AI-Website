@@ -13,15 +13,15 @@ export default function OurApproachPage() {
   return (
     <main>
       {/* Section 1: Page Header */}
-      <section className="relative bg-navy text-white py-24">
+      <section className="relative bg-navy text-white section-padding">
         <GridTexture />
-        <div className="relative z-10 hero-container px-6">
+        <div className="relative z-10 hero-container">
           <FadeIn>
             <SectionLabel variant="light">PHILOSOPHY</SectionLabel>
-            <h1 className="text-hero-headline text-white mb-6">
+            <h1 className="inner-page-title text-white mb-4">
               Our Approach
             </h1>
-            <p className="text-white/80 text-hero-subtext">
+            <p className="inner-page-subtitle text-white/80">
               We build the foundation that makes AI referrals possible and keeps
               them coming.
             </p>

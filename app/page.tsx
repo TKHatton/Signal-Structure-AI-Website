@@ -19,19 +19,12 @@ export default function HomePage() {
         <GridTexture />
         <div className="relative z-10 hero-container">
           <FadeIn delay={0.1}>
-            <h1 className="text-hero-headline text-white mb-6">
-              AI is sending referrals in your industry every day.
-              Is it sending them to you?
-            </h1>
-          </FadeIn>
-
-          <FadeIn delay={0.3}>
-            <p className="text-white/80 text-hero-subtext mb-8">
+            <h1 className="hero-headline-main text-white mb-8">
               People stopped Googling and started asking AI. When someone asks
               "Who should I hire for this?" AI gives a direct answer. If it does
               not know your business exists, or gets the details wrong, that
               referral goes to someone else.
-            </p>
+            </h1>
           </FadeIn>
 
           <FadeIn delay={0.5}>
