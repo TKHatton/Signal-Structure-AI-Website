@@ -15,7 +15,7 @@ export default function HomePage() {
   return (
     <main>
       {/* Section 1: Hero */}
-      <section className="relative bg-navy text-white section-padding">
+      <section className="relative bg-navy text-white">
         <GridTexture />
         <div className="relative z-10 hero-container">
           <FadeIn delay={0.1}>

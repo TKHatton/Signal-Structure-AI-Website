@@ -67,27 +67,24 @@ h3, h4, h5, h6 {
   }
 
   .hero-container {
-    max-width: 860px;
+    max-width: 900px;
     margin: 0 auto;
     text-align: center;
+    padding: 4rem 3rem;
   }
 
   .hero-headline-main {
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
     font-weight: 700;
     line-height: 1.2;
     text-align: center;
   }
 
-  .inner-page-title {
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
+  .inner-page-hero-subtitle {
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
     font-weight: 700;
-    line-height: 1.2;
-  }
-
-  .inner-page-subtitle {
-    font-size: clamp(1rem, 1.8vw, 1.2rem);
-    line-height: 1.5;
+    line-height: 1.3;
+    text-align: center;
   }
 
   .section-padding {

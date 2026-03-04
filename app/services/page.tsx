@@ -15,18 +15,15 @@ export default function ServicesPage() {
   return (
     <main>
       {/* Section 1: Page Header */}
-      <section className="relative bg-navy text-white section-padding">
+      <section className="relative bg-navy text-white">
         <GridTexture />
         <div className="relative z-10 hero-container">
           <FadeIn>
             <SectionLabel variant="light">PRICING & PACKAGES</SectionLabel>
-            <h1 className="inner-page-title text-white mb-4">
-              AI Knowledge Services
-            </h1>
-            <p className="inner-page-subtitle text-white/80">
+            <h1 className="inner-page-hero-subtitle text-white">
               Clear pricing for two things that matter: making sure AI can find
               your business, and making sure it describes you correctly when it does.
-            </p>
+            </h1>
           </FadeIn>
         </div>
       </section>
