@@ -11,9 +11,65 @@ import SignalDot from '@/components/SignalDot';
 import { BOOKING_URL } from '@/lib/constants';
 import Link from 'next/link';
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Signal & Structure AI',
+  url: 'https://signalstructure.ai',
+  logo: 'https://signalstructure.ai/images/logo.png',
+  description:
+    'Signal & Structure AI helps businesses become findable and accurately represented by AI platforms like ChatGPT, Claude, Perplexity, and Gemini. We build structured knowledge systems and measure results with our proprietary Signal Score.',
+  foundingDate: '2026',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Durham',
+    addressRegion: 'NC',
+    addressCountry: 'US',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    email: 'hello@signalstructure.ai',
+    availableLanguage: 'English',
+  },
+  sameAs: ['https://www.linkedin.com/company/signal-structure-ai'],
+  knowsAbout: [
+    'AI discoverability',
+    'schema markup',
+    'structured data',
+    'Google Business Profile optimization',
+    'AI search optimization',
+    'business knowledge systems',
+  ],
+  slogan: 'Be found. Be accurate. Be recommended.',
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Signal & Structure AI',
+  url: 'https://signalstructure.ai',
+  description:
+    'AI knowledge services that make businesses findable and accurately represented by AI platforms.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Signal & Structure AI',
+  },
+};
+
 export default function HomePage() {
   return (
     <main>
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+
       {/* Section 1: Hero */}
       <section className="relative bg-navy text-white">
         <GridTexture />

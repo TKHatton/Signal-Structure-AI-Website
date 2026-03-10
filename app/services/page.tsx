@@ -11,9 +11,70 @@ export const metadata = {
   description: 'AI Business Profile starting at $750. AI Knowledge System starting at $3,000. AI Presence Management starting at $1,500/mo. Clear pricing for AI knowledge services.',
 };
 
+const servicesSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'AI Business Profile',
+    provider: { '@type': 'Organization', name: 'Signal & Structure AI', url: 'https://signalstructure.ai' },
+    description: 'Organizes your business information so AI platforms can find and describe your company correctly. Includes guided intake, custom AI assistant, brand guardrails, structured formatting, and before-and-after Signal Score measurement.',
+    serviceType: 'AI Discoverability',
+    offers: { '@type': 'Offer', price: '750', priceCurrency: 'USD', priceSpecification: { '@type': 'PriceSpecification', price: '750', priceCurrency: 'USD', description: 'Starting price' } },
+    areaServed: { '@type': 'Country', name: 'United States' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'AI Knowledge System',
+    provider: { '@type': 'Organization', name: 'Signal & Structure AI', url: 'https://signalstructure.ai' },
+    description: 'Transforms all business documents, pages, policies, and content into one organized knowledge system that AI platforms pull from directly. Includes deep discovery, centralized knowledge structure, schema markup, custom AI assistant, and detailed Signal Score by category.',
+    serviceType: 'AI Discoverability',
+    offers: { '@type': 'Offer', price: '3000', priceCurrency: 'USD', priceSpecification: { '@type': 'PriceSpecification', price: '3000', priceCurrency: 'USD', description: 'Starting price' } },
+    areaServed: { '@type': 'Country', name: 'United States' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'AI Presence Management',
+    provider: { '@type': 'Organization', name: 'Signal & Structure AI', url: 'https://signalstructure.ai' },
+    description: 'Ongoing management of your AI presence as your business and AI platforms evolve. Includes monthly updates, monthly accuracy checks, quarterly audits, strategy calls, platform monitoring, discoverability tracking, and priority support.',
+    serviceType: 'AI Discoverability Management',
+    offers: { '@type': 'Offer', price: '1500', priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', price: '1500', priceCurrency: 'USD', unitText: 'MONTH', description: 'Starting monthly price with 3-month minimum' } },
+    areaServed: { '@type': 'Country', name: 'United States' },
+  },
+];
+
+const addOnsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Signal & Structure AI Add-On Services',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, item: { '@type': 'Service', name: 'Internal Team AI Assistant', description: 'Private AI assistant trained on your internal processes, SOPs, and team documentation.', offers: { '@type': 'Offer', price: '500', priceCurrency: 'USD' }, provider: { '@type': 'Organization', name: 'Signal & Structure AI' } } },
+    { '@type': 'ListItem', position: 2, item: { '@type': 'Service', name: 'Website AI Chat', description: 'Customer-facing AI chat widget connected to your knowledge system, embedded on your website.', offers: { '@type': 'Offer', price: '750', priceCurrency: 'USD' }, provider: { '@type': 'Organization', name: 'Signal & Structure AI' } } },
+    { '@type': 'ListItem', position: 3, item: { '@type': 'Service', name: 'Multi-Platform AI Readiness', description: 'Business information structured and optimized for ChatGPT, Claude, Perplexity, Gemini, and other AI platforms.', offers: { '@type': 'Offer', price: '1000', priceCurrency: 'USD' }, provider: { '@type': 'Organization', name: 'Signal & Structure AI' } } },
+    { '@type': 'ListItem', position: 4, item: { '@type': 'Service', name: 'Custom GPTs and AI Apps', description: 'Purpose-built AI tools like intake assistants, proposal generators, or customer service bots.', offers: { '@type': 'Offer', price: '2000', priceCurrency: 'USD' }, provider: { '@type': 'Organization', name: 'Signal & Structure AI' } } },
+    { '@type': 'ListItem', position: 5, item: { '@type': 'Service', name: 'AI Workflow Automation', description: 'Automated workflows connecting your existing tools with AI-powered processes.', offers: { '@type': 'Offer', price: '1500', priceCurrency: 'USD' }, provider: { '@type': 'Organization', name: 'Signal & Structure AI' } } },
+    { '@type': 'ListItem', position: 6, item: { '@type': 'Service', name: 'Compliance and Tone Guardrails', description: 'Rules and boundaries ensuring AI represents your brand consistently and avoids risk.', offers: { '@type': 'Offer', price: '500', priceCurrency: 'USD' }, provider: { '@type': 'Organization', name: 'Signal & Structure AI' } } },
+    { '@type': 'ListItem', position: 7, item: { '@type': 'Service', name: 'Quarterly AI Accuracy Audit', description: '90-day checkup testing AI platforms against your ground truth with scorecards and recommendations.', offers: { '@type': 'Offer', price: '750', priceCurrency: 'USD' }, provider: { '@type': 'Organization', name: 'Signal & Structure AI' } } },
+  ],
+};
+
 export default function ServicesPage() {
   return (
     <main>
+      {/* JSON-LD Schema */}
+      {servicesSchema.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(addOnsSchema) }}
+      />
+
       {/* Section 1: Page Header */}
       <section className="relative bg-navy text-white">
         <GridTexture />

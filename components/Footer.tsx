@@ -9,6 +9,7 @@ const navLinks = [
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/why-this-matters', label: 'Why This Matters' },
   { href: '/our-approach', label: 'Our Approach' },
+  { href: '/faq', label: 'FAQ' },
 ];
 
 export default function Footer() {

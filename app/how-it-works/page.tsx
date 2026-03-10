@@ -12,9 +12,31 @@ export const metadata = {
   description: 'Our five-step process: Discovery, Structure, Connection, Testing, and Ongoing management. We organize your business information so AI can find and recommend you.',
 };
 
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How Signal & Structure AI Improves Your AI Discoverability',
+  description:
+    'A clear process for getting your business into the AI referral conversation and making sure the details are right when it happens.',
+  totalTime: 'P90D',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Discovery and Baseline Assessment', text: 'We learn what your business actually does and how it really operates. We document authentic descriptions, identify customer priorities, and query AI platforms to establish your baseline Signal Score.' },
+    { '@type': 'HowToStep', position: 2, name: 'Information Organization', text: 'We organize your information in a way AI can actually find and use. Your knowledge is structured into categories: Identity, Services, Messaging, Policies, FAQs, and Guardrails.' },
+    { '@type': 'HowToStep', position: 3, name: 'AI Platform Integration', text: 'We connect AI directly to your organized information. Instead of AI piecing together guesses from the internet, it accesses your verified, structured knowledge directly across ChatGPT, Claude, Perplexity, and Gemini.' },
+    { '@type': 'HowToStep', position: 4, name: 'Testing and Verification', text: 'We test every answer against what you told us is actually true. Customer-relevant questions are verified against your ground truth to eliminate hallucinations and inaccuracies.' },
+    { '@type': 'HowToStep', position: 5, name: 'Ongoing Management', text: 'We keep everything current as your business and AI platforms change. Monthly updates, monthly accuracy checks, and quarterly deep audits with strategy reviews.' },
+  ],
+};
+
 export default function HowItWorksPage() {
   return (
     <main>
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+
       {/* Section 1: Page Header */}
       <section className="relative bg-navy text-white">
         <GridTexture />

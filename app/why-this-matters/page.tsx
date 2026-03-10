@@ -10,9 +10,26 @@ export const metadata = {
   description: 'People stopped Googling and started asking AI. If your business is not structured for AI, you are invisible to the new referral system. Here is why and how to fix it.',
 };
 
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Why AI Discoverability Matters | Signal & Structure AI',
+  description:
+    'How people find and evaluate businesses has fundamentally changed. Most businesses have not adjusted yet. Learn why AI discoverability is the new competitive advantage.',
+  url: 'https://signalstructure.ai/why-this-matters',
+  isPartOf: { '@type': 'WebSite', name: 'Signal & Structure AI', url: 'https://signalstructure.ai' },
+  publisher: { '@type': 'Organization', name: 'Signal & Structure AI', url: 'https://signalstructure.ai' },
+};
+
 export default function WhyThisMattersPage() {
   return (
     <main>
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+      />
+
       {/* Section 1: Page Header */}
       <section className="relative bg-navy text-white">
         <GridTexture />

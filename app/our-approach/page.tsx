@@ -9,9 +9,26 @@ export const metadata = {
   description: 'We build toward your independence, not your dependency. Signal & Structure AI organizes your business information for AI with structure, accuracy, and long-term thinking.',
 };
 
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Our Approach | Signal & Structure AI',
+  description:
+    'Signal & Structure AI builds the foundation that makes AI referrals possible. We organize existing business knowledge so AI platforms can find it, understand it, and recommend you accurately.',
+  url: 'https://signalstructure.ai/our-approach',
+  isPartOf: { '@type': 'WebSite', name: 'Signal & Structure AI', url: 'https://signalstructure.ai' },
+  publisher: { '@type': 'Organization', name: 'Signal & Structure AI', url: 'https://signalstructure.ai' },
+};
+
 export default function OurApproachPage() {
   return (
     <main>
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+      />
+
       {/* Section 1: Page Header */}
       <section className="relative bg-navy text-white">
         <GridTexture />
