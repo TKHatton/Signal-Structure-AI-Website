@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
@@ -35,6 +36,7 @@ const personSchema = {
     'AI Systems',
     'Education',
   ],
+  image: 'https://signalstructure.ai/lenise-kenney.jpg',
   description:
     'Co-Founder of Signal & Structure AI. Nearly 20 years as an educator. Author of Protect Your Genius: Using AI Without Diluting Your Voice.',
   sameAs: [],
@@ -177,9 +179,25 @@ export default function AboutPage() {
 
             {/* Lenise */}
             <div className="mb-10">
-              <h3 className="font-display text-2xl text-navy mb-4">
-                Lenise Kenney
-              </h3>
+              <div className="flex flex-col sm:flex-row gap-6 mb-6">
+                <div className="shrink-0">
+                  <Image
+                    src="/lenise-kenney.jpg"
+                    alt="Lenise Kenney, Co-Founder of Signal & Structure AI"
+                    width={200}
+                    height={200}
+                    className="rounded-lg object-cover w-[200px] h-[200px]"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-display text-2xl text-navy mb-2">
+                    Lenise Kenney
+                  </h3>
+                  <p className="font-body text-copper text-sm font-semibold uppercase tracking-wider">
+                    Co-Founder &amp; Chief Strategist
+                  </p>
+                </div>
+              </div>
               <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
                 <p>
                   Lenise brings nearly 20 years of experience as an educator
