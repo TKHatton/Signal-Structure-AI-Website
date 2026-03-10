@@ -2,6 +2,7 @@ import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
+import ChecklistForm from '@/components/ChecklistForm';
 import { BOOKING_URL, COMPANY_NAME } from '@/lib/constants';
 
 export const metadata = {
@@ -92,66 +93,9 @@ export default function ResourcesPage() {
                 </div>
               </div>
 
-              {/* Email Signup Form */}
+              {/* Checklist Signup Form */}
               <div className="bg-stone-dark p-8 rounded-lg border border-stone-dark">
-                <h3 className="font-display text-2xl text-navy mb-2">
-                  Get the Free Checklist
-                </h3>
-                <p className="font-body text-sm text-warmgray mb-6">
-                  Enter your email and we will send it right over. Plus you will
-                  get The Signal Report Monthly — one email per month with AI
-                  visibility tips and featured businesses.
-                </p>
-                <form
-                  className="space-y-4"
-                  action="https://signalstructure.ai/api/subscribe"
-                  method="POST"
-                >
-                  <input type="hidden" name="source" value="lead-magnet" />
-                  <div>
-                    <label
-                      htmlFor="email-lead"
-                      className="block font-body text-sm font-medium text-navy mb-1"
-                    >
-                      Email address
-                    </label>
-                    <input
-                      type="email"
-                      id="email-lead"
-                      name="email"
-                      required
-                      placeholder="you@yourbusiness.com"
-                      className="w-full px-4 py-3 rounded-lg border border-warmgray/30 font-body text-navy focus:outline-none focus:ring-2 focus:ring-copper focus:border-transparent"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="business-lead"
-                      className="block font-body text-sm font-medium text-navy mb-1"
-                    >
-                      Business name{' '}
-                      <span className="text-warmgray font-normal">
-                        (optional)
-                      </span>
-                    </label>
-                    <input
-                      type="text"
-                      id="business-lead"
-                      name="business"
-                      placeholder="Your Business Name"
-                      className="w-full px-4 py-3 rounded-lg border border-warmgray/30 font-body text-navy focus:outline-none focus:ring-2 focus:ring-copper focus:border-transparent"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-copper text-white font-body font-semibold py-3 px-6 rounded-lg hover:bg-copper/90 transition-colors"
-                  >
-                    Send Me the Checklist
-                  </button>
-                  <p className="text-xs text-warmgray text-center">
-                    No spam. Unsubscribe anytime. One email per month.
-                  </p>
-                </form>
+                <ChecklistForm />
               </div>
             </div>
           </FadeIn>
