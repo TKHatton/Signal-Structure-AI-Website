@@ -2,7 +2,7 @@ import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
-import { BOOKING_URL, COMPANY_NAME, TAGLINE } from '@/lib/constants';
+import { BOOKING_URL, COMPANY_NAME, TAGLINE, ADDRESS } from '@/lib/constants';
 
 export const metadata = {
   title: 'About | Signal & Structure AI',
@@ -19,6 +19,14 @@ const personSchema = {
     '@type': 'Organization',
     name: 'Signal & Structure AI',
     url: 'https://signalstructure.ai',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '506 Ramseur St, Unit 108',
+      addressLocality: 'Durham',
+      addressRegion: 'NC',
+      postalCode: '27701',
+      addressCountry: 'US',
+    },
   },
   knowsAbout: [
     'AI Discoverability',
@@ -214,11 +222,14 @@ export default function AboutPage() {
 
             {/* Digital Jaywalking callout */}
             <div className="bg-stone-dark p-8 rounded-lg border-l-4 border-copper">
-              <p className="font-body text-lg text-navy">
+              <p className="font-body text-lg text-navy mb-3">
                 {COMPANY_NAME} operates under{' '}
                 <strong>Digital Jaywalking</strong>, a company founded by Lenise
                 and Julian dedicated to helping people get their ideas from paper
                 to production.
+              </p>
+              <p className="font-body text-sm text-warmgray">
+                {ADDRESS}
               </p>
             </div>
           </FadeIn>

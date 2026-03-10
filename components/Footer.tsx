@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import SignalDot from './SignalDot';
 import GridTexture from './GridTexture';
-import { COMPANY_NAME, TAGLINE, LOCATION, EMAIL, LINKEDIN, BOOKING_URL } from '@/lib/constants';
+import { COMPANY_NAME, TAGLINE, LOCATION, ADDRESS, EMAIL, LINKEDIN, BOOKING_URL } from '@/lib/constants';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -70,7 +70,7 @@ export default function Footer() {
             <ul className="space-y-3 text-white/70 font-body text-sm">
               <li className="flex items-start gap-2">
                 <SignalDot size={4} className="mt-1.5" />
-                <span>{LOCATION}</span>
+                <span>{ADDRESS}</span>
               </li>
               <li className="flex items-start gap-2">
                 <SignalDot size={4} className="mt-1.5" />

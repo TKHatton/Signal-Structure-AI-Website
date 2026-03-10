@@ -22,8 +22,10 @@ const organizationSchema = {
   foundingDate: '2026',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: '506 Ramseur St, Unit 108',
     addressLocality: 'Durham',
     addressRegion: 'NC',
+    postalCode: '27701',
     addressCountry: 'US',
   },
   contactPoint: {
