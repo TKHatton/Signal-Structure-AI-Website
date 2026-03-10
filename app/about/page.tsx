@@ -265,38 +265,38 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Section 6: Building in Public */}
+      {/* Section 6: How We Work */}
       <section className="section-padding bg-stone-dark">
         <div className="max-w-prose mx-auto">
           <FadeIn>
-            <SectionLabel>BUILDING IN PUBLIC</SectionLabel>
+            <SectionLabel>HOW WE WORK</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-6">
-              We show the results, not just the pitch.
+              We measure everything. Then we fix what matters first.
             </h2>
             <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
               <p>
-                We ran our own business through the Signal Score methodology
-                before we ever asked a client to trust it. Our starting score
-                was zero. We are documenting the journey from invisible to
-                discoverable because we believe accountability matters more than
-                promises.
+                Every engagement starts with a Signal Score, a comprehensive
+                audit across all five major AI platforms. The score tells you
+                exactly where your business stands, what AI gets right, what
+                it gets wrong, and what it misses entirely.
               </p>
               <p>
-                You can follow that journey in{' '}
+                From there, we build the systems that close those gaps.
+                Structured data, optimized profiles, content AI can actually
+                parse, and ongoing monitoring to make sure nothing drifts.
+                The methodology is proprietary. The results are measurable.
+              </p>
+              <p>
+                We share insights and trends on{' '}
                 <a
                   href="/blog"
                   className="text-copper underline hover:text-navy transition-colors"
                 >
-                  The Signal Report
-                </a>
-                , our blog, and on LinkedIn. We share what changes, what improves,
-                and what the numbers look like along the way.
-              </p>
-              <p>
-                We do not share every step of the methodology. That is
-                proprietary and it is what our clients invest in. But we share
-                enough to prove that the work is real and the results are
-                measurable.
+                  our blog
+                </a>{' '}
+                and on LinkedIn. If you want to understand the landscape,
+                start there. If you want to fix your presence, start with a
+                Signal Check.
               </p>
             </div>
           </FadeIn>
