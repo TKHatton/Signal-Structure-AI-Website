@@ -6,12 +6,13 @@ import { COMPANY_NAME, TAGLINE, LOCATION, EMAIL, LINKEDIN, BOOKING_URL } from '@
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
+  { href: '/resources', label: 'Resources' },
   { href: '/about', label: 'Our Story' },
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/why-this-matters', label: 'Why This Matters' },
   { href: '/our-approach', label: 'Our Approach' },
-  { href: '/faq', label: 'FAQ' },
   { href: '/blog', label: 'Blog' },
+  { href: '/faq', label: 'FAQ' },
 ];
 
 export default function Footer() {

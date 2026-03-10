@@ -9,8 +9,8 @@ import { BOOKING_URL, COMPANY_NAME } from '@/lib/constants';
 
 const mainLinks = [
   { href: '/services', label: 'Services' },
+  { href: '/resources', label: 'Resources' },
   { href: '/blog', label: 'Blog' },
-  { href: '/faq', label: 'FAQ' },
 ];
 
 const aboutLinks = [
@@ -23,6 +23,7 @@ const aboutLinks = [
 const allLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
+  { href: '/resources', label: 'Resources' },
   { href: '/about', label: 'Our Story' },
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/why-this-matters', label: 'Why This Matters' },
