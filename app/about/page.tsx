@@ -173,9 +173,14 @@ export default function AboutPage() {
         <div className="max-w-prose mx-auto">
           <FadeIn>
             <SectionLabel>THE FOUNDERS</SectionLabel>
-            <h2 className="font-display text-section-heading text-navy mb-8">
-              Built by Lenise Kenney and Julian Bass.
+            <h2 className="font-display text-section-heading text-navy mb-4">
+              Built by two siblings who saw the same problem from two
+              different generations.
             </h2>
+            <p className="font-body text-lg text-warmgray mb-8">
+              {COMPANY_NAME} is run by Lenise and Julian, a sister-and-brother
+              team based in Durham, NC.
+            </p>
 
             {/* Lenise */}
             <div className="mb-10">
@@ -183,7 +188,7 @@ export default function AboutPage() {
                 <div className="shrink-0">
                   <Image
                     src="/lenise-kenney.jpg"
-                    alt="Lenise Kenney, Co-Founder of Signal & Structure AI"
+                    alt="Lenise, Co-Founder of Signal & Structure AI"
                     width={200}
                     height={200}
                     className="rounded-lg object-cover w-[200px] h-[200px]"
@@ -191,7 +196,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h3 className="font-display text-2xl text-navy mb-2">
-                    Lenise Kenney
+                    Lenise
                   </h3>
                   <p className="font-body text-copper text-sm font-semibold uppercase tracking-wider">
                     Co-Founder &amp; Chief Strategist
@@ -224,16 +229,20 @@ export default function AboutPage() {
 
             {/* Julian */}
             <div className="mb-8">
-              <h3 className="font-display text-2xl text-navy mb-4">
-                Julian Bass
+              <h3 className="font-display text-2xl text-navy mb-2">
+                Julian
               </h3>
+              <p className="font-body text-copper text-sm font-semibold uppercase tracking-wider mb-4">
+                Co-Founder &amp; Creative Director
+              </p>
               <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
                 <p>
                   Julian brings the perspective of a new generation of builders
                   who grew up with AI as a natural part of how things work. His
-                  understanding of emerging tools and platforms helps ensure that
-                  everything {COMPANY_NAME} builds is forward-looking and
-                  grounded in how technology actually moves.
+                  creative instincts and understanding of emerging tools and
+                  platforms help ensure that everything {COMPANY_NAME} builds
+                  is forward-looking and grounded in how technology actually
+                  moves.
                 </p>
               </div>
             </div>
@@ -242,9 +251,11 @@ export default function AboutPage() {
             <div className="bg-stone-dark p-8 rounded-lg border-l-4 border-copper">
               <p className="font-body text-lg text-navy mb-3">
                 {COMPANY_NAME} operates under{' '}
-                <strong>Digital Jaywalking</strong>, a company founded by Lenise
-                and Julian dedicated to helping people get their ideas from paper
-                to production.
+                <strong>Digital Jaywalking</strong>, founded by Julian and
+                Lenise. Digital Jaywalking helps people who know what they want
+                to build but need help making it real. From concept to launch,
+                they turn ideas into products, platforms, and businesses that
+                are ready to ship and ready to grow.
               </p>
               <p className="font-body text-sm text-warmgray">
                 {ADDRESS}

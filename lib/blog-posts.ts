@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'five-things-ai-gets-wrong',
     title: '5 Things AI Gets Wrong About Your Business Right Now',
-    date: '2026-03-21',
+    date: '2026-03-05',
     author: 'Signal & Structure AI',
     pillar: 'Education',
     description:
@@ -90,7 +90,7 @@ export const blogPosts: BlogPost[] = [
         name: 'Signal & Structure AI',
         url: 'https://signalstructure.ai',
       },
-      datePublished: '2026-03-21',
+      datePublished: '2026-03-05',
       description:
         'AI platforms are making claims about your business right now. Here are the 5 most common errors we see and why most businesses have no idea.',
       mainEntityOfPage: {
@@ -102,7 +102,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'day-one-signal-score-zero',
     title: 'Day One: My Signal Score Is Zero. Here Is What I Am Doing About It.',
-    date: '2026-03-16',
+    date: '2026-02-28',
     author: 'Signal & Structure AI',
     pillar: 'Company & Culture',
     description:
@@ -161,7 +161,7 @@ export const blogPosts: BlogPost[] = [
         name: 'Signal & Structure AI',
         url: 'https://signalstructure.ai',
       },
-      datePublished: '2026-03-16',
+      datePublished: '2026-02-28',
       description:
         'We ran our own business through the Signal Score methodology. The result was zero. This is what it looks like when AI has no idea you exist.',
       mainEntityOfPage: {
@@ -173,7 +173,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'what-is-a-signal-score',
     title: 'What Is a Signal Score? And Why Your Business Needs One',
-    date: '2026-03-14',
+    date: '2026-02-24',
     author: 'Signal & Structure AI',
     pillar: 'Education',
     description:
@@ -232,7 +232,7 @@ export const blogPosts: BlogPost[] = [
         name: 'Signal & Structure AI',
         url: 'https://signalstructure.ai',
       },
-      datePublished: '2026-03-14',
+      datePublished: '2026-02-24',
       description:
         'A Signal Score measures how accurately AI platforms represent your business. Learn what it tests, why it matters, and what most businesses score.',
       mainEntityOfPage: {
