@@ -14,6 +14,7 @@ const mainLinks = [
 ];
 
 const aboutLinks = [
+  { href: '/about', label: 'Our Story' },
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/why-this-matters', label: 'Why This Matters' },
   { href: '/our-approach', label: 'Our Approach' },
@@ -22,6 +23,7 @@ const aboutLinks = [
 const allLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
+  { href: '/about', label: 'Our Story' },
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/why-this-matters', label: 'Why This Matters' },
   { href: '/our-approach', label: 'Our Approach' },
