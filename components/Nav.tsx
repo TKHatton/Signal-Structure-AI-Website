@@ -14,6 +14,7 @@ const navLinks = [
   { href: '/why-this-matters', label: 'Why This Matters' },
   { href: '/our-approach', label: 'Our Approach' },
   { href: '/faq', label: 'FAQ' },
+  { href: '/blog', label: 'Blog' },
 ];
 
 export default function Nav() {
