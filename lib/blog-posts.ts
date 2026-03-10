@@ -15,71 +15,75 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: 'five-things-ai-gets-wrong',
-    title: '5 Things AI Gets Wrong About Your Business (And How to Fix Them)',
+    title: '5 Things AI Gets Wrong About Your Business Right Now',
     date: '2026-03-21',
     author: 'Signal & Structure AI',
     pillar: 'Education',
     description:
-      'AI platforms are making claims about your business right now. Here are the 5 most common errors and exactly what to do about each one.',
-    readTime: '7 min read',
+      'AI platforms are making claims about your business right now. Here are the 5 most common errors we see and why most businesses have no idea.',
+    readTime: '5 min read',
     content: [
       'Right now, someone is asking an AI platform about a business like yours. The answer they get might include the wrong address, outdated services, a competitor\'s phone number, or a description of something you have never offered. And you have no idea it is happening.',
-      'AI platforms do not fact-check themselves. They assemble answers from whatever data they can find. When that data is incomplete, inconsistent, or missing entirely, the answers reflect it.',
+      'AI platforms do not fact-check themselves. They assemble answers from whatever data they can find. When that data is incomplete, inconsistent, or missing entirely, the answers reflect it. Here are the five most common things we see when we audit businesses.',
     ],
     sections: [
       {
         heading: '1. AI Says You Offer Services You Do Not Provide',
         paragraphs: [
           'This is the most common hallucination. An AI platform looks at your industry, your location, and whatever fragments of data it can find, then fills in the gaps with assumptions.',
-          'A marketing agency might get described as offering web development. A financial advisor might be listed as providing tax preparation. The AI is not lying. It is guessing, and it is guessing wrong.',
-          'How to fix it: Create a dedicated Services page on your website with Service schema markup. List exactly what you offer and, just as importantly, what your specialties are. The more specific your structured data, the less room AI has to improvise. Your Google Business Profile should list the same services with the same language.',
+          'A marketing agency gets described as offering web development. A financial advisor gets listed as providing tax preparation. A restaurant gets credited with catering services they have never offered. The AI is not lying. It is guessing, and it is guessing wrong.',
+          'The problem is not that AI is unreliable. The problem is that your actual services are not structured in a way AI can find. So it makes its best guess based on your industry. And best guesses lead to wrong answers.',
         ],
       },
       {
         heading: '2. AI Gets Your Location Wrong',
         paragraphs: [
-          'AI platforms pull location data from multiple sources. When those sources disagree, AI either picks the wrong one or creates a hybrid that does not exist. A business in Durham, NC might get listed in Durham, England. A business that moved two years ago might still show the old address.',
-          'How to fix it: Lock in your NAP (Name, Address, Phone) and make sure it is identical everywhere. Your website, your Google Business Profile, Bing Places, Apple Business Connect, Yelp, and any other directory should all show the exact same address in the exact same format. Schema markup on your website should include your full address in Organization schema. Consistency across sources is what AI uses to confirm accuracy.',
+          'AI platforms pull location data from multiple sources. When those sources disagree, AI either picks the wrong one or creates a hybrid that does not exist.',
+          'We have seen a business in Durham, NC get listed in Durham, England. We have seen businesses that moved years ago still showing the old address. We have seen AI merge two different businesses at two different addresses into one listing.',
+          'When a potential customer asks AI for a recommendation near them and your location is wrong, you are not just invisible. You are in the wrong place entirely.',
         ],
       },
       {
         heading: '3. AI Cannot Describe What Makes You Different',
         paragraphs: [
           'Ask an AI what your business does and you might get a generic answer that could apply to any competitor. There is no mention of your methodology, your niche, your approach, or what separates you from the other ten businesses in the same category.',
-          'How to fix it: Publish content that explains your unique approach. Blog posts, FAQ pages, and About pages that describe your methodology in plain language give AI specific material to reference. If your differentiator is a proprietary process, a niche specialization, or a unique framework, write about it on your website. AI cannot reference what does not exist in text form.',
+          'This is one of the most damaging issues because it turns every business into a commodity. If AI describes you the same way it describes your competitor, the customer has no reason to choose you. Your differentiation disappears.',
+          'The reason this happens is that most businesses have not given AI anything specific to work with. Your differentiator might be obvious to you and your customers, but if it is not structured in a way AI can parse, it does not exist in AI\'s version of reality.',
         ],
       },
       {
-        heading: '4. AI Attributes Your Information to Someone Else',
+        heading: '4. AI Attributes Your Work to Someone Else',
         paragraphs: [
-          'This one is subtle and frustrating. You create a blog post or develop a methodology, and AI attributes it to a larger competitor or a generic source. Your intellectual property gets absorbed into the general knowledge pool without credit.',
-          'How to fix it: Use Author and Publisher schema on every piece of content. Make sure your Organization schema is on every page of your site. Link your content to your business entity with structured data. When AI sees the same author consistently attached to a body of work through schema markup, it builds an entity profile that connects the content to you specifically.',
+          'This one is subtle and frustrating. You create a methodology, publish original thinking, or build a body of expertise. AI absorbs it into the general knowledge pool and attributes it to a larger competitor or a generic source.',
+          'Your intellectual property gets flattened into "common knowledge" and the credit goes to whoever has the stronger entity signal. For smaller businesses competing against larger ones, this is a real threat. It is not enough to create great work. AI needs to know it belongs to you.',
         ],
       },
       {
         heading: '5. AI Does Not Know You Exist at All',
         paragraphs: [
-          'This is the most common issue and the easiest to overlook. You assume AI knows about your business because you have a website. But having a website is not enough. If no AI platform mentions you by name when asked about your industry in your location, you are functionally invisible.',
-          'How to fix it: This requires the full approach. Schema markup tells AI what you are. Google Business Profile tells AI where you are. Directory listings confirm you are real. Content gives AI something to learn from. A Custom GPT on the ChatGPT platform puts you directly into one AI ecosystem. Each step adds a signal. Enough signals, and AI starts including you in its answers.',
+          'This is the most common issue and the easiest to overlook. You assume AI knows about your business because you have a website. But having a website is not enough.',
+          'If no AI platform mentions you by name when asked about your industry in your location, you are functionally invisible. Every day, potential customers are asking AI for recommendations and getting answers that do not include you. They are not choosing your competitor over you. They never knew you were an option.',
+          'This is not a niche problem. In our audits, we see this with businesses of every size, in every industry. The majority score far lower than they expect. Many score zero.',
         ],
       },
       {
-        heading: 'The Common Thread',
+        heading: 'The Uncomfortable Truth',
         paragraphs: [
-          'All five of these problems have the same root cause: the information is either missing, inconsistent, or unstructured. AI platforms are not biased against your business. They simply work with what they can find. When what they find is incomplete, the results reflect it.',
-          'The good news is that every one of these issues is fixable. Not with ads, not with SEO tricks, and not with shortcuts. With structured data, consistent listings, and content that AI can actually parse and reference.',
+          'All five of these problems have something in common. They are invisible to the business owner. You cannot see what AI says about you unless you ask. Most business owners never think to ask.',
+          'The other thing they have in common: every one of them is fixable. Not with ads, not with SEO tricks, not with shortcuts. But it does require understanding how AI finds, evaluates, and represents businesses. And that is a very different skill set from traditional marketing.',
+          'If you do not know what AI is saying about your business, that is the first thing to find out. Everything else follows from there.',
         ],
       },
     ],
     cta: {
-      text: 'Book a free Signal Check and see what AI platforms are saying about your business right now.',
+      text: 'Book a free Signal Check and see what AI platforms are actually saying about your business.',
       href: 'https://calendly.com/ltkenney13/30min',
     },
     schema: {
       '@context': 'https://schema.org',
       '@type': 'Article',
       headline:
-        '5 Things AI Gets Wrong About Your Business (And How to Fix Them)',
+        '5 Things AI Gets Wrong About Your Business Right Now',
       author: { '@type': 'Organization', name: 'Signal & Structure AI' },
       publisher: {
         '@type': 'Organization',
@@ -88,7 +92,7 @@ export const blogPosts: BlogPost[] = [
       },
       datePublished: '2026-03-21',
       description:
-        'AI platforms are making claims about your business right now. Here are the 5 most common errors and exactly what to do about each one.',
+        'AI platforms are making claims about your business right now. Here are the 5 most common errors we see and why most businesses have no idea.',
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': 'https://signalstructure.ai/blog/five-things-ai-gets-wrong',
@@ -102,8 +106,8 @@ export const blogPosts: BlogPost[] = [
     author: 'Signal & Structure AI',
     pillar: 'Company & Culture',
     description:
-      'We ran our own business through the Signal Score methodology. The result was zero. This is the full story of what we found and the 90-day plan to fix it.',
-    readTime: '5 min read',
+      'We ran our own business through the Signal Score methodology. The result was zero. This is what it looks like when AI has no idea you exist.',
+    readTime: '4 min read',
     content: [
       'We built a system that measures how well AI platforms know about a business. Then we ran ourselves through it. The result was zero out of 100.',
       'Not low. Not concerning. Zero.',
@@ -122,7 +126,7 @@ export const blogPosts: BlogPost[] = [
         paragraphs: [
           'We asked ChatGPT, Claude, Perplexity, Gemini, and Copilot about Signal & Structure AI. None of them knew who we were. None of them could describe what we do. None of them recommended us for anything.',
           'That is what a zero looks like. It is not that AI got our information wrong. It is that AI had no information at all. We were invisible across every platform.',
-          'Schema and Structure: zero. Our website existed, but it had no structured data markup. Google Business Profile: zero. We had not claimed one. NAP Consistency: zero. Our business name appeared in exactly one place. Content for AI: zero. No blog, no FAQ, no educational material. AI Presence: zero. No platform mentioned us by name. Technical Infrastructure: partial. The site loaded and was mobile-friendly, but without schema it was only half complete.',
+          'Every single one of our six scoring categories came back at zero or near zero. The website existed, but AI could not make sense of it. There was no presence on any platform that AI pulls from. There were no signals for AI to cross-reference. Nothing.',
         ],
       },
       {
@@ -134,23 +138,16 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: 'The 90-Day Plan',
+        heading: 'What Happens Next',
         paragraphs: [
-          'We are giving ourselves 90 days to go from 0 to 75 or higher. Every step will be documented. Every score change will be recorded. The whole process will be public.',
-          'Week one: claim the territory. Domain, email, Google Business Profile, LinkedIn. Weeks one through two: build the home base. Schema markup on every page, FAQ page, blog launch. Weeks two through four: start talking. Blog posts, LinkedIn cadence, sitemap submissions. Weeks three through five: spread the signal. Directory submissions across Bing Places, Apple Business Connect, and more. Weeks four through eight: go deeper. Custom GPT, case studies, guest posts. Week twelve: re-test everything.',
-        ],
-      },
-      {
-        heading: 'Why We Are Sharing This',
-        paragraphs: [
-          'This is not a marketing stunt. This is the actual work.',
-          'Every business that hires us will go through a version of this same process. We want them to see what it looks like from day one. The starting point, the messy middle, and the measurable results.',
-          'If you are a business owner and you have no idea what AI says about you, you are probably in the same position we were. The difference is that now you know it is fixable, because you are going to watch us fix it.',
+          'We are giving ourselves 90 days to go from 0 to 75 or higher. We will share the results publicly. The score changes, the before-and-after comparisons, the milestones along the way.',
+          'We are not going to share every step of the process. That is our methodology and it is what our clients pay for. But we are going to show what is possible when the right work gets done in the right order.',
+          'If you have ever wondered whether AI knows your business exists, the answer might be the same as ours was. And if that is the case, the question is not whether to fix it. It is how long you are comfortable being invisible.',
         ],
       },
     ],
     cta: {
-      text: 'Book a free Signal Check and see where your business stands today.',
+      text: 'Book a free Signal Check and find out what AI actually says about your business.',
       href: 'https://calendly.com/ltkenney13/30min',
     },
     schema: {
@@ -166,7 +163,7 @@ export const blogPosts: BlogPost[] = [
       },
       datePublished: '2026-03-16',
       description:
-        'We ran our own business through the Signal Score methodology. The result was zero. This is the full story of what we found and the 90-day plan to fix it.',
+        'We ran our own business through the Signal Score methodology. The result was zero. This is what it looks like when AI has no idea you exist.',
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': 'https://signalstructure.ai/blog/day-one-signal-score-zero',
