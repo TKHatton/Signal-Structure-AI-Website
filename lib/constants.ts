@@ -1,5 +1,5 @@
 export const BOOKING_URL = "https://calendly.com/ltkenney13/30min";
-export const EMAIL = "hello@signalstructureai.com";
+export const EMAIL = "hello@signalstructure.ai";
 export const LINKEDIN = "https://linkedin.com/company/signal-structure-ai";
 export const LOCATION = "Durham, NC";
 export const COMPANY_NAME = "Signal & Structure AI";

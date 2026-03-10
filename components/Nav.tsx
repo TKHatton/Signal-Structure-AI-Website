@@ -1,26 +1,40 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
 import { BOOKING_URL, COMPANY_NAME } from '@/lib/constants';
 
-const navLinks = [
+const mainLinks = [
+  { href: '/services', label: 'Services' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/faq', label: 'FAQ' },
+];
+
+const aboutLinks = [
+  { href: '/how-it-works', label: 'How It Works' },
+  { href: '/why-this-matters', label: 'Why This Matters' },
+  { href: '/our-approach', label: 'Our Approach' },
+];
+
+const allLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/why-this-matters', label: 'Why This Matters' },
   { href: '/our-approach', label: 'Our Approach' },
-  { href: '/faq', label: 'FAQ' },
   { href: '/blog', label: 'Blog' },
+  { href: '/faq', label: 'FAQ' },
 ];
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const aboutRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,10 +45,25 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when route changes
+  // Close menus when route changes
   useEffect(() => {
     setIsMenuOpen(false);
+    setIsAboutOpen(false);
   }, [pathname]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (aboutRef.current && !aboutRef.current.contains(event.target as Node)) {
+        setIsAboutOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const isAboutActive = aboutLinks.some((link) => pathname === link.href);
 
   return (
     <>
@@ -55,8 +84,8 @@ export default function Nav() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => {
+          <div className="hidden lg:flex items-center gap-6">
+            {mainLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
@@ -73,7 +102,67 @@ export default function Nav() {
                 </Link>
               );
             })}
-            <Button href={BOOKING_URL} variant="primary" className="text-sm">
+
+            {/* About Dropdown */}
+            <div ref={aboutRef} className="relative">
+              <button
+                onClick={() => setIsAboutOpen(!isAboutOpen)}
+                className={`font-body font-medium text-sm relative transition-colors duration-300 flex items-center gap-1 ${
+                  isAboutActive ? 'text-copper' : 'text-navy hover:text-copper'
+                }`}
+              >
+                About
+                <svg
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    isAboutOpen ? 'rotate-180' : ''
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+                {isAboutActive && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-copper" />
+                )}
+              </button>
+
+              <AnimatePresence>
+                {isAboutOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -4 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 bg-white rounded-card shadow-card-hover border border-stone-dark py-2"
+                  >
+                    {aboutLinks.map((link) => {
+                      const isActive = pathname === link.href;
+                      return (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className={`block px-4 py-2.5 font-body text-sm transition-colors ${
+                            isActive
+                              ? 'text-copper bg-stone'
+                              : 'text-navy hover:text-copper hover:bg-stone'
+                          }`}
+                        >
+                          {link.label}
+                        </Link>
+                      );
+                    })}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            <Button href={BOOKING_URL} variant="primary" className="text-sm whitespace-nowrap">
               Book a Signal Check
             </Button>
           </div>
@@ -145,7 +234,7 @@ export default function Nav() {
               </div>
 
               <div className="flex flex-col gap-4">
-                {navLinks.map((link) => {
+                {allLinks.map((link) => {
                   const isActive = pathname === link.href;
                   return (
                     <Link
