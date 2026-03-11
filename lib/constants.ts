@@ -1,5 +1,7 @@
 export const BOOKING_URL = "https://calendly.com/ltkenney13/30min";
 export const EMAIL = "hello@signalstructure.ai";
+export const PHONE = "(984) 314-3102";
+export const PHONE_HREF = "tel:+19843143102";
 export const LINKEDIN = "https://linkedin.com/company/signal-structure-ai";
 export const LOCATION = "Durham, NC";
 export const ADDRESS = "506 Ramseur St, Unit 108, Durham, NC 27701";

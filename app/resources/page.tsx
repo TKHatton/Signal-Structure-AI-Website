@@ -192,7 +192,7 @@ export default function ResourcesPage() {
                   </span>
                 </div>
                 <p className="font-body text-navy font-semibold mb-4">
-                  Available soon — join the newsletter to be first to know.
+                  Available soon. Join the newsletter to be first to know.
                 </p>
               </div>
             </div>

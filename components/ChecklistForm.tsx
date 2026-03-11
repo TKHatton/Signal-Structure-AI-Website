@@ -146,9 +146,9 @@ export default function ChecklistForm() {
               check your spam or promotions folder.
             </p>
             <p className="font-body text-sm text-warmgray">
-              You are also now subscribed to{' '}
-              <strong className="text-navy">The Signal Report Monthly</strong> —
-              one email per month with AI visibility tips and featured
+              You are also now subscribed to our newsletter,{' '}
+              <strong className="text-navy">The Signal Report</strong>, with
+              AI visibility tips and featured
               businesses.
             </p>
           </motion.div>
