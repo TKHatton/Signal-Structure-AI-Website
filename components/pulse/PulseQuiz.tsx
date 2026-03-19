@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { API_URL } from '@/lib/constants';
 import SignalDot from '../SignalDot';
@@ -85,8 +85,13 @@ export default function PulseQuiz() {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [result, setResult] = useState<QuizResult | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [questionsComplete, setQuestionsComplete] = useState(false);
+  const [email, setEmail] = useState('');
+  const [businessName, setBusinessName] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [shareConfirm, setShareConfirm] = useState(false);
 
-  const handleAnswer = async (value: string) => {
+  const handleAnswer = (value: string) => {
     const question = QUESTIONS[currentQuestion];
     const newAnswers = { ...answers, [question.id]: value };
     setAnswers(newAnswers);
@@ -94,44 +99,64 @@ export default function PulseQuiz() {
     if (currentQuestion < QUESTIONS.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      // Submit quiz
-      setIsSubmitting(true);
-      try {
-        const res = await fetch(`${API_URL}/api/quiz/submit`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ answers: newAnswers }),
-        });
+      // All questions answered, show email gate
+      setQuestionsComplete(true);
+    }
+  };
 
-        if (!res.ok) throw new Error('Failed to submit');
-        const data = await res.json();
-        setResult(data);
-      } catch {
-        // Fallback: compute locally
-        setResult({
-          signal_strength: 'Low Signal',
-          signal_key: 'low',
-          headline: 'Your signal is barely getting through.',
-          explanation: 'Based on your answers, AI systems probably have a hard time finding accurate information about your business.',
-          cta_text: 'Want to know for sure? Run a free Signal Pulse check with your actual URL.',
-          cta_url: '/signal-pulse',
-        });
-      } finally {
-        setIsSubmitting(false);
-      }
+  const handleEmailSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+
+    setIsSubmitting(true);
+    setEmailError('');
+
+    try {
+      const res = await fetch(`${API_URL}/api/quiz/submit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          answers,
+          email: email.trim(),
+          business_name: businessName.trim() || null,
+        }),
+      });
+
+      if (!res.ok) throw new Error('Failed to submit');
+      const data = await res.json();
+      setResult(data);
+    } catch {
+      // Fallback: compute locally
+      setResult({
+        signal_strength: 'Low Signal',
+        signal_key: 'low',
+        headline: 'Your signal is barely getting through.',
+        explanation:
+          'Based on your answers, AI systems probably have a hard time finding accurate information about your business.',
+        cta_text:
+          'Want to know for sure? Run a free Signal Pulse check with your actual URL.',
+        cta_url: '/signal-pulse',
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   const handleShare = () => {
     const shareUrl = `${window.location.origin}/signal-pulse/quiz`;
     navigator.clipboard.writeText(shareUrl);
+    setShareConfirm(true);
+    setTimeout(() => setShareConfirm(false), 2000);
   };
 
   // Progress bar
   const progress = result
     ? 100
-    : ((currentQuestion) / QUESTIONS.length) * 100;
+    : questionsComplete
+      ? 90
+      : (currentQuestion / QUESTIONS.length) * 80;
 
+  // --- Result Screen ---
   if (result) {
     const colors = SIGNAL_COLORS[result.signal_key] || SIGNAL_COLORS.none;
 
@@ -141,7 +166,6 @@ export default function PulseQuiz() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        {/* Result Card */}
         <div className={`bg-white rounded-2xl shadow-card border-l-4 ${colors.border} p-6 sm:p-8`}>
           <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${colors.bg} mb-4`}>
             <span className={`font-body font-semibold text-sm ${colors.text}`}>
@@ -149,14 +173,11 @@ export default function PulseQuiz() {
             </span>
           </div>
 
-          <h3 className="font-display text-xl text-navy mb-3">
-            {result.headline}
-          </h3>
+          <h3 className="font-display text-xl text-navy mb-3">{result.headline}</h3>
           <p className="font-body text-sm text-warmgray leading-relaxed mb-6">
             {result.explanation}
           </p>
 
-          {/* CTA */}
           <div className="space-y-3">
             <a
               href={result.cta_url}
@@ -168,22 +189,138 @@ export default function PulseQuiz() {
               onClick={handleShare}
               className="block w-full bg-transparent border-2 border-navy/20 text-navy font-body font-medium py-3 px-6 rounded-lg hover:bg-navy/5 transition-colors text-center"
             >
-              Share This Quiz
+              {shareConfirm ? 'Link copied.' : 'Share This Quiz'}
             </button>
           </div>
 
-          {/* Branding */}
           <div className="mt-6 pt-4 border-t border-warmgray/10 flex items-center justify-center gap-2">
             <SignalDot size={5} />
-            <span className="font-body text-xs text-warmgray">
-              Signal & Structure AI
-            </span>
+            <span className="font-body text-xs text-warmgray">Signal & Structure AI</span>
+          </div>
+        </div>
+
+        <div className="mt-4 bg-status-green/5 border border-status-green/20 rounded-lg p-4">
+          <div className="flex items-center gap-2">
+            <svg
+              className="w-5 h-5 text-status-green flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <p className="font-body text-sm text-navy">
+              Your results have been sent to {email}.
+            </p>
           </div>
         </div>
       </motion.div>
     );
   }
 
+  // --- Email Gate Screen ---
+  if (questionsComplete) {
+    return (
+      <div>
+        {/* Progress Bar */}
+        <div className="mb-8">
+          <div className="h-1.5 bg-warmgray/10 rounded-full overflow-hidden">
+            <motion.div
+              className="h-full bg-copper rounded-full"
+              animate={{ width: `${progress}%` }}
+              transition={{ duration: 0.3 }}
+            />
+          </div>
+        </div>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key="email-gate"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <h3 className="font-display text-xl sm:text-2xl text-navy mb-3">
+              Your results are ready.
+            </h3>
+            <p className="font-body text-sm text-warmgray mb-6 leading-relaxed">
+              Enter your email to see your signal strength and get a copy sent to your inbox.
+            </p>
+
+            <form onSubmit={handleEmailSubmit} className="space-y-4">
+              <div>
+                <label
+                  htmlFor="quiz-business"
+                  className="block font-body text-sm font-medium text-navy mb-1"
+                >
+                  Business name (optional)
+                </label>
+                <input
+                  type="text"
+                  id="quiz-business"
+                  placeholder="Acme Dental"
+                  value={businessName}
+                  onChange={(e) => setBusinessName(e.target.value)}
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-2.5 rounded-lg border border-warmgray/30 font-body text-navy text-sm focus:outline-none focus:ring-2 focus:ring-copper focus:border-transparent disabled:opacity-50"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="quiz-email"
+                  className="block font-body text-sm font-medium text-navy mb-1"
+                >
+                  Email address
+                </label>
+                <input
+                  type="email"
+                  id="quiz-email"
+                  required
+                  placeholder="you@yourbusiness.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-2.5 rounded-lg border border-warmgray/30 font-body text-navy text-sm focus:outline-none focus:ring-2 focus:ring-copper focus:border-transparent disabled:opacity-50"
+                />
+              </div>
+              {emailError && (
+                <p className="text-xs text-status-red">{emailError}</p>
+              )}
+              <button
+                type="submit"
+                disabled={isSubmitting || !email.trim()}
+                className="w-full bg-copper text-white font-body font-semibold py-3 px-6 rounded-lg hover:bg-copper/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <motion.span
+                      animate={{ opacity: [1, 0.4, 1] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      Calculating your signal
+                    </motion.span>
+                    <span className="flex gap-1">
+                      <SignalDot size={5} />
+                      <SignalDot size={5} />
+                      <SignalDot size={5} />
+                    </span>
+                  </span>
+                ) : (
+                  'See My Results'
+                )}
+              </button>
+              <p className="text-xs text-warmgray text-center">
+                No spam. Just your results and one follow-up.
+              </p>
+            </form>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    );
+  }
+
+  // --- Questions Screen ---
   const question = QUESTIONS[currentQuestion];
 
   return (

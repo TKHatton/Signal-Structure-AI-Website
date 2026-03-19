@@ -3,20 +3,19 @@ import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
-import ChecklistForm from '@/components/ChecklistForm';
 import SignalDot from '@/components/SignalDot';
-import { BOOKING_URL, COMPANY_NAME } from '@/lib/constants';
+import { BOOKING_URL } from '@/lib/constants';
 
 export const metadata = {
   title: 'Resources | Signal & Structure AI',
   description:
-    'Free AI visibility checklist, The AI Discoverability Playbook ebook, and The Signal Report Monthly newsletter. Tools to understand your AI presence.',
+    'Free signal quiz, Signal Pulse checker, and The Invisible Shift ebook. Tools to understand how AI sees your business.',
 };
 
 export default function ResourcesPage() {
   return (
     <main>
-      {/* Section 1: Page Header */}
+      {/* Page Header */}
       <section className="relative bg-navy text-white">
         <GridTexture />
         <div className="relative z-10 hero-container">
@@ -30,8 +29,66 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Signal Pulse Checker */}
+      {/* 1. Signal Quiz (Lead Magnet) */}
       <section className="section-padding">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <Link
+              href="/signal-pulse/quiz"
+              className="block bg-white rounded-2xl shadow-card hover:shadow-card-hover overflow-hidden group transition-shadow duration-300"
+            >
+              <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 p-8 sm:p-12">
+                {/* Icon */}
+                <div className="w-16 h-16 bg-copper/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-copper/20 transition-colors">
+                  <svg
+                    className="w-8 h-8 text-copper"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"
+                    />
+                  </svg>
+                </div>
+                {/* Text */}
+                <div className="text-center sm:text-left flex-1">
+                  <div className="flex items-center gap-2 justify-center sm:justify-start mb-2">
+                    <SignalDot size={6} />
+                    <span className="font-body text-xs font-medium uppercase tracking-[0.08em] text-warmgray">
+                      Free Quiz
+                    </span>
+                  </div>
+                  <h2 className="font-display text-2xl sm:text-3xl text-navy mb-2">
+                    Can AI Find Your Business?
+                  </h2>
+                  <p className="font-body text-warmgray mb-1">
+                    5 questions. 60 seconds. Find out where you stand.
+                  </p>
+                  <p className="font-body text-sm text-warmgray/70">
+                    No technical knowledge needed. Get your signal strength and a copy sent to your inbox.
+                  </p>
+                </div>
+                {/* Arrow */}
+                <svg
+                  className="w-6 h-6 text-copper flex-shrink-0 hidden sm:block group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* 2. Signal Pulse Checker */}
+      <section className="section-padding bg-stone-dark">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <Link
@@ -99,82 +156,8 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Section 2: Free Lead Magnet */}
+      {/* 3. Ebook */}
       <section className="section-padding">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <SectionLabel>FREE DOWNLOAD</SectionLabel>
-                <h2 className="font-display text-section-heading text-navy mb-4">
-                  Is AI Ignoring Your Business?
-                </h2>
-                <p className="font-body text-lg text-warmgray mb-4">
-                  A 10-question checklist you can run in 5 minutes. Ask real AI
-                  platforms real questions about your business and find out
-                  whether they know you exist, get your information right, or
-                  have no idea who you are.
-                </p>
-                <p className="font-body text-warmgray mb-6">
-                  Most business owners have never checked what AI says about
-                  them. This checklist changes that. No technical skills
-                  required. Just an honest look at where you stand.
-                </p>
-                <div className="flex items-center gap-2 text-sm text-warmgray mb-2">
-                  <svg
-                    className="w-4 h-4 text-copper"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>10 questions to ask any AI platform</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-warmgray mb-2">
-                  <svg
-                    className="w-4 h-4 text-copper"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>Score your results instantly</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-warmgray mb-6">
-                  <svg
-                    className="w-4 h-4 text-copper"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>Know exactly where you stand in under 5 minutes</span>
-                </div>
-              </div>
-
-              {/* Checklist Signup Form */}
-              <div className="bg-stone-dark p-8 rounded-lg border border-stone-dark">
-                <ChecklistForm />
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Section 3: Paid Ebook */}
-      <section className="section-padding bg-stone-dark">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -258,9 +241,7 @@ export default function ResourcesPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span>
-                    Includes the free AI Visibility Checklist in the appendix
-                  </span>
+                  <span>Written for business owners, not developers</span>
                 </div>
                 <p className="font-body text-navy font-semibold mb-4">
                   Available soon. Join the newsletter to be first to know.
@@ -271,8 +252,8 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Section 4: Newsletter */}
-      <section className="section-padding">
+      {/* Newsletter */}
+      <section className="section-padding bg-stone-dark">
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
             <SectionLabel>NEWSLETTER</SectionLabel>
@@ -310,14 +291,13 @@ export default function ResourcesPage() {
               </button>
             </form>
             <p className="text-xs text-warmgray mt-3">
-              No spam. Unsubscribe anytime. You will also receive the free AI
-              Visibility Checklist.
+              No spam. Unsubscribe anytime.
             </p>
           </FadeIn>
         </div>
       </section>
 
-      {/* Section 5: Bottom CTA */}
+      {/* Bottom CTA */}
       <section className="relative bg-navy text-white section-padding">
         <GridTexture />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
@@ -326,7 +306,7 @@ export default function ResourcesPage() {
               Want answers now?
             </h2>
             <p className="text-white/70 text-hero-subtext mb-8">
-              Skip the checklist and get a full Signal Score in 30 minutes. We
+              Skip the free tools and get a full Signal Score in 30 minutes. We
               test your business on live AI platforms and show you exactly what
               they say.
             </p>
