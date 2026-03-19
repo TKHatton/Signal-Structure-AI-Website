@@ -4,6 +4,7 @@ import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import SignalDot from '@/components/SignalDot';
+import NewsletterForm from '@/components/NewsletterForm';
 import { BOOKING_URL } from '@/lib/constants';
 
 export const metadata = {
@@ -330,29 +331,7 @@ export default function ResourcesPage() {
               discoverable. If you are on that journey too, this is your
               community.
             </p>
-            <form
-              className="max-w-md mx-auto flex gap-3"
-              action="https://signalstructure.ai/api/subscribe"
-              method="POST"
-            >
-              <input type="hidden" name="source" value="newsletter" />
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="you@yourbusiness.com"
-                className="flex-1 px-4 py-3 rounded-lg border border-warmgray/30 font-body text-navy focus:outline-none focus:ring-2 focus:ring-copper focus:border-transparent"
-              />
-              <button
-                type="submit"
-                className="bg-copper text-white font-body font-semibold py-3 px-6 rounded-lg hover:bg-copper/90 transition-colors whitespace-nowrap"
-              >
-                Subscribe
-              </button>
-            </form>
-            <p className="text-xs text-warmgray mt-3">
-              No spam. Unsubscribe anytime.
-            </p>
+            <NewsletterForm source="resources-page" />
           </FadeIn>
         </div>
       </section>
