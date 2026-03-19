@@ -95,6 +95,55 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Signal Pulse CTA */}
+      <section className="bg-stone py-10 sm:py-12">
+        <div className="max-w-content mx-auto px-6">
+          <FadeIn>
+            <Link
+              href="/signal-pulse"
+              className="block bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-shadow duration-300 overflow-hidden group"
+            >
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 p-6 sm:p-8">
+                {/* Icon */}
+                <div className="w-14 h-14 bg-copper/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-copper/20 transition-colors">
+                  <svg
+                    className="w-7 h-7 text-copper"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9.348 14.651a3.75 3.75 0 010-5.303m5.304 0a3.75 3.75 0 010 5.303m-7.425 2.122a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.808-3.808-9.98 0-13.789m13.788 0c3.808 3.808 3.808 9.981 0 13.79M12 12h.008v.007H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                    />
+                  </svg>
+                </div>
+                {/* Text */}
+                <div className="text-center sm:text-left flex-1">
+                  <p className="font-display text-lg text-navy mb-1">
+                    Check your signal right now, for free.
+                  </p>
+                  <p className="font-body text-sm text-warmgray">
+                    Enter your URL and find out if AI can see your business. Takes 10 seconds.
+                  </p>
+                </div>
+                {/* Arrow */}
+                <svg
+                  className="w-5 h-5 text-copper flex-shrink-0 hidden sm:block group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Section 2: The Shift */}
       <section className="section-padding">
         <div className="max-w-content mx-auto">

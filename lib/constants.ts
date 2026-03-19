@@ -7,3 +7,4 @@ export const LOCATION = "Durham, NC";
 export const ADDRESS = "506 Ramseur St, Unit 108, Durham, NC 27701";
 export const COMPANY_NAME = "Signal & Structure AI";
 export const TAGLINE = "Be found. Be accurate. Be recommended.";
+export const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://signal-pulse-api.up.railway.app";

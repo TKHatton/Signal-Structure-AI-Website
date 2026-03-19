@@ -1,8 +1,10 @@
+import Link from 'next/link';
 import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import ChecklistForm from '@/components/ChecklistForm';
+import SignalDot from '@/components/SignalDot';
 import { BOOKING_URL, COMPANY_NAME } from '@/lib/constants';
 
 export const metadata = {
@@ -24,6 +26,75 @@ export default function ResourcesPage() {
               Tools and insights to help you understand how AI sees your
               business.
             </h1>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Signal Pulse Checker */}
+      <section className="section-padding">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <Link
+              href="/signal-pulse"
+              className="block bg-navy rounded-2xl overflow-hidden group hover:shadow-xl transition-shadow duration-300"
+            >
+              <div className="relative p-8 sm:p-12">
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
+                    backgroundSize: '24px 24px',
+                    opacity: 0.03,
+                  }}
+                  aria-hidden="true"
+                />
+                <div className="relative z-10 flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+                  {/* Icon */}
+                  <div className="w-16 h-16 bg-copper/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <svg
+                      className="w-8 h-8 text-copper"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9.348 14.651a3.75 3.75 0 010-5.303m5.304 0a3.75 3.75 0 010 5.303m-7.425 2.122a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.808-3.808-9.98 0-13.789m13.788 0c3.808 3.808 3.808 9.981 0 13.79M12 12h.008v.007H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                      />
+                    </svg>
+                  </div>
+                  {/* Text */}
+                  <div className="text-center sm:text-left flex-1">
+                    <div className="flex items-center gap-2 justify-center sm:justify-start mb-2">
+                      <SignalDot size={6} />
+                      <span className="font-body text-xs font-medium uppercase tracking-[0.08em] text-white/60">
+                        Free Tool
+                      </span>
+                    </div>
+                    <h2 className="font-display text-2xl sm:text-3xl text-white mb-2">
+                      Signal Pulse
+                    </h2>
+                    <p className="font-body text-white/70 mb-1">
+                      A quick vital sign check for your online presence.
+                    </p>
+                    <p className="font-body text-sm text-white/50">
+                      Enter your URL and find out if AI systems can see your business. Free. Instant results.
+                    </p>
+                  </div>
+                  {/* Arrow */}
+                  <svg
+                    className="w-6 h-6 text-copper flex-shrink-0 hidden sm:block group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </Link>
           </FadeIn>
         </div>
       </section>
