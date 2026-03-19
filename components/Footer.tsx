@@ -51,15 +51,13 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <a
+                <Link
                   href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="text-copper hover:text-copper-light transition-colors font-body text-sm font-medium flex items-center gap-2 mt-4"
                 >
                   <SignalDot size={4} />
-                  Book a Signal Check
-                </a>
+                  Get Your Signal Score
+                </Link>
               </li>
             </ul>
           </div>

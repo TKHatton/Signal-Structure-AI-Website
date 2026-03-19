@@ -14,12 +14,7 @@ const faqItems = [
   {
     question: 'What is a Signal Score?',
     answer:
-      'A Signal Score is a 0 to 100 measurement of how accurately AI platforms represent your business. It tests across 5 major AI platforms (ChatGPT, Claude, Perplexity, Gemini, and Copilot) and 6 categories: Schema and Structure, Google Business Profile, NAP Consistency, Content for AI, AI Presence, and Technical Infrastructure. Most businesses score below 40 before optimization.',
-  },
-  {
-    question: 'What is a Signal Check?',
-    answer:
-      'A Signal Check is a free 30-minute consultation where we test your business on live AI platforms and show you exactly what they say. We ask AI the same questions your potential customers are asking, and you see the results in real time. There is no cost and no obligation.',
+      'A Signal Score is your full AI visibility and accuracy report. We test your business across major AI platforms and deliver a detailed breakdown of what they know, what they get wrong, and what they cannot find. It includes a 30-minute walkthrough of your results so you understand exactly where you stand and what it means. The score is a 0 to 100 measurement across 5 major AI platforms (ChatGPT, Claude, Perplexity, Gemini, and Copilot) and 6 categories: Schema and Structure, Google Business Profile, NAP Consistency, Content for AI, AI Presence, and Technical Infrastructure. Most businesses score below 40 before optimization.',
   },
   {
     question: 'How much does Signal & Structure AI cost?',
@@ -108,7 +103,7 @@ export default function FAQPage() {
               Frequently asked questions.
             </h2>
             <p className="font-body text-lg text-warmgray text-center mb-12">
-              If you do not see your question here, book a free Signal Check
+              If you do not see your question here, get your Signal Score
               and we will answer it live.
             </p>
           </FadeIn>
@@ -127,13 +122,13 @@ export default function FAQPage() {
               Still have questions?
             </h2>
             <p className="font-body text-lg text-warmgray leading-relaxed mb-8">
-              The fastest way to get answers is to see it in action. In a free
-              30-minute Signal Check, we test your business on live AI platforms
+              The fastest way to get answers is to see it in action. Get your
+              Signal Score and we test your business on live AI platforms
               and show you exactly what they say. No sales pitch. Just your
               results.
             </p>
             <Button href={BOOKING_URL} variant="primary">
-              Book a Free Signal Check
+              Get Your Signal Score
             </Button>
           </FadeIn>
         </div>
@@ -149,7 +144,7 @@ export default function FAQPage() {
               is saying the right things.
             </h2>
             <Button href={BOOKING_URL} variant="primary">
-              Book a Signal Check
+              Get Your Signal Score
             </Button>
           </FadeIn>
         </div>

@@ -296,7 +296,7 @@ export default function AboutPage() {
                 </a>{' '}
                 and on LinkedIn. If you want to understand the landscape,
                 start there. If you want to fix your presence, start with a
-                Signal Check.
+                Signal Score.
               </p>
             </div>
           </FadeIn>
@@ -350,7 +350,7 @@ export default function AboutPage() {
               a 30-minute conversation.
             </h2>
             <Button href={BOOKING_URL} variant="primary" className="mb-4">
-              Book a Signal Check
+              Get Your Signal Score
             </Button>
             <p className="text-white/70 text-sm">
               No cost. No pressure. Just clarity.

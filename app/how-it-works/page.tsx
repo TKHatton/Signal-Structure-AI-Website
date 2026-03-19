@@ -94,7 +94,7 @@ export default function HowItWorksPage() {
             visual={
               <div className="bg-stone p-8 rounded-card shadow-card">
                 <div className="font-body text-sm font-semibold text-copper mb-4 uppercase tracking-wider">
-                  SIGNAL CHECK RESULTS
+                  SIGNAL SCORE RESULTS
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
@@ -361,7 +361,7 @@ export default function HowItWorksPage() {
               If referrals drive your business, AI should be sending them your way.
             </h2>
             <Button href={BOOKING_URL} variant="primary">
-              Book a Signal Check
+              Get Your Signal Score
             </Button>
           </FadeIn>
         </div>

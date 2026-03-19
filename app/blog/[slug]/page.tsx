@@ -119,7 +119,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.cta.text}
               </p>
               <Button href={post.cta.href} variant="primary">
-                Book a Signal Check
+                Get Your Signal Score
               </Button>
             </div>
           </FadeIn>
@@ -155,7 +155,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               it knows yours.
             </h2>
             <Button href={BOOKING_URL} variant="primary">
-              Book a Free Signal Check
+              Get Your Signal Score
             </Button>
           </FadeIn>
         </div>

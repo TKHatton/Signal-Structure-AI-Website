@@ -350,7 +350,7 @@ export default function ResourcesPage() {
               they say.
             </p>
             <Button href={BOOKING_URL} variant="primary" className="mb-4">
-              Book a Signal Check
+              Get Your Signal Score
             </Button>
             <p className="text-white/70 text-sm">
               No cost. No pressure. Just clarity.

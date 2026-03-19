@@ -166,7 +166,7 @@ export default function Nav() {
             </div>
 
             <Button href={BOOKING_URL} variant="primary" className="text-sm whitespace-nowrap">
-              Book a Signal Check
+              Get Your Signal Score
             </Button>
           </div>
 
@@ -253,7 +253,7 @@ export default function Nav() {
                 })}
                 <div className="mt-4">
                   <Button href={BOOKING_URL} variant="primary" className="w-full text-center">
-                    Book a Signal Check
+                    Get Your Signal Score
                   </Button>
                 </div>
               </div>

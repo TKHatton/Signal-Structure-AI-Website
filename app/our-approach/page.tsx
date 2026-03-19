@@ -240,7 +240,7 @@ export default function OurApproachPage() {
               exactly where you stand and talk about what it would take to change it.
             </h2>
             <Button href={BOOKING_URL} variant="primary" className="mb-4">
-              Book a Signal Check
+              Get Your Signal Score
             </Button>
             <p className="text-white/70 text-sm">
               No pressure. Just clarity.

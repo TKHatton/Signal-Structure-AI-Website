@@ -1,4 +1,4 @@
-export const BOOKING_URL = "https://calendly.com/ltkenney13/30min";
+export const BOOKING_URL = "/signal-score";
 export const EMAIL = "hello@signalstructure.ai";
 export const PHONE = "(984) 314-3102";
 export const PHONE_HREF = "tel:+19843143102";

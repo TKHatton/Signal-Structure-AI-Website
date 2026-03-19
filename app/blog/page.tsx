@@ -104,7 +104,7 @@ export default function BlogPage() {
               Want to know what AI is saying about your business right now?
             </h2>
             <Button href={BOOKING_URL} variant="primary">
-              Book a Free Signal Check
+              Get Your Signal Score
             </Button>
           </FadeIn>
         </div>

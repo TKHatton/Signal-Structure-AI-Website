@@ -85,7 +85,7 @@ export default function HomePage() {
           <FadeIn delay={0.5}>
             <div className="flex flex-col items-center gap-4">
               <Button href={BOOKING_URL} variant="primary" className="text-lg px-8 py-4">
-                Book a Signal Check
+                Get Your Signal Score
               </Button>
               <p className="text-white/70 text-sm">
                 30 minutes. See exactly how AI describes your business today.
@@ -423,7 +423,7 @@ export default function HomePage() {
               one of them.
             </h2>
             <Button href={BOOKING_URL} variant="primary" className="mb-4">
-              Book a Signal Check
+              Get Your Signal Score
             </Button>
             <p className="text-white/70 text-sm">
               30 minutes. No pressure. Just clarity.

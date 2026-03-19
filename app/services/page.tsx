@@ -246,7 +246,7 @@ export default function ServicesPage() {
               Ready to start getting the referrals you have been missing?
             </h2>
             <Button href={BOOKING_URL} variant="primary" className="mb-4">
-              Book a Signal Check
+              Get Your Signal Score
             </Button>
             <p className="text-white/70 text-sm max-w-2xl mx-auto">
               30 minutes. We look at what AI currently says about your business

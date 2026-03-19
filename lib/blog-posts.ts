@@ -76,8 +76,8 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     cta: {
-      text: 'Book a free Signal Check and see what AI platforms are actually saying about your business.',
-      href: 'https://calendly.com/ltkenney13/30min',
+      text: 'Get your Signal Score and see what AI platforms are actually saying about your business.',
+      href: '/signal-score',
     },
     schema: {
       '@context': 'https://schema.org',
@@ -147,8 +147,8 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     cta: {
-      text: 'Book a free Signal Check and find out what AI actually says about your business.',
-      href: 'https://calendly.com/ltkenney13/30min',
+      text: 'Get your Signal Score and find out what AI actually says about your business.',
+      href: '/signal-score',
     },
     schema: {
       '@context': 'https://schema.org',
@@ -219,8 +219,8 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     cta: {
-      text: 'Book a free Signal Check and see your score in 30 minutes.',
-      href: 'https://calendly.com/ltkenney13/30min',
+      text: 'Get your Signal Score and find out where you stand.',
+      href: '/signal-score',
     },
     schema: {
       '@context': 'https://schema.org',
