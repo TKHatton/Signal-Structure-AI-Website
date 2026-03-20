@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useEffect, useMemo } from 'react';
+import { useState, useCallback, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
 
 // --- Types ---
@@ -13,6 +13,60 @@ interface PlacedWord {
   startCol: number;
   direction: Direction;
   cells: [number, number][];
+}
+
+// --- Sound Effects ---
+function createAudioContext() {
+  if (typeof window === 'undefined') return null;
+  try {
+    return new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
+  } catch {
+    return null;
+  }
+}
+
+function playSound(ctx: AudioContext | null, type: 'found' | 'hint' | 'complete') {
+  if (!ctx) return;
+  if (ctx.state === 'suspended') ctx.resume();
+
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+
+  const now = ctx.currentTime;
+
+  switch (type) {
+    case 'found':
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(523, now);
+      osc.frequency.setValueAtTime(659, now + 0.12);
+      gain.gain.setValueAtTime(0.18, now);
+      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
+      osc.start(now);
+      osc.stop(now + 0.35);
+      break;
+    case 'hint':
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(350, now);
+      osc.frequency.exponentialRampToValueAtTime(500, now + 0.2);
+      gain.gain.setValueAtTime(0.1, now);
+      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+      osc.start(now);
+      osc.stop(now + 0.25);
+      break;
+    case 'complete':
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(523, now);
+      osc.frequency.setValueAtTime(659, now + 0.2);
+      osc.frequency.setValueAtTime(784, now + 0.4);
+      gain.gain.setValueAtTime(0.2, now);
+      gain.gain.setValueAtTime(0.2, now + 0.4);
+      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.8);
+      osc.start(now);
+      osc.stop(now + 0.8);
+      break;
+  }
 }
 
 // --- Grid Generation ---
@@ -72,12 +126,10 @@ function generateGrid(): { grid: string[][]; placed: PlacedWord[] } {
       }
     }
     if (!success) {
-      // Retry entire grid if a word can't be placed
       return generateGrid();
     }
   }
 
-  // Fill empty cells with random letters
   for (let r = 0; r < GRID_SIZE; r++) {
     for (let c = 0; c < GRID_SIZE; c++) {
       if (grid[r][c] === '') {
@@ -91,6 +143,13 @@ function generateGrid(): { grid: string[][]; placed: PlacedWord[] } {
 
 // --- Component ---
 export default function SignalSearchPage() {
+  const audioCtx = useRef<AudioContext | null>(null);
+
+  useEffect(() => {
+    audioCtx.current = createAudioContext();
+    return () => { audioCtx.current?.close(); };
+  }, []);
+
   const { grid, placed } = useMemo(() => generateGrid(), []);
   const [foundWords, setFoundWords] = useState<Set<string>>(new Set());
   const [cellStates, setCellStates] = useState<Map<string, CellState>>(new Map());
@@ -102,17 +161,16 @@ export default function SignalSearchPage() {
   const [gameComplete, setGameComplete] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
 
-  // Timer
   useEffect(() => {
     if (!gameStarted || gameComplete) return;
     const interval = setInterval(() => setTimer(t => t + 1), 1000);
     return () => clearInterval(interval);
   }, [gameStarted, gameComplete]);
 
-  // Check for game completion
   useEffect(() => {
     if (foundWords.size === WORDS.length && gameStarted) {
       setGameComplete(true);
+      playSound(audioCtx.current, 'complete');
     }
   }, [foundWords, gameStarted]);
 
@@ -122,18 +180,14 @@ export default function SignalSearchPage() {
     return cellStates.get(cellKey(r, c)) || 'default';
   }, [cellStates]);
 
-  // Find cells between start and current (for line selection)
   const getCellsInLine = useCallback((start: [number, number], end: [number, number]): [number, number][] => {
     const [sr, sc] = start;
     const [er, ec] = end;
     const dr = Math.sign(er - sr);
     const dc = Math.sign(ec - sc);
-
-    // Must be in a straight line
     const rowDiff = Math.abs(er - sr);
     const colDiff = Math.abs(ec - sc);
     if (rowDiff !== colDiff && rowDiff !== 0 && colDiff !== 0) return [];
-
     const steps = Math.max(rowDiff, colDiff);
     const cells: [number, number][] = [];
     for (let i = 0; i <= steps; i++) {
@@ -142,16 +196,14 @@ export default function SignalSearchPage() {
     return cells;
   }, []);
 
-  // Check if selected cells match a word
   const checkSelection = useCallback((cells: [number, number][]) => {
     for (const pw of placed) {
       if (foundWords.has(pw.word)) continue;
       if (pw.cells.length !== cells.length) continue;
-
       const forward = pw.cells.every((c, i) => c[0] === cells[i][0] && c[1] === cells[i][1]);
       const backward = pw.cells.every((c, i) => c[0] === cells[cells.length - 1 - i][0] && c[1] === cells[cells.length - 1 - i][1]);
-
       if (forward || backward) {
+        playSound(audioCtx.current, 'found');
         setFoundWords(prev => new Set([...prev, pw.word]));
         setCellStates(prev => {
           const next = new Map(prev);
@@ -164,7 +216,6 @@ export default function SignalSearchPage() {
     return false;
   }, [placed, foundWords]);
 
-  // Mouse/touch handlers
   const handleCellDown = (r: number, c: number) => {
     if (gameComplete) return;
     if (!gameStarted) setGameStarted(true);
@@ -184,8 +235,6 @@ export default function SignalSearchPage() {
   const handleCellUp = () => {
     if (!selecting || !startCell) return;
     setSelecting(false);
-
-    // Convert selected cells to array of [r,c]
     const cells = Array.from(selectedCells).map(key => {
       const [r, c] = key.split('-').map(Number);
       return [r, c] as [number, number];
@@ -193,22 +242,21 @@ export default function SignalSearchPage() {
       if (a[0] !== b[0]) return a[0] - b[0];
       return a[1] - b[1];
     });
-
     checkSelection(cells);
     setSelectedCells(new Set());
     setStartCell(null);
   };
 
-  // "Let Signal & Structure find it" button
   const handleHint = () => {
     if (!gameStarted) setGameStarted(true);
     const unfound = placed.filter(pw => !foundWords.has(pw.word));
     if (unfound.length === 0) return;
 
+    playSound(audioCtx.current, 'hint');
+
     const target = unfound[0];
     setPulsingWord(target.word);
 
-    // Set pulsing state
     setCellStates(prev => {
       const next = new Map(prev);
       target.cells.forEach(([r, c]) => {
@@ -219,7 +267,6 @@ export default function SignalSearchPage() {
       return next;
     });
 
-    // Remove pulsing after 3 seconds
     setTimeout(() => {
       setCellStates(prev => {
         const next = new Map(prev);
@@ -244,13 +291,13 @@ export default function SignalSearchPage() {
     const state = getCellState(r, c);
     const isSelected = selectedCells.has(cellKey(r, c));
 
-    let base = 'w-full aspect-square flex items-center justify-center text-sm sm:text-base md:text-lg font-mono font-bold select-none cursor-pointer transition-all duration-200 rounded-sm ';
+    const base = 'w-full aspect-square flex items-center justify-center text-sm sm:text-base md:text-lg font-mono font-bold select-none cursor-pointer transition-all duration-200 rounded-sm ';
 
     if (state === 'found') {
       return base + 'bg-copper text-white scale-105';
     }
     if (state === 'pulsing') {
-      return base + 'animate-signal-pulse text-white';
+      return base + 'signal-glow bg-white text-copper';
     }
     if (isSelected) {
       return base + 'bg-navy text-white scale-105';
@@ -261,12 +308,35 @@ export default function SignalSearchPage() {
   return (
     <main className="min-h-screen bg-stone pt-24 pb-16">
       {/* Header */}
-      <div className="max-w-4xl mx-auto px-6 mb-8 text-center">
+      <div className="max-w-4xl mx-auto px-6 mb-6 text-center">
         <p className="text-copper font-body font-semibold text-sm tracking-widest uppercase mb-3">The Signal Report</p>
         <h1 className="text-navy text-3xl sm:text-4xl md:text-5xl mb-4">Signal Search</h1>
-        <p className="text-warmgray text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-          Find the hidden words in the grid below. Click and drag to select. Some words read forward, backward, or diagonally. Can you find them all?
-        </p>
+      </div>
+
+      {/* Educational Context */}
+      <div className="max-w-3xl mx-auto px-6 mb-8">
+        <div className="bg-white rounded-card p-6 sm:p-8 shadow-card">
+          <h2 className="font-body font-semibold text-navy text-lg mb-3">Why this game exists</h2>
+          <p className="font-body text-warmgray leading-relaxed mb-4">
+            Every word hidden in this grid represents something AI platforms look for when deciding whether to recommend a business. Signal. Structure. Presence. Visibility. Accuracy. These are not marketing terms. They are the building blocks that determine whether AI can find you, understand you, and recommend you to the right people.
+          </p>
+          <p className="font-body text-warmgray leading-relaxed mb-4">
+            Right now, most businesses are hidden in plain sight. The information exists somewhere online, but it is buried, scattered, or formatted in ways AI cannot read. AI does not browse your website the way a human does. It looks for structured signals. When those signals are missing, your business is invisible to the fastest-growing referral channel in the world.
+          </p>
+          <p className="font-body text-warmgray leading-relaxed">
+            The words in this grid are hard to find on purpose. That is exactly what it is like for AI trying to find your business without the right structure in place. And just like the hint button below can help you find what you are looking for faster, the right tools and structure can help AI find your business faster too.
+          </p>
+        </div>
+      </div>
+
+      {/* How to Play */}
+      <div className="max-w-3xl mx-auto px-6 mb-8">
+        <div className="bg-navy/5 rounded-card p-5 border border-navy/10">
+          <p className="font-body text-navy text-sm font-semibold mb-2">How to play</p>
+          <p className="font-body text-warmgray text-sm leading-relaxed">
+            Click and drag across letters to select words. Words can read forward, backward, vertically, or diagonally. Stuck? Use the hint button and the word will glow briefly to show you where it is.
+          </p>
+        </div>
       </div>
 
       {/* Game Stats Bar */}
@@ -287,7 +357,7 @@ export default function SignalSearchPage() {
             disabled={pulsingWord !== null || gameComplete}
             className="bg-navy text-white px-4 py-2.5 rounded-button text-sm font-body font-semibold hover:bg-navy-light transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           >
-            Let Signal &amp; Structure find it
+            Boost My Signal
           </button>
         </div>
       </div>
@@ -359,13 +429,13 @@ export default function SignalSearchPage() {
             <h2 className="text-white text-2xl sm:text-3xl mb-3">All signals found.</h2>
             <p className="text-white/60 text-lg mb-2">Time: {formatTime(timer)}</p>
             <p className="text-white/70 text-base mb-8 max-w-md mx-auto leading-relaxed">
-              You found every hidden word. Now find out if AI can find your business just as easily.
+              You found every hidden word because you knew what to look for. AI platforms work the same way. When the right signals exist, they find you. When they do not, you stay hidden.
             </p>
             <Link
               href="/signal-pulse"
               className="inline-block bg-copper text-white px-8 py-3.5 rounded-button font-body font-semibold text-base hover:bg-copper-light transition-colors shadow-button"
             >
-              Check Your Signal
+              Find Out If AI Can Find You
             </Link>
           </div>
         </div>
@@ -382,15 +452,16 @@ export default function SignalSearchPage() {
         </p>
       </div>
 
-      {/* Pulse animation styles */}
+      {/* Glow animation styles */}
       <style jsx global>{`
-        @keyframes signalPulse {
-          0% { background-color: #C17A3A; opacity: 1; }
-          50% { background-color: #D4923F; opacity: 0.6; }
-          100% { background-color: #C17A3A; opacity: 1; }
+        @keyframes signalGlow {
+          0% { box-shadow: 0 0 4px rgba(193, 122, 58, 0.3), inset 0 0 2px rgba(193, 122, 58, 0.1); }
+          50% { box-shadow: 0 0 12px rgba(193, 122, 58, 0.6), inset 0 0 4px rgba(193, 122, 58, 0.2); }
+          100% { box-shadow: 0 0 4px rgba(193, 122, 58, 0.3), inset 0 0 2px rgba(193, 122, 58, 0.1); }
         }
-        .animate-signal-pulse {
-          animation: signalPulse 0.8s ease-in-out infinite;
+        .signal-glow {
+          animation: signalGlow 0.8s ease-in-out infinite;
+          border: 2px solid rgba(193, 122, 58, 0.5);
         }
       `}</style>
     </main>

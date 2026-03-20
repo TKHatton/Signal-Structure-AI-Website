@@ -6,9 +6,11 @@ import { API_URL } from '@/lib/constants';
 
 interface NewsletterFormProps {
   source?: string;
+  buttonText?: string;
+  placeholder?: string;
 }
 
-export default function NewsletterForm({ source = 'newsletter' }: NewsletterFormProps) {
+export default function NewsletterForm({ source = 'newsletter', buttonText = 'Subscribe', placeholder = 'you@yourbusiness.com' }: NewsletterFormProps) {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
@@ -79,7 +81,7 @@ export default function NewsletterForm({ source = 'newsletter' }: NewsletterForm
             <input
               type="email"
               required
-              placeholder="you@yourbusiness.com"
+              placeholder={placeholder}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={isSubmitting}
@@ -90,7 +92,7 @@ export default function NewsletterForm({ source = 'newsletter' }: NewsletterForm
               disabled={isSubmitting || !email.trim()}
               className="bg-copper text-white font-body font-semibold py-3 px-6 rounded-lg hover:bg-copper/90 transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isSubmitting ? 'Joining...' : 'Subscribe'}
+              {isSubmitting ? 'Joining...' : buttonText}
             </button>
           </form>
           {error && (

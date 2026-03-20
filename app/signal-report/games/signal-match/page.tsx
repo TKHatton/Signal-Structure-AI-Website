@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import Link from 'next/link';
 
 // --- Types ---
@@ -13,9 +13,90 @@ interface CardData {
   isAccurate: boolean;
 }
 
+// --- Sound Effects (Web Audio API) ---
+function createAudioContext() {
+  if (typeof window === 'undefined') return null;
+  try {
+    return new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
+  } catch {
+    return null;
+  }
+}
+
+function playSound(ctx: AudioContext | null, type: 'flip' | 'match' | 'wrong' | 'noMatch' | 'complete') {
+  if (!ctx) return;
+  if (ctx.state === 'suspended') ctx.resume();
+
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+
+  const now = ctx.currentTime;
+
+  switch (type) {
+    case 'flip':
+      // Quick whoosh-like sweep up
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(200, now);
+      osc.frequency.exponentialRampToValueAtTime(600, now + 0.12);
+      gain.gain.setValueAtTime(0.15, now);
+      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.15);
+      osc.start(now);
+      osc.stop(now + 0.15);
+      break;
+
+    case 'match':
+      // Two-tone chime (ascending)
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(523, now); // C5
+      osc.frequency.setValueAtTime(659, now + 0.15); // E5
+      gain.gain.setValueAtTime(0.2, now);
+      gain.gain.setValueAtTime(0.2, now + 0.15);
+      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+      osc.start(now);
+      osc.stop(now + 0.4);
+      break;
+
+    case 'wrong':
+      // Low buzz for inaccurate match
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(150, now);
+      osc.frequency.setValueAtTime(120, now + 0.15);
+      gain.gain.setValueAtTime(0.1, now);
+      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+      osc.start(now);
+      osc.stop(now + 0.3);
+      break;
+
+    case 'noMatch':
+      // Soft descending tone
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(400, now);
+      osc.frequency.exponentialRampToValueAtTime(200, now + 0.2);
+      gain.gain.setValueAtTime(0.12, now);
+      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+      osc.start(now);
+      osc.stop(now + 0.25);
+      break;
+
+    case 'complete':
+      // Victory fanfare: three ascending tones
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(523, now);       // C5
+      osc.frequency.setValueAtTime(659, now + 0.2);  // E5
+      osc.frequency.setValueAtTime(784, now + 0.4);  // G5
+      gain.gain.setValueAtTime(0.2, now);
+      gain.gain.setValueAtTime(0.2, now + 0.2);
+      gain.gain.setValueAtTime(0.2, now + 0.4);
+      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.8);
+      osc.start(now);
+      osc.stop(now + 0.8);
+      break;
+  }
+}
+
 // --- Game Data ---
-// Each pair: a business and what AI says about them
-// Some AI responses are accurate, some are wrong
 const PAIRS = [
   {
     business: { label: 'Durham Bakery', content: 'Family-owned bakery in Durham, NC. Known for sourdough bread and custom wedding cakes. Open since 2014.' },
@@ -62,6 +143,13 @@ function shuffle<T>(arr: T[]): T[] {
 
 // --- Component ---
 export default function SignalMatchPage() {
+  const audioCtx = useRef<AudioContext | null>(null);
+
+  useEffect(() => {
+    audioCtx.current = createAudioContext();
+    return () => { audioCtx.current?.close(); };
+  }, []);
+
   const cards = useMemo(() => {
     const allCards: CardData[] = [];
     PAIRS.forEach((pair, idx) => {
@@ -95,17 +183,16 @@ export default function SignalMatchPage() {
   const [showResult, setShowResult] = useState<{ matched: boolean; isAccurate: boolean } | null>(null);
   const [lockBoard, setLockBoard] = useState(false);
 
-  // Timer
   useEffect(() => {
     if (!gameStarted || gameComplete) return;
     const interval = setInterval(() => setTimer(t => t + 1), 1000);
     return () => clearInterval(interval);
   }, [gameStarted, gameComplete]);
 
-  // Check completion
   useEffect(() => {
     if (matchedPairs.size === PAIRS.length && gameStarted) {
       setGameComplete(true);
+      playSound(audioCtx.current, 'complete');
     }
   }, [matchedPairs, gameStarted]);
 
@@ -115,6 +202,8 @@ export default function SignalMatchPage() {
     if (matchedPairs.has(cards.find(c => c.id === cardId)!.pairId)) return;
 
     if (!gameStarted) setGameStarted(true);
+
+    playSound(audioCtx.current, 'flip');
 
     const newFlipped = new Set(flippedIds);
     newFlipped.add(cardId);
@@ -131,8 +220,10 @@ export default function SignalMatchPage() {
       const card2 = cards.find(c => c.id === newSelected[1])!;
 
       if (card1.pairId === card2.pairId && card1.type !== card2.type) {
-        // Match found
-        setShowResult({ matched: true, isAccurate: card1.isAccurate });
+        setTimeout(() => {
+          playSound(audioCtx.current, card1.isAccurate ? 'match' : 'wrong');
+          setShowResult({ matched: true, isAccurate: card1.isAccurate });
+        }, 400);
         setTimeout(() => {
           setMatchedPairs(prev => new Set([...prev, card1.pairId]));
           setSelectedCards([]);
@@ -140,8 +231,10 @@ export default function SignalMatchPage() {
           setLockBoard(false);
         }, 2000);
       } else {
-        // No match
-        setShowResult({ matched: false, isAccurate: false });
+        setTimeout(() => {
+          playSound(audioCtx.current, 'noMatch');
+          setShowResult({ matched: false, isAccurate: false });
+        }, 400);
         setTimeout(() => {
           const resetFlipped = new Set(newFlipped);
           resetFlipped.delete(newSelected[0]);
@@ -177,12 +270,35 @@ export default function SignalMatchPage() {
   return (
     <main className="min-h-screen bg-stone pt-24 pb-16">
       {/* Header */}
-      <div className="max-w-5xl mx-auto px-6 mb-8 text-center">
+      <div className="max-w-5xl mx-auto px-6 mb-6 text-center">
         <p className="text-copper font-body font-semibold text-sm tracking-widest uppercase mb-3">The Signal Report</p>
         <h1 className="text-navy text-3xl sm:text-4xl md:text-5xl mb-4">Signal Match</h1>
-        <p className="text-warmgray text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-          Flip cards to match each business with what AI says about them. Some AI responses are accurate. Some are completely wrong. Find all 8 pairs.
-        </p>
+      </div>
+
+      {/* Educational Context */}
+      <div className="max-w-3xl mx-auto px-6 mb-8">
+        <div className="bg-white rounded-card p-6 sm:p-8 shadow-card">
+          <h2 className="font-body font-semibold text-navy text-lg mb-3">Why this game exists</h2>
+          <p className="font-body text-warmgray leading-relaxed mb-4">
+            When someone asks an AI platform about a local business, it does not search the internet in real time. It pulls from what it already knows. And what it knows is often incomplete, outdated, or flat out wrong. A dentist gets described as closed. A pottery studio gets confused with a plumbing supply company. A gym in Durham gets placed in Charlotte.
+          </p>
+          <p className="font-body text-warmgray leading-relaxed mb-4">
+            These are not hypothetical examples. This is what happens every day when AI platforms try to describe businesses they do not have enough structured information about. They fill in the gaps with whatever seems plausible, and plausible is not the same as accurate.
+          </p>
+          <p className="font-body text-warmgray leading-relaxed">
+            This game puts you in the position of figuring out which AI responses are real and which are wrong. Some of the responses below are accurate. Some are completely fabricated. See if you can tell the difference. Then ask yourself: what would AI say about your business?
+          </p>
+        </div>
+      </div>
+
+      {/* How to Play */}
+      <div className="max-w-3xl mx-auto px-6 mb-8">
+        <div className="bg-navy/5 rounded-card p-5 border border-navy/10">
+          <p className="font-body text-navy text-sm font-semibold mb-2">How to play</p>
+          <p className="font-body text-warmgray text-sm leading-relaxed">
+            Flip two cards at a time to find matching pairs. Each pair is a business matched with what AI says about them. When you find a match, it stays revealed and shows whether the AI response was accurate (green) or wrong (red). Find all 8 pairs to finish.
+          </p>
+        </div>
       </div>
 
       {/* Stats Bar */}
@@ -246,15 +362,15 @@ export default function SignalMatchPage() {
               <div
                 key={card.id}
                 onClick={() => handleCardClick(card.id)}
-                className="perspective-1000 cursor-pointer"
+                className="cursor-pointer"
                 style={{ perspective: '1000px' }}
               >
                 <div
-                  className={`relative w-full transition-transform duration-500 ${flipped ? 'rotate-y-180' : ''}`}
+                  className="relative w-full transition-transform duration-500"
                   style={{
                     transformStyle: 'preserve-3d',
                     transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
-                    minHeight: '160px',
+                    minHeight: '180px',
                   }}
                 >
                   {/* Card Back (face down) */}
@@ -265,8 +381,8 @@ export default function SignalMatchPage() {
                     style={{ backfaceVisibility: 'hidden' }}
                   >
                     <div className="text-center p-4">
-                      <div className="w-10 h-10 mx-auto mb-2 rounded-full bg-copper/20 flex items-center justify-center">
-                        <span className="text-copper text-lg">?</span>
+                      <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-copper/20 flex items-center justify-center">
+                        <span className="text-copper text-xl">?</span>
                       </div>
                       <p className="text-white/40 text-xs font-body uppercase tracking-wider">Flip to reveal</p>
                     </div>
@@ -337,17 +453,17 @@ export default function SignalMatchPage() {
                 <p className="text-white/50 text-sm font-body">AI got wrong</p>
               </div>
             </div>
-            <p className="text-white/70 text-base mb-8 max-w-md mx-auto leading-relaxed">
+            <p className="text-white/70 text-base mb-8 max-w-lg mx-auto leading-relaxed">
               {inaccurateMatches > accurateMatches
-                ? 'More than half of these AI responses were wrong. That is the reality for most businesses right now. The question is what AI is saying about yours.'
-                : 'Some AI responses were accurate. Others were completely wrong. The difference comes down to whether the right information exists for AI to find.'
+                ? 'More than half of these AI responses were wrong. AI does not fact-check itself. It works with whatever information it can find. When the right information does not exist, AI fills in the gaps on its own. The question is what it is saying about your business right now.'
+                : 'Some AI responses were accurate. Others were completely fabricated. The businesses that got accurate responses had the right information in the right places for AI to find. The ones that got wrong responses did not. That is the entire difference.'
               }
             </p>
             <Link
               href="/signal-pulse"
               className="inline-block bg-copper text-white px-8 py-3.5 rounded-button font-body font-semibold text-base hover:bg-copper-light transition-colors shadow-button"
             >
-              Check What AI Says About You
+              Find Out What AI Says About You
             </Link>
           </div>
         </div>
