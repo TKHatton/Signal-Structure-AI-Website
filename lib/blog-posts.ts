@@ -14,6 +14,95 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'free-5-minute-ai-visibility-check',
+    title: 'The Free 5-Minute AI Visibility Check You Can Do Right Now',
+    date: '2026-04-01',
+    author: 'Signal & Structure AI',
+    pillar: 'How-To',
+    description:
+      'Want to know what AI platforms say about your business? Here is how to check in 5 minutes using our free tool.',
+    readTime: '4 min read',
+    content: [
+      'Most business owners have no idea what AI platforms say about their business. They assume if they have a website and good reviews, AI knows who they are. That assumption is usually wrong.',
+      'The fastest way to find out where you stand is to ask AI directly. We built a free tool that does exactly that.',
+    ],
+    sections: [
+      {
+        heading: 'What the Check Does',
+        paragraphs: [
+          'The AI Visibility Check asks the leading AI platforms about your business and shows you what each one says. You get to see the actual responses, word for word, exactly as a potential customer would see them.',
+          'It tests ChatGPT, Claude, Gemini, and other major AI platforms. Each platform accesses business information differently, which is why testing multiple platforms matters. One platform might know you exist while another has never heard of you.',
+          'The tool runs the check and shows you the results in plain language. No jargon. No technical explanations. Just what AI said about your business and whether it got the facts right.',
+        ],
+      },
+      {
+        heading: 'Why This Matters',
+        paragraphs: [
+          'When someone asks AI for a recommendation in your industry, they are not getting a list of links to click through. They are getting a direct answer with specific business names and reasons to choose one over another.',
+          'If AI does not know you exist, you are not in that answer. If AI knows you exist but gets the details wrong, you are in the answer but presenting incorrect information. Both scenarios cost you referrals.',
+          'The check tells you which scenario you are in. That is the starting point for everything else.',
+        ],
+      },
+      {
+        heading: 'How to Run the Check',
+        paragraphs: [
+          'Go to the AI Visibility Check tool. You will need a free ChatGPT account. If you do not have one, it takes about 30 seconds to create.',
+          'Once you are in the tool, it will ask for your business name and location. That is all it needs. The tool handles the rest.',
+          'It queries all five AI platforms, compares the responses to what you told it about your business, and gives you a summary of what each platform knows and what it got wrong.',
+          'The whole process takes about 5 minutes. You do not need to install anything. You do not need to give us your email. You just run the check and see the results.',
+        ],
+      },
+      {
+        heading: 'What You Will Learn',
+        paragraphs: [
+          'The check shows you three things.',
+          'First, whether AI platforms know your business exists. Some businesses get recognized on all the platforms checked. Some get recognized on one or two. Many get recognized on none.',
+          'Second, how accurately AI describes your business. Does it get your services right? Your location? Your hours? Or does it list services you do not offer, locations you are not at, or details that are completely wrong?',
+          'Third, which platforms are the weakest for you. If ChatGPT knows you but Claude does not, that tells you where the gap is. If all five platforms are missing the same piece of information, that tells you what needs to be fixed first.',
+        ],
+      },
+      {
+        heading: 'What Happens After You Run the Check',
+        paragraphs: [
+          'You get the results immediately. No waiting. No follow-up calls. Just a clear breakdown of what AI knows about your business right now.',
+          'If the results show gaps or inaccuracies, that is normal. Most businesses have them. The check is designed to surface those issues so you know exactly what to address.',
+          'If you want help fixing what the check finds, we offer a full Signal Score audit that goes deeper. But the free check is a good starting point to see whether you even have a problem.',
+        ],
+      },
+      {
+        heading: 'Why We Built This as a Free Tool',
+        paragraphs: [
+          'AI visibility is a new problem. Most businesses do not know it exists yet. The fastest way to show them is to let them check their own business and see the results for themselves.',
+          'We could have gated this behind an email form or required a sales call. We did not. You can run the check, see the results, and decide what to do next. No pressure. No tricks.',
+          'If the results show you are in good shape, great. If they show gaps, you know what you are dealing with. Either way, you have more information than you had five minutes ago.',
+        ],
+      },
+    ],
+    cta: {
+      text: 'Run the free AI Visibility Check and see what AI platforms say about your business.',
+      href: 'https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline:
+        'The Free 5-Minute AI Visibility Check You Can Do Right Now',
+      author: { '@type': 'Organization', name: 'Signal & Structure AI' },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Signal & Structure AI',
+        url: 'https://signalstructure.ai',
+      },
+      datePublished: '2026-04-01',
+      description:
+        'Want to know what AI platforms say about your business? Here is how to check in 5 minutes using our free tool.',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': 'https://signalstructure.ai/blog/free-5-minute-ai-visibility-check',
+      },
+    },
+  },
+  {
     slug: 'five-things-ai-gets-wrong',
     title: '5 Things AI Gets Wrong About Your Business Right Now',
     date: '2026-03-05',
