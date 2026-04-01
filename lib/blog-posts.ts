@@ -124,7 +124,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'What the Audit Found',
         paragraphs: [
-          'We asked ChatGPT, Claude, Perplexity, Gemini, and Copilot about Signal & Structure AI. None of them knew who we were. None of them could describe what we do. None of them recommended us for anything.',
+          'We asked ChatGPT, Claude, Gemini, and the other major AI platforms about Signal & Structure AI. None of them knew who we were. None of them could describe what we do. None of them recommended us for anything.',
           'That is what a zero looks like. It is not that AI got our information wrong. It is that AI had no information at all. We were invisible across every platform.',
           'Every single one of our six scoring categories came back at zero or near zero. The website existed, but AI could not make sense of it. There was no presence on any platform that AI pulls from. There were no signals for AI to cross-reference. Nothing.',
         ],
@@ -180,7 +180,7 @@ export const blogPosts: BlogPost[] = [
       'A Signal Score measures how accurately AI platforms represent your business. Learn what it tests, why it matters, and what most businesses score.',
     readTime: '6 min read',
     content: [
-      'AI platforms are sending referrals in your industry every day. When someone asks ChatGPT, Claude, or Perplexity for a recommendation, those platforms give direct answers with names, descriptions, and reasons to choose one business over another.',
+      'AI platforms are sending referrals in your industry every day. When someone asks ChatGPT, Claude, or Gemini for a recommendation, those platforms give direct answers with names, descriptions, and reasons to choose one business over another.',
       'The question is whether your business is one of them. And if it is, whether the information is actually correct.',
     ],
     sections: [
@@ -188,7 +188,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'A Signal Score Measures What AI Knows About You',
         paragraphs: [
           'A Signal Score\u2122 is a 0 to 100 measurement of how accurately and consistently AI platforms represent your business. It is not a vanity metric. It is a diagnostic tool that tells you exactly where you stand in the AI referral ecosystem.',
-          'The score tests your business across 5 major AI platforms: ChatGPT by OpenAI, Claude by Anthropic, Perplexity AI, Google Gemini, and Microsoft Copilot. Each platform accesses and processes business information differently, which is why testing across all five matters.',
+          'The score tests your business across the leading AI platforms including ChatGPT by OpenAI, Claude by Anthropic, and Google Gemini. Each platform accesses and processes business information differently, which is why testing across multiple platforms matters.',
           'Most businesses score below 40 before any optimization. Many score zero. That does not mean they are bad businesses. It means their information is not set up for how AI looks for it.',
         ],
       },

@@ -178,7 +178,7 @@ export default function OurApproachPage() {
               <p>
                 AI platforms do not sit still. OpenAI releases updates to ChatGPT
                 regularly. Anthropic improves Claude. Google changes how Gemini processes
-                information. Perplexity updates how it surfaces sources.
+                information. Each platform updates how it surfaces sources.
               </p>
               <p>
                 Every one of those changes can affect how your business shows up, how it

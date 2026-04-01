@@ -276,7 +276,7 @@ export default function AboutPage() {
             <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
               <p>
                 Every engagement starts with a Signal Score, a comprehensive
-                audit across all five major AI platforms. The score tells you
+                audit across the leading AI platforms. The score tells you
                 exactly where your business stands, what AI gets right, what
                 it gets wrong, and what it misses entirely.
               </p>

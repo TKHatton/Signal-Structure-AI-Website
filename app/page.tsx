@@ -18,7 +18,7 @@ const organizationSchema = {
   url: 'https://signalstructure.ai',
   logo: 'https://signalstructure.ai/images/logo.png',
   description:
-    'Signal & Structure AI helps businesses become findable and accurately represented by AI platforms like ChatGPT, Claude, Perplexity, and Gemini. We build structured knowledge systems and measure results with our proprietary Signal Score.',
+    'Signal & Structure AI helps businesses become findable and accurately represented by AI platforms like ChatGPT, Claude, Gemini, and other leading AI platforms. We build structured knowledge systems and measure results with our proprietary Signal Score.',
   foundingDate: '2026',
   address: {
     '@type': 'PostalAddress',
@@ -163,7 +163,7 @@ export default function HomePage() {
                   That is not how people find businesses anymore.
                 </p>
                 <p>
-                  Now they open ChatGPT, Claude, Perplexity, or Gemini and ask a full
+                  Now they open ChatGPT, Claude, or Gemini and ask a full
                   question. "Who is the best company for this in my area?" AI does not give
                   them a list of links. It gives them a direct answer. Names, descriptions,
                   reasons to choose one business over another.

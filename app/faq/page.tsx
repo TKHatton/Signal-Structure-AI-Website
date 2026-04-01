@@ -14,7 +14,7 @@ const faqItems = [
   {
     question: 'What is a Signal Score?',
     answer:
-      'A Signal Score is your full AI visibility and accuracy report. We test your business across major AI platforms and deliver a detailed breakdown of what they know, what they get wrong, and what they cannot find. It includes a 30-minute walkthrough of your results so you understand exactly where you stand and what it means. The score is a 0 to 100 measurement across 5 major AI platforms (ChatGPT, Claude, Perplexity, Gemini, and Copilot) and 6 categories: Schema and Structure, Google Business Profile, NAP Consistency, Content for AI, AI Presence, and Technical Infrastructure. Most businesses score below 40 before optimization.',
+      'A Signal Score is your full AI visibility and accuracy report. We test your business across major AI platforms and deliver a detailed breakdown of what they know, what they get wrong, and what they cannot find. It includes a 30-minute walkthrough of your results so you understand exactly where you stand and what it means. The score is a 0 to 100 measurement across the leading AI platforms (including ChatGPT, Claude, and Gemini) and 6 categories: Schema and Structure, Google Business Profile, NAP Consistency, Content for AI, AI Presence, and Technical Infrastructure. Most businesses score below 40 before optimization.',
   },
   {
     question: 'How much does Signal & Structure AI cost?',
@@ -24,7 +24,7 @@ const faqItems = [
   {
     question: 'What is AI discoverability?',
     answer:
-      'AI discoverability is how easily AI platforms like ChatGPT, Claude, and Perplexity can find, understand, and accurately recommend your business. When someone asks AI for a recommendation in your industry, AI discoverability determines whether your business appears in the answer and whether the information is correct.',
+      'AI discoverability is how easily AI platforms like ChatGPT, Claude, and Gemini can find, understand, and accurately recommend your business. When someone asks AI for a recommendation in your industry, AI discoverability determines whether your business appears in the answer and whether the information is correct.',
   },
   {
     question: 'What is schema markup?',
@@ -49,7 +49,7 @@ const faqItems = [
   {
     question: 'What AI platforms do you test?',
     answer:
-      'We test across five major AI platforms: ChatGPT by OpenAI, Claude by Anthropic, Perplexity AI, Google Gemini, and Microsoft Copilot. These platforms represent the majority of AI-driven search and recommendation traffic. Each platform accesses and processes business information differently, which is why testing across all five is important.',
+      'We test across the leading AI platforms including ChatGPT by OpenAI, Claude by Anthropic, and Google Gemini. These platforms represent the majority of AI-driven search and recommendation traffic. Each platform accesses and processes business information differently, which is why testing across multiple platforms is important. We regularly add new platforms as the AI landscape evolves.',
   },
   {
     question: 'What happens after my Signal Score improves?',

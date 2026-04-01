@@ -87,7 +87,7 @@ const STATEMENTS: Statement[] = [
     explanation: 'AI made up a founding year that was off by 4 years and listed a partner who left the firm in 2020. The response sounded confident and detailed, which made it more dangerous because a potential client would have believed it.',
   },
   {
-    text: 'Perplexity correctly identified a Chapel Hill dentist as accepting new patients and listed their actual office hours.',
+    text: 'Gemini correctly identified a Chapel Hill dentist as accepting new patients and listed their actual office hours.',
     isFact: true,
     businessName: 'A Chapel Hill dentist',
     explanation: 'This practice had invested in structured data on their website. Their hours, services, and patient availability were formatted in a way AI could read directly. This is the exception, not the rule.',
@@ -105,7 +105,7 @@ const STATEMENTS: Statement[] = [
     explanation: 'The firm actually specializes in small business tax preparation, not nonprofits. AI likely pulled from a guest blog post the owner wrote about nonprofit accounting and assumed that was their specialty. One piece of content reshaped how AI describes the entire business.',
   },
   {
-    text: 'A wedding photographer\'s portfolio website was completely invisible to all five major AI platforms. None of them could describe the business at all.',
+    text: 'A wedding photographer\'s portfolio website was completely invisible to all the major AI platforms. None of them could describe the business at all.',
     isFact: true,
     businessName: 'A wedding photographer',
     explanation: 'The photographer had a beautiful portfolio website with stunning images but almost no text, no structured data, and no business information that AI could parse. A visually impressive site can be completely invisible to AI if it lacks the right structure.',
@@ -117,10 +117,10 @@ const STATEMENTS: Statement[] = [
     explanation: 'AI confused two businesses at similar addresses. Without clear structured data to differentiate them, AI combined information from multiple sources and created a description that was confidently wrong about the most basic detail: what kind of food they serve.',
   },
   {
-    text: 'A marketing agency\'s AI presence was so strong that all five major platforms gave nearly identical, accurate descriptions of their services.',
+    text: 'A marketing agency\'s AI presence was so strong that all the major platforms gave nearly identical, accurate descriptions of their services.',
     isFact: false,
     businessName: 'A marketing agency',
-    explanation: 'Three out of five platforms had significant inaccuracies. One said they were based in Atlanta when they are in Charlotte. Another listed services they stopped offering two years ago. Even businesses that invest in their online presence are often surprised by how much AI gets wrong.',
+    explanation: 'Some platforms had significant inaccuracies. One said they were based in Atlanta when they are in Charlotte. Another listed services they stopped offering two years ago. Even businesses that invest in their online presence are often surprised by how much AI gets wrong.',
   },
 ];
 

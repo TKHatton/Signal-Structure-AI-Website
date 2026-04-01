@@ -28,7 +28,7 @@ const jetBrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: `${COMPANY_NAME} | ${TAGLINE}`,
-  description: 'Signal & Structure AI helps businesses be found, be accurate, and be recommended in AI-generated results. Optimize your presence in ChatGPT, Perplexity, Claude, and other AI systems with our proprietary Signal Score™ methodology.',
+  description: 'Signal & Structure AI helps businesses be found, be accurate, and be recommended in AI-generated results. Optimize your presence in ChatGPT, Claude, Gemini, and other AI platforms with our proprietary Signal Score™ methodology.',
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },

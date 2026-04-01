@@ -58,7 +58,7 @@ export default function SignalPulsePage() {
     '@type': 'WebApplication',
     name: 'Signal Pulse Checker',
     description:
-      'Check how visible your business is to AI systems like ChatGPT, Claude, and Perplexity.',
+      'Check how visible your business is to AI systems like ChatGPT, Claude, and Gemini.',
     url: 'https://signalstructure.ai/signal-pulse',
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',

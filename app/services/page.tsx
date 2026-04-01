@@ -51,7 +51,7 @@ const addOnsSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, item: { '@type': 'Service', name: 'Internal Team AI Assistant', description: 'Private AI assistant trained on your internal processes, SOPs, and team documentation.', offers: { '@type': 'Offer', price: '500', priceCurrency: 'USD' }, provider: { '@type': 'Organization', name: 'Signal & Structure AI' } } },
     { '@type': 'ListItem', position: 2, item: { '@type': 'Service', name: 'Website AI Chat', description: 'Customer-facing AI chat widget connected to your knowledge system, embedded on your website.', offers: { '@type': 'Offer', price: '750', priceCurrency: 'USD' }, provider: { '@type': 'Organization', name: 'Signal & Structure AI' } } },
-    { '@type': 'ListItem', position: 3, item: { '@type': 'Service', name: 'Multi-Platform AI Readiness', description: 'Business information structured and optimized for ChatGPT, Claude, Perplexity, Gemini, and other AI platforms.', offers: { '@type': 'Offer', price: '1000', priceCurrency: 'USD' }, provider: { '@type': 'Organization', name: 'Signal & Structure AI' } } },
+    { '@type': 'ListItem', position: 3, item: { '@type': 'Service', name: 'Multi-Platform AI Readiness', description: 'Business information structured and optimized for ChatGPT, Claude, Gemini, and other leading AI platforms.', offers: { '@type': 'Offer', price: '1000', priceCurrency: 'USD' }, provider: { '@type': 'Organization', name: 'Signal & Structure AI' } } },
     { '@type': 'ListItem', position: 4, item: { '@type': 'Service', name: 'Custom GPTs and AI Apps', description: 'Purpose-built AI tools like intake assistants, proposal generators, or customer service bots.', offers: { '@type': 'Offer', price: '2000', priceCurrency: 'USD' }, provider: { '@type': 'Organization', name: 'Signal & Structure AI' } } },
     { '@type': 'ListItem', position: 5, item: { '@type': 'Service', name: 'AI Workflow Automation', description: 'Automated workflows connecting your existing tools with AI-powered processes.', offers: { '@type': 'Offer', price: '1500', priceCurrency: 'USD' }, provider: { '@type': 'Organization', name: 'Signal & Structure AI' } } },
     { '@type': 'ListItem', position: 6, item: { '@type': 'Service', name: 'Compliance and Tone Guardrails', description: 'Rules and boundaries ensuring AI represents your brand consistently and avoids risk.', offers: { '@type': 'Offer', price: '500', priceCurrency: 'USD' }, provider: { '@type': 'Organization', name: 'Signal & Structure AI' } } },
@@ -198,7 +198,7 @@ export default function ServicesPage() {
               <AddOnCard
                 title="Multi-Platform AI Readiness"
                 price="Starting at $1,000"
-                description="Your knowledge structured to work across every AI tool, not just one. ChatGPT, Claude, Perplexity, website chat, internal tools. One structure that feeds all of them."
+                description="Your knowledge structured to work across every AI tool, not just one. ChatGPT, Claude, Gemini, website chat, internal tools. One structure that feeds all of them."
               />
             </FadeIn>
 

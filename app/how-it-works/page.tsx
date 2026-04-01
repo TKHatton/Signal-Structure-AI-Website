@@ -22,7 +22,7 @@ const howToSchema = {
   step: [
     { '@type': 'HowToStep', position: 1, name: 'Discovery and Baseline Assessment', text: 'We learn what your business actually does and how it really operates. We document authentic descriptions, identify customer priorities, and query AI platforms to establish your baseline Signal Score.' },
     { '@type': 'HowToStep', position: 2, name: 'Information Organization', text: 'We organize your information in a way AI can actually find and use. Your knowledge is structured into categories: Identity, Services, Messaging, Policies, FAQs, and Guardrails.' },
-    { '@type': 'HowToStep', position: 3, name: 'AI Platform Integration', text: 'We connect AI directly to your organized information. Instead of AI piecing together guesses from the internet, it accesses your verified, structured knowledge directly across ChatGPT, Claude, Perplexity, and Gemini.' },
+    { '@type': 'HowToStep', position: 3, name: 'AI Platform Integration', text: 'We connect AI directly to your organized information. Instead of AI piecing together guesses from the internet, it accesses your verified, structured knowledge directly across ChatGPT, Claude, Gemini, and other leading AI platforms.' },
     { '@type': 'HowToStep', position: 4, name: 'Testing and Verification', text: 'We test every answer against what you told us is actually true. Customer-relevant questions are verified against your ground truth to eliminate hallucinations and inaccuracies.' },
     { '@type': 'HowToStep', position: 5, name: 'Ongoing Management', text: 'We keep everything current as your business and AI platforms change. Monthly updates, monthly accuracy checks, and quarterly deep audits with strategy reviews.' },
   ],
@@ -124,7 +124,7 @@ export default function HowItWorksPage() {
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="font-body text-navy">Perplexity:</span>
+                    <span className="font-body text-navy">Gemini:</span>
                     <div className="flex items-center gap-3">
                       <div className="flex gap-1">
                         <div className="w-3 h-3 bg-copper rounded"></div>
@@ -186,7 +186,7 @@ export default function HowItWorksPage() {
                 </div>
                 <div className="flex flex-col items-center gap-6">
                   <div className="grid grid-cols-2 gap-4 w-full">
-                    {['ChatGPT', 'Claude', 'Perplexity', 'Gemini'].map((platform) => (
+                    {['ChatGPT', 'Claude', 'Gemini'].map((platform) => (
                       <div key={platform} className="bg-stone p-4 rounded text-center font-body text-sm font-semibold text-navy">
                         {platform}
                       </div>

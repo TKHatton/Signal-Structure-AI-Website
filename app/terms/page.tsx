@@ -49,7 +49,7 @@ export default function TermsPage() {
               <ul>
                 <li><strong>Signal Pulse:</strong> A free AI discoverability check that scans whether AI platforms mention a business and analyzes website schema markup.</li>
                 <li><strong>Signal Advisor:</strong> A free educational resource about AI discoverability concepts, schema markup, and platform optimization.</li>
-                <li><strong>Signal Score:</strong> A paid comprehensive analysis across 6 categories and up to 13 AI platforms, with actionable recommendations.</li>
+                <li><strong>Signal Score:</strong> A paid comprehensive analysis across 6 categories and multiple AI platforms, with actionable recommendations.</li>
                 <li><strong>Signal Watch:</strong> A paid ongoing monitoring service that tracks AI platform mentions and score changes over time.</li>
                 <li><strong>Consulting Services:</strong> One-on-one AI discoverability consulting and implementation support.</li>
               </ul>
@@ -107,8 +107,8 @@ export default function TermsPage() {
 
               <h2 className="font-display text-navy">Accuracy and Disclaimers</h2>
               <p>
-                Our tools query third-party AI platforms (ChatGPT, Claude, Gemini,
-                Perplexity, Copilot, and others) to check business visibility. We do
+                Our tools query third-party AI platforms (ChatGPT, Claude,
+                Gemini, and others) to check business visibility. We do
                 our best to provide accurate results, but:
               </p>
               <ul>

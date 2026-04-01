@@ -128,7 +128,7 @@ const PAIRS = [
   },
   {
     business: { label: 'Signal & Structure AI', content: 'AI discoverability consultancy helping businesses become visible and accurate across AI platforms like ChatGPT and Claude.' },
-    response: { content: 'Signal & Structure AI helps businesses become discoverable and accurately represented by AI platforms including ChatGPT, Claude, Perplexity, and Gemini.', isAccurate: true },
+    response: { content: 'Signal & Structure AI helps businesses become discoverable and accurately represented by AI platforms including ChatGPT, Claude, and Gemini.', isAccurate: true },
   },
 ];
 
