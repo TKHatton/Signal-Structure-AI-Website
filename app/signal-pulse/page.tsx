@@ -91,7 +91,7 @@ export default function SignalPulsePage() {
               A quick vital sign check for your online presence.
             </h1>
             <p className="font-body text-base sm:text-lg text-white/70 max-w-2xl">
-              Find out if AI systems like ChatGPT, Claude, and Perplexity
+              Find out if AI systems like ChatGPT, Claude, and Gemini
               can find your business. Takes 10 seconds. No account needed.
             </p>
           </FadeIn>
@@ -137,7 +137,7 @@ export default function SignalPulsePage() {
             </h2>
             <p className="font-body text-warmgray max-w-2xl mx-auto mb-8">
               It tells you something is off. The full Signal Score tells you
-              exactly what, why, and how to fix it. Six categories. Five AI platforms.
+              exactly what, why, and how to fix it. Six categories. Multiple AI platforms.
               One clear roadmap.
             </p>
             <Button href={BOOKING_URL} variant="primary">

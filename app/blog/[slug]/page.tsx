@@ -119,7 +119,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.cta.text}
               </p>
               <Button href={post.cta.href} variant="primary">
-                Get Your Signal Score
+                {post.cta.buttonLabel || 'Get Your Signal Score'}
               </Button>
             </div>
           </FadeIn>

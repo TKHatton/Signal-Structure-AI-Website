@@ -8,7 +8,7 @@ export interface BlogPost {
   readTime: string;
   content: string[];
   sections: { heading: string; paragraphs: string[] }[];
-  cta: { text: string; href: string };
+  cta: { text: string; href: string; buttonLabel?: string };
   schema: object;
 }
 
@@ -48,7 +48,7 @@ export const blogPosts: BlogPost[] = [
         paragraphs: [
           'Go to the AI Visibility Check tool. You will need a free ChatGPT account. If you do not have one, it takes about 30 seconds to create.',
           'Once you are in the tool, it will ask for your business name and location. That is all it needs. The tool handles the rest.',
-          'It queries all five AI platforms, compares the responses to what you told it about your business, and gives you a summary of what each platform knows and what it got wrong.',
+          'It queries all the AI platforms checked, compares the responses to what you told it about your business, and gives you a summary of what each platform knows and what it got wrong.',
           'The whole process takes about 5 minutes. You do not need to install anything. You do not need to give us your email. You just run the check and see the results.',
         ],
       },
@@ -58,7 +58,7 @@ export const blogPosts: BlogPost[] = [
           'The check shows you three things.',
           'First, whether AI platforms know your business exists. Some businesses get recognized on all the platforms checked. Some get recognized on one or two. Many get recognized on none.',
           'Second, how accurately AI describes your business. Does it get your services right? Your location? Your hours? Or does it list services you do not offer, locations you are not at, or details that are completely wrong?',
-          'Third, which platforms are the weakest for you. If ChatGPT knows you but Claude does not, that tells you where the gap is. If all five platforms are missing the same piece of information, that tells you what needs to be fixed first.',
+          'Third, which platforms are the weakest for you. If ChatGPT knows you but Claude does not, that tells you where the gap is. If all the platforms checked are missing the same piece of information, that tells you what needs to be fixed first.',
         ],
       },
       {
@@ -81,6 +81,7 @@ export const blogPosts: BlogPost[] = [
     cta: {
       text: 'Run the free AI Visibility Check and see what AI platforms say about your business.',
       href: 'https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit',
+      buttonLabel: 'Run the Free AI Visibility Check',
     },
     schema: {
       '@context': 'https://schema.org',
