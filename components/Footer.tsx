@@ -97,7 +97,11 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/50 text-sm font-body">
           <p>&copy; {currentYear} {COMPANY_NAME}. All rights reserved.</p>
-          <p>Signal Score™ is a trademark of {COMPANY_NAME}</p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="hover:text-copper transition-colors">Privacy Policy</Link>
+            <span>&middot;</span>
+            <p>Signal Score™ is a trademark of {COMPANY_NAME}</p>
+          </div>
         </div>
       </div>
     </footer>

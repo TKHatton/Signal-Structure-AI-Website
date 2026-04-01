@@ -253,12 +253,12 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* 4. AI Reality Check GPT */}
+      {/* 4. AI Visibility Check GPT */}
       <section className="section-padding bg-stone-dark">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <a
-              href="https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-ai-reality-check"
+              href="https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit"
               target="_blank"
               rel="noopener noreferrer"
               className="block bg-white rounded-2xl shadow-card hover:shadow-card-hover overflow-hidden group transition-shadow duration-300"
@@ -289,7 +289,7 @@ export default function ResourcesPage() {
                     </span>
                   </div>
                   <h2 className="font-display text-2xl sm:text-3xl text-navy mb-2">
-                    AI Reality Check
+                    AI Visibility Check
                   </h2>
                   <p className="font-body text-warmgray mb-1">
                     Ask ChatGPT about your business and see exactly what it says.
