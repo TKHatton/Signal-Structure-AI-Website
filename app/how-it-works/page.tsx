@@ -12,13 +12,34 @@ export const metadata = {
   description: 'Our five-step process: Discovery, Structure, Connection, Testing, and Ongoing management. We organize your business information so AI can find and recommend you.',
 };
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://signalstructure.ai',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'How It Works',
+      item: 'https://signalstructure.ai/how-it-works',
+    },
+  ],
+};
+
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  '@id': 'https://signalstructure.ai/how-it-works/#howto',
   name: 'How Signal & Structure AI Improves Your AI Discoverability',
   description:
     'A clear process for getting your business into the AI referral conversation and making sure the details are right when it happens.',
   totalTime: 'P90D',
+  publisher: { '@id': 'https://signalstructure.ai/#organization' },
   step: [
     { '@type': 'HowToStep', position: 1, name: 'Discovery and Baseline Assessment', text: 'We learn what your business actually does and how it really operates. We document authentic descriptions, identify customer priorities, and query AI platforms to establish your baseline Signal Score.' },
     { '@type': 'HowToStep', position: 2, name: 'Information Organization', text: 'We organize your information in a way AI can actually find and use. Your knowledge is structured into categories: Identity, Services, Messaging, Policies, FAQs, and Guardrails.' },
@@ -32,6 +53,10 @@ export default function HowItWorksPage() {
   return (
     <main>
       {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}

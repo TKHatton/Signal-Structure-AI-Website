@@ -21,37 +21,37 @@ const blogPageSchema = {
   description:
     'Insights on AI discoverability, visibility, and getting found. Learn how AI platforms find, understand, and recommend businesses.',
   url: 'https://signalstructure.ai/blog',
-  isPartOf: {
-    '@type': 'WebSite',
-    '@id': 'https://signalstructure.ai/#website',
-    name: 'Signal & Structure AI',
-    url: 'https://signalstructure.ai',
-  },
-  publisher: {
-    '@type': 'Organization',
-    '@id': 'https://signalstructure.ai/#organization',
-    name: 'Signal & Structure AI',
-    url: 'https://signalstructure.ai',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://signalstructure.ai/images/logo.png',
-    },
-  },
-  author: {
-    '@type': 'Person',
-    name: 'Lenise Kenney',
-    jobTitle: 'Co-Founder',
-    worksFor: {
-      '@type': 'Organization',
-      name: 'Signal & Structure AI',
-    },
-  },
+  isPartOf: { '@id': 'https://signalstructure.ai/#website' },
+  publisher: { '@id': 'https://signalstructure.ai/#organization' },
+  author: { '@id': 'https://signalstructure.ai/about#lenise-kenney' },
   about: [
     'AI discoverability',
     'AI visibility',
     'schema markup',
     'structured data',
     'local business AI optimization',
+    'Signal Score',
+    'generative engine optimization',
+  ],
+  inLanguage: 'en-US',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://signalstructure.ai',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: 'https://signalstructure.ai/blog',
+    },
   ],
 };
 
@@ -64,6 +64,10 @@ export default function BlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Section 1: Page Header */}

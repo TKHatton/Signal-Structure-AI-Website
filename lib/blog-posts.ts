@@ -85,22 +85,23 @@ export const blogPosts: BlogPost[] = [
     },
     schema: {
       '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline:
-        'The Free 5-Minute AI Visibility Check You Can Do Right Now',
-      author: { '@type': 'Organization', name: 'Signal & Structure AI' },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Signal & Structure AI',
-        url: 'https://signalstructure.ai',
-      },
+      '@type': 'BlogPosting',
+      '@id': 'https://signalstructure.ai/blog/free-5-minute-ai-visibility-check#article',
+      headline: 'The Free 5-Minute AI Visibility Check You Can Do Right Now',
+      description: 'Want to know what AI platforms say about your business? Here is how to check in 5 minutes using our free tool.',
       datePublished: '2026-04-01',
-      description:
-        'Want to know what AI platforms say about your business? Here is how to check in 5 minutes using our free tool.',
+      dateModified: '2026-04-01',
+      author: { '@id': 'https://signalstructure.ai/about#lenise-kenney' },
+      publisher: { '@id': 'https://signalstructure.ai/#organization' },
+      isPartOf: { '@id': 'https://signalstructure.ai/blog/#blog' },
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': 'https://signalstructure.ai/blog/free-5-minute-ai-visibility-check',
       },
+      keywords: ['AI visibility', 'AI discoverability', 'Signal Pulse', 'free AI check', 'business visibility'],
+      articleSection: 'How-To',
+      wordCount: 850,
+      inLanguage: 'en-US',
     },
   },
   {
@@ -171,22 +172,23 @@ export const blogPosts: BlogPost[] = [
     },
     schema: {
       '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline:
-        '5 Things AI Gets Wrong About Your Business Right Now',
-      author: { '@type': 'Organization', name: 'Signal & Structure AI' },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Signal & Structure AI',
-        url: 'https://signalstructure.ai',
-      },
+      '@type': 'BlogPosting',
+      '@id': 'https://signalstructure.ai/blog/five-things-ai-gets-wrong#article',
+      headline: '5 Things AI Gets Wrong About Your Business Right Now',
+      description: 'AI platforms are making claims about your business right now. Here are the 5 most common errors we see and why most businesses have no idea.',
       datePublished: '2026-03-05',
-      description:
-        'AI platforms are making claims about your business right now. Here are the 5 most common errors we see and why most businesses have no idea.',
+      dateModified: '2026-03-05',
+      author: { '@id': 'https://signalstructure.ai/about#lenise-kenney' },
+      publisher: { '@id': 'https://signalstructure.ai/#organization' },
+      isPartOf: { '@id': 'https://signalstructure.ai/blog/#blog' },
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': 'https://signalstructure.ai/blog/five-things-ai-gets-wrong',
       },
+      keywords: ['AI errors', 'AI hallucinations', 'business information', 'AI accuracy', 'local business'],
+      articleSection: 'Education',
+      wordCount: 1100,
+      inLanguage: 'en-US',
     },
   },
   {
@@ -242,22 +244,23 @@ export const blogPosts: BlogPost[] = [
     },
     schema: {
       '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline:
-        'Day One: My Signal Score Is Zero. Here Is What I Am Doing About It.',
-      author: { '@type': 'Organization', name: 'Signal & Structure AI' },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Signal & Structure AI',
-        url: 'https://signalstructure.ai',
-      },
+      '@type': 'BlogPosting',
+      '@id': 'https://signalstructure.ai/blog/day-one-signal-score-zero#article',
+      headline: 'Day One: My Signal Score Is Zero. Here Is What I Am Doing About It.',
+      description: 'We ran our own business through the Signal Score methodology. The result was zero. This is what it looks like when AI has no idea you exist.',
       datePublished: '2026-02-28',
-      description:
-        'We ran our own business through the Signal Score methodology. The result was zero. This is what it looks like when AI has no idea you exist.',
+      dateModified: '2026-02-28',
+      author: { '@id': 'https://signalstructure.ai/about#lenise-kenney' },
+      publisher: { '@id': 'https://signalstructure.ai/#organization' },
+      isPartOf: { '@id': 'https://signalstructure.ai/blog/#blog' },
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': 'https://signalstructure.ai/blog/day-one-signal-score-zero',
       },
+      keywords: ['Signal Score', 'AI visibility', 'zero score', 'AI discoverability journey', 'business case study'],
+      articleSection: 'Company & Culture',
+      wordCount: 750,
+      inLanguage: 'en-US',
     },
   },
   {
@@ -314,21 +317,23 @@ export const blogPosts: BlogPost[] = [
     },
     schema: {
       '@context': 'https://schema.org',
-      '@type': 'Article',
+      '@type': 'BlogPosting',
+      '@id': 'https://signalstructure.ai/blog/what-is-a-signal-score#article',
       headline: 'What Is a Signal Score? And Why Your Business Needs One',
-      author: { '@type': 'Organization', name: 'Signal & Structure AI' },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Signal & Structure AI',
-        url: 'https://signalstructure.ai',
-      },
+      description: 'A Signal Score measures how accurately AI platforms represent your business. Learn what it tests, why it matters, and what most businesses score.',
       datePublished: '2026-02-24',
-      description:
-        'A Signal Score measures how accurately AI platforms represent your business. Learn what it tests, why it matters, and what most businesses score.',
+      dateModified: '2026-02-24',
+      author: { '@id': 'https://signalstructure.ai/about#lenise-kenney' },
+      publisher: { '@id': 'https://signalstructure.ai/#organization' },
+      isPartOf: { '@id': 'https://signalstructure.ai/blog/#blog' },
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': 'https://signalstructure.ai/blog/what-is-a-signal-score',
       },
+      keywords: ['Signal Score', 'AI discoverability', 'business visibility', 'AI platforms', 'ChatGPT', 'Claude', 'Gemini'],
+      articleSection: 'Education',
+      wordCount: 1000,
+      inLanguage: 'en-US',
     },
   },
 ];

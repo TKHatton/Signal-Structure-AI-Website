@@ -11,40 +11,105 @@ import SignalDot from '@/components/SignalDot';
 import { BOOKING_URL } from '@/lib/constants';
 import Link from 'next/link';
 
+// Organization schema - the core entity for cross-referencing across the site
 const organizationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': 'Organization',
   '@id': 'https://signalstructure.ai/#organization',
   name: 'Signal & Structure AI',
   alternateName: 'S&S AI',
   url: 'https://signalstructure.ai',
   logo: {
     '@type': 'ImageObject',
+    '@id': 'https://signalstructure.ai/#logo',
     url: 'https://signalstructure.ai/images/logo.png',
+    width: 512,
+    height: 512,
+    caption: 'Signal & Structure AI Logo',
   },
   image: 'https://signalstructure.ai/og-image.png',
   description:
     'Signal & Structure AI helps local businesses get found, accurately represented, and recommended by AI platforms like ChatGPT, Claude, Gemini, and Perplexity. We build structured knowledge systems that make your business visible to AI-powered search and referral tools.',
-  telephone: '+1-984-314-3102',
-  email: 'hello@signalstructure.ai',
   foundingDate: '2025',
-  founder: {
-    '@type': 'Person',
-    name: 'Lenise Kenney',
+  founder: { '@id': 'https://signalstructure.ai/about#lenise-kenney' },
+  numberOfEmployees: {
+    '@type': 'QuantitativeValue',
+    value: 2,
+  },
+  sameAs: ['https://www.linkedin.com/company/signal-structure-ai'],
+  knowsAbout: [
+    'AI discoverability',
+    'AI search optimization',
+    'schema markup',
+    'structured data',
+    'generative engine optimization',
+    'local business AI visibility',
+    'ChatGPT business recommendations',
+    'AI referral optimization',
+    'Signal Score',
+    'entity authority',
+  ],
+  slogan: 'Be found. Be accurate. Be recommended.',
+  brand: {
+    '@type': 'Brand',
+    name: 'Signal & Structure AI',
+    slogan: 'Be found. Be accurate. Be recommended.',
+    logo: { '@id': 'https://signalstructure.ai/#logo' },
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+1-984-314-3102',
+    email: 'hello@signalstructure.ai',
+    contactType: 'customer service',
+    availableLanguage: 'English',
   },
   address: {
     '@type': 'PostalAddress',
+    '@id': 'https://signalstructure.ai/#address',
     streetAddress: '506 Ramseur St, Unit 108',
     addressLocality: 'Durham',
     addressRegion: 'NC',
     postalCode: '27701',
     addressCountry: 'US',
   },
+  areaServed: [
+    {
+      '@type': 'City',
+      name: 'Durham',
+      sameAs: 'https://en.wikipedia.org/wiki/Durham,_North_Carolina',
+    },
+    {
+      '@type': 'State',
+      name: 'North Carolina',
+    },
+    {
+      '@type': 'Country',
+      name: 'United States',
+    },
+  ],
+};
+
+// LocalBusiness schema - for local search and maps integration
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://signalstructure.ai/#localbusiness',
+  name: 'Signal & Structure AI',
+  alternateName: 'S&S AI',
+  url: 'https://signalstructure.ai',
+  logo: { '@id': 'https://signalstructure.ai/#logo' },
+  image: 'https://signalstructure.ai/og-image.png',
+  description:
+    'Signal & Structure AI helps local businesses get found, accurately represented, and recommended by AI platforms like ChatGPT, Claude, Gemini, and Perplexity. We build structured knowledge systems that make your business visible to AI-powered search and referral tools.',
+  telephone: '+1-984-314-3102',
+  email: 'hello@signalstructure.ai',
+  address: { '@id': 'https://signalstructure.ai/#address' },
   geo: {
     '@type': 'GeoCoordinates',
     latitude: 35.9907,
     longitude: -78.8986,
   },
+  hasMap: 'https://maps.google.com/?cid=506+Ramseur+St,+Unit+108,+Durham,+NC+27701',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -78,17 +143,24 @@ const organizationSchema = {
     },
   ],
   sameAs: ['https://www.linkedin.com/company/signal-structure-ai'],
-  knowsAbout: [
-    'AI discoverability',
-    'AI search optimization',
-    'schema markup',
-    'structured data',
-    'generative engine optimization',
-    'local business AI visibility',
-    'ChatGPT business recommendations',
-    'AI referral optimization',
-  ],
-  slogan: 'Be found. Be accurate. Be recommended.',
+  // Uncomment aggregateRating when reviews are available:
+  // aggregateRating: {
+  //   '@type': 'AggregateRating',
+  //   ratingValue: '5',
+  //   reviewCount: '10',
+  //   bestRating: '5',
+  //   worstRating: '1',
+  // },
+  // Uncomment and add reviews when available:
+  // review: [
+  //   {
+  //     '@type': 'Review',
+  //     author: { '@type': 'Person', name: 'Client Name' },
+  //     datePublished: '2026-01-01',
+  //     reviewBody: 'Review text here...',
+  //     reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+  //   },
+  // ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'AI Discoverability Services',
@@ -158,6 +230,24 @@ const webpageSchema = {
     'AI is sending referrals in your industry every day. Signal & Structure AI helps your business get found and recommended by ChatGPT, Claude, Gemini, and other AI platforms.',
   isPartOf: { '@id': 'https://signalstructure.ai/#website' },
   about: { '@id': 'https://signalstructure.ai/#organization' },
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['.hero-headline-main', '.font-display.text-section-heading'],
+  },
+};
+
+// BreadcrumbList for homepage (single item - Home)
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://signalstructure.ai',
+    },
+  ],
 };
 
 export default function HomePage() {
@@ -170,11 +260,19 @@ export default function HomePage() {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Section 1: Hero */}

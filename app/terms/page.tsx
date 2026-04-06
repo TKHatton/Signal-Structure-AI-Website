@@ -18,26 +18,14 @@ const termsSchema = {
   url: 'https://signalstructure.ai/terms',
   dateModified: '2026-04-01',
   inLanguage: 'en-US',
-  isPartOf: {
-    '@type': 'WebSite',
-    '@id': 'https://signalstructure.ai/#website',
-    name: 'Signal & Structure AI',
-    url: 'https://signalstructure.ai',
-  },
-  publisher: {
-    '@type': 'Organization',
-    '@id': 'https://signalstructure.ai/#organization',
-    name: 'Signal & Structure AI',
-  },
+  isPartOf: { '@id': 'https://signalstructure.ai/#website' },
+  publisher: { '@id': 'https://signalstructure.ai/#organization' },
   mainEntity: {
     '@type': 'Article',
     name: 'Terms of Service',
     headline: 'Signal & Structure AI Terms of Service',
     dateModified: '2026-04-01',
-    author: {
-      '@type': 'Organization',
-      name: 'Signal & Structure AI',
-    },
+    author: { '@id': 'https://signalstructure.ai/#organization' },
     about: [
       'terms of service',
       'acceptable use',
@@ -47,6 +35,25 @@ const termsSchema = {
   },
 };
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://signalstructure.ai',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Terms of Service',
+      item: 'https://signalstructure.ai/terms',
+    },
+  ],
+};
+
 export default function TermsPage() {
   return (
     <>
@@ -54,6 +61,10 @@ export default function TermsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(termsSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero */}

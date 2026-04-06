@@ -14,51 +14,70 @@ export const metadata = {
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': 'https://signalstructure.ai/about#lenise-kenney',
   name: 'Lenise Kenney',
-  jobTitle: 'Co-Founder',
-  worksFor: {
-    '@type': 'Organization',
-    name: 'Signal & Structure AI',
-    url: 'https://signalstructure.ai',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '506 Ramseur St, Unit 108',
-      addressLocality: 'Durham',
-      addressRegion: 'NC',
-      postalCode: '27701',
-      addressCountry: 'US',
-    },
-  },
+  givenName: 'Lenise',
+  familyName: 'Kenney',
+  jobTitle: 'Co-Founder & Chief Strategist',
+  worksFor: { '@id': 'https://signalstructure.ai/#organization' },
   knowsAbout: [
-    'AI Discoverability',
-    'Structured Data',
-    'Business Visibility',
-    'AI Systems',
-    'Education',
+    'AI discoverability',
+    'AI search optimization',
+    'schema markup',
+    'structured data',
+    'generative engine optimization',
+    'local business AI visibility',
+    'Signal Score methodology',
+    'entity authority',
+    'education',
+    'knowledge systems',
   ],
-  image: 'https://signalstructure.ai/lenise-kenney.jpg',
+  image: {
+    '@type': 'ImageObject',
+    url: 'https://signalstructure.ai/lenise-kenney.jpg',
+    width: 400,
+    height: 400,
+  },
   description:
-    'Co-Founder of Signal & Structure AI. Nearly 20 years as an educator. Author of Protect Your Genius: Using AI Without Diluting Your Voice.',
-  sameAs: [],
+    'Co-Founder and Chief Strategist of Signal & Structure AI. Nearly 20 years as an educator. Author of Protect Your Genius: Using AI Without Diluting Your Voice. Designs the systems, methodologies, and strategies that power the Signal Score.',
+  sameAs: ['https://www.linkedin.com/in/lenise-kenney/'],
+  url: 'https://signalstructure.ai/about',
 };
 
 const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'AboutPage',
+  '@id': 'https://signalstructure.ai/about/#page',
   name: 'About Signal & Structure AI',
   description:
     'Signal & Structure AI was founded by Lenise Kenney and Julian Bass to help businesses become discoverable by AI platforms.',
   url: 'https://signalstructure.ai/about',
-  isPartOf: {
-    '@type': 'WebSite',
-    name: 'Signal & Structure AI',
-    url: 'https://signalstructure.ai',
+  isPartOf: { '@id': 'https://signalstructure.ai/#website' },
+  publisher: { '@id': 'https://signalstructure.ai/#organization' },
+  mainEntity: { '@id': 'https://signalstructure.ai/#organization' },
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['.inner-page-hero-subtitle', '.font-display.text-section-heading'],
   },
-  publisher: {
-    '@type': 'Organization',
-    name: 'Signal & Structure AI',
-    url: 'https://signalstructure.ai',
-  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://signalstructure.ai',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'About',
+      item: 'https://signalstructure.ai/about',
+    },
+  ],
 };
 
 export default function AboutPage() {
@@ -72,6 +91,10 @@ export default function AboutPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Section 1: Page Header */}

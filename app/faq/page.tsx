@@ -62,6 +62,12 @@ const faqItems = [
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  '@id': 'https://signalstructure.ai/faq/#page',
+  name: 'Frequently Asked Questions | Signal & Structure AI',
+  description: 'Common questions about AI discoverability, Signal Scores, schema markup, pricing, and how Signal & Structure AI helps businesses get found and recommended by AI platforms.',
+  url: 'https://signalstructure.ai/faq',
+  isPartOf: { '@id': 'https://signalstructure.ai/#website' },
+  publisher: { '@id': 'https://signalstructure.ai/#organization' },
   mainEntity: faqItems.map((item) => ({
     '@type': 'Question',
     name: item.question,
@@ -72,6 +78,25 @@ const faqSchema = {
   })),
 };
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://signalstructure.ai',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'FAQ',
+      item: 'https://signalstructure.ai/faq',
+    },
+  ],
+};
+
 export default function FAQPage() {
   return (
     <main>
@@ -79,6 +104,10 @@ export default function FAQPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Section 1: Page Header */}

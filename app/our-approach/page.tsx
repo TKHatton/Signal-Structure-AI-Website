@@ -9,21 +9,49 @@ export const metadata = {
   description: 'We build toward your independence, not your dependency. Signal & Structure AI organizes your business information for AI with structure, accuracy, and long-term thinking.',
 };
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://signalstructure.ai',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Our Approach',
+      item: 'https://signalstructure.ai/our-approach',
+    },
+  ],
+};
+
 const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
+  '@id': 'https://signalstructure.ai/our-approach/#page',
   name: 'Our Approach | Signal & Structure AI',
   description:
     'Signal & Structure AI builds the foundation that makes AI referrals possible. We organize existing business knowledge so AI platforms can find it, understand it, and recommend you accurately.',
   url: 'https://signalstructure.ai/our-approach',
-  isPartOf: { '@type': 'WebSite', name: 'Signal & Structure AI', url: 'https://signalstructure.ai' },
-  publisher: { '@type': 'Organization', name: 'Signal & Structure AI', url: 'https://signalstructure.ai' },
+  isPartOf: { '@id': 'https://signalstructure.ai/#website' },
+  publisher: { '@id': 'https://signalstructure.ai/#organization' },
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['.inner-page-hero-subtitle', '.font-display.text-section-heading'],
+  },
 };
 
 export default function OurApproachPage() {
   return (
     <main>
       {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}

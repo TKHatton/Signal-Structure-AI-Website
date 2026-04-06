@@ -13,6 +13,25 @@ export const metadata = {
     'Free signal quiz, Signal Pulse checker, and The Invisible Shift ebook. Tools to understand how AI sees your business.',
 };
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://signalstructure.ai',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Resources',
+      item: 'https://signalstructure.ai/resources',
+    },
+  ],
+};
+
 const resourcesPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
@@ -21,17 +40,8 @@ const resourcesPageSchema = {
   description:
     'Free tools and resources to help you understand how AI sees your business. Includes Signal Pulse checker, AI visibility quiz, and educational content.',
   url: 'https://signalstructure.ai/resources',
-  isPartOf: {
-    '@type': 'WebSite',
-    '@id': 'https://signalstructure.ai/#website',
-    name: 'Signal & Structure AI',
-    url: 'https://signalstructure.ai',
-  },
-  publisher: {
-    '@type': 'Organization',
-    '@id': 'https://signalstructure.ai/#organization',
-    name: 'Signal & Structure AI',
-  },
+  isPartOf: { '@id': 'https://signalstructure.ai/#website' },
+  publisher: { '@id': 'https://signalstructure.ai/#organization' },
   mainEntity: {
     '@type': 'ItemList',
     name: 'Free AI Discoverability Tools',
@@ -108,6 +118,10 @@ export default function ResourcesPage() {
   return (
     <main>
       {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(resourcesPageSchema) }}

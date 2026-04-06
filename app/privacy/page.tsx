@@ -18,26 +18,14 @@ const privacySchema = {
   url: 'https://signalstructure.ai/privacy',
   dateModified: '2026-04-01',
   inLanguage: 'en-US',
-  isPartOf: {
-    '@type': 'WebSite',
-    '@id': 'https://signalstructure.ai/#website',
-    name: 'Signal & Structure AI',
-    url: 'https://signalstructure.ai',
-  },
-  publisher: {
-    '@type': 'Organization',
-    '@id': 'https://signalstructure.ai/#organization',
-    name: 'Signal & Structure AI',
-  },
+  isPartOf: { '@id': 'https://signalstructure.ai/#website' },
+  publisher: { '@id': 'https://signalstructure.ai/#organization' },
   mainEntity: {
     '@type': 'Article',
     name: 'Privacy Policy',
     headline: 'Signal & Structure AI Privacy Policy',
     dateModified: '2026-04-01',
-    author: {
-      '@type': 'Organization',
-      name: 'Signal & Structure AI',
-    },
+    author: { '@id': 'https://signalstructure.ai/#organization' },
     about: [
       'data collection',
       'data privacy',
@@ -47,6 +35,25 @@ const privacySchema = {
   },
 };
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://signalstructure.ai',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Privacy Policy',
+      item: 'https://signalstructure.ai/privacy',
+    },
+  ],
+};
+
 export default function PrivacyPage() {
   return (
     <>
@@ -54,6 +61,10 @@ export default function PrivacyPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(privacySchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero */}
