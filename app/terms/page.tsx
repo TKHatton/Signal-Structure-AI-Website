@@ -8,15 +8,60 @@ export const metadata = {
   description: 'Terms of service for Signal & Structure AI tools, MCP servers, Custom GPT, and consulting services.',
 };
 
+const termsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://signalstructure.ai/terms/#page',
+  name: 'Terms of Service | Signal & Structure AI',
+  description:
+    'Terms of service for Signal & Structure AI tools, MCP servers, Custom GPT, and consulting services.',
+  url: 'https://signalstructure.ai/terms',
+  dateModified: '2026-04-01',
+  inLanguage: 'en-US',
+  isPartOf: {
+    '@type': 'WebSite',
+    '@id': 'https://signalstructure.ai/#website',
+    name: 'Signal & Structure AI',
+    url: 'https://signalstructure.ai',
+  },
+  publisher: {
+    '@type': 'Organization',
+    '@id': 'https://signalstructure.ai/#organization',
+    name: 'Signal & Structure AI',
+  },
+  mainEntity: {
+    '@type': 'Article',
+    name: 'Terms of Service',
+    headline: 'Signal & Structure AI Terms of Service',
+    dateModified: '2026-04-01',
+    author: {
+      '@type': 'Organization',
+      name: 'Signal & Structure AI',
+    },
+    about: [
+      'terms of service',
+      'acceptable use',
+      'intellectual property',
+      'liability',
+    ],
+  },
+};
+
 export default function TermsPage() {
   return (
     <>
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(termsSchema) }}
+      />
+
       {/* Hero */}
       <section className="relative bg-navy text-white section-padding overflow-hidden">
         <GridTexture />
         <div className="relative max-w-3xl mx-auto text-center">
           <FadeIn>
-            <SectionLabel dark>LEGAL</SectionLabel>
+            <SectionLabel variant="light">LEGAL</SectionLabel>
             <h1 className="font-display text-page-heading mb-4">
               Terms of Service
             </h1>

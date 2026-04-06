@@ -8,6 +8,10 @@ import NewsletterForm from '@/components/NewsletterForm';
 export const metadata: Metadata = {
   title: `Signal Score Session | ${COMPANY_NAME}`,
   description: 'Get your full AI visibility and accuracy report. Find out what AI platforms say about your business, what they get wrong, and what they cannot find. Opening soon.',
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function SignalScorePage() {

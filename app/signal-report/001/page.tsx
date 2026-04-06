@@ -7,6 +7,10 @@ import { COMPANY_NAME } from '@/lib/constants';
 export const metadata: Metadata = {
   title: `The Signal Report - Issue 001 | ${COMPANY_NAME}`,
   description: 'AI is not searching for you. It is answering about you. The first issue of The Signal Report from Signal & Structure AI.',
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function SignalReport001() {

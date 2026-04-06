@@ -13,13 +13,25 @@ import Link from 'next/link';
 
 const organizationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': 'LocalBusiness',
+  '@id': 'https://signalstructure.ai/#organization',
   name: 'Signal & Structure AI',
+  alternateName: 'S&S AI',
   url: 'https://signalstructure.ai',
-  logo: 'https://signalstructure.ai/images/logo.png',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://signalstructure.ai/images/logo.png',
+  },
+  image: 'https://signalstructure.ai/og-image.png',
   description:
-    'Signal & Structure AI helps businesses become findable and accurately represented by AI platforms like ChatGPT, Claude, Gemini, and other leading AI platforms. We build structured knowledge systems and measure results with our proprietary Signal Score.',
-  foundingDate: '2026',
+    'Signal & Structure AI helps local businesses get found, accurately represented, and recommended by AI platforms like ChatGPT, Claude, Gemini, and Perplexity. We build structured knowledge systems that make your business visible to AI-powered search and referral tools.',
+  telephone: '+1-984-314-3102',
+  email: 'hello@signalstructure.ai',
+  foundingDate: '2025',
+  founder: {
+    '@type': 'Person',
+    name: 'Lenise Kenney',
+  },
   address: {
     '@type': 'PostalAddress',
     streetAddress: '506 Ramseur St, Unit 108',
@@ -28,35 +40,124 @@ const organizationSchema = {
     postalCode: '27701',
     addressCountry: 'US',
   },
-  contactPoint: {
-    '@type': 'ContactPoint',
-    contactType: 'customer service',
-    email: 'hello@signalstructure.ai',
-    availableLanguage: 'English',
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 35.9907,
+    longitude: -78.8986,
   },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday'],
+      opens: '11:00',
+      closes: '18:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Thursday'],
+      opens: '11:00',
+      closes: '16:00',
+    },
+  ],
+  priceRange: '$750 - $3,000+',
+  currenciesAccepted: 'USD',
+  paymentAccepted: 'Credit Card, Invoice',
+  areaServed: [
+    {
+      '@type': 'City',
+      name: 'Durham',
+      sameAs: 'https://en.wikipedia.org/wiki/Durham,_North_Carolina',
+    },
+    {
+      '@type': 'State',
+      name: 'North Carolina',
+    },
+    {
+      '@type': 'Country',
+      name: 'United States',
+    },
+  ],
   sameAs: ['https://www.linkedin.com/company/signal-structure-ai'],
   knowsAbout: [
     'AI discoverability',
+    'AI search optimization',
     'schema markup',
     'structured data',
-    'Google Business Profile optimization',
-    'AI search optimization',
-    'business knowledge systems',
+    'generative engine optimization',
+    'local business AI visibility',
+    'ChatGPT business recommendations',
+    'AI referral optimization',
   ],
   slogan: 'Be found. Be accurate. Be recommended.',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'AI Discoverability Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          '@id': 'https://signalstructure.ai/services#ai-business-profile',
+          name: 'AI Business Profile',
+          description: 'Your starting point for AI visibility. We organize your real business information so AI platforms can find you and describe you correctly.',
+          provider: { '@id': 'https://signalstructure.ai/#organization' },
+          serviceType: 'AI Discoverability Setup',
+        },
+        price: '750',
+        priceCurrency: 'USD',
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          '@id': 'https://signalstructure.ai/services#ai-knowledge-system',
+          name: 'AI Knowledge System',
+          description: 'A comprehensive knowledge structure built from every document, page, policy, FAQ, and piece of content your business has.',
+          provider: { '@id': 'https://signalstructure.ai/#organization' },
+          serviceType: 'AI Knowledge Architecture',
+        },
+        price: '3000',
+        priceCurrency: 'USD',
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          '@id': 'https://signalstructure.ai/services#ai-presence-management',
+          name: 'AI Presence Management',
+          description: 'Ongoing monitoring and optimization of your AI presence with monthly accuracy checks and quarterly deep audits.',
+          provider: { '@id': 'https://signalstructure.ai/#organization' },
+          serviceType: 'AI Presence Monitoring',
+        },
+        price: '1500',
+        priceCurrency: 'USD',
+        unitText: 'MONTH',
+      },
+    ],
+  },
 };
 
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': 'https://signalstructure.ai/#website',
   name: 'Signal & Structure AI',
   url: 'https://signalstructure.ai',
   description:
-    'AI knowledge services that make businesses findable and accurately represented by AI platforms.',
-  publisher: {
-    '@type': 'Organization',
-    name: 'Signal & Structure AI',
-  },
+    'AI discoverability services for local businesses. Get found, accurately represented, and recommended by ChatGPT, Claude, Gemini, and other AI platforms.',
+  publisher: { '@id': 'https://signalstructure.ai/#organization' },
+};
+
+const webpageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://signalstructure.ai/#homepage',
+  url: 'https://signalstructure.ai',
+  name: 'Signal & Structure AI | Be found. Be accurate. Be recommended.',
+  description:
+    'AI is sending referrals in your industry every day. Signal & Structure AI helps your business get found and recommended by ChatGPT, Claude, Gemini, and other AI platforms.',
+  isPartOf: { '@id': 'https://signalstructure.ai/#website' },
+  about: { '@id': 'https://signalstructure.ai/#organization' },
 };
 
 export default function HomePage() {
@@ -70,6 +171,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
       />
 
       {/* Section 1: Hero */}

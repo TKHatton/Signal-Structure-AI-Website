@@ -8,6 +8,10 @@ import NewsletterForm from '@/components/NewsletterForm';
 export const metadata: Metadata = {
   title: `The Signal Report | ${COMPANY_NAME}`,
   description: 'A bi-weekly newsletter about AI discoverability and accuracy. Games, insights, case studies, and one question that changes how you think about your online presence.',
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function SignalReportPage() {

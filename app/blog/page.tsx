@@ -13,11 +13,59 @@ export const metadata = {
     'Insights on AI discoverability, visibility, and getting found. Learn how AI platforms find, understand, and recommend businesses.',
 };
 
+const blogPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  '@id': 'https://signalstructure.ai/blog/#blog',
+  name: 'The Signal Report',
+  description:
+    'Insights on AI discoverability, visibility, and getting found. Learn how AI platforms find, understand, and recommend businesses.',
+  url: 'https://signalstructure.ai/blog',
+  isPartOf: {
+    '@type': 'WebSite',
+    '@id': 'https://signalstructure.ai/#website',
+    name: 'Signal & Structure AI',
+    url: 'https://signalstructure.ai',
+  },
+  publisher: {
+    '@type': 'Organization',
+    '@id': 'https://signalstructure.ai/#organization',
+    name: 'Signal & Structure AI',
+    url: 'https://signalstructure.ai',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://signalstructure.ai/images/logo.png',
+    },
+  },
+  author: {
+    '@type': 'Person',
+    name: 'Lenise Kenney',
+    jobTitle: 'Co-Founder',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Signal & Structure AI',
+    },
+  },
+  about: [
+    'AI discoverability',
+    'AI visibility',
+    'schema markup',
+    'structured data',
+    'local business AI optimization',
+  ],
+};
+
 export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
     <main>
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPageSchema) }}
+      />
+
       {/* Section 1: Page Header */}
       <section className="relative bg-navy text-white">
         <GridTexture />

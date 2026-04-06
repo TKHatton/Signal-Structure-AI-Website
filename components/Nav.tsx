@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
@@ -78,9 +79,13 @@ export default function Nav() {
         <div className="max-w-content mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 border-2 border-navy rounded flex items-center justify-center font-display text-navy text-lg group-hover:bg-navy group-hover:text-white transition-colors duration-300">
-              S&S
-            </div>
+            <Image
+              src="/images/logo-light.png"
+              alt="Signal & Structure AI"
+              width={40}
+              height={40}
+              className="rounded-lg"
+            />
             <span className="font-body font-semibold text-navy hidden sm:block">
               {COMPANY_NAME}
             </span>

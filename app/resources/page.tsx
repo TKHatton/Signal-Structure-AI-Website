@@ -13,9 +13,106 @@ export const metadata = {
     'Free signal quiz, Signal Pulse checker, and The Invisible Shift ebook. Tools to understand how AI sees your business.',
 };
 
+const resourcesPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': 'https://signalstructure.ai/resources/#page',
+  name: 'AI Discoverability Resources | Signal & Structure AI',
+  description:
+    'Free tools and resources to help you understand how AI sees your business. Includes Signal Pulse checker, AI visibility quiz, and educational content.',
+  url: 'https://signalstructure.ai/resources',
+  isPartOf: {
+    '@type': 'WebSite',
+    '@id': 'https://signalstructure.ai/#website',
+    name: 'Signal & Structure AI',
+    url: 'https://signalstructure.ai',
+  },
+  publisher: {
+    '@type': 'Organization',
+    '@id': 'https://signalstructure.ai/#organization',
+    name: 'Signal & Structure AI',
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    name: 'Free AI Discoverability Tools',
+    numberOfItems: 3,
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        item: {
+          '@type': 'SoftwareApplication',
+          name: 'Can AI Find Your Business? Quiz',
+          description:
+            '5-question quiz to assess your AI discoverability in 60 seconds. Get your signal strength rating instantly.',
+          applicationCategory: 'Business Assessment Tool',
+          url: 'https://signalstructure.ai/signal-pulse/quiz',
+          offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+          },
+          provider: {
+            '@type': 'Organization',
+            '@id': 'https://signalstructure.ai/#organization',
+          },
+        },
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        item: {
+          '@type': 'SoftwareApplication',
+          name: 'Signal Pulse',
+          description:
+            'Free tool to check if AI systems can see your business. Enter your URL and get instant results on your AI visibility.',
+          applicationCategory: 'Business Assessment Tool',
+          url: 'https://signalstructure.ai/signal-pulse',
+          offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+          },
+          provider: {
+            '@type': 'Organization',
+            '@id': 'https://signalstructure.ai/#organization',
+          },
+        },
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        item: {
+          '@type': 'SoftwareApplication',
+          name: 'AI Visibility Check',
+          description:
+            'Custom GPT that shows you how AI platforms describe your business right now. Free on ChatGPT.',
+          applicationCategory: 'Business Assessment Tool',
+          url: 'https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit',
+          offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+          },
+          provider: {
+            '@type': 'Organization',
+            '@id': 'https://signalstructure.ai/#organization',
+          },
+        },
+      },
+    ],
+  },
+};
+
 export default function ResourcesPage() {
   return (
     <main>
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(resourcesPageSchema) }}
+      />
+
       {/* Page Header */}
       <section className="relative bg-navy text-white">
         <GridTexture />

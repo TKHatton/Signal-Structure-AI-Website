@@ -8,15 +8,60 @@ export const metadata = {
   description: 'How Signal & Structure AI collects, uses, and protects your information when you use our AI discoverability tools and services.',
 };
 
+const privacySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://signalstructure.ai/privacy/#page',
+  name: 'Privacy Policy | Signal & Structure AI',
+  description:
+    'How Signal & Structure AI collects, uses, and protects your information when you use our AI discoverability tools and services.',
+  url: 'https://signalstructure.ai/privacy',
+  dateModified: '2026-04-01',
+  inLanguage: 'en-US',
+  isPartOf: {
+    '@type': 'WebSite',
+    '@id': 'https://signalstructure.ai/#website',
+    name: 'Signal & Structure AI',
+    url: 'https://signalstructure.ai',
+  },
+  publisher: {
+    '@type': 'Organization',
+    '@id': 'https://signalstructure.ai/#organization',
+    name: 'Signal & Structure AI',
+  },
+  mainEntity: {
+    '@type': 'Article',
+    name: 'Privacy Policy',
+    headline: 'Signal & Structure AI Privacy Policy',
+    dateModified: '2026-04-01',
+    author: {
+      '@type': 'Organization',
+      name: 'Signal & Structure AI',
+    },
+    about: [
+      'data collection',
+      'data privacy',
+      'information security',
+      'user rights',
+    ],
+  },
+};
+
 export default function PrivacyPage() {
   return (
     <>
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(privacySchema) }}
+      />
+
       {/* Hero */}
       <section className="relative bg-navy text-white section-padding overflow-hidden">
         <GridTexture />
         <div className="relative max-w-3xl mx-auto text-center">
           <FadeIn>
-            <SectionLabel dark>LEGAL</SectionLabel>
+            <SectionLabel variant="light">LEGAL</SectionLabel>
             <h1 className="font-display text-page-heading mb-4">
               Privacy Policy
             </h1>

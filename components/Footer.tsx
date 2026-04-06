@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import SignalDot from './SignalDot';
 import GridTexture from './GridTexture';
 import { COMPANY_NAME, TAGLINE, LOCATION, ADDRESS, EMAIL, LINKEDIN, BOOKING_URL } from '@/lib/constants';
@@ -27,9 +28,13 @@ export default function Footer() {
           {/* Column 1: Branding */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 border-2 border-white rounded flex items-center justify-center font-display text-white text-lg">
-                S&S
-              </div>
+              <Image
+                src="/images/logo-dark.png"
+                alt="Signal & Structure AI"
+                width={40}
+                height={40}
+                className="rounded-lg"
+              />
               <span className="font-body font-semibold">{COMPANY_NAME}</span>
             </div>
             <p className="text-white/70 font-body text-sm">{TAGLINE}</p>
