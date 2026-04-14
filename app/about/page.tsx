@@ -9,6 +9,9 @@ export const metadata = {
   title: 'About | Signal & Structure AI',
   description:
     'Signal & Structure AI was founded by Lenise Kenney and Julian Bass to help businesses become discoverable by AI platforms. Based in Durham, NC.',
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 const personSchema = {

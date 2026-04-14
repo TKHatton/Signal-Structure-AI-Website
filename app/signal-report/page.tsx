@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     index: false,
     follow: true,
   },
+  alternates: {
+    canonical: '/signal-report',
+  },
 };
 
 export default function SignalReportPage() {

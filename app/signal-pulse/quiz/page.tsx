@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Signal Pulse Quiz | Signal & Structure AI',
   description:
     'Can AI find your business? Take this 60-second quiz to find out. No URL needed.',
+  alternates: {
+    canonical: '/signal-pulse/quiz',
+  },
 };
 
 export default function SignalPulseQuizPage() {

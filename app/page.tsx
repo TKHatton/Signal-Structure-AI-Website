@@ -58,7 +58,7 @@ const organizationSchema = {
   },
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+1-984-314-3102',
+    telephone: '+19843143102',
     email: 'hello@signalstructure.ai',
     contactType: 'customer service',
     availableLanguage: 'English',
@@ -101,7 +101,7 @@ const localBusinessSchema = {
   image: 'https://signalstructure.ai/og-image.png',
   description:
     'Signal & Structure AI helps local businesses get found, accurately represented, and recommended by AI platforms like ChatGPT, Claude, Gemini, and Perplexity. We build structured knowledge systems that make your business visible to AI-powered search and referral tools.',
-  telephone: '+1-984-314-3102',
+  telephone: '+19843143102',
   email: 'hello@signalstructure.ai',
   address: { '@id': 'https://signalstructure.ai/#address' },
   geo: {

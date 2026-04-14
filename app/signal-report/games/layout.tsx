@@ -5,6 +5,9 @@ export const metadata: Metadata = {
     index: false,
     follow: true,
   },
+  alternates: {
+    canonical: '/signal-report/games',
+  },
 };
 
 export default function GamesLayout({

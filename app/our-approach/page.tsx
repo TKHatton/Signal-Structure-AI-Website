@@ -7,6 +7,9 @@ import { BOOKING_URL, COMPANY_NAME, TAGLINE } from '@/lib/constants';
 export const metadata = {
   title: 'Our Approach | Signal & Structure AI',
   description: 'We build toward your independence, not your dependency. Signal & Structure AI organizes your business information for AI with structure, accuracy, and long-term thinking.',
+  alternates: {
+    canonical: '/our-approach',
+  },
 };
 
 const breadcrumbSchema = {

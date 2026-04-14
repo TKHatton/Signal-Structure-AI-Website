@@ -8,6 +8,9 @@ import { BOOKING_URL } from '@/lib/constants';
 export const metadata = {
   title: 'Frequently Asked Questions | Signal & Structure AI',
   description: 'Common questions about AI discoverability, Signal Scores, schema markup, pricing, and how Signal & Structure AI helps businesses get found and recommended by AI platforms.',
+  alternates: {
+    canonical: '/faq',
+  },
 };
 
 const faqItems = [

@@ -6,6 +6,9 @@ import { EMAIL, COMPANY_NAME, ADDRESS } from '@/lib/constants';
 export const metadata = {
   title: 'Privacy Policy | Signal & Structure AI',
   description: 'How Signal & Structure AI collects, uses, and protects your information when you use our AI discoverability tools and services.',
+  alternates: {
+    canonical: '/privacy',
+  },
 };
 
 const privacySchema = {

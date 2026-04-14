@@ -8,6 +8,9 @@ import { BOOKING_URL } from '@/lib/constants';
 export const metadata = {
   title: 'Why This Matters | Signal & Structure AI',
   description: 'People stopped Googling and started asking AI. If your business is not structured for AI, you are invisible to the new referral system. Here is why and how to fix it.',
+  alternates: {
+    canonical: '/why-this-matters',
+  },
 };
 
 const pageSchema = {

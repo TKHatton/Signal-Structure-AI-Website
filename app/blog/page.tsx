@@ -11,6 +11,9 @@ export const metadata = {
   title: 'The Signal Report | Signal & Structure AI Blog',
   description:
     'Insights on AI discoverability, visibility, and getting found. Learn how AI platforms find, understand, and recommend businesses.',
+  alternates: {
+    canonical: '/blog',
+  },
 };
 
 const blogPageSchema = {

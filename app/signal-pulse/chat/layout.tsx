@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     index: false,
     follow: true,
   },
+  alternates: {
+    canonical: '/signal-pulse/chat',
+  },
 };
 
 export default function ChatLayout({

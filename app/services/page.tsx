@@ -9,6 +9,9 @@ import { BOOKING_URL } from '@/lib/constants';
 export const metadata = {
   title: 'Services & Pricing | Signal & Structure AI',
   description: 'AI Business Profile starting at $750. AI Knowledge System starting at $3,000. AI Presence Management starting at $1,500/mo. Clear pricing for AI knowledge services.',
+  alternates: {
+    canonical: '/services',
+  },
 };
 
 const breadcrumbSchema = {

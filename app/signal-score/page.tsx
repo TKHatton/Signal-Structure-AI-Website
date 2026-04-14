@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     index: false,
     follow: true,
   },
+  alternates: {
+    canonical: '/signal-score',
+  },
 };
 
 export default function SignalScorePage() {

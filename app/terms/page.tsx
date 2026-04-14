@@ -6,6 +6,9 @@ import { EMAIL, COMPANY_NAME, ADDRESS } from '@/lib/constants';
 export const metadata = {
   title: 'Terms of Service | Signal & Structure AI',
   description: 'Terms of service for Signal & Structure AI tools, MCP servers, Custom GPT, and consulting services.',
+  alternates: {
+    canonical: '/terms',
+  },
 };
 
 const termsSchema = {

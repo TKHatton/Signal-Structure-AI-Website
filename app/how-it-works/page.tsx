@@ -10,6 +10,9 @@ import { BOOKING_URL } from '@/lib/constants';
 export const metadata = {
   title: 'How It Works | Signal & Structure AI',
   description: 'Our five-step process: Discovery, Structure, Connection, Testing, and Ongoing management. We organize your business information so AI can find and recommend you.',
+  alternates: {
+    canonical: '/how-it-works',
+  },
 };
 
 const breadcrumbSchema = {

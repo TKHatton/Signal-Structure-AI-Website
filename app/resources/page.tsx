@@ -11,6 +11,9 @@ export const metadata = {
   title: 'Resources | Signal & Structure AI',
   description:
     'Free signal quiz, Signal Pulse checker, and The Invisible Shift ebook. Tools to understand how AI sees your business.',
+  alternates: {
+    canonical: '/resources',
+  },
 };
 
 const breadcrumbSchema = {
