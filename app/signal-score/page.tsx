@@ -3,15 +3,12 @@ import Link from 'next/link';
 import FadeIn from '@/components/FadeIn';
 import SectionLabel from '@/components/SectionLabel';
 import { COMPANY_NAME, EMAIL } from '@/lib/constants';
-import NewsletterForm from '@/components/NewsletterForm';
+
+const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/bJedR934sh2TbV367k87K05';
 
 export const metadata: Metadata = {
   title: `Signal Score Session | ${COMPANY_NAME}`,
-  description: 'Get your full AI visibility and accuracy report. Find out what AI platforms say about your business, what they get wrong, and what they cannot find. Opening soon.',
-  robots: {
-    index: false,
-    follow: true,
-  },
+  description: 'Get your full AI visibility and accuracy report. Find out what AI platforms say about your business, what they get wrong, and what they cannot find.',
   alternates: {
     canonical: '/signal-score',
   },
@@ -24,7 +21,7 @@ export default function SignalScorePage() {
       <section className="section-padding bg-navy text-center">
         <div className="max-w-content mx-auto">
           <FadeIn>
-            <SectionLabel>Coming Soon</SectionLabel>
+            <SectionLabel>Available Now</SectionLabel>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl text-white mb-6">
               Signal Score Session
             </h1>
@@ -36,6 +33,14 @@ export default function SignalScorePage() {
             <p className="font-body text-copper text-lg font-semibold mb-8">
               $97 &middot; Includes a 30-minute results walkthrough
             </p>
+            <a
+              href={STRIPE_CHECKOUT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 bg-copper text-white font-body font-semibold rounded-button shadow-button hover:shadow-button-hover hover:bg-copper-light transition-all"
+            >
+              Get Your Signal Score
+            </a>
           </FadeIn>
         </div>
       </section>
@@ -72,28 +77,41 @@ export default function SignalScorePage() {
         </div>
       </section>
 
-      {/* Early Access */}
+      {/* How It Works */}
       <section className="section-padding bg-white">
         <div className="max-w-prose mx-auto text-center">
           <FadeIn>
-            <SectionLabel>Be First</SectionLabel>
-            <h2 className="font-display text-2xl sm:text-3xl text-navy mb-4">
-              Signal Score sessions are opening soon.
+            <SectionLabel>How It Works</SectionLabel>
+            <h2 className="font-display text-2xl sm:text-3xl text-navy mb-8">
+              From purchase to delivered report.
             </h2>
-            <p className="font-body text-warmgray text-lg max-w-xl mx-auto mb-3 leading-relaxed">
-              Join the early access list and get 15% off your Signal Score Session
-              when we go live. You will receive a one-time code valid for 30 days.
-            </p>
-            <p className="font-body text-warmgray-light text-sm mb-8">
-              No spam. Just one email when sessions open.
-            </p>
-            <div className="max-w-md mx-auto">
-              <NewsletterForm
-                buttonText="Join Early Access"
-                placeholder="Enter your email"
-                source="signal-score-early-access"
-              />
-            </div>
+            <ol className="font-body text-warmgray text-lg max-w-xl mx-auto mb-10 leading-relaxed text-left space-y-4">
+              <li>
+                <strong className="text-navy">1. Click the button.</strong>{' '}
+                Pay $97 securely through Stripe.
+              </li>
+              <li>
+                <strong className="text-navy">2. Reply to your receipt</strong>{' '}
+                with your business name and website URL.
+              </li>
+              <li>
+                <strong className="text-navy">3. Get your report</strong>{' '}
+                in your inbox within 48 hours.
+              </li>
+              <li>
+                <strong className="text-navy">4. Schedule your walkthrough.</strong>{' '}
+                Use the link in your delivery email to book your 30-minute
+                results call.
+              </li>
+            </ol>
+            <a
+              href={STRIPE_CHECKOUT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 bg-copper text-white font-body font-semibold rounded-button shadow-button hover:shadow-button-hover hover:bg-copper-light transition-all"
+            >
+              Get Your Signal Score
+            </a>
           </FadeIn>
         </div>
       </section>
