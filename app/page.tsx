@@ -41,6 +41,15 @@ const organizationSchema = {
     'https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit',
     'https://share.google/5Ci2LRrbmjYiQpkCp',
   ],
+  // Reflects Google Business Profile review state. Update reviewCount + ratingValue
+  // as new reviews accumulate on GBP. Re-average ratingValue when reviewCount > 1.
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '1',
+    bestRating: '5',
+    worstRating: '1',
+  },
   knowsAbout: [
     'AI discoverability',
     'AI search optimization',
@@ -147,19 +156,22 @@ const localBusinessSchema = {
     },
   ],
   sameAs: ['https://www.linkedin.com/company/signal-structure-ai'],
-  // Uncomment aggregateRating when reviews are available:
-  // aggregateRating: {
-  //   '@type': 'AggregateRating',
-  //   ratingValue: '5',
-  //   reviewCount: '10',
-  //   bestRating: '5',
-  //   worstRating: '1',
-  // },
-  // Uncomment and add reviews when available:
+  // Reflects current Google Business Profile review state (1 review, 5 stars).
+  // Update reviewCount and re-average ratingValue as new reviews accumulate.
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '1',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  // Individual Review entries can be added below when reviewer name + text
+  // are available to publish. Pulling them from GBP requires the reviewer's
+  // explicit consent or fair-use judgment. Currently empty.
   // review: [
   //   {
   //     '@type': 'Review',
-  //     author: { '@type': 'Person', name: 'Client Name' },
+  //     author: { '@type': 'Person', name: 'Reviewer Name' },
   //     datePublished: '2026-01-01',
   //     reviewBody: 'Review text here...',
   //     reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
