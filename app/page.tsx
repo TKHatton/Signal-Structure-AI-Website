@@ -17,7 +17,7 @@ const organizationSchema = {
   '@type': 'Organization',
   '@id': 'https://signalstructure.ai/#organization',
   name: 'Signal & Structure AI',
-  alternateName: 'S&S AI',
+  alternateName: ['Signal and Structure AI', 'S&S AI', 'SNS AI'],
   url: 'https://signalstructure.ai',
   logo: {
     '@type': 'ImageObject',
@@ -30,7 +30,7 @@ const organizationSchema = {
   image: 'https://signalstructure.ai/og-image.png',
   description:
     'Signal & Structure AI helps local businesses get found, accurately represented, and recommended by AI platforms like ChatGPT, Claude, Gemini, and Perplexity. We build structured knowledge systems that make your business visible to AI-powered search and referral tools.',
-  foundingDate: '2025',
+  foundingDate: '2025-09',
   founder: { '@id': 'https://signalstructure.ai/about#lenise-kenney' },
   numberOfEmployees: {
     '@type': 'QuantitativeValue',
@@ -99,7 +99,7 @@ const localBusinessSchema = {
   '@type': 'LocalBusiness',
   '@id': 'https://signalstructure.ai/#localbusiness',
   name: 'Signal & Structure AI',
-  alternateName: 'S&S AI',
+  alternateName: ['Signal and Structure AI', 'S&S AI', 'SNS AI'],
   url: 'https://signalstructure.ai',
   logo: { '@id': 'https://signalstructure.ai/#logo' },
   image: 'https://signalstructure.ai/og-image.png',
