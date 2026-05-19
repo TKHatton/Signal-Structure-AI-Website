@@ -52,7 +52,20 @@ export default function SignalPulsePage() {
     }
   };
 
-  // JSON-LD schema for this page
+  // JSON-LD schemas for this page
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': 'https://signalstructure.ai/#organization',
+    name: 'Signal & Structure AI',
+    url: 'https://signalstructure.ai',
+    sameAs: [
+      'https://www.linkedin.com/company/signal-structure-ai',
+      'https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit',
+      'https://share.google/5Ci2LRrbmjYiQpkCp',
+    ],
+  };
+
   const pageSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
@@ -67,15 +80,15 @@ export default function SignalPulsePage() {
       price: '0',
       priceCurrency: 'USD',
     },
-    provider: {
-      '@type': 'Organization',
-      name: 'Signal & Structure AI',
-      url: 'https://signalstructure.ai',
-    },
+    provider: { '@id': 'https://signalstructure.ai/#organization' },
   };
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
