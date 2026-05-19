@@ -14,6 +14,19 @@ export const metadata = {
   },
 };
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://signalstructure.ai/#organization',
+  name: 'Signal & Structure AI',
+  url: 'https://signalstructure.ai',
+  sameAs: [
+    'https://www.linkedin.com/company/signal-structure-ai',
+    'https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit',
+    'https://share.google/5Ci2LRrbmjYiQpkCp',
+  ],
+};
+
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -88,6 +101,10 @@ export default function ServicesPage() {
   return (
     <main>
       {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

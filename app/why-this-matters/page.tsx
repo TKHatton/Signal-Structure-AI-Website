@@ -13,6 +13,19 @@ export const metadata = {
   },
 };
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://signalstructure.ai/#organization',
+  name: 'Signal & Structure AI',
+  url: 'https://signalstructure.ai',
+  sameAs: [
+    'https://www.linkedin.com/company/signal-structure-ai',
+    'https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit',
+    'https://share.google/5Ci2LRrbmjYiQpkCp',
+  ],
+};
+
 const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
@@ -21,13 +34,17 @@ const pageSchema = {
     'How people find and evaluate businesses has fundamentally changed. Most businesses have not adjusted yet. Learn why AI discoverability is the new competitive advantage.',
   url: 'https://signalstructure.ai/why-this-matters',
   isPartOf: { '@type': 'WebSite', name: 'Signal & Structure AI', url: 'https://signalstructure.ai' },
-  publisher: { '@type': 'Organization', name: 'Signal & Structure AI', url: 'https://signalstructure.ai' },
+  publisher: { '@id': 'https://signalstructure.ai/#organization' },
 };
 
 export default function WhyThisMattersPage() {
   return (
     <main>
       {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}

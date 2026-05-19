@@ -23,15 +23,47 @@ const personSchema = {
   familyName: 'Kenney',
   jobTitle: 'Co-Founder & Chief Strategist',
   worksFor: { '@id': 'https://signalstructure.ai/#organization' },
+  affiliation: [
+    { '@id': 'https://signalstructure.ai/#organization' },
+    {
+      '@type': 'Organization',
+      name: 'Digital Jaywalking',
+      url: 'https://digitaljaywalking.com/',
+    },
+    {
+      '@type': 'Organization',
+      name: 'She Is AI',
+      url: 'https://sheisai.ai',
+    },
+  ],
+  hasOccupation: [
+    {
+      '@type': 'Occupation',
+      name: 'Co-Founder & Chief Strategist, Signal & Structure AI',
+    },
+    {
+      '@type': 'Occupation',
+      name: 'Founder, Digital Jaywalking',
+    },
+    {
+      '@type': 'Occupation',
+      name: 'Global Head of AI Innovation & Applied Learning, She Is AI',
+    },
+  ],
   knowsAbout: [
     'AI discoverability',
+    'AI visibility',
+    'AI accuracy',
     'AI search optimization',
+    'AI hallucination reduction',
+    'Answer Engine Optimization',
     'schema markup',
     'structured data',
     'generative engine optimization',
     'local business AI visibility',
     'Signal Score methodology',
     'entity authority',
+    'teaching AI',
     'education',
     'knowledge systems',
   ],
@@ -43,7 +75,11 @@ const personSchema = {
   },
   description:
     'Co-Founder and Chief Strategist of Signal & Structure AI. Nearly 20 years as an educator. Author of Protect Your Genius: Using AI Without Diluting Your Voice. Designs the systems, methodologies, and strategies that power the Signal Score.',
-  sameAs: ['https://www.linkedin.com/in/lenise-kenney/'],
+  sameAs: [
+    'https://www.linkedin.com/in/lenise-kenney/',
+    'https://www.amazon.com/stores/author/B0GY791G6D/about',
+    'https://sheisai.ai/team',
+  ],
   url: 'https://signalstructure.ai/about',
 };
 
