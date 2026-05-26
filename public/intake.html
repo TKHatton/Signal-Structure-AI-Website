@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Client Intake — Signal &amp; Structure AI</title>
+<title>Client Intake | Signal &amp; Structure AI</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -387,10 +387,10 @@ const SECTIONS = [
     id: "basics",
     title: "About Your Business",
     icon: "🏢",
-    desc: "Let's start with the fundamentals — the information that should appear consistently everywhere your business shows up.",
+    desc: "Let's start with the fundamentals: the information that should appear consistently everywhere your business shows up.",
     questions: [
       { id: "q1",  text: "What is your business name?",
-        hint: "Write it exactly as it should always appear — including LLC, Inc., ampersands, or specific capitalization.",
+        hint: "Write it exactly as it should always appear, including LLC, Inc., ampersands, or specific capitalization.",
         type: "text", required: true },
       { id: "q2",  text: "Are there other names or abbreviations people use for your business?",
         hint: "Include any that are fine to use and any you'd rather avoid.",
@@ -399,13 +399,13 @@ const SECTIONS = [
         hint: "Describe it as you would to someone who has never heard of you.",
         type: "textarea", cls: "tall", required: true },
       { id: "q4",  text: "When was your business founded?",
-        hint: "Month and year if you can — for example: March 2019.",
+        hint: "Month and year if you can. For example: March 2019.",
         type: "text", required: false, skip: true },
       { id: "q5",  text: "Where are you located?",
-        hint: "Full public address — or describe the area you serve if customers don't come to you.",
+        hint: "Full public address. Or describe the area you serve if customers don't come to you.",
         type: "textarea", cls: "short", required: true },
       { id: "q6",  text: "What is your public phone number?",
-        hint: "Exactly as it should appear everywhere — for example: (919) 555-0123.",
+        hint: "Exactly as it should appear everywhere. For example: (919) 555-0123.",
         type: "text", required: false, skip: true },
       { id: "q7",  text: "What is your public business email address?",
         hint: "The one you want customers to use.",
@@ -422,17 +422,17 @@ const SECTIONS = [
     id: "online",
     title: "Where You Show Up Online",
     icon: "🔍",
-    desc: "We need to find you everywhere you already exist — so we can make sure everything is consistent and working for you.",
+    desc: "We need to find you everywhere you already exist, so we can make sure everything is consistent and working for you.",
     questions: [
       { id: "q10", text: "List every place your business appears online that you know of.",
-        hint: "Google Business Profile, social media, directories, review sites, industry listings — anything.",
+        hint: "Google Business Profile, social media, directories, review sites, industry listings. Include anything you know of.",
         type: "urllist", required: false, skip: true,
         urls: [
           "Google Business Profile","LinkedIn","Facebook","Instagram","Yelp","BBB","Other"
         ]
       },
       { id: "q11", text: "Do any of these listings have outdated or inconsistent information?",
-        hint: "Old address, old phone number, old name — anything you've noticed.",
+        hint: "Old address, old phone number, old name. Anything you've noticed.",
         type: "textarea", cls: "short", required: false, skip: true },
     ]
   },
@@ -447,16 +447,16 @@ const SECTIONS = [
         type: "textarea", cls: "tall", required: false, skip: true,
         placeholder: "Jane Smith · Founder & CEO · Jane has led the company since 2018 and specializes in X.\nMike Johnson · Head of Operations · Mike manages day-to-day delivery across all clients." },
       { id: "q13", text: "Do you hold any certifications, awards, licenses, or credentials worth highlighting?",
-        hint: "List them and note where they can be verified — a link, issuing body, or year.",
+        hint: "List them and note where they can be verified: a link, issuing body, or year.",
         type: "textarea", cls: "short", required: false, skip: true,
-        placeholder: "Google Partner — certified since 2021\nLicensed NC General Contractor #12345\nBBB A+ rated member" },
+        placeholder: "Google Partner, certified since 2021\nLicensed NC General Contractor #12345\nBBB A+ rated member" },
     ]
   },
   {
     id: "services",
     title: "Your Services",
     icon: "⚡",
-    desc: "We need to describe what you offer precisely — so AI platforms recommend the right people to you.",
+    desc: "We need to describe what you offer precisely, so AI platforms recommend the right people to you.",
     questions: [
       { id: "q14", text: "List your core services or products.",
         hint: "For each: Name · Brief description · Who it's for · Price range (if you share pricing). One per line.",
@@ -480,7 +480,7 @@ const SECTIONS = [
     desc: "Understanding who you serve helps AI platforms match you to the right people.",
     questions: [
       { id: "q18", text: "Who is your ideal customer?",
-        hint: "Industry, situation, mindset — whatever comes to mind first.",
+        hint: "Industry, situation, mindset. Whatever comes to mind first.",
         type: "textarea", required: true },
       { id: "q19", text: "Who is NOT a good fit for your business?",
         hint: "Being specific here helps us position you accurately.",
@@ -494,10 +494,10 @@ const SECTIONS = [
     id: "brand",
     title: "Your Brand",
     icon: "✦",
-    desc: "We want AI platforms to describe you the way you'd describe yourself — not in a generic, forgettable way.",
+    desc: "We want AI platforms to describe you the way you'd describe yourself. Not in a generic, forgettable way.",
     questions: [
       { id: "q21", text: "How would you describe your business's personality?",
-        hint: "Professional, friendly, bold, technical, warm, precise — use your own words.",
+        hint: "Professional, friendly, bold, technical, warm, precise. Use your own words.",
         type: "textarea", cls: "short", required: true },
       { id: "q22", text: "Are there specific words or phrases you always use when talking about your business?",
         hint: "Terms, taglines, or phrases that are part of your voice.",
@@ -517,7 +517,7 @@ const SECTIONS = [
     id: "questions",
     title: "Common Questions",
     icon: "💬",
-    desc: "The questions your customers ask — and the ones you wish they would — tell us a lot about how to represent you.",
+    desc: "The questions your customers ask, and the ones you wish they would, tell us a lot about how to represent you.",
     questions: [
       { id: "q26", text: "What are the 5 most common questions customers ask you?",
         hint: "List them one per line.",
@@ -534,19 +534,19 @@ const SECTIONS = [
     id: "current",
     title: "Your Current Online Presence",
     icon: "📡",
-    desc: "We want to know what's already out there — accurate, inaccurate, or missing entirely.",
+    desc: "We want to know what's already out there: accurate, inaccurate, or missing entirely.",
     questions: [
       { id: "q29", text: "Have you ever searched for your business in ChatGPT, Claude, or Perplexity?",
-        hint: "Tell us what came up — even if nothing did, or if what came up was wrong.",
+        hint: "Tell us what came up, even if nothing did, or if what came up was wrong.",
         type: "textarea", required: false, skip: true },
       { id: "q30", text: "Do you currently use any AI tools in your business?",
-        hint: "ChatGPT for drafts, Canva AI, anything like that — or 'None yet' is a fine answer.",
+        hint: "ChatGPT for drafts, Canva AI, anything like that. 'None yet' is a fine answer.",
         type: "textarea", cls: "short", required: false, skip: true },
       { id: "q31", text: "Is there anything currently said about your business online that is wrong or misleading?",
         hint: "Wrong category, wrong location, outdated description, incorrect reviews.",
         type: "textarea", required: false, skip: true },
       { id: "q32", text: "Are there old articles or pages that describe your business inaccurately?",
-        hint: "Old pricing, discontinued services, outdated team info — anything that's still out there.",
+        hint: "Old pricing, discontinued services, outdated team info. Anything that's still out there.",
         type: "textarea", cls: "short", required: false, skip: true },
     ]
   },
@@ -554,16 +554,16 @@ const SECTIONS = [
     id: "goals",
     title: "Goals and Anything Else",
     icon: "🌟",
-    desc: "Last section. Tell us what success looks like for you — and anything else we should know.",
+    desc: "Last section. Tell us what success looks like for you, and anything else we should know.",
     questions: [
       { id: "q33", text: "What would success look like for you with this project?",
-        hint: "Practical outcomes, feelings, both — whatever comes to mind.",
+        hint: "Practical outcomes, feelings, both. Whatever comes to mind.",
         type: "textarea", required: true },
       { id: "q34", text: "Is there a specific outcome you're hoping for?",
         hint: "For example: 'I want ChatGPT to recommend me when someone asks for X.'",
         type: "textarea", cls: "short", required: false, skip: true },
       { id: "q35", text: "Is there anything else you want us to know?",
-        hint: "About your business, your customers, or your goals — no detail is too small.",
+        hint: "About your business, your customers, or your goals. No detail is too small.",
         type: "textarea", cls: "tall", required: false, skip: true },
     ]
   }
@@ -800,7 +800,7 @@ function saveAndAdvance(q) {
   }
 
   if (q.required && !val) {
-    showToast("This question is required — please fill it in to continue.");
+    showToast("This question is required. Please fill it in to continue.");
     return;
   }
 
@@ -958,7 +958,7 @@ async function submitForm() {
 }
 
 function formatAnswersAsText(payload) {
-  let out = "SIGNAL & STRUCTURE AI — CLIENT INTAKE FORM\n";
+  let out = "SIGNAL & STRUCTURE AI | CLIENT INTAKE FORM\n";
   out += "Submitted: " + payload.submitted_at + "\n";
   out += "Client: " + payload.client_name + "\n";
   out += "=".repeat(60) + "\n\n";
@@ -989,14 +989,14 @@ function showThanks(payload) {
 }
 
 function showThanksWithCopy(payload) {
-  // Could not reach endpoint — show thank you but ask them to copy
+  // Could not reach endpoint. Show thank you but ask them to copy
   document.getElementById("review-screen").style.display = "none";
   const thanks = document.getElementById("thanks-screen");
   thanks.style.display = "flex";
   thanks.querySelector(".thanks-body").innerHTML = `
     We couldn't reach our server right now. Please copy your answers below and email them to
-    <a href="mailto:hello@signalstructure.ai" style="color:var(--copper)">hello@signalstructure.ai</a>
-    — we'll pick it up from there.`;
+    <a href="mailto:hello@signalstructure.ai" style="color:var(--copper)">hello@signalstructure.ai</a>.
+    We'll pick it up from there.`;
 
   const textOut = formatAnswersAsText(payload);
   document.getElementById("copy-text").textContent = textOut.substring(0, 400) + "…";
