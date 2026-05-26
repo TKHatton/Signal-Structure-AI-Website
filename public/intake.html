@@ -354,6 +354,48 @@ textarea.tall{min-height:140px}
 .checklist-option.selected .checklist-check svg{display:block}
 .checklist-label{font-size:16px;color:rgba(255,255,255,.85);line-height:1.4}
 
+/* ── Agreement question type ──────────────────── */
+.agreement-text{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:8px;
+  padding:16px 20px;
+  font-size:14px;
+  color:rgba(255,255,255,.65);
+  line-height:1.7;
+  margin-bottom:20px;
+  max-height:220px;
+  overflow-y:auto;
+}
+.agreement-text::-webkit-scrollbar{width:4px}
+.agreement-text::-webkit-scrollbar-track{background:rgba(255,255,255,.05)}
+.agreement-text::-webkit-scrollbar-thumb{background:var(--copper);border-radius:4px}
+.agreement-text strong{color:rgba(255,255,255,.85)}
+.agreement-text a{color:var(--copper)}
+.agreement-checkbox{
+  display:flex;align-items:flex-start;gap:14px;
+  cursor:pointer;
+  padding:14px 16px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:6px;
+  transition:border-color .2s,background .2s;
+  user-select:none;
+}
+.agreement-checkbox:hover{border-color:rgba(193,122,58,.6)}
+.agreement-checkbox.selected{border-color:var(--copper);background:rgba(193,122,58,.1)}
+.agreement-check{
+  width:22px;height:22px;
+  border:2px solid rgba(255,255,255,.3);
+  border-radius:4px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .15s;
+  margin-top:1px;
+}
+.agreement-checkbox.selected .agreement-check{background:var(--copper);border-color:var(--copper)}
+.agreement-check svg{display:none;width:12px;height:12px}
+.agreement-checkbox.selected .agreement-check svg{display:block}
+.agreement-check-label{font-size:15px;color:rgba(255,255,255,.9);line-height:1.45}
+
 /* ── Responsive ────────────────────────────────── */
 @media(max-width:600px){
   .screen{padding:0 20px}
@@ -385,8 +427,20 @@ textarea.tall{min-height:140px}
   <div class="thanks-icon">✓</div>
   <div class="thanks-title">You're all set.</div>
   <div class="thanks-body">
-    We received your answers and will be in touch within 24 hours to confirm your project is underway. Your 10-day delivery window begins today.<br><br>
-    Questions? Email us at <a href="mailto:hello@signalstructure.ai" style="color:var(--copper)">hello@signalstructure.ai</a>
+    Your intake form and agreements came through. Your 10-day delivery window starts today.
+  </div>
+  <div id="calendly-cta" style="margin-top:28px;display:none;text-align:center;max-width:520px;width:100%">
+    <p style="font-size:15px;color:rgba(255,255,255,.65);margin-bottom:16px;line-height:1.6">
+      Next step: book your kick-off call.
+    </p>
+    <a id="calendly-link" href="#" target="_blank" rel="noopener"
+       style="display:inline-block;background:var(--copper);color:#fff;text-decoration:none;
+              padding:14px 32px;border-radius:6px;font-size:15px;font-weight:600">
+      Book your kick-off session &rarr;
+    </a>
+  </div>
+  <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.4)">
+    Questions? Email <a href="mailto:hello@signalstructure.ai" style="color:var(--copper)">hello@signalstructure.ai</a>
   </div>
   <div class="thanks-copy-area">
     <div class="thanks-copy-title">Your answers (keep a copy)</div>
@@ -403,11 +457,36 @@ textarea.tall{min-height:140px}
 // ─────────────────────────────────────────────────────────────────────
 const INTAKE_ENDPOINT = "https://signal-pulse-api-production.up.railway.app/api/intake/submit";
 const STORAGE_KEY     = "ss_intake_v1";
+const CALENDLY_URL    = ""; // paste your real Calendly link here before launch
 
 // ─────────────────────────────────────────────────────────────────────
 // QUESTIONS DATA
 // ─────────────────────────────────────────────────────────────────────
 const SECTIONS = [
+  {
+    id: "agreements",
+    title: "Before We Begin",
+    icon: "📋",
+    desc: "Please read and acknowledge the following before completing your intake questionnaire.",
+    questions: [
+      {
+        id: "qa1",
+        text: "Confidentiality Agreement",
+        hint: "<strong>What we do with your information:</strong><br><br>The details you share in this form are used solely to build and improve your AI presence. Signal &amp; Structure AI will not share your business information, pricing, customer data, or any sensitive details with third parties except as necessary to deliver your services — for example, updating your Google Business Profile, submitting information to directory platforms, or publishing schema markup to your website.<br><br>Your information will not be sold, used for unrelated marketing, or disclosed outside of your engagement without your explicit written permission.",
+        type: "agreement",
+        label: "I have read and agree to the confidentiality terms above.",
+        required: true
+      },
+      {
+        id: "qa2",
+        text: "Access Authorization",
+        hint: "<strong>What access means:</strong><br><br>You are authorizing Signal &amp; Structure AI to access the platforms you identify in this form. Access is limited to actions within your engagement scope: reviewing and updating your business profiles, checking listing accuracy, and making the specific changes we agree on together.<br><br>You can revoke this authorization at any time by removing Signal &amp; Structure AI as a manager on the platform directly, or by emailing <a href=\"mailto:hello@signalstructure.ai\" style=\"color:#C17A3A\">hello@signalstructure.ai</a>.",
+        type: "agreement",
+        label: "I authorize Signal & Structure AI to access the platforms I identify in this form, within the scope described above.",
+        required: true
+      }
+    ]
+  },
   {
     id: "basics",
     title: "About Your Business",
@@ -604,6 +683,21 @@ const SECTIONS = [
         hint: "About your business, your customers, or your goals. No detail is too small.",
         type: "textarea", cls: "tall", required: false, skip: true },
     ]
+  },
+  {
+    id: "signature",
+    title: "Your Signature",
+    icon: "✍",
+    desc: "By typing your full legal name below, you confirm that the information you've provided is accurate and that you have read and agreed to the terms at the start of this form.",
+    questions: [
+      {
+        id: "qsig",
+        text: "Type your full legal name to confirm.",
+        hint: "This serves as your electronic signature. It confirms that you have read the agreements at the start of this form and that the information you've provided is accurate to the best of your knowledge.",
+        type: "text",
+        required: true
+      }
+    ]
   }
 ];
 
@@ -770,18 +864,28 @@ function renderQuestionCard(sec, q) {
       </div>`;
     });
     inputHtml = `<div class="checklist-options" id="${q.id}-opts">${opts}</div>`;
+  } else if (q.type === "agreement") {
+    const isChecked = (answers[q.id] === "agreed");
+    const sel = isChecked ? " selected" : "";
+    inputHtml = `
+      <div class="agreement-text">${q.hint}</div>
+      <div class="agreement-checkbox${sel}" id="${q.id}-check" onclick="toggleAgreement(this)">
+        <div class="agreement-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="1,6 4.5,10 11,2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="agreement-check-label">${escHtml(q.label)}</div>
+      </div>`;
   }
 
   const skipBtn = q.skip ? `<button class="btn-skip" onclick="skipQuestion('${q.id}')">Skip</button>` : "";
   const enterHint = q.type === "text" ? `<span class="hint-enter">Press Enter ↵</span>`
     : q.type === "checklist" ? `<span class="hint-enter">Select all that apply</span>`
+    : q.type === "agreement" ? ``
     : `<span class="hint-enter">Shift+Enter for new line</span>`;
 
   return `
     <div class="question-card">
       <div class="q-section-label">${sec.title}</div>
       <div class="q-text">${q.text}</div>
-      ${q.hint ? `<div class="q-hint">${q.hint}</div>` : ""}
+      ${q.hint && q.type !== "agreement" ? `<div class="q-hint">${q.hint}</div>` : ""}
       ${!q.required ? `<div class="q-optional">Optional</div>` : ""}
       <div class="field-wrap">${inputHtml}</div>
       <div class="nav-row">
@@ -836,7 +940,14 @@ function wireQuestion(screen, q) {
 function saveAndAdvance(q) {
   // Collect value
   let val = "";
-  if (q.type === "text" || q.type === "textarea") {
+  if (q.type === "agreement") {
+    const el = document.getElementById(q.id + "-check");
+    if (!el || !el.classList.contains("selected")) {
+      showToast("Please check the box to agree before continuing.");
+      return;
+    }
+    val = "agreed";
+  } else if (q.type === "text" || q.type === "textarea") {
     const el = document.getElementById(q.id);
     val = el ? el.value.trim() : "";
   } else if (q.type === "urllist") {
@@ -959,6 +1070,9 @@ function editQuestion(flatQIndex) {
 
 function displayValue(q, val) {
   if (!val) return "";
+  if (q.type === "agreement") {
+    return val === "agreed" ? "Agreed" : "";
+  }
   if (q.type === "urllist") {
     try {
       const obj = JSON.parse(val);
@@ -975,6 +1089,10 @@ function toggleChecklist(el) {
   el.classList.toggle("selected");
 }
 
+function toggleAgreement(el) {
+  el.classList.toggle("selected");
+}
+
 // ─────────────────────────────────────────────────────────────────────
 // SUBMIT
 // ─────────────────────────────────────────────────────────────────────
@@ -986,7 +1104,7 @@ async function submitForm() {
   // Collect all answers into a readable format
   const payload = {
     submitted_at: new Date().toISOString(),
-    client_name:  clientName || answers["q1"] || "Unknown",
+    client_name:  clientName || answers["qsig"] || answers["q1"] || "Unknown",
     answers: {}
   };
 
@@ -1046,6 +1164,15 @@ function showThanks(payload) {
   const preview = textOut.substring(0, 300) + "…";
   document.getElementById("copy-text").textContent = preview;
   window._fullAnswerText = textOut;
+
+  if (CALENDLY_URL) {
+    const cta  = document.getElementById("calendly-cta");
+    const link = document.getElementById("calendly-link");
+    if (cta && link) {
+      link.href = CALENDLY_URL;
+      cta.style.display = "block";
+    }
+  }
 
   localStorage.removeItem(STORAGE_KEY);
 }
