@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Intake | Signal &amp; Structure AI</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --navy:#1B2B4B;
+  --copper:#C17A3A;
+  --stone:#F5F0EB;
+  --white:#FFFFFF;
+  --mid:#6B7A99;
+  --border:#D9D2CA;
+  --green:#2D8A5E;
+}
+
+html,body{
+  height:100%;
+  font-family:'DM Sans',sans-serif;
+  background:var(--navy);
+  color:var(--white);
+  overflow:hidden;
+}
+
+/* ── Progress bar ──────────────────────────────── */
+#progress-bar{
+  position:fixed;top:0;left:0;
+  height:3px;
+  background:var(--copper);
+  transition:width .4s ease;
+  z-index:100;
+}
+
+/* ── Back button ───────────────────────────────── */
+#back-btn{
+  position:fixed;top:20px;left:24px;
+  background:none;border:none;
+  color:rgba(255,255,255,.45);
+  font-family:'DM Sans',sans-serif;
+  font-size:13px;cursor:pointer;
+  display:flex;align-items:center;gap:6px;
+  z-index:100;
+  transition:color .2s;
+}
+#back-btn:hover{color:rgba(255,255,255,.8)}
+#back-btn svg{width:16px;height:16px;fill:currentColor}
+#back-btn.hidden{display:none}
+
+/* ── Question counter ──────────────────────────── */
+#counter{
+  position:fixed;top:22px;right:24px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;color:rgba(255,255,255,.4);
+  z-index:100;
+}
+
+/* ── Slide container ───────────────────────────── */
+#slides{
+  position:fixed;inset:0;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* ── Each screen ───────────────────────────────── */
+.screen{
+  position:absolute;
+  width:100%;max-width:680px;
+  padding:0 32px;
+  opacity:0;transform:translateX(60px);
+  transition:opacity .35s ease,transform .35s ease;
+  pointer-events:none;
+}
+.screen.active{
+  opacity:1;transform:translateX(0);
+  pointer-events:all;
+}
+.screen.exit-left{
+  opacity:0;transform:translateX(-60px);
+}
+
+/* ── Section card ──────────────────────────────── */
+.section-card{text-align:center;padding:60px 0}
+.section-icon{
+  font-size:36px;margin-bottom:20px;
+}
+.section-title{
+  font-family:'DM Serif Display',serif;
+  font-size:28px;font-weight:400;
+  margin-bottom:12px;
+  color:var(--white);
+}
+.section-desc{
+  font-size:15px;color:rgba(255,255,255,.6);
+  line-height:1.6;max-width:480px;margin:0 auto 32px;
+}
+.section-count{
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;color:var(--copper);
+  margin-bottom:8px;
+  letter-spacing:.08em;text-transform:uppercase;
+}
+
+/* ── Question card ─────────────────────────────── */
+.question-card{padding:20px 0}
+.q-section-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--copper);
+  margin-bottom:10px;
+}
+.q-text{
+  font-family:'DM Serif Display',serif;
+  font-size:26px;font-weight:400;
+  line-height:1.3;
+  color:var(--white);
+  margin-bottom:8px;
+}
+.q-hint{
+  font-size:13px;color:rgba(255,255,255,.45);
+  margin-bottom:24px;line-height:1.5;
+}
+.q-optional{
+  font-size:12px;color:rgba(255,255,255,.3);
+  margin-bottom:24px;
+}
+
+/* ── Inputs ────────────────────────────────────── */
+.field-wrap{position:relative;margin-bottom:8px}
+
+input[type=text],textarea,select{
+  width:100%;
+  background:transparent;
+  border:none;
+  border-bottom:2px solid rgba(255,255,255,.25);
+  color:var(--white);
+  font-family:'DM Sans',sans-serif;
+  font-size:18px;
+  padding:10px 0;
+  outline:none;
+  transition:border-color .2s;
+  border-radius:0;
+  -webkit-appearance:none;
+}
+input[type=text]:focus,textarea:focus{
+  border-bottom-color:var(--copper);
+}
+input[type=text]::placeholder,textarea::placeholder{
+  color:rgba(255,255,255,.25);
+}
+textarea{
+  resize:none;
+  line-height:1.6;
+  min-height:100px;
+  display:block;
+}
+textarea.short{min-height:60px}
+textarea.tall{min-height:140px}
+
+/* URL list */
+.url-rows{display:flex;flex-direction:column;gap:10px;margin-bottom:8px}
+.url-row{display:flex;align-items:center;gap:12px}
+.url-row-label{
+  font-size:12px;color:rgba(255,255,255,.4);
+  min-width:110px;flex-shrink:0;
+}
+.url-row input[type=text]{font-size:15px}
+.url-add-btn{
+  background:none;border:1px solid rgba(255,255,255,.2);
+  color:rgba(255,255,255,.5);
+  border-radius:4px;
+  padding:5px 12px;font-size:12px;
+  cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  margin-top:4px;
+  transition:border-color .2s,color .2s;
+}
+.url-add-btn:hover{border-color:var(--copper);color:var(--copper)}
+
+/* ── Navigation ────────────────────────────────── */
+.nav-row{
+  display:flex;align-items:center;
+  gap:12px;margin-top:28px;
+}
+.btn-next{
+  background:var(--copper);
+  color:var(--white);
+  border:none;
+  border-radius:6px;
+  padding:13px 28px;
+  font-family:'DM Sans',sans-serif;
+  font-size:15px;font-weight:500;
+  cursor:pointer;
+  display:flex;align-items:center;gap:8px;
+  transition:background .2s,transform .1s;
+}
+.btn-next:hover{background:#a8682e}
+.btn-next:active{transform:scale(.97)}
+.btn-next svg{width:16px;height:16px;fill:currentColor}
+.btn-skip{
+  background:none;border:none;
+  color:rgba(255,255,255,.3);
+  font-size:13px;cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  padding:4px;
+}
+.btn-skip:hover{color:rgba(255,255,255,.6)}
+.hint-enter{
+  font-size:12px;color:rgba(255,255,255,.25);
+  margin-left:auto;
+}
+
+/* ── Review screen ─────────────────────────────── */
+#review-screen{
+  padding:0 32px;
+  max-width:720px;margin:0 auto;
+}
+#review-inner{
+  max-height:80vh;overflow-y:auto;
+  padding-right:8px;
+}
+#review-inner::-webkit-scrollbar{width:4px}
+#review-inner::-webkit-scrollbar-track{background:rgba(255,255,255,.05)}
+#review-inner::-webkit-scrollbar-thumb{background:var(--copper);border-radius:4px}
+.review-title{
+  font-family:'DM Serif Display',serif;
+  font-size:26px;margin-bottom:6px;
+  color:var(--white);
+}
+.review-sub{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:28px}
+.review-section{margin-bottom:28px}
+.review-section-title{
+  font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--copper);
+  font-family:'JetBrains Mono',monospace;
+  margin-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  padding-bottom:6px;
+}
+.review-item{
+  display:flex;gap:16px;
+  margin-bottom:12px;
+  cursor:pointer;
+}
+.review-item:hover .review-answer{color:var(--white)}
+.review-qnum{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;color:var(--copper);
+  min-width:28px;padding-top:2px;
+}
+.review-qtext{font-size:12px;color:rgba(255,255,255,.4);margin-bottom:4px}
+.review-answer{
+  font-size:14px;color:rgba(255,255,255,.8);
+  line-height:1.5;white-space:pre-wrap;
+  transition:color .15s;
+}
+.review-answer.empty{
+  color:rgba(255,255,255,.2);font-style:italic;
+}
+.review-edit-icon{
+  font-size:11px;color:rgba(255,255,255,.2);
+  margin-left:auto;padding-top:2px;flex-shrink:0;
+}
+.btn-submit{
+  background:var(--green);
+  color:var(--white);border:none;
+  border-radius:6px;
+  padding:14px 32px;
+  font-family:'DM Sans',sans-serif;
+  font-size:16px;font-weight:600;
+  cursor:pointer;
+  margin-top:20px;
+  width:100%;
+  transition:background .2s;
+}
+.btn-submit:hover{background:#246f4a}
+.btn-submit:disabled{background:rgba(45,138,94,.4);cursor:not-allowed}
+
+/* ── Thanks screen ─────────────────────────────── */
+#thanks-screen{text-align:center;padding:60px 32px}
+.thanks-icon{font-size:52px;margin-bottom:20px}
+.thanks-title{
+  font-family:'DM Serif Display',serif;
+  font-size:30px;margin-bottom:12px;
+}
+.thanks-body{
+  font-size:15px;color:rgba(255,255,255,.65);
+  line-height:1.7;max-width:480px;margin:0 auto;
+}
+.thanks-copy-area{
+  margin-top:32px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:8px;
+  padding:16px 20px;
+  text-align:left;
+  max-width:600px;margin-left:auto;margin-right:auto;
+}
+.thanks-copy-title{
+  font-size:12px;color:rgba(255,255,255,.35);
+  margin-bottom:10px;
+  font-family:'JetBrains Mono',monospace;
+  text-transform:uppercase;letter-spacing:.08em;
+}
+.btn-copy{
+  background:none;
+  border:1px solid rgba(255,255,255,.2);
+  color:rgba(255,255,255,.6);
+  padding:8px 16px;
+  border-radius:4px;
+  font-size:13px;font-family:'DM Sans',sans-serif;
+  cursor:pointer;margin-top:10px;
+  transition:border-color .2s,color .2s;
+}
+.btn-copy:hover{border-color:var(--copper);color:var(--copper)}
+
+/* ── Error toast ───────────────────────────────── */
+#toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+  background:#B8372A;color:white;
+  padding:10px 20px;border-radius:6px;
+  font-size:13px;
+  opacity:0;transition:opacity .3s;
+  pointer-events:none;z-index:200;
+}
+#toast.show{opacity:1}
+
+/* ── Checklist options ─────────────────────────── */
+.checklist-options{display:flex;flex-direction:column;gap:10px;margin-bottom:8px}
+.checklist-option{
+  display:flex;align-items:center;gap:14px;
+  cursor:pointer;
+  padding:12px 16px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:6px;
+  transition:border-color .2s,background .2s;
+  user-select:none;
+}
+.checklist-option:hover{border-color:rgba(193,122,58,.6)}
+.checklist-option.selected{border-color:var(--copper);background:rgba(193,122,58,.1)}
+.checklist-check{
+  width:20px;height:20px;
+  border:2px solid rgba(255,255,255,.3);
+  border-radius:4px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .15s;
+}
+.checklist-option.selected .checklist-check{background:var(--copper);border-color:var(--copper)}
+.checklist-check svg{display:none;width:12px;height:12px}
+.checklist-option.selected .checklist-check svg{display:block}
+.checklist-label{font-size:16px;color:rgba(255,255,255,.85);line-height:1.4}
+
+/* ── Responsive ────────────────────────────────── */
+@media(max-width:600px){
+  .screen{padding:0 20px}
+  .q-text{font-size:21px}
+  input[type=text],textarea{font-size:16px}
+  .section-title{font-size:24px}
+  #review-screen{padding:0 20px}
+}
+</style>
+</head>
+<body>
+
+<div id="progress-bar" style="width:0%"></div>
+<button id="back-btn" class="hidden" onclick="goBack()">
+  <svg viewBox="0 0 20 20"><path d="M13 4l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+  Back
+</button>
+<div id="counter"></div>
+
+<div id="slides"></div>
+
+<!-- Review screen (hidden until end) -->
+<div id="review-screen" style="display:none;position:fixed;inset:0;overflow-y:auto;padding-top:56px;padding-bottom:40px;">
+  <div id="review-inner"></div>
+</div>
+
+<!-- Thanks screen -->
+<div id="thanks-screen" style="display:none;position:fixed;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;">
+  <div class="thanks-icon">✓</div>
+  <div class="thanks-title">You're all set.</div>
+  <div class="thanks-body">
+    We received your answers and will be in touch within 24 hours to confirm your project is underway. Your 10-day delivery window begins today.<br><br>
+    Questions? Email us at <a href="mailto:hello@signalstructure.ai" style="color:var(--copper)">hello@signalstructure.ai</a>
+  </div>
+  <div class="thanks-copy-area">
+    <div class="thanks-copy-title">Your answers (keep a copy)</div>
+    <div id="copy-text" style="font-size:12px;color:rgba(255,255,255,.5);max-height:160px;overflow:hidden;line-height:1.6"></div>
+    <button class="btn-copy" onclick="copyAnswers()">Copy all answers</button>
+  </div>
+</div>
+
+<div id="toast">Please answer this question to continue.</div>
+
+<script>
+// ─────────────────────────────────────────────────────────────────────
+// CONFIGURATION
+// ─────────────────────────────────────────────────────────────────────
+const INTAKE_ENDPOINT = "https://signal-pulse-api-production.up.railway.app/api/intake/submit";
+const STORAGE_KEY     = "ss_intake_v1";
+
+// ─────────────────────────────────────────────────────────────────────
+// QUESTIONS DATA
+// ─────────────────────────────────────────────────────────────────────
+const SECTIONS = [
+  {
+    id: "basics",
+    title: "About Your Business",
+    icon: "🏢",
+    desc: "Let's start with the fundamentals: the information that should appear consistently everywhere your business shows up.",
+    questions: [
+      { id: "q1",  text: "What is your business name?",
+        hint: "Write it exactly as it should always appear, including LLC, Inc., ampersands, or specific capitalization.",
+        type: "text", required: true },
+      { id: "q2",  text: "Are there other names or abbreviations people use for your business?",
+        hint: "Include any that are fine to use and any you'd rather avoid.",
+        type: "textarea", cls: "short", required: false, skip: true },
+      { id: "q3",  text: "What does your business do?",
+        hint: "Describe it as you would to someone who has never heard of you.",
+        type: "textarea", cls: "tall", required: true },
+      { id: "q4",  text: "When was your business founded?",
+        hint: "Month and year if you can. For example: March 2019.",
+        type: "text", required: false, skip: true },
+      { id: "q5",  text: "Where are you located?",
+        hint: "Full public address. Or describe the area you serve if customers don't come to you.",
+        type: "textarea", cls: "short", required: true },
+      { id: "q6",  text: "What is your public phone number?",
+        hint: "Exactly as it should appear everywhere. For example: (919) 555-0123.",
+        type: "text", required: false, skip: true },
+      { id: "q7",  text: "What is your public business email address?",
+        hint: "The one you want customers to use.",
+        type: "text", required: false, skip: true },
+      { id: "q8",  text: "What is your website URL?",
+        hint: "If you have more than one, list them all.",
+        type: "text", required: true },
+      { id: "q9",  text: "What are your hours of operation?",
+        hint: "Or just tell us if hours don't apply.",
+        type: "textarea", cls: "short", required: false, skip: true },
+      { id: "q36", text: "How would you categorize your business?",
+        hint: "Up to 3 categories or industries. For example: Marketing Consultant, Digital Marketing, Health and Wellness. Used for directory listings.",
+        type: "textarea", cls: "short", required: false, skip: true },
+      { id: "q37", text: "Do you have a business logo or photos we can use for your listings?",
+        hint: "Check what you have. We will follow up to get the files — do not worry about attaching anything here.",
+        type: "checklist",
+        options: ["Business logo (PNG or JPG, at least 400x400px)", "Business photos (exterior, team, or workspace — at least 720px wide)"],
+        required: false, skip: true },
+    ]
+  },
+  {
+    id: "online",
+    title: "Where You Show Up Online",
+    icon: "🔍",
+    desc: "We need to find you everywhere you already exist, so we can make sure everything is consistent and working for you.",
+    questions: [
+      { id: "q10", text: "List every place your business appears online that you know of.",
+        hint: "Google Business Profile, social media, directories, review sites, industry listings. Include anything you know of.",
+        type: "urllist", required: false, skip: true,
+        urls: [
+          "Google Business Profile","LinkedIn","Facebook","Instagram","Yelp","BBB","Other"
+        ]
+      },
+      { id: "q11", text: "Do any of these listings have outdated or inconsistent information?",
+        hint: "Old address, old phone number, old name. Anything you've noticed.",
+        type: "textarea", cls: "short", required: false, skip: true },
+      { id: "q38", text: "Which platforms are you willing to give us access to?",
+        hint: "We only access what is in your engagement scope. You can revoke at any time by removing us from the platform or emailing hello@signalstructure.ai.",
+        type: "checklist",
+        options: ["Google Business Profile", "Website / CMS", "Google Search Console", "Facebook / Instagram", "LinkedIn Company Page"],
+        required: false, skip: true },
+    ]
+  },
+  {
+    id: "people",
+    title: "Your People and Credentials",
+    icon: "👥",
+    desc: "AI platforms use information about your team and credentials to describe your business accurately.",
+    questions: [
+      { id: "q12", text: "Who are the key people in your business?",
+        hint: "For each person: Name · Role · One sentence about what they do. You can list multiple people here.",
+        type: "textarea", cls: "tall", required: false, skip: true,
+        placeholder: "Jane Smith · Founder & CEO · Jane has led the company since 2018 and specializes in X.\nMike Johnson · Head of Operations · Mike manages day-to-day delivery across all clients." },
+      { id: "q13", text: "Do you hold any certifications, awards, licenses, or credentials worth highlighting?",
+        hint: "List them and note where they can be verified: a link, issuing body, or year.",
+        type: "textarea", cls: "short", required: false, skip: true,
+        placeholder: "Google Partner, certified since 2021\nLicensed NC General Contractor #12345\nBBB A+ rated member" },
+    ]
+  },
+  {
+    id: "services",
+    title: "Your Services",
+    icon: "⚡",
+    desc: "We need to describe what you offer precisely, so AI platforms recommend the right people to you.",
+    questions: [
+      { id: "q14", text: "List your core services or products.",
+        hint: "For each: Name · Brief description · Who it's for · Price range (if you share pricing). One per line.",
+        type: "textarea", cls: "tall", required: true,
+        placeholder: "AI Business Profile · Full setup of your AI presence · Small businesses wanting more visibility · $497\nOngoing Management · Monthly monitoring and updates · Established businesses · $297/mo" },
+      { id: "q15", text: "Which of your services is most popular or most important?",
+        hint: "Just the name is fine.",
+        type: "text", required: false, skip: true },
+      { id: "q16", text: "Are there services you used to offer but no longer do?",
+        hint: "Especially important if they're still mentioned somewhere online.",
+        type: "textarea", cls: "short", required: false, skip: true },
+      { id: "q17", text: "Has your pricing changed in the last 2 years?",
+        hint: "Just let us know if anything changed and roughly when.",
+        type: "textarea", cls: "short", required: false, skip: true },
+    ]
+  },
+  {
+    id: "audience",
+    title: "Your Audience",
+    icon: "🎯",
+    desc: "Understanding who you serve helps AI platforms match you to the right people.",
+    questions: [
+      { id: "q18", text: "Who is your ideal customer?",
+        hint: "Industry, situation, mindset. Whatever comes to mind first.",
+        type: "textarea", required: true },
+      { id: "q19", text: "Who is NOT a good fit for your business?",
+        hint: "Being specific here helps us position you accurately.",
+        type: "textarea", cls: "short", required: false, skip: true },
+      { id: "q20", text: "What problem does your ideal customer have that you solve?",
+        hint: "Describe the situation they're in before they find you.",
+        type: "textarea", required: true },
+    ]
+  },
+  {
+    id: "brand",
+    title: "Your Brand",
+    icon: "✦",
+    desc: "We want AI platforms to describe you the way you'd describe yourself. Not in a generic, forgettable way.",
+    questions: [
+      { id: "q21", text: "How would you describe your business's personality?",
+        hint: "Professional, friendly, bold, technical, warm, precise. Use your own words.",
+        type: "textarea", cls: "short", required: true },
+      { id: "q22", text: "Are there specific words or phrases you always use when talking about your business?",
+        hint: "Terms, taglines, or phrases that are part of your voice.",
+        type: "textarea", cls: "short", required: false, skip: true },
+      { id: "q23", text: "Are there words you would never want associated with your business?",
+        hint: "Anything off-brand or inaccurate.",
+        type: "textarea", cls: "short", required: false, skip: true },
+      { id: "q24", text: "What makes you different from your competitors?",
+        hint: "List as many things as feel true.",
+        type: "textarea", required: true },
+      { id: "q25", text: "What backs up those differences?",
+        hint: "A statistic, a result, an award, years of experience, a guarantee, or a customer outcome.",
+        type: "textarea", required: false, skip: true },
+    ]
+  },
+  {
+    id: "questions",
+    title: "Common Questions",
+    icon: "💬",
+    desc: "The questions your customers ask, and the ones you wish they would, tell us a lot about how to represent you.",
+    questions: [
+      { id: "q26", text: "What are the 5 most common questions customers ask you?",
+        hint: "List them one per line.",
+        type: "textarea", cls: "tall", required: true },
+      { id: "q27", text: "What do you wish customers asked about?",
+        hint: "The thing that would change how they see you if they only knew to ask.",
+        type: "textarea", required: false, skip: true },
+      { id: "q28", text: "Are there questions you'd prefer no one answer on your behalf?",
+        hint: "Sensitive topics, legal areas, or things where context really matters.",
+        type: "textarea", cls: "short", required: false, skip: true },
+    ]
+  },
+  {
+    id: "current",
+    title: "Your Current Online Presence",
+    icon: "📡",
+    desc: "We want to know what's already out there: accurate, inaccurate, or missing entirely.",
+    questions: [
+      { id: "q29", text: "Have you ever searched for your business in ChatGPT, Claude, or Perplexity?",
+        hint: "Tell us what came up, even if nothing did, or if what came up was wrong.",
+        type: "textarea", required: false, skip: true },
+      { id: "q30", text: "Do you currently use any AI tools in your business?",
+        hint: "ChatGPT for drafts, Canva AI, anything like that. 'None yet' is a fine answer.",
+        type: "textarea", cls: "short", required: false, skip: true },
+      { id: "q31", text: "Is there anything currently said about your business online that is wrong or misleading?",
+        hint: "Wrong category, wrong location, outdated description, incorrect reviews.",
+        type: "textarea", required: false, skip: true },
+      { id: "q32", text: "Are there old articles or pages that describe your business inaccurately?",
+        hint: "Old pricing, discontinued services, outdated team info. Anything that's still out there.",
+        type: "textarea", cls: "short", required: false, skip: true },
+    ]
+  },
+  {
+    id: "goals",
+    title: "Goals and Anything Else",
+    icon: "🌟",
+    desc: "Last section. Tell us what success looks like for you, and anything else we should know.",
+    questions: [
+      { id: "q33", text: "What would success look like for you with this project?",
+        hint: "Practical outcomes, feelings, both. Whatever comes to mind.",
+        type: "textarea", required: true },
+      { id: "q34", text: "Is there a specific outcome you're hoping for?",
+        hint: "For example: 'I want ChatGPT to recommend me when someone asks for X.'",
+        type: "textarea", cls: "short", required: false, skip: true },
+      { id: "q35", text: "Is there anything else you want us to know?",
+        hint: "About your business, your customers, or your goals. No detail is too small.",
+        type: "textarea", cls: "tall", required: false, skip: true },
+    ]
+  }
+];
+
+// ─────────────────────────────────────────────────────────────────────
+// STATE
+// ─────────────────────────────────────────────────────────────────────
+let answers   = {};
+let steps     = [];   // flat list: {type:'section'|'question', section, question?}
+let stepIndex = 0;
+let clientEmail = "";
+let clientName  = "";
+
+// Build flat step list
+function buildSteps() {
+  steps = [];
+  SECTIONS.forEach(sec => {
+    steps.push({ type: "section", section: sec });
+    sec.questions.forEach(q => {
+      steps.push({ type: "question", section: sec, question: q });
+    });
+  });
+}
+
+function totalQuestions() {
+  return SECTIONS.reduce((acc, s) => acc + s.questions.length, 0);
+}
+function answeredCount() {
+  return Object.keys(answers).filter(k => (answers[k] || "").trim()).length;
+}
+function questionIndexOf(qid) {
+  let n = 0;
+  for (const sec of SECTIONS) {
+    for (const q of sec.questions) {
+      n++;
+      if (q.id === qid) return n;
+    }
+  }
+  return 0;
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// PERSISTENCE
+// ─────────────────────────────────────────────────────────────────────
+function saveState() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({ answers, stepIndex, clientEmail, clientName }));
+}
+function loadState() {
+  try {
+    const s = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+    if (s.answers)      answers     = s.answers;
+    if (s.stepIndex)    stepIndex   = s.stepIndex;
+    if (s.clientEmail)  clientEmail = s.clientEmail;
+    if (s.clientName)   clientName  = s.clientName;
+  } catch(e) {}
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// RENDER
+// ─────────────────────────────────────────────────────────────────────
+function renderStep(idx, direction) {
+  const slidesEl = document.getElementById("slides");
+  const step = steps[idx];
+  const pct  = Math.round(((answeredCount()) / totalQuestions()) * 100);
+
+  // Progress bar
+  document.getElementById("progress-bar").style.width = pct + "%";
+
+  // Back button
+  const backBtn = document.getElementById("back-btn");
+  idx > 0 ? backBtn.classList.remove("hidden") : backBtn.classList.add("hidden");
+
+  // Counter
+  const counterEl = document.getElementById("counter");
+  if (step.type === "question") {
+    const qn = questionIndexOf(step.question.id);
+    counterEl.textContent = qn + " / " + totalQuestions();
+  } else {
+    counterEl.textContent = "";
+  }
+
+  // Build new screen
+  const screen = document.createElement("div");
+  screen.className = "screen";
+  screen.style.transform = direction === "forward" ? "translateX(60px)" : "translateX(-60px)";
+
+  if (step.type === "section") {
+    screen.innerHTML = renderSectionCard(step.section);
+    const btn = screen.querySelector(".btn-next");
+    btn.addEventListener("click", () => advance());
+  } else {
+    screen.innerHTML = renderQuestionCard(step.section, step.question);
+    wireQuestion(screen, step.question);
+  }
+
+  // Swap screens
+  const existing = slidesEl.querySelector(".screen.active");
+  if (existing) {
+    existing.classList.remove("active");
+    existing.classList.add(direction === "forward" ? "exit-left" : "exit-right");
+    setTimeout(() => existing.remove(), 400);
+  }
+  slidesEl.appendChild(screen);
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      screen.classList.add("active");
+      // Focus first input
+      setTimeout(() => {
+        const inp = screen.querySelector("input,textarea");
+        if (inp) inp.focus();
+      }, 360);
+    });
+  });
+}
+
+function renderSectionCard(sec) {
+  const secNum = SECTIONS.indexOf(sec) + 1;
+  return `
+    <div class="section-card">
+      <div class="section-icon">${sec.icon}</div>
+      <div class="section-count">Section ${secNum} of ${SECTIONS.length}</div>
+      <div class="section-title">${sec.title}</div>
+      <div class="section-desc">${sec.desc}</div>
+      <div class="nav-row" style="justify-content:center">
+        <button class="btn-next">
+          Let's go
+          <svg viewBox="0 0 20 20"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>`;
+}
+
+function renderQuestionCard(sec, q) {
+  const val = answers[q.id] || "";
+  let inputHtml = "";
+
+  if (q.type === "text") {
+    inputHtml = `<input type="text" id="${q.id}" value="${escHtml(val)}" placeholder="Your answer…" autocomplete="off">`;
+  } else if (q.type === "textarea") {
+    const cls = q.cls || "";
+    const ph  = q.placeholder || "Your answer…";
+    inputHtml = `<textarea id="${q.id}" class="${cls}" placeholder="${escHtml(ph)}">${escHtml(val)}</textarea>`;
+  } else if (q.type === "urllist") {
+    let rows = "";
+    const saved = val ? JSON.parse(val) : {};
+    q.urls.forEach((label, i) => {
+      const uid = q.id + "_url_" + i;
+      rows += `<div class="url-row">
+        <span class="url-row-label">${label}</span>
+        <input type="text" id="${uid}" value="${escHtml(saved[label]||"")}" placeholder="Link or 'Not listed'">
+      </div>`;
+    });
+    const extra = saved["extra"] || "";
+    rows += `<div style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.3);margin-bottom:6px">Any others?</div>
+      <textarea id="${q.id}_extra" class="short" placeholder="Other directories, industry sites, YouTube, X/Twitter, TikTok, podcast pages…">${escHtml(extra)}</textarea>`;
+    inputHtml = `<div class="url-rows">${rows}</div>`;
+  } else if (q.type === "checklist") {
+    const savedArr = val ? JSON.parse(val) : [];
+    let opts = "";
+    q.options.forEach(label => {
+      const sel = savedArr.includes(label) ? " selected" : "";
+      opts += `<div class="checklist-option${sel}" data-value="${escHtml(label)}" onclick="toggleChecklist(this)">
+        <div class="checklist-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="1,6 4.5,10 11,2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="checklist-label">${escHtml(label)}</div>
+      </div>`;
+    });
+    inputHtml = `<div class="checklist-options" id="${q.id}-opts">${opts}</div>`;
+  }
+
+  const skipBtn = q.skip ? `<button class="btn-skip" onclick="skipQuestion('${q.id}')">Skip</button>` : "";
+  const enterHint = q.type === "text" ? `<span class="hint-enter">Press Enter ↵</span>`
+    : q.type === "checklist" ? `<span class="hint-enter">Select all that apply</span>`
+    : `<span class="hint-enter">Shift+Enter for new line</span>`;
+
+  return `
+    <div class="question-card">
+      <div class="q-section-label">${sec.title}</div>
+      <div class="q-text">${q.text}</div>
+      ${q.hint ? `<div class="q-hint">${q.hint}</div>` : ""}
+      ${!q.required ? `<div class="q-optional">Optional</div>` : ""}
+      <div class="field-wrap">${inputHtml}</div>
+      <div class="nav-row">
+        <button class="btn-next" id="btn-next-${q.id}">
+          OK
+          <svg viewBox="0 0 20 20"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </button>
+        ${skipBtn}
+        ${enterHint}
+      </div>
+    </div>`;
+}
+
+function wireQuestion(screen, q) {
+  const nextBtn = screen.querySelector(`#btn-next-${q.id}`);
+  nextBtn.addEventListener("click", () => saveAndAdvance(q));
+
+  if (q.type === "text") {
+    const inp = screen.querySelector(`#${q.id}`);
+    inp.addEventListener("keydown", e => {
+      if (e.key === "Enter") { e.preventDefault(); saveAndAdvance(q); }
+    });
+  } else if (q.type === "textarea") {
+    const ta = screen.querySelector(`#${q.id}`);
+    ta.addEventListener("keydown", e => {
+      if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); saveAndAdvance(q); }
+    });
+    // Auto-grow
+    ta.addEventListener("input", () => {
+      ta.style.height = "auto";
+      ta.style.height = ta.scrollHeight + "px";
+    });
+  } else if (q.type === "urllist") {
+    // Enter on any url input → advance
+    screen.querySelectorAll(".url-row input").forEach(inp => {
+      inp.addEventListener("keydown", e => {
+        if (e.key === "Enter") { e.preventDefault(); saveAndAdvance(q); }
+      });
+    });
+    const extra = screen.querySelector(`#${q.id}_extra`);
+    if (extra) {
+      extra.addEventListener("keydown", e => {
+        if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); saveAndAdvance(q); }
+      });
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// NAVIGATION
+// ─────────────────────────────────────────────────────────────────────
+function saveAndAdvance(q) {
+  // Collect value
+  let val = "";
+  if (q.type === "text" || q.type === "textarea") {
+    const el = document.getElementById(q.id);
+    val = el ? el.value.trim() : "";
+  } else if (q.type === "urllist") {
+    const obj = {};
+    q.urls.forEach((label, i) => {
+      const inp = document.getElementById(q.id + "_url_" + i);
+      if (inp && inp.value.trim()) obj[label] = inp.value.trim();
+    });
+    const extra = document.getElementById(q.id + "_extra");
+    if (extra && extra.value.trim()) obj["extra"] = extra.value.trim();
+    val = Object.keys(obj).length ? JSON.stringify(obj) : "";
+  } else if (q.type === "checklist") {
+    const opts = document.querySelectorAll(`#${q.id}-opts .checklist-option.selected`);
+    const selected = Array.from(opts).map(el => el.dataset.value);
+    val = selected.length ? JSON.stringify(selected) : "";
+  }
+
+  if (q.required && !val) {
+    showToast("This question is required. Please fill it in to continue.");
+    return;
+  }
+
+  answers[q.id] = val;
+  saveState();
+  advance();
+}
+
+function skipQuestion(qid) {
+  answers[qid] = "";
+  saveState();
+  advance();
+}
+
+function advance() {
+  stepIndex++;
+  if (stepIndex >= steps.length) {
+    showReview();
+  } else {
+    renderStep(stepIndex, "forward");
+  }
+}
+
+function goBack() {
+  if (stepIndex > 0) {
+    stepIndex--;
+    renderStep(stepIndex, "back");
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// REVIEW
+// ─────────────────────────────────────────────────────────────────────
+function showReview() {
+  document.getElementById("slides").style.display = "none";
+  document.getElementById("back-btn").classList.add("hidden");
+  document.getElementById("counter").textContent = "";
+  document.getElementById("progress-bar").style.width = "100%";
+
+  const reviewEl = document.getElementById("review-screen");
+  const inner    = document.getElementById("review-inner");
+  reviewEl.style.display = "block";
+
+  let html = `
+    <div class="review-title">Review your answers</div>
+    <div class="review-sub">Click any answer to go back and edit it. Then scroll down to submit.</div>`;
+
+  SECTIONS.forEach(sec => {
+    html += `<div class="review-section"><div class="review-section-title">${sec.title}</div>`;
+    sec.questions.forEach(q => {
+      const val  = answers[q.id] || "";
+      const disp = displayValue(q, val);
+      const qn   = questionIndexOf(q.id);
+      const isEmpty = !val.trim();
+      html += `
+        <div class="review-item" onclick="editQuestion(${qn-1})">
+          <div>
+            <div class="review-qnum">Q${qn}</div>
+          </div>
+          <div style="flex:1">
+            <div class="review-qtext">${q.text}</div>
+            <div class="review-answer ${isEmpty ? "empty" : ""}">${isEmpty ? "Not answered" : escHtml(disp)}</div>
+          </div>
+          <div class="review-edit-icon">✎</div>
+        </div>`;
+    });
+    html += `</div>`;
+  });
+
+  html += `
+    <div style="margin-top:8px">
+      <button class="btn-submit" id="submit-btn" onclick="submitForm()">
+        Submit my answers →
+      </button>
+      <div style="font-size:12px;color:rgba(255,255,255,.3);text-align:center;margin-top:10px">
+        Submits to Signal &amp; Structure AI via encrypted connection.
+      </div>
+    </div>`;
+
+  inner.innerHTML = html;
+}
+
+function editQuestion(flatQIndex) {
+  // flatQIndex is the index within the questions list (0-based)
+  // Find the corresponding step index
+  let qCount = 0;
+  for (let i = 0; i < steps.length; i++) {
+    const step = steps[i];
+    if (step.type === "question") {
+      if (qCount === flatQIndex) {
+        stepIndex = i;
+        document.getElementById("review-screen").style.display = "none";
+        document.getElementById("slides").style.display = "flex";
+        renderStep(stepIndex, "forward");
+        return;
+      }
+      qCount++;
+    }
+  }
+}
+
+function displayValue(q, val) {
+  if (!val) return "";
+  if (q.type === "urllist") {
+    try {
+      const obj = JSON.parse(val);
+      return Object.entries(obj).map(([k,v]) => `${k}: ${v}`).join("\n");
+    } catch(e) { return val; }
+  }
+  if (q.type === "checklist") {
+    try { return JSON.parse(val).join(", "); } catch(e) { return val; }
+  }
+  return val;
+}
+
+function toggleChecklist(el) {
+  el.classList.toggle("selected");
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// SUBMIT
+// ─────────────────────────────────────────────────────────────────────
+async function submitForm() {
+  const btn = document.getElementById("submit-btn");
+  btn.disabled = true;
+  btn.textContent = "Sending…";
+
+  // Collect all answers into a readable format
+  const payload = {
+    submitted_at: new Date().toISOString(),
+    client_name:  clientName || answers["q1"] || "Unknown",
+    answers: {}
+  };
+
+  SECTIONS.forEach(sec => {
+    sec.questions.forEach(q => {
+      const val = answers[q.id] || "";
+      payload.answers[q.id] = {
+        question: q.text,
+        answer: displayValue(q, val)
+      };
+    });
+  });
+
+  try {
+    const res = await fetch(INTAKE_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
+      showThanks(payload);
+    } else {
+      // Fallback: copy-to-clipboard flow
+      showThanksWithCopy(payload);
+    }
+  } catch(e) {
+    // Network error: show copy flow
+    showThanksWithCopy(payload);
+  }
+}
+
+function formatAnswersAsText(payload) {
+  let out = "SIGNAL & STRUCTURE AI | CLIENT INTAKE FORM\n";
+  out += "Submitted: " + payload.submitted_at + "\n";
+  out += "Client: " + payload.client_name + "\n";
+  out += "=".repeat(60) + "\n\n";
+
+  SECTIONS.forEach(sec => {
+    out += sec.title.toUpperCase() + "\n" + "-".repeat(40) + "\n";
+    sec.questions.forEach(q => {
+      const entry = payload.answers[q.id];
+      const ans = (entry && entry.answer) ? entry.answer : "(not answered)";
+      out += "\n" + q.text + "\n" + ans + "\n";
+    });
+    out += "\n";
+  });
+  return out;
+}
+
+function showThanks(payload) {
+  document.getElementById("review-screen").style.display = "none";
+  const thanks = document.getElementById("thanks-screen");
+  thanks.style.display = "flex";
+
+  const textOut = formatAnswersAsText(payload);
+  const preview = textOut.substring(0, 300) + "…";
+  document.getElementById("copy-text").textContent = preview;
+  window._fullAnswerText = textOut;
+
+  localStorage.removeItem(STORAGE_KEY);
+}
+
+function showThanksWithCopy(payload) {
+  // Could not reach endpoint. Show thank you but ask them to copy
+  document.getElementById("review-screen").style.display = "none";
+  const thanks = document.getElementById("thanks-screen");
+  thanks.style.display = "flex";
+  thanks.querySelector(".thanks-body").innerHTML = `
+    We couldn't reach our server right now. Please copy your answers below and email them to
+    <a href="mailto:hello@signalstructure.ai" style="color:var(--copper)">hello@signalstructure.ai</a>.
+    We'll pick it up from there.`;
+
+  const textOut = formatAnswersAsText(payload);
+  document.getElementById("copy-text").textContent = textOut.substring(0, 400) + "…";
+  window._fullAnswerText = textOut;
+}
+
+function copyAnswers() {
+  const text = window._fullAnswerText || "";
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.querySelector(".btn-copy");
+      btn.textContent = "Copied!";
+      setTimeout(() => btn.textContent = "Copy all answers", 2000);
+    });
+  } else {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand("copy");
+    document.body.removeChild(ta);
+    const btn = document.querySelector(".btn-copy");
+    btn.textContent = "Copied!";
+    setTimeout(() => btn.textContent = "Copy all answers", 2000);
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// UTILS
+// ─────────────────────────────────────────────────────────────────────
+function escHtml(s) {
+  return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("show"), 3200);
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────────────────────────────
+buildSteps();
+loadState();
+
+// If we have saved state mid-way, resume
+if (stepIndex > 0 && stepIndex < steps.length) {
+  // Show a brief "resume" state
+  renderStep(stepIndex, "forward");
+} else {
+  stepIndex = 0;
+  renderStep(0, "forward");
+}
+</script>
+</body>
+</html>
