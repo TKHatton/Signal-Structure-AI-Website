@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Give Us Access — Signal &amp; Structure AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:    #1B2B4B;
+    --copper:  #C17A3A;
+    --stone:   #F5F0EB;
+    --white:   #FFFFFF;
+    --charcoal:#2A2A2A;
+    --gray:    #6B6B6B;
+    --border:  #E8E2DA;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family:'DM Sans',sans-serif;
+    background:var(--stone);
+    color:var(--charcoal);
+    line-height:1.65;
+    padding:40px 20px 60px;
+  }
+  .doc {
+    max-width:760px;
+    margin:0 auto;
+    background:var(--white);
+    box-shadow:0 4px 32px rgba(27,43,75,.1);
+    border-radius:6px;
+    overflow:hidden;
+  }
+
+  /* HEADER */
+  .header {
+    background:var(--navy);
+    padding:48px 56px 40px;
+    position:relative;
+  }
+  .header::before {
+    content:'';
+    position:absolute;
+    top:0;left:0;right:0;
+    height:4px;
+    background:var(--copper);
+  }
+  .header-label {
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--copper);
+    margin-bottom:14px;
+  }
+  .header h1 {
+    font-family:'DM Serif Display',serif;
+    font-size:32px;
+    color:#fff;
+    line-height:1.2;
+    margin-bottom:10px;
+  }
+  .header-sub {
+    font-size:15px;
+    color:rgba(255,255,255,.65);
+    max-width:520px;
+    line-height:1.6;
+  }
+
+  /* INTRO STRIP */
+  .intro {
+    background:var(--stone);
+    padding:22px 56px;
+    border-bottom:1px solid var(--border);
+    font-size:14.5px;
+    color:var(--gray);
+    line-height:1.7;
+  }
+  .intro strong { color:var(--navy); }
+
+  /* SECTIONS */
+  .section {
+    padding:36px 56px;
+    border-bottom:1px solid var(--border);
+  }
+  .section:last-of-type { border-bottom:none; }
+  .section-eyebrow {
+    font-family:'JetBrains Mono',monospace;
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--copper);
+    margin-bottom:6px;
+  }
+  .section-title {
+    font-family:'DM Serif Display',serif;
+    font-size:22px;
+    color:var(--navy);
+    margin-bottom:20px;
+  }
+
+  /* NOTE BOX */
+  .note-box {
+    background:var(--stone);
+    border-left:3px solid var(--copper);
+    padding:14px 18px;
+    border-radius:0 4px 4px 0;
+    margin-bottom:20px;
+    font-size:13.5px;
+    line-height:1.6;
+    color:var(--charcoal);
+  }
+
+  /* PLATFORM BLOCKS */
+  .platform-block {
+    border:1px solid var(--border);
+    border-radius:6px;
+    margin-bottom:16px;
+    overflow:hidden;
+  }
+  .platform-block:last-child { margin-bottom:0; }
+  .platform-header {
+    background:var(--stone);
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    border-bottom:1px solid var(--border);
+  }
+  .platform-name {
+    font-weight:700;
+    font-size:15px;
+    color:var(--navy);
+  }
+  .platform-tag {
+    font-family:'JetBrains Mono',monospace;
+    font-size:9px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--gray);
+    background:var(--white);
+    border:1px solid var(--border);
+    padding:3px 10px;
+    border-radius:100px;
+    white-space:nowrap;
+  }
+  .platform-body { padding:18px 20px; }
+  .platform-why {
+    font-size:13px;
+    color:var(--gray);
+    margin-bottom:14px;
+    line-height:1.55;
+  }
+  .platform-why strong { color:var(--charcoal); }
+  .steps-label {
+    font-family:'JetBrains Mono',monospace;
+    font-size:9px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--copper);
+    margin-bottom:10px;
+  }
+  .steps {
+    list-style:none;
+    counter-reset:step;
+  }
+  .steps li {
+    counter-increment:step;
+    padding:8px 0 8px 32px;
+    position:relative;
+    font-size:13.5px;
+    border-bottom:1px solid var(--border);
+    line-height:1.55;
+  }
+  .steps li:last-child { border-bottom:none; }
+  .steps li::before {
+    content:counter(step);
+    position:absolute;
+    left:0;
+    top:9px;
+    width:20px;
+    height:20px;
+    background:var(--navy);
+    color:#fff;
+    border-radius:50%;
+    font-size:10px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .platform-note {
+    font-size:12px;
+    color:var(--gray);
+    font-style:italic;
+    margin-top:12px;
+    padding-top:12px;
+    border-top:1px solid var(--border);
+  }
+
+  /* CMS GRID */
+  .cms-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:4px;
+  }
+  .cms-card {
+    border:1px solid var(--border);
+    border-radius:4px;
+    padding:12px 14px;
+  }
+  .cms-name {
+    font-weight:700;
+    font-size:13px;
+    color:var(--navy);
+    margin-bottom:5px;
+  }
+  .cms-path {
+    font-size:12px;
+    color:var(--charcoal);
+    line-height:1.55;
+  }
+
+  /* EMAIL PILL */
+  .email-pill {
+    display:inline-block;
+    background:var(--stone);
+    border:1px solid var(--border);
+    border-radius:100px;
+    padding:4px 14px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    color:var(--navy);
+    font-weight:600;
+  }
+
+  /* FOOTER */
+  .footer {
+    background:var(--navy);
+    padding:24px 56px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .footer-brand {
+    font-family:'DM Serif Display',serif;
+    font-size:17px;
+    color:#fff;
+  }
+  .footer-meta {
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    color:rgba(255,255,255,.45);
+  }
+
+  @media (max-width:600px) {
+    .header { padding:32px 24px 28px; }
+    .intro, .section { padding:24px 24px; }
+    .platform-header { flex-wrap:wrap; }
+    .cms-grid { grid-template-columns:1fr; }
+    .footer { padding:18px 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <div class="header">
+    <div class="header-label">Signal &amp; Structure AI &nbsp;·&nbsp; Getting Started</div>
+    <h1>How to Give Us Access</h1>
+    <p class="header-sub">Step-by-step instructions for each platform we work in. No passwords. Just manager and collaborator invites.</p>
+  </div>
+
+  <div class="intro">
+    <strong>Most clients finish this in under 10 minutes.</strong> We use manager invites and collaborator access wherever possible. You will never need to share a password with us. If anything below is confusing, email us before you get started.
+  </div>
+
+  <!-- PLATFORM ACCESS -->
+  <div class="section">
+    <div class="section-eyebrow">Platform Access</div>
+    <h2 class="section-title">Add us to each platform below</h2>
+
+    <div class="note-box">
+      Our email for all invites: <strong>hello@signalstructure.ai</strong><br>
+      Only add us to the platforms you use. If you are not sure whether a platform applies to you, just ask.
+    </div>
+
+    <!-- GBP -->
+    <div class="platform-block">
+      <div class="platform-header">
+        <span class="platform-name">Google Business Profile</span>
+        <span class="platform-tag">Manager invite</span>
+      </div>
+      <div class="platform-body">
+        <div class="platform-why"><strong>Why we need it:</strong> To update your listing, fix inconsistencies, and make sure your profile is complete and accurately read by AI platforms like Gemini and Google AI.</div>
+        <div class="steps-label">How to add us &mdash; 2 minutes</div>
+        <ol class="steps">
+          <li>Go to <strong>business.google.com</strong> and sign in</li>
+          <li>Select your business profile</li>
+          <li>Click the three-dot menu &rarr; <strong>Business Profile Settings</strong> &rarr; <strong>Managers</strong></li>
+          <li>Click <strong>Add</strong>, enter <strong>hello@signalstructure.ai</strong>, select the <strong>Manager</strong> role, and send the invite</li>
+        </ol>
+        <div class="platform-note">We will accept the invite and get to work. When your engagement ends, remove us from that same Managers screen. Not sure where to find it? Search YouTube: "How to add a manager to Google Business Profile" for a short walkthrough.</div>
+      </div>
+    </div>
+
+    <!-- Website/CMS -->
+    <div class="platform-block">
+      <div class="platform-header">
+        <span class="platform-name">Website / CMS</span>
+        <span class="platform-tag">Admin invite</span>
+      </div>
+      <div class="platform-body">
+        <div class="platform-why"><strong>Why we need it:</strong> To add or update structured data, fix technical issues, and update page content as part of your engagement.</div>
+        <div class="steps-label">Find your platform below</div>
+        <div class="cms-grid">
+          <div class="cms-card">
+            <div class="cms-name">WordPress</div>
+            <div class="cms-path">Settings &rarr; Users &rarr; Add New &rarr; enter our email &rarr; Role: Administrator &rarr; Add New User</div>
+          </div>
+          <div class="cms-card">
+            <div class="cms-name">Squarespace</div>
+            <div class="cms-path">Settings &rarr; Permissions &rarr; Invite Contributor &rarr; enter our email &rarr; Role: Administrator</div>
+          </div>
+          <div class="cms-card">
+            <div class="cms-name">Wix</div>
+            <div class="cms-path">Settings &rarr; Roles and Permissions &rarr; Invite People &rarr; enter our email &rarr; Role: Admin</div>
+          </div>
+          <div class="cms-card">
+            <div class="cms-name">Webflow</div>
+            <div class="cms-path">Project Settings &rarr; Members &rarr; Invite Member &rarr; enter our email &rarr; Role: Designer or Admin</div>
+          </div>
+          <div class="cms-card">
+            <div class="cms-name">Shopify</div>
+            <div class="cms-path">Settings &rarr; Users and Permissions &rarr; Add Staff &rarr; enter our email &rarr; select relevant permissions</div>
+          </div>
+          <div class="cms-card">
+            <div class="cms-name">Different platform?</div>
+            <div class="cms-path">Email us at hello@signalstructure.ai and we will confirm the right method for your setup.</div>
+          </div>
+        </div>
+        <div class="platform-note">Not sure how to add someone? Search YouTube: "How to add admin user [your platform name]" for a short walkthrough video.</div>
+      </div>
+    </div>
+
+    <!-- Google Search Console -->
+    <div class="platform-block">
+      <div class="platform-header">
+        <span class="platform-name">Google Search Console</span>
+        <span class="platform-tag">User invite</span>
+      </div>
+      <div class="platform-body">
+        <div class="platform-why"><strong>Why we need it:</strong> To check indexing status, submit your sitemap, and confirm your site is being read correctly by Google.</div>
+        <div class="steps-label">How to add us &mdash; 1 minute</div>
+        <ol class="steps">
+          <li>Go to <strong>search.google.com/search-console</strong> and sign in</li>
+          <li>Select your property</li>
+          <li>Click the gear icon &rarr; <strong>Users and Permissions</strong> &rarr; <strong>Add User</strong></li>
+          <li>Enter <strong>hello@signalstructure.ai</strong>, set Permission to <strong>Full</strong>, and click Add</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Facebook / Instagram -->
+    <div class="platform-block">
+      <div class="platform-header">
+        <span class="platform-name">Facebook / Instagram</span>
+        <span class="platform-tag">Page admin invite</span>
+      </div>
+      <div class="platform-body">
+        <div class="platform-why"><strong>Why we need it:</strong> To update business information in your profile that AI platforms read, if social is part of your engagement scope.</div>
+        <div class="steps-label">How to add us</div>
+        <ol class="steps">
+          <li>Go to <strong>business.facebook.com</strong> and sign in</li>
+          <li>Go to <strong>Business Settings &rarr; People</strong></li>
+          <li>Click <strong>Add</strong>, enter <strong>hello@signalstructure.ai</strong>, and assign Admin access</li>
+          <li>We will accept the invite from the notification email</li>
+        </ol>
+        <div class="platform-note">Instagram access comes through your connected Facebook Business Manager. If your pages are not connected, email us first.</div>
+      </div>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="platform-block">
+      <div class="platform-header">
+        <span class="platform-name">LinkedIn Company Page</span>
+        <span class="platform-tag">Page admin invite</span>
+      </div>
+      <div class="platform-body">
+        <div class="platform-why"><strong>Why we need it:</strong> To ensure your company profile is accurate and complete, since LinkedIn is a source AI platforms use to identify and describe businesses.</div>
+        <div class="steps-label">How to add us</div>
+        <ol class="steps">
+          <li>Go to your LinkedIn Company Page</li>
+          <li>Click <strong>Admin tools</strong> (top right) &rarr; <strong>Manage admins</strong></li>
+          <li>Click <strong>Add admin</strong> and search for <strong>Lenise Kenney</strong> or enter <strong>hello@signalstructure.ai</strong></li>
+          <li>Select the admin role and save</li>
+        </ol>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- HELP -->
+  <div class="section" style="border-bottom:none;">
+    <div class="section-eyebrow">Questions?</div>
+    <h2 class="section-title">We are here if anything is unclear.</h2>
+    <p style="font-size:15px;color:var(--gray);line-height:1.7;margin-bottom:16px;">
+      Email us at <span class="email-pill">hello@signalstructure.ai</span> before you get started and we will walk you through anything confusing. This is supposed to be easy. If it feels like homework, reach out.
+    </p>
+    <p style="font-size:13.5px;color:var(--gray);line-height:1.6;">
+      When your engagement ends, you can remove us from every platform by retracing these same steps and deleting our access. We will also remind you.
+    </p>
+  </div>
+
+  <div class="footer">
+    <span class="footer-brand">Signal &amp; Structure AI</span>
+    <span class="footer-meta">signalstructure.ai &nbsp;·&nbsp; hello@signalstructure.ai</span>
+  </div>
+
+</div>
+</body>
+</html>
