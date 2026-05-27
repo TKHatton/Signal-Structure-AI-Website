@@ -162,6 +162,8 @@ textarea{
 }
 textarea.short{min-height:60px}
 textarea.tall{min-height:140px}
+select{cursor:pointer}
+select option{color:#1B2B4B;background:#fff}
 
 /* URL list */
 .url-rows{display:flex;flex-direction:column;gap:10px;margin-bottom:8px}
@@ -283,7 +285,7 @@ textarea.tall{min-height:140px}
 .btn-submit:disabled{background:rgba(45,138,94,.4);cursor:not-allowed}
 
 /* ── Thanks screen ─────────────────────────────── */
-#thanks-screen{text-align:center;padding:60px 32px}
+#thanks-screen{text-align:center;padding:90px 32px 56px;overflow-y:auto}
 .thanks-icon{font-size:52px;margin-bottom:20px}
 .thanks-title{
   font-family:'DM Serif Display',serif;
@@ -424,12 +426,29 @@ textarea.tall{min-height:140px}
   <div id="review-inner"></div>
 </div>
 
+<!-- Brand logo (shown on every screen) -->
+<img id="brand-logo" src="/images/logo-light.png" alt="Signal & Structure AI"
+     style="position:fixed;top:16px;left:50%;transform:translateX(-50%);height:22px;opacity:.8;z-index:101;pointer-events:none">
+
 <!-- Thanks screen -->
-<div id="thanks-screen" style="display:none;position:fixed;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;">
+<div id="thanks-screen" style="display:none;position:fixed;inset:0;display:none;align-items:center;justify-content:flex-start;flex-direction:column;">
   <div class="thanks-icon">✓</div>
   <div class="thanks-title">You're all set.</div>
   <div class="thanks-body">
     Your intake form and agreements came through. Your 10-day delivery window starts today.
+  </div>
+  <div style="margin-top:28px;max-width:560px;width:100%;background:rgba(193,122,58,.1);border:1px solid rgba(193,122,58,.3);border-radius:8px;padding:20px 24px;text-align:left">
+    <div style="font-size:12px;color:var(--copper);font-family:'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">One more step before we begin</div>
+    <div style="font-size:15px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:14px">
+      Please add us as a manager on the platforms you chose. We never need your passwords, and you can remove us anytime.
+    </div>
+    <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.8">
+      <strong style="color:rgba(255,255,255,.85)">Google Business Profile:</strong> Settings, then People and access, then Add hello@signalstructure.ai as a Manager.<br>
+      <strong style="color:rgba(255,255,255,.85)">Website / CMS:</strong> Users or Contributors, then add hello@signalstructure.ai as Editor or Admin.<br>
+      <strong style="color:rgba(255,255,255,.85)">Google Search Console:</strong> Settings, then Users and permissions, then add hello@signalstructure.ai as a Full user.<br>
+      <strong style="color:rgba(255,255,255,.85)">Facebook / Instagram:</strong> Meta Business Suite, then Settings, then People, then invite hello@signalstructure.ai.<br>
+      <strong style="color:rgba(255,255,255,.85)">LinkedIn Page:</strong> Settings, then Manage admins, then add Signal &amp; Structure AI.
+    </div>
   </div>
   <div id="calendly-cta" style="margin-top:28px;display:none;text-align:center;max-width:520px;width:100%">
     <p style="font-size:15px;color:rgba(255,255,255,.65);margin-bottom:16px;line-height:1.6">
@@ -520,8 +539,13 @@ const SECTIONS = [
         hint: "If you have more than one, list them all.",
         type: "text", required: true },
       { id: "q9",  text: "What are your hours of operation?",
-        hint: "Please include your time zone. For example: Mon to Fri, 9am to 5pm Eastern. Or just tell us if hours do not apply.",
+        hint: "For example: Mon to Fri, 9am to 5pm. Or just tell us if hours do not apply.",
         type: "textarea", cls: "short", required: false, skip: true },
+      { id: "q39", text: "What time zone are you in?",
+        hint: "So your hours and your kick-off call line up correctly.",
+        type: "select",
+        options: ["Eastern Time (US and Canada)","Central Time (US and Canada)","Mountain Time (US and Canada)","Pacific Time (US and Canada)","Alaska Time","Hawaii Time","Atlantic Time (Canada)","UK / GMT","Central European Time (Berlin, Paris)","Eastern European Time (Athens, Helsinki)","India Standard Time","Australian Eastern Time","Other"],
+        required: false, skip: true },
       { id: "q36", text: "How would you categorize your business?",
         hint: "Up to 3 categories or industries. For example: Marketing Consultant, Digital Marketing, Health and Wellness. Used for directory listings.",
         type: "textarea", cls: "short", required: false, skip: true },
@@ -818,12 +842,19 @@ function renderQuestionCard(sec, q) {
         <div class="agreement-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="1,6 4.5,10 11,2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="agreement-check-label">${escHtml(q.label)}</div>
       </div>`;
+  } else if (q.type === "select") {
+    let opts = `<option value="" ${!val ? "selected" : ""} disabled>Select an option…</option>`;
+    q.options.forEach(o => {
+      opts += `<option value="${escHtml(o)}"${val === o ? " selected" : ""}>${escHtml(o)}</option>`;
+    });
+    inputHtml = `<select id="${q.id}">${opts}</select>`;
   }
 
   const skipBtn = q.skip ? `<button class="btn-skip" onclick="skipQuestion('${q.id}')">Skip</button>` : "";
   const enterHint = q.type === "text" ? `<span class="hint-enter">Press Enter ↵</span>`
     : q.type === "checklist" ? `<span class="hint-enter">Select all that apply</span>`
     : q.type === "agreement" ? ``
+    : q.type === "select" ? `<span class="hint-enter">Choose one</span>`
     : `<span class="hint-enter">Shift+Enter for new line</span>`;
 
   return `
@@ -892,7 +923,7 @@ function saveAndAdvance(q) {
       return;
     }
     val = "agreed";
-  } else if (q.type === "text" || q.type === "textarea") {
+  } else if (q.type === "text" || q.type === "textarea" || q.type === "select") {
     const el = document.getElementById(q.id);
     val = el ? el.value.trim() : "";
   } else if (q.type === "urllist") {
