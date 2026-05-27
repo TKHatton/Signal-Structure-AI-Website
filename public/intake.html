@@ -285,7 +285,7 @@ select option{color:#1B2B4B;background:#fff}
 .btn-submit:disabled{background:rgba(45,138,94,.4);cursor:not-allowed}
 
 /* ── Thanks screen ─────────────────────────────── */
-#thanks-screen{text-align:center;padding:90px 32px 56px;overflow-y:auto}
+#thanks-screen{text-align:center;padding:60px 32px;overflow-y:auto}
 .thanks-icon{font-size:52px;margin-bottom:20px}
 .thanks-title{
   font-family:'DM Serif Display',serif;
@@ -426,29 +426,12 @@ select option{color:#1B2B4B;background:#fff}
   <div id="review-inner"></div>
 </div>
 
-<!-- Brand logo (shown on every screen) -->
-<img id="brand-logo" src="/images/logo-light.png" alt="Signal & Structure AI"
-     style="position:fixed;top:16px;left:50%;transform:translateX(-50%);height:22px;opacity:.8;z-index:101;pointer-events:none">
-
 <!-- Thanks screen -->
-<div id="thanks-screen" style="display:none;position:fixed;inset:0;display:none;align-items:center;justify-content:flex-start;flex-direction:column;">
+<div id="thanks-screen" style="display:none;position:fixed;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;">
   <div class="thanks-icon">✓</div>
   <div class="thanks-title">You're all set.</div>
   <div class="thanks-body">
     Your intake form and agreements came through. Your 10-day delivery window starts today.
-  </div>
-  <div style="margin-top:28px;max-width:560px;width:100%;background:rgba(193,122,58,.1);border:1px solid rgba(193,122,58,.3);border-radius:8px;padding:20px 24px;text-align:left">
-    <div style="font-size:12px;color:var(--copper);font-family:'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">One more step before we begin</div>
-    <div style="font-size:15px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:14px">
-      Please add us as a manager on the platforms you chose. We never need your passwords, and you can remove us anytime.
-    </div>
-    <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.8">
-      <strong style="color:rgba(255,255,255,.85)">Google Business Profile:</strong> Settings, then People and access, then Add hello@signalstructure.ai as a Manager.<br>
-      <strong style="color:rgba(255,255,255,.85)">Website / CMS:</strong> Users or Contributors, then add hello@signalstructure.ai as Editor or Admin.<br>
-      <strong style="color:rgba(255,255,255,.85)">Google Search Console:</strong> Settings, then Users and permissions, then add hello@signalstructure.ai as a Full user.<br>
-      <strong style="color:rgba(255,255,255,.85)">Facebook / Instagram:</strong> Meta Business Suite, then Settings, then People, then invite hello@signalstructure.ai.<br>
-      <strong style="color:rgba(255,255,255,.85)">LinkedIn Page:</strong> Settings, then Manage admins, then add Signal &amp; Structure AI.
-    </div>
   </div>
   <div id="calendly-cta" style="margin-top:28px;display:none;text-align:center;max-width:520px;width:100%">
     <p style="font-size:15px;color:rgba(255,255,255,.65);margin-bottom:16px;line-height:1.6">
@@ -533,8 +516,11 @@ const SECTIONS = [
         hint: "Exactly as it should appear everywhere. For example: (919) 555-0123.",
         type: "text", required: false, skip: true },
       { id: "q7",  text: "What is your public business email address?",
-        hint: "The one you want customers to use.",
+        hint: "The one you want customers to use. This may go on your public listings. Optional.",
         type: "text", required: false, skip: true },
+      { id: "qcontact", text: "What is the best email to reach YOU at?",
+        hint: "This is where we send your confirmation and project updates. It can be the same as above, or a different one you check more often.",
+        type: "text", required: true },
       { id: "q8",  text: "What is your website URL?",
         hint: "If you have more than one, list them all.",
         type: "text", required: true },
