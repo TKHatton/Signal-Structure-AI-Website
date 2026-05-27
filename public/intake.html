@@ -69,7 +69,9 @@ html,body{
 .screen{
   position:absolute;
   width:100%;max-width:680px;
-  padding:0 32px;
+  padding:64px 32px 48px;
+  max-height:100vh;
+  overflow-y:auto;
   opacity:0;transform:translateX(60px);
   transition:opacity .35s ease,transform .35s ease;
   pointer-events:none;
@@ -121,8 +123,8 @@ html,body{
   margin-bottom:8px;
 }
 .q-hint{
-  font-size:13px;color:rgba(255,255,255,.45);
-  margin-bottom:24px;line-height:1.5;
+  font-size:15px;color:rgba(255,255,255,.6);
+  margin-bottom:24px;line-height:1.6;
 }
 .q-optional{
   font-size:12px;color:rgba(255,255,255,.3);
@@ -472,7 +474,7 @@ const SECTIONS = [
       {
         id: "qa1",
         text: "Confidentiality Agreement",
-        hint: "<strong>What we do with your information:</strong><br><br>The details you share in this form are used solely to build and improve your AI presence. Signal &amp; Structure AI will not share your business information, pricing, customer data, or any sensitive details with third parties except as necessary to deliver your services — for example, updating your Google Business Profile, submitting information to directory platforms, or publishing schema markup to your website.<br><br>Your information will not be sold, used for unrelated marketing, or disclosed outside of your engagement without your explicit written permission.",
+        hint: "<strong>What we do with your information:</strong><br><br>The details you share in this form are used solely to build and improve your AI presence. Signal &amp; Structure AI will not share your business information, pricing, customer data, or any sensitive details with third parties except as necessary to deliver your services. For example, updating your Google Business Profile, submitting information to directory platforms, or publishing schema markup to your website.<br><br>Your information will not be sold, used for unrelated marketing, or disclosed outside of your engagement without your explicit written permission.",
         type: "agreement",
         label: "I have read and agree to the confidentiality terms above.",
         required: true
@@ -518,15 +520,15 @@ const SECTIONS = [
         hint: "If you have more than one, list them all.",
         type: "text", required: true },
       { id: "q9",  text: "What are your hours of operation?",
-        hint: "Or just tell us if hours don't apply.",
+        hint: "Please include your time zone. For example: Mon to Fri, 9am to 5pm Eastern. Or just tell us if hours do not apply.",
         type: "textarea", cls: "short", required: false, skip: true },
       { id: "q36", text: "How would you categorize your business?",
         hint: "Up to 3 categories or industries. For example: Marketing Consultant, Digital Marketing, Health and Wellness. Used for directory listings.",
         type: "textarea", cls: "short", required: false, skip: true },
       { id: "q37", text: "Do you have a business logo or photos we can use for your listings?",
-        hint: "Check what you have. We will follow up to get the files — do not worry about attaching anything here.",
+        hint: "Just check what you have. We will follow up to collect the files later, so there is nothing to attach here.",
         type: "checklist",
-        options: ["Business logo (PNG or JPG, at least 400x400px)", "Business photos (exterior, team, or workspace — at least 720px wide)"],
+        options: ["Business logo (PNG or JPG, at least 400x400px)", "Business photos (exterior, team, or workspace, at least 720px wide)"],
         required: false, skip: true },
     ]
   },
