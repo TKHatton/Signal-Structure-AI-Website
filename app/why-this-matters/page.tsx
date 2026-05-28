@@ -240,7 +240,7 @@ export default function WhyThisMattersPage() {
               is whether your business is one of them.
             </h2>
             <Button href={BOOKING_URL} variant="primary">
-              Get Your Signal Score
+              Reserve a Spot at My Next Talk
             </Button>
           </FadeIn>
         </div>

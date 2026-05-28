@@ -8,7 +8,7 @@ import { BOOKING_URL, COMPANY_NAME, TAGLINE, ADDRESS } from '@/lib/constants';
 export const metadata = {
   title: 'About | Signal & Structure AI',
   description:
-    'Signal & Structure AI was founded by Lenise Kenney and Julian Bass to help businesses become discoverable by AI platforms. Based in Durham, NC.',
+    'Signal & Structure AI was founded by Lenise Kenney to help businesses become discoverable by AI platforms. Based in Durham, NC.',
   alternates: {
     canonical: '/about',
   },
@@ -21,7 +21,7 @@ const personSchema = {
   name: 'Lenise Kenney',
   givenName: 'Lenise',
   familyName: 'Kenney',
-  jobTitle: 'Co-Founder & Chief Strategist',
+  jobTitle: 'Founder',
   worksFor: { '@id': 'https://signalstructure.ai/#organization' },
   affiliation: [
     { '@id': 'https://signalstructure.ai/#organization' },
@@ -39,7 +39,7 @@ const personSchema = {
   hasOccupation: [
     {
       '@type': 'Occupation',
-      name: 'Co-Founder & Chief Strategist, Signal & Structure AI',
+      name: 'Founder, Signal & Structure AI',
     },
     {
       '@type': 'Occupation',
@@ -74,7 +74,7 @@ const personSchema = {
     height: 400,
   },
   description:
-    'Co-Founder and Chief Strategist of Signal & Structure AI. Nearly 20 years as an educator. Author of Protect Your Genius: Using AI Without Diluting Your Voice. Designs the systems, methodologies, and strategies that power the Signal Score.',
+    'Founder of Signal & Structure AI. Nearly 20 years as an educator. Author of Protect Your Genius: Using AI Without Diluting Your Voice. Designs the proprietary systems, methodologies, and strategies that power the Signal Score.',
   sameAs: [
     'https://www.linkedin.com/in/lenise-kenney/',
     'https://www.amazon.com/stores/author/B0GY791G6D/about',
@@ -89,7 +89,7 @@ const pageSchema = {
   '@id': 'https://signalstructure.ai/about/#page',
   name: 'About Signal & Structure AI',
   description:
-    'Signal & Structure AI was founded by Lenise Kenney and Julian Bass to help businesses become discoverable by AI platforms.',
+    'Signal & Structure AI was founded by Lenise Kenney to help businesses become discoverable by AI platforms.',
   url: 'https://signalstructure.ai/about',
   isPartOf: { '@id': 'https://signalstructure.ai/#website' },
   publisher: { '@id': 'https://signalstructure.ai/#organization' },
@@ -234,14 +234,13 @@ export default function AboutPage() {
       <section className="section-padding">
         <div className="max-w-prose mx-auto">
           <FadeIn>
-            <SectionLabel>THE FOUNDERS</SectionLabel>
+            <SectionLabel>THE FOUNDER</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-4">
-              Built by two siblings who saw the same problem from two
-              different generations.
+              Built by someone who saw the shift early and decided to do
+              something about it.
             </h2>
             <p className="font-body text-lg text-warmgray mb-8">
-              {COMPANY_NAME} is run by Lenise and Julian, a sister-and-brother
-              team based in Durham, NC.
+              {COMPANY_NAME} is founded and run by Lenise, based in Durham, NC.
             </p>
 
             {/* Lenise */}
@@ -250,7 +249,7 @@ export default function AboutPage() {
                 <div className="shrink-0">
                   <Image
                     src="/lenise-kenney.jpg"
-                    alt="Lenise, Co-Founder of Signal & Structure AI"
+                    alt="Lenise Kenney, Founder of Signal & Structure AI"
                     width={200}
                     height={200}
                     className="rounded-lg object-cover w-[200px] h-[200px]"
@@ -258,10 +257,10 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h3 className="font-display text-2xl text-navy mb-2">
-                    Lenise
+                    Lenise Kenney
                   </h3>
                   <p className="font-body text-copper text-sm font-semibold uppercase tracking-wider">
-                    Co-Founder &amp; Chief Strategist
+                    Founder
                   </p>
                 </div>
               </div>
@@ -274,37 +273,17 @@ export default function AboutPage() {
                   observation became {COMPANY_NAME}.
                 </p>
                 <p>
-                  She designs the systems, methodologies, and strategies that
-                  power the Signal Score and the work behind it. Her approach
-                  comes from a belief that technology should make people more
-                  independent, not more dependent. Every engagement is designed
-                  to leave clients stronger than when they started.
+                  She designs and builds the proprietary systems, methodologies,
+                  and strategies that power the Signal Score and the work behind
+                  it. Her approach comes from a belief that technology should make
+                  people more independent, not more dependent. Every engagement is
+                  designed to leave clients stronger than when they started.
                 </p>
                 <p>
                   Lenise is also the author of{' '}
                   <em>Protect Your Genius: Using AI Without Diluting Your Voice</em>,
-                  available April 2026. She writes about AI, discoverability,
+                  available now. She writes about AI, discoverability,
                   and the building process on her personal blog, Always In Beta.
-                </p>
-              </div>
-            </div>
-
-            {/* Julian */}
-            <div className="mb-8">
-              <h3 className="font-display text-2xl text-navy mb-2">
-                Julian
-              </h3>
-              <p className="font-body text-copper text-sm font-semibold uppercase tracking-wider mb-4">
-                Co-Founder &amp; Creative Director
-              </p>
-              <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
-                <p>
-                  Julian brings the perspective of a new generation of builders
-                  who grew up with AI as a natural part of how things work. His
-                  creative instincts and understanding of emerging tools and
-                  platforms help ensure that everything {COMPANY_NAME} builds
-                  is forward-looking and grounded in how technology actually
-                  moves.
                 </p>
               </div>
             </div>
@@ -313,11 +292,11 @@ export default function AboutPage() {
             <div className="bg-stone-dark p-8 rounded-lg border-l-4 border-copper">
               <p className="font-body text-lg text-navy mb-3">
                 {COMPANY_NAME} operates under{' '}
-                <strong>Digital Jaywalking</strong>, founded by Julian and
-                Lenise. Digital Jaywalking helps people who know what they want
-                to build but need help making it real. From concept to launch,
-                they turn ideas into products, platforms, and businesses that
-                are ready to ship and ready to grow.
+                <strong>Digital Jaywalking</strong>, founded by Lenise. Digital
+                Jaywalking helps people who know what they want to build but need
+                help making it real. From concept to launch, it turns ideas into
+                products, platforms, and businesses that are ready to ship and
+                ready to grow.
               </p>
               <p className="font-body text-sm text-warmgray">
                 {ADDRESS}
@@ -357,8 +336,8 @@ export default function AboutPage() {
                   our blog
                 </a>{' '}
                 and on LinkedIn. If you want to understand the landscape,
-                start there. If you want to fix your presence, start with a
-                Signal Score.
+                start there. If you want to fix your presence, join the
+                AI Presence Program.
               </p>
             </div>
           </FadeIn>
@@ -408,14 +387,13 @@ export default function AboutPage() {
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-display text-section-heading mb-8 text-white">
-              Want to know where your business stands with AI? The first step is
-              a 30-minute conversation.
+              Want to understand how AI is describing your business? Start with a talk.
             </h2>
             <Button href={BOOKING_URL} variant="primary" className="mb-4">
-              Get Your Signal Score
+              Reserve a Spot at My Next Talk
             </Button>
             <p className="text-white/70 text-sm">
-              No cost. No pressure. Just clarity.
+              A clear, honest look at what changed and what to do about it.
             </p>
           </FadeIn>
         </div>

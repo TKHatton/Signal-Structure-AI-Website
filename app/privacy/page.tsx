@@ -19,7 +19,7 @@ const privacySchema = {
   description:
     'How Signal & Structure AI collects, uses, and protects your information when you use our AI discoverability tools and services.',
   url: 'https://signalstructure.ai/privacy',
-  dateModified: '2026-04-01',
+  dateModified: '2026-05-27',
   inLanguage: 'en-US',
   isPartOf: { '@id': 'https://signalstructure.ai/#website' },
   publisher: { '@id': 'https://signalstructure.ai/#organization' },
@@ -27,7 +27,7 @@ const privacySchema = {
     '@type': 'Article',
     name: 'Privacy Policy',
     headline: 'Signal & Structure AI Privacy Policy',
-    dateModified: '2026-04-01',
+    dateModified: '2026-05-27',
     author: { '@id': 'https://signalstructure.ai/#organization' },
     about: [
       'data collection',
@@ -80,7 +80,7 @@ export default function PrivacyPage() {
               Privacy Policy
             </h1>
             <p className="font-body text-lg text-white/70">
-              Last updated: April 1, 2026
+              Last updated: May 27, 2026
             </p>
           </FadeIn>
         </div>
@@ -104,6 +104,7 @@ export default function PrivacyPage() {
               <ul>
                 <li><strong>Business information:</strong> When you use our tools (Signal Pulse, AI Visibility Check, Signal Score), you provide a business name and optionally a website URL, location, and industry. This is used solely to check AI platform visibility for that business.</li>
                 <li><strong>Contact information:</strong> When you sign up for our newsletter, book a consultation, or purchase a service, you provide your name and email address.</li>
+                <li><strong>Event registration:</strong> When you register for one of our talks or workshops, our scheduling provider collects your name, email, and the session you selected so we can send you the meeting link and reminders.</li>
                 <li><strong>Payment information:</strong> Payments are processed by Stripe. We do not store credit card numbers or bank account details on our servers.</li>
               </ul>
 

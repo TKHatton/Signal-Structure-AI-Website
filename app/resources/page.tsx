@@ -456,18 +456,17 @@ export default function ResourcesPage() {
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-display text-section-heading mb-4 text-white">
-              Want answers now?
+              Want to understand this more deeply?
             </h2>
             <p className="text-white/70 text-hero-subtext mb-8">
-              Skip the free tools and get a full Signal Score in 30 minutes. We
-              test your business on live AI platforms and show you exactly what
-              they say.
+              I run live talks on how AI is describing businesses and what to do
+              about it. No jargon, no hype, just a clear breakdown.
             </p>
             <Button href={BOOKING_URL} variant="primary" className="mb-4">
-              Get Your Signal Score
+              Reserve a Spot at My Next Talk
             </Button>
             <p className="text-white/70 text-sm">
-              No cost. No pressure. Just clarity.
+              Pick a date that works for you.
             </p>
           </FadeIn>
         </div>

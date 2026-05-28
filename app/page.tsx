@@ -5,10 +5,8 @@ import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
-import ServiceCard from '@/components/ServiceCard';
-import SignalScoreDemo from '@/components/SignalScoreDemo';
 import SignalDot from '@/components/SignalDot';
-import { BOOKING_URL } from '@/lib/constants';
+import { BOOKING_URL, WEBINAR_PRICE } from '@/lib/constants';
 import Link from 'next/link';
 
 // Organization schema - the core entity for cross-referencing across the site
@@ -59,7 +57,7 @@ const organizationSchema = {
     'local business AI visibility',
     'ChatGPT business recommendations',
     'AI referral optimization',
-    'Signal Score',
+    'AI presence management',
     'entity authority',
   ],
   slogan: 'Be found. Be accurate. Be recommended.',
@@ -137,7 +135,7 @@ const localBusinessSchema = {
       closes: '16:00',
     },
   ],
-  priceRange: '$750 - $3,000+',
+  priceRange: '$297 - $797',
   currenciesAccepted: 'USD',
   paymentAccepted: 'Credit Card, Invoice',
   areaServed: [
@@ -179,47 +177,21 @@ const localBusinessSchema = {
   // ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'AI Discoverability Services',
+    name: 'AI Presence Management',
     itemListElement: [
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          '@id': 'https://signalstructure.ai/services#ai-business-profile',
-          name: 'AI Business Profile',
-          description: 'Your starting point for AI visibility. We organize your real business information so AI platforms can find you and describe you correctly.',
+          '@id': 'https://signalstructure.ai/services#ai-presence-program',
+          name: 'AI Presence Program',
+          description: 'Done-for-you monitoring, reporting, and correction of how AI platforms describe your business. We monitor 13 AI platforms every month, show you what is being said, and fix what is wrong. Includes a live dashboard and a monthly report.',
           provider: { '@id': 'https://signalstructure.ai/#organization' },
-          serviceType: 'AI Discoverability Setup',
+          serviceType: 'AI Presence Management',
         },
-        price: '750',
+        price: '797',
         priceCurrency: 'USD',
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          '@id': 'https://signalstructure.ai/services#ai-knowledge-system',
-          name: 'AI Knowledge System',
-          description: 'A comprehensive knowledge structure built from every document, page, policy, FAQ, and piece of content your business has.',
-          provider: { '@id': 'https://signalstructure.ai/#organization' },
-          serviceType: 'AI Knowledge Architecture',
-        },
-        price: '3000',
-        priceCurrency: 'USD',
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          '@id': 'https://signalstructure.ai/services#ai-presence-management',
-          name: 'AI Presence Management',
-          description: 'Ongoing monitoring and optimization of your AI presence with monthly accuracy checks and quarterly deep audits.',
-          provider: { '@id': 'https://signalstructure.ai/#organization' },
-          serviceType: 'AI Presence Monitoring',
-        },
-        price: '1500',
-        priceCurrency: 'USD',
-        unitText: 'MONTH',
+        description: 'Beta founder rate: $797 to start (build plus first month), then $297/month.',
       },
     ],
   },
@@ -304,10 +276,10 @@ export default function HomePage() {
           <FadeIn delay={0.5}>
             <div className="flex flex-col items-center gap-4">
               <Button href={BOOKING_URL} variant="primary" className="text-lg px-8 py-4">
-                Get Your Signal Score
+                Reserve a Spot at My Next Talk
               </Button>
               <p className="text-white/70 text-sm">
-                30 minutes. See exactly how AI describes your business today.
+                A live session on how AI is describing businesses, and what to do about it.
               </p>
             </div>
           </FadeIn>
@@ -452,135 +424,124 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section 3: Service Cards */}
+      {/* Section 3: Learn deeper — the talks */}
       <section className="section-padding bg-stone-dark">
         <div className="max-w-content mx-auto">
-          <FadeIn className="text-center mb-12">
-            <SectionLabel>SERVICES</SectionLabel>
-            <h2 className="font-display text-section-heading text-navy">
-              Three ways to get into the AI referral conversation.
-            </h2>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 items-stretch">
-            <FadeIn delay={0.1}>
-              <ServiceCard
-                title="AI Business Profile"
-                description="AI learns who you are and what you actually do. Your starting point for showing up correctly."
-                price="Starting at $750"
-                features={[
-                  'Structured business information for AI',
-                  'Custom AI assistant on your data',
-                  'Before and after Signal Score™',
-                ]}
-                ctaText="View Details"
-                ctaHref="/services"
-              />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <FadeIn>
+              <SectionLabel>LEARN HOW THIS WORKS</SectionLabel>
+              <h2 className="font-display text-section-heading text-navy mb-6">
+                It is here. It is already happening. It is just not easy to understand yet.
+              </h2>
+              <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
+                <p>
+                  Let me break it down for you. I run live talks that walk through how AI is
+                  deciding who to recommend, what it is already saying about businesses, and the
+                  concrete steps to be described accurately.
+                </p>
+                <p>
+                  No jargon. No hype. Just a clear, honest look at what changed and what to do
+                  about it.
+                </p>
+              </div>
             </FadeIn>
 
-            <FadeIn delay={0.2}>
-              <ServiceCard
-                badge="MOST POPULAR"
-                title="AI Knowledge System"
-                description="AI pulls from your real information instead of guessing. A complete knowledge system AI references directly."
-                price="Starting at $3,000"
-                features={[
-                  'Full knowledge mapping and structure',
-                  'Multi-platform AI formatting',
-                  'Detailed Signal Score™ by category',
-                ]}
-                ctaText="Build Your System"
-                ctaHref="/services"
-                featured
-              />
-            </FadeIn>
-
-            <FadeIn delay={0.3}>
-              <ServiceCard
-                title="AI Presence Management"
-                description="AI keeps referring you correctly as your business and AI platforms change. Ongoing monitoring and optimization."
-                price="Starting at $1,500/mo"
-                priceNote="3 month minimum"
-                features={[
-                  'Monthly accuracy checks and updates',
-                  'Quarterly deep audit and strategy',
-                  'AI referral tracking and reporting',
-                ]}
-                ctaText="Learn More"
-                ctaHref="/services"
-              />
+            <FadeIn delay={0.2} direction="left">
+              <div className="bg-navy text-white rounded-card shadow-card p-8">
+                <h3 className="font-display text-2xl mb-2">Reserve a spot at my next talk</h3>
+                <p className="font-body text-white/70 mb-6">
+                  Pick a date that works for you. Live, on video, and built to make this make
+                  sense.
+                </p>
+                <div className="mb-6">
+                  <span className="font-mono text-4xl font-bold text-copper">{WEBINAR_PRICE}</span>
+                  <span className="font-body text-white/70 ml-2">per session</span>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <Button href={BOOKING_URL} variant="primary" className="w-full text-center">
+                    See the schedule and reserve
+                  </Button>
+                </div>
+              </div>
             </FadeIn>
           </div>
-
-          <FadeIn delay={0.4} className="text-center">
-            <Link
-              href="/services"
-              className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2"
-            >
-              See All Services and Pricing
-              <span>→</span>
-            </Link>
-          </FadeIn>
         </div>
       </section>
 
-      {/* Section 4: Signal Score Demo */}
+      {/* Section 4: What makes this different */}
       <section className="relative bg-navy text-white section-padding-sm">
         <GridTexture />
         <div className="relative z-10 max-w-5xl mx-auto">
           <FadeIn className="text-center mb-8">
-            <SectionLabel variant="light">SIGNAL SCORE</SectionLabel>
+            <SectionLabel variant="light">WHAT MAKES THIS DIFFERENT</SectionLabel>
             <h2 className="font-display text-section-heading mb-4">
-              We do not just fix it. We prove it.
+              We do not just tell you what is wrong. We fix it.
             </h2>
             <p className="text-white/70 text-hero-subtext max-w-3xl mx-auto">
-              Every engagement starts with a baseline and ends with proof. Our
-              Signal Score™ measures how accurately and consistently AI represents
-              your business across every major platform.
+              Most tools check ChatGPT and maybe one or two others, then hand you a report and
+              wish you luck. We check 13 platforms every month and do the correction work
+              ourselves.
             </p>
           </FadeIn>
 
-          <FadeIn delay={0.2}>
-            <SignalScoreDemo before={2.8} after={7.4} />
-          </FadeIn>
-
-          {/* Three stat cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
             <FadeIn delay={0.3}>
               <div className="bg-white/10 rounded-lg p-6 text-center">
                 <div className="text-copper text-xs font-body font-semibold uppercase tracking-wider mb-2">
-                  ACCURACY
+                  COVERAGE
                 </div>
-                <div className="font-mono text-4xl font-bold text-white mb-1">+4.6</div>
-                <div className="text-white/50 text-sm">avg improvement</div>
+                <div className="font-mono text-4xl font-bold text-white mb-1">13</div>
+                <div className="text-white/50 text-sm">AI platforms monitored monthly</div>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.4}>
               <div className="bg-white/10 rounded-lg p-6 text-center">
                 <div className="text-copper text-xs font-body font-semibold uppercase tracking-wider mb-2">
-                  DISCOVERABILITY
+                  THE WORK
                 </div>
-                <div className="font-mono text-4xl font-bold text-white mb-1">1 → 4</div>
-                <div className="text-white/50 text-sm">platforms</div>
+                <div className="font-mono text-4xl font-bold text-white mb-1">Done</div>
+                <div className="text-white/50 text-sm">we fix it, you do not lift a finger</div>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.5}>
               <div className="bg-white/10 rounded-lg p-6 text-center">
                 <div className="text-copper text-xs font-body font-semibold uppercase tracking-wider mb-2">
-                  HALLUCINATION
+                  PROOF
                 </div>
-                <div className="font-mono text-4xl font-bold text-white mb-1">82% → 12%</div>
-                <div className="text-white/50 text-sm">reduction</div>
+                <div className="font-mono text-4xl font-bold text-white mb-1">Monthly</div>
+                <div className="text-white/50 text-sm">report plus a live dashboard</div>
               </div>
             </FadeIn>
           </div>
 
           <FadeIn delay={0.6} className="text-center mt-8">
-            <Button href={BOOKING_URL} variant="primary">
-              See How Your Business Scores
-            </Button>
+            <Link
+              href="/services"
+              className="font-body text-copper hover:text-copper-light transition-colors inline-flex items-center gap-2"
+            >
+              See how the program works
+              <span>→</span>
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Beacon tease */}
+      <section className="section-padding-sm">
+        <div className="max-w-content mx-auto">
+          <FadeIn>
+            <div className="bg-stone-dark rounded-card p-8 md:p-10 text-center">
+              <SectionLabel>COMING SOON</SectionLabel>
+              <h2 className="font-display text-2xl md:text-3xl text-navy mb-3">
+                Beacon is on the way.
+              </h2>
+              <p className="font-body text-warmgray max-w-2xl mx-auto">
+                A simpler, self-serve way to keep your business described accurately by AI.
+                Same thinking, built so you can run it yourself. More soon.
+              </p>
+            </div>
           </FadeIn>
         </div>
       </section>
@@ -642,10 +603,10 @@ export default function HomePage() {
               one of them.
             </h2>
             <Button href={BOOKING_URL} variant="primary" className="mb-4">
-              Get Your Signal Score
+              Reserve a Spot at My Next Talk
             </Button>
             <p className="text-white/70 text-sm">
-              30 minutes. No pressure. Just clarity.
+              Come learn how AI is describing businesses, and what to do about it.
             </p>
           </FadeIn>
         </div>

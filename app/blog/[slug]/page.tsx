@@ -152,7 +152,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.cta.text}
               </p>
               <Button href={post.cta.href} variant="primary">
-                {post.cta.buttonLabel || 'Get Your Signal Score'}
+                {post.cta.buttonLabel || 'Reserve a Spot at My Next Talk'}
               </Button>
             </div>
           </FadeIn>
@@ -188,7 +188,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               it knows yours.
             </h2>
             <Button href={BOOKING_URL} variant="primary">
-              Get Your Signal Score
+              Reserve a Spot at My Next Talk
             </Button>
           </FadeIn>
         </div>

@@ -1,4 +1,36 @@
-export const BOOKING_URL = "/signal-score";
+// Beta Founder Offer — Stripe checkout for the AI Presence Program.
+// Used ONLY on the Services page. Beta is intentionally NOT promoted elsewhere.
+export const RESERVE_URL = "https://buy.stripe.com/cNi14m5codyBgWgfqdaAw00";
+
+// Paid talks / webinars — the default call to action across the site.
+// TODO: replace with the live Calendly event link for the paid talk once it exists.
+export const WEBINAR_URL = "https://calendly.com/ltkenney13";
+export const WEBINAR_PRICE = "$22";
+
+// Next live talk — edit these in one place; the Speaking page flyer reads them.
+// TODO: confirm date/time before sharing the flyer.
+export const TALK = {
+  title: "What AI Is Saying About Your Business",
+  subtitle: "And what to do about it. A live, plain-language walk-through.",
+  date: "Sunday, May 31, 2026",
+  time: "5:00 PM ET",
+  platform: "Live on Google Meet",
+  duration: "About 1 hour",
+  price: WEBINAR_PRICE,
+  url: WEBINAR_URL,
+};
+
+// Legacy alias: generic CTAs that import BOOKING_URL now invite people to a talk,
+// not to buy the beta. Beta uses RESERVE_URL directly on the Services page.
+export const BOOKING_URL = WEBINAR_URL;
+
+// Beta AI Presence Program pricing
+export const BETA_SETUP = "$797";
+export const BETA_MONTHLY = "$297";
+export const FULL_SETUP = "$997";
+export const FULL_MONTHLY = "$497";
+export const BETA_SPOTS = 10;
+
 export const EMAIL = "hello@signalstructure.ai";
 export const PHONE = "(984) 314-3102";
 export const PHONE_HREF = "tel:+19843143102";

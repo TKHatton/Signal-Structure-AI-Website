@@ -7,6 +7,7 @@ import { COMPANY_NAME, TAGLINE, LOCATION, ADDRESS, EMAIL, LINKEDIN, BOOKING_URL 
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
+  { href: '/speaking', label: 'Speaking' },
   { href: '/resources', label: 'Resources' },
   { href: '/about', label: 'Our Story' },
   { href: '/how-it-works', label: 'How It Works' },
@@ -56,13 +57,15 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <Link
+                <a
                   href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-copper hover:text-copper-light transition-colors font-body text-sm font-medium flex items-center gap-2 mt-4"
                 >
                   <SignalDot size={4} />
-                  Get Your Signal Score
-                </Link>
+                  Reserve My Spot
+                </a>
               </li>
             </ul>
           </div>
@@ -105,7 +108,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-copper transition-colors">Privacy Policy</Link>
             <span>&middot;</span>
-            <p>Signal Score™ is a trademark of {COMPANY_NAME}</p>
+            <Link href="/terms" className="hover:text-copper transition-colors">Terms</Link>
           </div>
         </div>
       </div>

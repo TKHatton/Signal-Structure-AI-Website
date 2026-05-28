@@ -284,14 +284,13 @@ export default function OurApproachPage() {
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-display text-section-heading mb-8 text-white">
-              The next step is a 30-minute conversation. We will show you
-              exactly where you stand and talk about what it would take to change it.
+              Want to understand what this means for your own business? Come to my next talk.
             </h2>
             <Button href={BOOKING_URL} variant="primary" className="mb-4">
-              Get Your Signal Score
+              Reserve a Spot at My Next Talk
             </Button>
             <p className="text-white/70 text-sm">
-              No pressure. Just clarity.
+              A clear, honest walk through what changed and what to do about it.
             </p>
           </FadeIn>
         </div>

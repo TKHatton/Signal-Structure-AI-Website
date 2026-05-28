@@ -9,7 +9,7 @@ import PulseForm from '@/components/pulse/PulseForm';
 import PulseResultCard, { PulseResultData } from '@/components/pulse/PulseResultCard';
 import PulseEmailCapture from '@/components/pulse/PulseEmailCapture';
 import PulseChatPrompt from '@/components/pulse/PulseChatPrompt';
-import { API_URL, BOOKING_URL } from '@/lib/constants';
+import { API_URL } from '@/lib/constants';
 
 export default function SignalPulsePage() {
   const [result, setResult] = useState<PulseResultData | null>(null);
@@ -149,12 +149,12 @@ export default function SignalPulsePage() {
               The Signal Pulse is a vital sign check.
             </h2>
             <p className="font-body text-warmgray max-w-2xl mx-auto mb-8">
-              It tells you something is off. The full Signal Score tells you
-              exactly what, why, and how to fix it. Six categories. Multiple AI platforms.
-              One clear roadmap.
+              It tells you something is off. The AI Presence Program tells you
+              exactly what and why across 13 platforms, then does the work to fix it,
+              every month.
             </p>
-            <Button href={BOOKING_URL} variant="primary">
-              Book a Signal Score Session
+            <Button href="/services" variant="primary">
+              See how the program works
             </Button>
           </FadeIn>
         </div>

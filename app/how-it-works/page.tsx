@@ -406,7 +406,7 @@ export default function HowItWorksPage() {
               If referrals drive your business, AI should be sending them your way.
             </h2>
             <Button href={BOOKING_URL} variant="primary">
-              Get Your Signal Score
+              Reserve a Spot at My Next Talk
             </Button>
           </FadeIn>
         </div>
