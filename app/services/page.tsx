@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'The AI Presence Program | Signal & Structure AI',
-  description: 'Done-for-you AI presence management. We monitor 13 AI platforms every month, show you what they say about your business, and fix what is wrong. Beta founder rate: $797 to start, then $297/month.',
+  description: 'Done-for-you AI presence management. We monitor ChatGPT, Claude, Gemini, Perplexity, and more every month, show you what they say about your business, and fix what is wrong. Beta founder rate: $797 to start, then $297/month.',
   alternates: {
     canonical: '/services',
   },
@@ -53,7 +53,7 @@ const serviceSchema = {
   '@id': 'https://signalstructure.ai/services#ai-presence-program',
   name: 'AI Presence Program',
   provider: { '@id': 'https://signalstructure.ai/#organization' },
-  description: 'Done-for-you monitoring, reporting, and correction of how AI platforms describe your business. We monitor 13 AI platforms every month, surface what is being said, and do the work to fix hallucinations and gaps. Includes a live dashboard, monthly report, and your Signal Score with trend tracking.',
+  description: 'Done-for-you monitoring, reporting, and correction of how AI platforms describe your business. We monitor ChatGPT, Claude, Gemini, Perplexity, and more every month, surface what is being said, and do the work to fix hallucinations and gaps. Includes a live dashboard, monthly report, and your Signal Score with trend tracking.',
   serviceType: 'AI Presence Management',
   offers: {
     '@type': 'Offer',
@@ -73,9 +73,7 @@ const addOnSchema = {
 };
 
 const platforms = [
-  'ChatGPT', 'Google Gemini', 'Microsoft Copilot', 'Perplexity', 'Claude',
-  'Meta AI', 'Grok', 'Amazon Alexa AI', 'Apple Intelligence', 'DeepSeek',
-  'You.com', 'Brave Leo', 'Azure AI',
+  'ChatGPT', 'Claude', 'Google Gemini', 'Perplexity',
 ];
 
 export default function ServicesPage() {
@@ -106,8 +104,9 @@ export default function ServicesPage() {
           <FadeIn>
             <SectionLabel variant="light">THE AI PRESENCE PROGRAM</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              One program. We monitor how AI describes your business across 13 platforms,
-              show you what is being said, and fix what is wrong, every month.
+              One program. We monitor how AI describes your business across ChatGPT, Claude,
+              Gemini, Perplexity, and more — show you what is being said, and fix what is wrong,
+              every month.
             </h1>
           </FadeIn>
         </div>
@@ -124,7 +123,7 @@ export default function ServicesPage() {
                 <p className="font-body text-sm text-warmgray mb-6">Your foundation report.</p>
                 <ul className="space-y-3 font-body text-warmgray mb-8">
                   {[
-                    'Full AI presence audit across all 13 platforms',
+                    'Full AI presence audit across ChatGPT, Claude, Gemini, Perplexity, and more',
                     'Your Signal Score, my proprietary 0 to 100 measure, with a category breakdown',
                     'A plain-language summary of what AI is saying about you',
                     'Every hallucination and gap identified',
@@ -141,7 +140,7 @@ export default function ServicesPage() {
                 <p className="font-body text-sm text-warmgray mb-6">Monitoring, fixing, and proof.</p>
                 <ul className="space-y-3 font-body text-warmgray">
                   {[
-                    'Re-scan across all 13 platforms',
+                    'Re-scan across all monitored platforms',
                     'A live dashboard you can check any time',
                     'Updated Signal Score with trend tracking',
                     'New findings flagged since last month',
@@ -248,17 +247,17 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Section 3: The 13 platforms */}
+      {/* Section 3: Platforms */}
       <section className="section-padding bg-stone-dark">
         <div className="max-w-content mx-auto">
           <FadeIn className="text-center mb-10">
             <SectionLabel>WHERE WE LOOK</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-4">
-              13 platforms. Not just the ones you have heard of.
+              The platforms that matter right now.
             </h2>
             <p className="text-warmgray text-lg max-w-2xl mx-auto">
-              Most tools check three to five. We check thirteen, every month, because your
-              customers are asking about you on more of them than you think.
+              We focus on the AI platforms your customers are actually using today — and we
+              are adding more as the landscape grows.
             </p>
           </FadeIn>
 

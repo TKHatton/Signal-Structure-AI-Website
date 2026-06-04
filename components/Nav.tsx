@@ -10,7 +10,6 @@ import { BOOKING_URL, COMPANY_NAME } from '@/lib/constants';
 
 const mainLinks = [
   { href: '/services', label: 'Services' },
-  { href: '/speaking', label: 'Speaking' },
   { href: '/resources', label: 'Resources' },
   { href: '/blog', label: 'Blog' },
 ];
@@ -25,7 +24,6 @@ const aboutLinks = [
 const allLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
-  { href: '/speaking', label: 'Speaking' },
   { href: '/resources', label: 'Resources' },
   { href: '/about', label: 'Our Story' },
   { href: '/how-it-works', label: 'How It Works' },

@@ -185,7 +185,7 @@ const localBusinessSchema = {
           '@type': 'Service',
           '@id': 'https://signalstructure.ai/services#ai-presence-program',
           name: 'AI Presence Program',
-          description: 'Done-for-you monitoring, reporting, and correction of how AI platforms describe your business. We monitor 13 AI platforms every month, show you what is being said, and fix what is wrong. Includes a live dashboard and a monthly report.',
+          description: 'Done-for-you monitoring, reporting, and correction of how AI platforms describe your business. We monitor ChatGPT, Claude, Gemini, Perplexity, and more every month, show you what is being said, and fix what is wrong. Includes a live dashboard and a monthly report.',
           provider: { '@id': 'https://signalstructure.ai/#organization' },
           serviceType: 'AI Presence Management',
         },
@@ -479,8 +479,8 @@ export default function HomePage() {
             </h2>
             <p className="text-white/70 text-hero-subtext max-w-3xl mx-auto">
               Most tools check ChatGPT and maybe one or two others, then hand you a report and
-              wish you luck. We check 13 platforms every month and do the correction work
-              ourselves.
+              wish you luck. We check ChatGPT, Claude, Gemini, Perplexity, and more every month
+              and do the correction work ourselves.
             </p>
           </FadeIn>
 
@@ -490,7 +490,7 @@ export default function HomePage() {
                 <div className="text-copper text-xs font-body font-semibold uppercase tracking-wider mb-2">
                   COVERAGE
                 </div>
-                <div className="font-mono text-4xl font-bold text-white mb-1">13</div>
+                <div className="font-mono text-4xl font-bold text-white mb-1">4+</div>
                 <div className="text-white/50 text-sm">AI platforms monitored monthly</div>
               </div>
             </FadeIn>
