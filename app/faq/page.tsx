@@ -17,12 +17,12 @@ const faqItems = [
   {
     question: 'What is a Signal Score?',
     answer:
-      'A Signal Score is your full AI visibility and accuracy report. We test your business across major AI platforms and deliver a detailed breakdown of what they know, what they get wrong, and what they cannot find. It includes a 30-minute walkthrough of your results so you understand exactly where you stand and what it means. The score is a 0 to 100 measurement across the leading AI platforms (including ChatGPT, Claude, and Gemini) and 6 categories: Schema and Structure, Google Business Profile, NAP Consistency, Content for AI, AI Presence, and Technical Infrastructure. Most businesses score below 40 before optimization.',
+      'Your Signal Score is our 0 to 100 measurement of how accurately and consistently AI represents your business. It looks across the leading AI platforms and 6 categories: Schema and Structure, Google Business Profile, NAP Consistency, Content for AI, AI Presence, and Technical Infrastructure. It is the baseline and the trend metric inside the AI Presence Program, so you can see month over month whether AI is describing you better. Most businesses score below 40 before any work is done.',
   },
   {
     question: 'How much does Signal & Structure AI cost?',
     answer:
-      'Signal & Structure AI offers three core packages. The AI Business Profile starts at $750 and organizes your information for AI. The AI Knowledge System starts at $3,000 and builds a complete structured knowledge base. AI Presence Management starts at $1,500 per month with a 3-month minimum for ongoing monitoring and updates. Add-on services range from $500 to $2,000.',
+      'We have one program: AI Presence Management. The beta founder rate is $797 to start, which covers the build and your first month, then $297 per month after that. Your founder rate is locked for as long as you stay in the program, even after the price rises to $997 setup and $497 per month. A custom AI tools, MCP server, and API integration add-on is available to clients by quote.',
   },
   {
     question: 'What is AI discoverability?',
@@ -52,12 +52,12 @@ const faqItems = [
   {
     question: 'What AI platforms do you test?',
     answer:
-      'We test across the leading AI platforms including ChatGPT by OpenAI, Claude by Anthropic, and Google Gemini. These platforms represent the majority of AI-driven search and recommendation traffic. Each platform accesses and processes business information differently, which is why testing across multiple platforms is important. We regularly add new platforms as the AI landscape evolves.',
+      'We monitor 13 AI platforms every month: ChatGPT, Google Gemini, Microsoft Copilot, Perplexity, Claude, Meta AI, Grok, Amazon Alexa AI, Apple Intelligence, DeepSeek, You.com, Brave Leo, and Azure AI. Most tools only check three to five. Each platform accesses and processes business information differently, which is why monitoring across all of them matters. We add new platforms as the landscape evolves.',
   },
   {
-    question: 'What happens after my Signal Score improves?',
+    question: 'What happens as my Signal Score improves?',
     answer:
-      'After reaching your target Signal Score, you have two options. You can continue with AI Presence Management for ongoing monitoring and updates as your business and AI platforms change. Or you can maintain things independently using the documentation and guides we provide. We build toward your independence, not your dependency. Either path is a success.',
+      'The AI Presence Program is ongoing. Each month we re-scan all 13 platforms, do the correction work, update your Signal Score, and send a report that links back to your live dashboard. As your business changes and AI platforms update, we keep your information accurate. We build toward your independence, not your dependency, and your founder rate stays locked for as long as you stay in the program.',
   },
 ];
 
@@ -152,8 +152,7 @@ export default function FAQPage() {
               Frequently asked questions.
             </h2>
             <p className="font-body text-lg text-warmgray text-center mb-12">
-              If you do not see your question here, get your Signal Score
-              and we will answer it live.
+              If you do not see your question here, email us and we will answer it.
             </p>
           </FadeIn>
 
@@ -171,13 +170,12 @@ export default function FAQPage() {
               Still have questions?
             </h2>
             <p className="font-body text-lg text-warmgray leading-relaxed mb-8">
-              The fastest way to get answers is to see it in action. Get your
-              Signal Score and we test your business on live AI platforms
-              and show you exactly what they say. No sales pitch. Just your
-              results.
+              The fastest way to get answers is to see it in action. Run a free
+              Signal Pulse check on your site, or come to a live talk where I walk
+              through how AI is describing businesses across all 13 platforms.
             </p>
             <Button href={BOOKING_URL} variant="primary">
-              Get Your Signal Score
+              Reserve a Spot at My Next Talk
             </Button>
           </FadeIn>
         </div>
@@ -193,7 +191,7 @@ export default function FAQPage() {
               is saying the right things.
             </h2>
             <Button href={BOOKING_URL} variant="primary">
-              Get Your Signal Score
+              Reserve a Spot at My Next Talk
             </Button>
           </FadeIn>
         </div>

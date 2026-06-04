@@ -19,7 +19,7 @@ export default function Button({ variant = 'primary', href, children, className 
   const combinedStyles = `${baseStyles} ${variantStyles[variant]} ${className}`;
 
   // Check if it's an external link
-  if (href.startsWith('http')) {
+  if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
     return (
       <a
         href={href}

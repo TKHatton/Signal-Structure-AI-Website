@@ -10,6 +10,7 @@ import { BOOKING_URL, COMPANY_NAME } from '@/lib/constants';
 
 const mainLinks = [
   { href: '/services', label: 'Services' },
+  { href: '/speaking', label: 'Speaking' },
   { href: '/resources', label: 'Resources' },
   { href: '/blog', label: 'Blog' },
 ];
@@ -24,6 +25,7 @@ const aboutLinks = [
 const allLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
+  { href: '/speaking', label: 'Speaking' },
   { href: '/resources', label: 'Resources' },
   { href: '/about', label: 'Our Story' },
   { href: '/how-it-works', label: 'How It Works' },
@@ -171,7 +173,7 @@ export default function Nav() {
             </div>
 
             <Button href={BOOKING_URL} variant="primary" className="text-sm whitespace-nowrap">
-              Get Your Signal Score
+              Reserve My Spot
             </Button>
           </div>
 
@@ -258,7 +260,7 @@ export default function Nav() {
                 })}
                 <div className="mt-4">
                   <Button href={BOOKING_URL} variant="primary" className="w-full text-center">
-                    Get Your Signal Score
+                    Reserve My Spot
                   </Button>
                 </div>
               </div>

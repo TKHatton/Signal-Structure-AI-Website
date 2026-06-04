@@ -19,7 +19,7 @@ const termsSchema = {
   description:
     'Terms of service for Signal & Structure AI tools, MCP servers, Custom GPT, and consulting services.',
   url: 'https://signalstructure.ai/terms',
-  dateModified: '2026-04-01',
+  dateModified: '2026-05-27',
   inLanguage: 'en-US',
   isPartOf: { '@id': 'https://signalstructure.ai/#website' },
   publisher: { '@id': 'https://signalstructure.ai/#organization' },
@@ -27,7 +27,7 @@ const termsSchema = {
     '@type': 'Article',
     name: 'Terms of Service',
     headline: 'Signal & Structure AI Terms of Service',
-    dateModified: '2026-04-01',
+    dateModified: '2026-05-27',
     author: { '@id': 'https://signalstructure.ai/#organization' },
     about: [
       'terms of service',
@@ -80,7 +80,7 @@ export default function TermsPage() {
               Terms of Service
             </h1>
             <p className="font-body text-lg text-white/70">
-              Last updated: April 1, 2026
+              Last updated: May 27, 2026
             </p>
           </FadeIn>
         </div>
@@ -108,9 +108,9 @@ export default function TermsPage() {
               <ul>
                 <li><strong>Signal Pulse:</strong> A free AI discoverability check that scans whether AI platforms mention a business and analyzes website schema markup.</li>
                 <li><strong>Signal Advisor:</strong> A free educational resource about AI discoverability concepts, schema markup, and platform optimization.</li>
-                <li><strong>Signal Score:</strong> A paid comprehensive analysis across 6 categories and multiple AI platforms, with actionable recommendations.</li>
-                <li><strong>Signal Watch:</strong> A paid ongoing monitoring service that tracks AI platform mentions and score changes over time.</li>
-                <li><strong>Consulting Services:</strong> One-on-one AI discoverability consulting and implementation support.</li>
+                <li><strong>AI Presence Program:</strong> Our paid, done-for-you service. We monitor how AI platforms describe a business across multiple platforms each month, report what we find using our proprietary Signal Score, and perform correction work. Includes a client dashboard and a monthly report.</li>
+                <li><strong>Custom AI Tools, MCP Servers, and API Integrations:</strong> Optional add-on work, scoped and priced separately for program clients.</li>
+                <li><strong>Talks and Workshops:</strong> Paid live sessions and presentations about AI discoverability.</li>
               </ul>
 
               <h2 className="font-display text-navy">Acceptable Use</h2>
@@ -154,14 +154,16 @@ export default function TermsPage() {
 
               <h2 className="font-display text-navy">Paid Services</h2>
               <p>
-                For paid products (Signal Score, Extended Signal Score, Signal Watch),
+                For paid services (the AI Presence Program, add-on work, and talks),
                 the following additional terms apply:
               </p>
               <ul>
                 <li>Payments are processed securely through Stripe. All prices are listed in USD.</li>
-                <li>Signal Score reports are one-time purchases. Refunds may be issued at our discretion if the report could not be generated due to a technical error on our end.</li>
-                <li>Signal Watch subscriptions are billed monthly. You may cancel at any time; access continues through the end of the billing period.</li>
-                <li>We reserve the right to adjust pricing with 30 days notice to active subscribers.</li>
+                <li>The AI Presence Program begins with a one-time setup fee that includes your first month, followed by a recurring monthly subscription. You may cancel at any time; access and monitoring continue through the end of the paid billing period.</li>
+                <li>Founder-rate pricing offered during the beta is honored for as long as your subscription remains active and uninterrupted.</li>
+                <li>Talks and workshops are paid per session. If a session is canceled by us, you will be refunded or rebooked.</li>
+                <li>Add-on work (custom AI tools, MCP servers, and API integrations) is quoted and agreed in writing before any work begins.</li>
+                <li>We reserve the right to adjust standard pricing with 30 days notice to active subscribers.</li>
               </ul>
 
               <h2 className="font-display text-navy">Accuracy and Disclaimers</h2>
