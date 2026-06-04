@@ -3,15 +3,15 @@
 export const RESERVE_URL = "https://buy.stripe.com/cNi14m5codyBgWgfqdaAw00";
 
 // Paid talks / webinars — the default call to action across the site.
-// TODO: replace with the live Calendly event link for the paid talk once it exists.
-export const WEBINAR_URL = "https://calendly.com/ltkenney13";
-export const WEBINAR_PRICE = "$22";
+// Live Calendly event link for the talk.
+export const WEBINAR_URL = "https://calendly.com/ltkenney13/the-secret-life-of-your-business-according-to-ai";
+export const WEBINAR_PRICE = "$47";
 
 // Next live talk — edit these in one place; the Speaking page flyer reads them.
 // TODO: confirm date/time before sharing the flyer.
 export const TALK = {
-  title: "What AI Is Saying About Your Business",
-  subtitle: "And what to do about it. A live, plain-language walk-through.",
+  title: "The Secret Life of Your Business, According to AI",
+  subtitle: "What AI is telling people about you, and how to take the wheel. A live, plain-language session.",
   date: "Sunday, May 31, 2026",
   time: "5:00 PM ET",
   platform: "Live on Google Meet",
