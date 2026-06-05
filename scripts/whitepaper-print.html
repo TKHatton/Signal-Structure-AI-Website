@@ -23,6 +23,9 @@
 
     @page {
       size: Letter;
+      margin: 0.95in 0.85in 0.85in;
+    }
+    @page :first {
       margin: 0;
     }
 
@@ -48,22 +51,33 @@
 
     .mono { font-family: 'JetBrains Mono', monospace; }
 
+    /* Each chapter section starts on a fresh page; content within flows naturally
+       and pages break wherever Chromium decides, using @page margins. */
     .page {
-      width: 8.5in;
-      min-height: 11in;
-      padding: 0.8in 0.85in;
-      page-break-after: always;
+      page-break-before: always;
+      break-before: page;
       position: relative;
     }
-    .page:last-child { page-break-after: auto; }
+    .page:first-of-type { page-break-before: avoid; break-before: avoid; }
+
+    /* A section that should CONTINUE in the same chapter, not break to a new page */
+    .continues {
+      page-break-before: avoid !important;
+      break-before: avoid !important;
+      margin-top: 18pt;
+    }
 
     /* === COVER === */
     .cover {
+      width: 8.5in;
+      height: 11in;
       background: var(--navy);
       color: #fff;
       padding: 1in 0.85in 0.85in;
       position: relative;
       overflow: hidden;
+      page-break-after: always;
+      break-after: page;
     }
     .cover::before {
       content: "";
@@ -184,29 +198,29 @@
     }
 
     h2.section-title {
-      font-size: 32pt;
-      line-height: 1.05;
-      margin-bottom: 18pt;
+      font-size: 27pt;
+      line-height: 1.06;
+      margin-bottom: 13pt;
       letter-spacing: -0.015em;
     }
     h3.sub-title {
-      font-size: 19pt;
+      font-size: 15pt;
       color: var(--navy);
-      margin-top: 26pt;
-      margin-bottom: 10pt;
-      line-height: 1.2;
+      margin-top: 16pt;
+      margin-bottom: 6pt;
+      line-height: 1.22;
     }
     h4 {
       font-family: 'DM Sans', sans-serif;
       font-weight: 700;
-      font-size: 10.5pt;
+      font-size: 10pt;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--copper);
-      margin-top: 22pt;
-      margin-bottom: 6pt;
+      margin-top: 18pt;
+      margin-bottom: 5pt;
     }
-    p { margin: 0 0 11pt; color: var(--ink); }
+    p { margin: 0 0 9pt; color: var(--ink); }
     p strong { font-weight: 700; color: var(--navy); }
 
     /* === DROP CAP === */
@@ -224,32 +238,37 @@
       border: 0;
       height: 1px;
       background: linear-gradient(90deg, var(--copper) 0, var(--copper) 64px, var(--stone-dark) 64px, var(--stone-dark) 100%);
-      margin: 22pt 0 18pt;
+      margin: 16pt 0 14pt;
     }
     .rule-thin {
       border: 0;
       height: 1px;
       background: var(--stone-dark);
-      margin: 18pt 0;
+      margin: 14pt 0;
     }
+
+    /* Keep visual blocks intact across page breaks */
+    .stat, .pullquote, .callout, .closing, .cause { page-break-inside: avoid; break-inside: avoid; }
+    table.data tr, table.framework tr, table.dimensions tr { page-break-inside: avoid; break-inside: avoid; }
+    h2.section-title, h3.sub-title, h4 { page-break-after: avoid; break-after: avoid; }
 
     /* === PULL QUOTE === */
     .pullquote {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 22pt;
+      font-size: 18pt;
       line-height: 1.25;
       color: var(--navy);
-      padding: 22pt 26pt 22pt 38pt;
+      padding: 16pt 22pt 16pt 32pt;
       border-left: 3px solid var(--copper);
-      margin: 22pt 0;
+      margin: 16pt 0;
       position: relative;
     }
     .pullquote::before {
       content: "“";
       position: absolute;
-      left: 14pt;
-      top: 6pt;
-      font-size: 44pt;
+      left: 10pt;
+      top: 2pt;
+      font-size: 36pt;
       color: var(--copper);
       line-height: 1;
     }
@@ -258,20 +277,20 @@
     .stat-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14pt;
-      margin: 16pt 0 22pt;
+      gap: 11pt;
+      margin: 12pt 0 16pt;
     }
     .stat {
       background: var(--stone);
-      padding: 16pt 18pt;
+      padding: 12pt 14pt;
       border-left: 3px solid var(--copper);
     }
     .stat .n {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 28pt;
+      font-size: 24pt;
       color: var(--navy);
       line-height: 1;
-      margin-bottom: 4pt;
+      margin-bottom: 3pt;
     }
     .stat .l {
       font-size: 9.5pt;
@@ -321,11 +340,11 @@
     table.framework {
       width: 100%;
       border-collapse: collapse;
-      margin: 14pt 0 22pt;
-      font-size: 10pt;
+      margin: 12pt 0 16pt;
+      font-size: 9.5pt;
     }
     table.framework td {
-      padding: 14pt 16pt;
+      padding: 10pt 14pt;
       vertical-align: top;
       border-bottom: 1px solid var(--stone-dark);
     }
@@ -349,18 +368,18 @@
     table.dimensions {
       width: 100%;
       border-collapse: collapse;
-      margin: 14pt 0 22pt;
-      font-size: 10pt;
+      margin: 12pt 0 16pt;
+      font-size: 9.5pt;
     }
     table.dimensions td {
-      padding: 14pt 16pt;
+      padding: 9pt 14pt;
       vertical-align: top;
       border-bottom: 1px solid var(--stone-dark);
     }
     table.dimensions td.num {
-      width: 0.7in;
+      width: 0.6in;
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 22pt;
+      font-size: 18pt;
       color: var(--copper);
       line-height: 1;
     }
@@ -386,8 +405,8 @@
     .callout {
       background: var(--navy);
       color: rgba(255,255,255,0.92);
-      padding: 24pt 26pt;
-      margin: 22pt 0;
+      padding: 18pt 22pt;
+      margin: 16pt 0;
       position: relative;
     }
     .callout .label {
@@ -397,7 +416,7 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--copper);
-      margin-bottom: 10pt;
+      margin-bottom: 8pt;
     }
     .callout p { color: rgba(255,255,255,0.92); }
     .callout p strong { color: #fff; }
@@ -405,14 +424,14 @@
     /* === CAUSE BLOCKS === */
     .cause {
       display: grid;
-      grid-template-columns: 0.8in 1fr;
-      gap: 14pt;
-      margin: 14pt 0;
+      grid-template-columns: 0.7in 1fr;
+      gap: 12pt;
+      margin: 10pt 0;
       page-break-inside: avoid;
     }
     .cause .num {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 38pt;
+      font-size: 30pt;
       color: var(--copper);
       line-height: 0.9;
     }
@@ -421,9 +440,10 @@
       text-transform: none;
       letter-spacing: 0;
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 14pt;
+      font-size: 13pt;
       color: var(--navy);
       font-weight: 400;
+      margin-bottom: 4pt;
     }
 
     /* === REFERENCES === */
@@ -437,35 +457,16 @@
     }
     .refs p strong { color: var(--navy); font-weight: 700; }
 
-    /* === FOOTER === */
-    .pg-footer {
-      position: absolute;
-      bottom: 0.4in;
-      left: 0.85in;
-      right: 0.85in;
-      border-top: 1px solid var(--stone-dark);
-      padding-top: 8pt;
-      display: flex;
-      justify-content: space-between;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 8pt;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--warmgray);
-    }
-    .pg-footer .brand { color: var(--navy); font-weight: 500; }
-    .pg-footer .right { letter-spacing: 0.18em; color: var(--copper); }
-
     /* === CLOSING === */
     .closing {
       background: var(--stone);
-      padding: 28pt 30pt;
-      margin: 26pt 0 18pt;
+      padding: 20pt 24pt;
+      margin: 18pt 0 12pt;
       border-left: 3px solid var(--copper);
     }
     .closing p {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 18pt;
+      font-size: 16pt;
       line-height: 1.3;
       color: var(--navy);
       margin: 0;
@@ -475,17 +476,17 @@
 <body>
 
   <!-- ========== COVER ========== -->
-  <section class="page cover">
+  <section class="cover">
     <div class="cover-inner">
-      <div class="cover-eyebrow">A SIGNAL &amp; STRUCTURE AI WHITE PAPER</div>
+      <div class="cover-eyebrow">WHITE PAPER</div>
       <p class="article">The</p>
       <h1>Invisible<br>Business</h1>
-      <p class="subhead">Why your business exists in the real world but not in AI — and a framework for understanding AI visibility.</p>
+      <p class="subhead">Why your business exists in the real world but not in AI. A framework for understanding AI visibility.</p>
       <hr>
       <div class="meta">
         <div>
           <strong>Author</strong>
-          Lenise Kenney<br>Founder, Signal &amp; Structure AI
+          Lenise Kenney<br>Founder
         </div>
         <div>
           <strong>Published</strong>
@@ -530,12 +531,7 @@
         <div class="l">Average conversion rate from AI-referred traffic, vs ~3% for traditional organic search (Previsible, 2025&ndash;26)</div>
       </div>
     </div>
-
-    <div class="pg-footer">
-      <span class="brand">The Invisible Business</span>
-      <span class="right">02</span>
-    </div>
-  </section>
+</section>
 
   <!-- ========== PRELIMINARY RESEARCH FINDINGS ========== -->
   <section class="page">
@@ -553,15 +549,10 @@
 
     <h3 class="sub-title">Structured Data: the universal weakness</h3>
     <p>Across all 20 businesses and all four industries, Structured Data was the lowest-scoring category without exception. No business scored above 48 out of 100 on this dimension, and the category average was 25. This is the markup that tells AI exactly what a business is, who runs it, what it offers, and where it operates. Without it, AI has to infer. Most of the time, it infers wrong or says nothing.</p>
+</section>
 
-    <div class="pg-footer">
-      <span class="brand">The Invisible Business</span>
-      <span class="right">03</span>
-    </div>
-  </section>
-
-  <!-- ========== DATASET ========== -->
-  <section class="page">
+  <!-- ========== DATASET (continues from research findings) ========== -->
+  <section class="page continues">
     <div class="eyebrow">The Dataset</div>
     <h2 class="section-title">Twenty businesses, four industries, four cities.</h2>
     <p>Scores are on a 0&ndash;100 scale. <strong>Structured Data</strong> measures schema markup quality. <strong>Business Identity</strong> measures name, address, and phone consistency. <strong>AI Presence</strong> measures whether AI platforms found and accurately described the business. Businesses are anonymized.</p>
@@ -609,12 +600,7 @@
     </table>
 
     <p>By industry: pilates studios averaged 51, chiropractic practices 49, independent realtors 48, bed and breakfasts 46. <strong>The spread within each industry was as wide as the spread across industries.</strong> A pilates studio scored 57; another in a different city scored 39. The difference was not the industry or the city. It was the degree to which each business had structured its information in ways AI can read.</p>
-
-    <div class="pg-footer">
-      <span class="brand">The Invisible Business</span>
-      <span class="right">04</span>
-    </div>
-  </section>
+</section>
 
   <!-- ========== THE PROBLEM ========== -->
   <section class="page">
@@ -625,19 +611,13 @@
     <p>As far as AI is concerned, your business does not exist. This scenario is already happening millions of times a day. And it is happening to businesses that have done everything right by traditional standards.</p>
 
     <h3 class="sub-title">The numbers behind the shift</h3>
-    <p>The scale of this shift is not hypothetical. ChatGPT now has over <strong>800 million weekly active users</strong> (OpenAI, 2026). Gartner projects that traditional search engine volume will <strong>decline by 25%</strong> by the end of 2026 (Gartner, 2026). Google&rsquo;s own AI Overviews now reach more than <strong>2 billion monthly users</strong> (Google, 2026), which means even people who think they&rsquo;re &ldquo;just Googling it&rdquo; are increasingly getting AI-generated answers. Referral traffic from AI platforms is growing at roughly <strong>800% year-over-year</strong> (Semrush, 2025).</p>
-    <p>Perhaps the most striking number: AI-referred traffic converts at approximately <strong>14%</strong>, compared to roughly <strong>3%</strong> for traditional organic search (Previsible, 2025&ndash;26). Someone who finds your business through an AI recommendation is nearly five times more likely to become a customer than someone who finds you through a standard Google search.</p>
+    <p>The scale of this shift is not hypothetical. ChatGPT now has over <strong>800 million weekly active users</strong> (OpenAI, 2026). Gartner projects traditional search volume will <strong>decline 25%</strong> by the end of 2026. Google&rsquo;s AI Overviews now reach more than <strong>2 billion monthly users</strong>, and referral traffic from AI platforms is growing at roughly <strong>800% year-over-year</strong> (Semrush, 2025). AI-referred traffic converts at approximately <strong>14%</strong>, compared to ~3% for traditional organic search (Previsible, 2025&ndash;26). That is nearly five times the conversion rate.</p>
 
     <h3 class="sub-title">The gap</h3>
-    <p>The core problem is a disconnect between who your business actually is and what AI platforms say about you. For most small businesses, this gap takes one of two forms.</p>
+    <p>For most small businesses, the disconnect between who they are and what AI says about them takes one of two forms.</p>
     <p><strong>Invisibility.</strong> AI has no information about your business and returns nothing, or returns generic responses that omit you entirely. You are functionally absent from every AI-powered conversation in your category.</p>
     <p><strong>Hallucination.</strong> AI presents fabricated information about your business with complete confidence. Wrong services, wrong location, invented specialties. The customer believes it. You never see the conversation.</p>
-
-    <div class="pg-footer">
-      <span class="brand">The Invisible Business</span>
-      <span class="right">05</span>
-    </div>
-  </section>
+</section>
 
   <!-- ========== WHY INVISIBLE ========== -->
   <section class="page">
@@ -651,15 +631,10 @@
     <hr class="rule">
 
     <div class="pullquote">Without structured data, your website is a book written in a language AI does not speak.</div>
+</section>
 
-    <div class="pg-footer">
-      <span class="brand">The Invisible Business</span>
-      <span class="right">06</span>
-    </div>
-  </section>
-
-  <!-- ========== FIVE CAUSES ========== -->
-  <section class="page">
+  <!-- ========== FIVE CAUSES (continues from pull quote) ========== -->
+  <section class="page continues">
     <div class="eyebrow">Five Causes</div>
     <h2 class="section-title">Why your business is invisible.</h2>
 
@@ -667,7 +642,7 @@
       <div class="num">01</div>
       <div class="body">
         <h4>No structured data.</h4>
-        <p>Your website speaks human, not machine. Most small business websites are built for people to read: compelling copy, clean navigation, beautiful photography. But AI platforms don&rsquo;t read websites the way humans do. They look for structured data: schema markup, metadata, clearly labeled information in formats machines can parse. Without it, your website is a book written in a language AI does not speak.</p>
+        <p>Your website speaks human, not machine. Most small business websites are built for people: compelling copy, clean navigation, beautiful photography. AI platforms read websites differently. They look for structured data: schema markup, metadata, clearly labeled information in formats machines can parse.</p>
       </div>
     </div>
 
@@ -675,7 +650,7 @@
       <div class="num">02</div>
       <div class="body">
         <h4>Inconsistent information.</h4>
-        <p>Conflicting details across the web create noise AI cannot resolve. If your Google Business Profile lists one address, your Yelp page shows another, and your website mentions a third set of services, AI faces a conflict it cannot untangle. It either picks one version (which may be wrong), tries to average them (which produces nonsense), or simply skips you.</p>
+        <p>Conflicting details across the web create noise AI cannot resolve. If your Google Business Profile lists one address, your Yelp page shows another, and your website mentions a third set of services, AI faces a conflict it cannot untangle. It picks one version, tries to average them, or simply skips you.</p>
       </div>
     </div>
 
@@ -683,7 +658,7 @@
       <div class="num">03</div>
       <div class="body">
         <h4>No third-party validation.</h4>
-        <p>AI trusts what others say about you more than what you say about yourself. This works the same way human trust works: a friend&rsquo;s recommendation carries more weight than a company&rsquo;s own advertisement. AI weighs third-party mentions, reviews, directory listings, press coverage, and professional citations heavily. If the only source of information about your business is your own website, AI has limited confidence in representing you.</p>
+        <p>AI trusts what others say about you more than what you say about yourself. It weighs third-party mentions, reviews, directory listings, press coverage, and professional citations heavily. If the only source of information about your business is your own website, AI has limited confidence in representing you.</p>
       </div>
     </div>
 
@@ -691,7 +666,7 @@
       <div class="num">04</div>
       <div class="body">
         <h4>Thin or outdated content.</h4>
-        <p>AI favors substantive, recent, well-organized information. A five-page website last updated in 2022 sends a weak signal. A business that regularly publishes detailed service descriptions, answers common questions, and maintains current information across platforms sends a much stronger one. Depth and freshness are not just good for marketing. They are how AI decides whether you&rsquo;re worth mentioning.</p>
+        <p>AI favors substantive, recent, well-organized information. A five-page website last updated in 2022 sends a weak signal. A business that regularly publishes detailed service descriptions and maintains current information across platforms sends a much stronger one.</p>
       </div>
     </div>
 
@@ -699,15 +674,10 @@
       <div class="num">05</div>
       <div class="body">
         <h4>No AI-specific optimization.</h4>
-        <p>The rules for being found by Google are not the same as the rules for being represented by AI. Traditional SEO focuses on keywords, backlinks, and page authority. AI visibility depends on entity clarity, content extractability, and multi-platform presence. Research shows that 40&ndash;60% of the sources cited in AI responses change month to month, but businesses with clear entity definitions and broad, consistent presence show up reliably (Search Engine Land, 2025).</p>
+        <p>The rules for being found by Google are not the same as the rules for being represented by AI. Traditional SEO focuses on keywords, backlinks, and page authority. AI visibility depends on entity clarity, content extractability, and multi-platform presence.</p>
       </div>
     </div>
-
-    <div class="pg-footer">
-      <span class="brand">The Invisible Business</span>
-      <span class="right">07</span>
-    </div>
-  </section>
+</section>
 
   <!-- ========== HALLUCINATION ========== -->
   <section class="page">
@@ -726,12 +696,7 @@
       <p>Over the next 60 days, as we applied the same framework we use with clients, our score climbed: <strong>0, then 6, then 76, then 75, and most recently 80 out of 100</strong>, reaching Strong Signal. AI platforms now mention us accurately. Hallucinations that previously placed us in unrelated industries have fallen significantly. We are not done. But the arc is real.</p>
       <p>We were a new business, so a zero on day one was not surprising. What is surprising is that businesses with ten, fifteen, twenty years of operation, hundreds of reviews, and strong local reputations score the same way. <strong>Our zero was a starting point. Theirs is an invisible crisis they do not know they have.</strong></p>
     </div>
-
-    <div class="pg-footer">
-      <span class="brand">The Invisible Business</span>
-      <span class="right">08</span>
-    </div>
-  </section>
+</section>
 
   <!-- ========== SIGNAL STRENGTH FRAMEWORK ========== -->
   <section class="page">
@@ -764,19 +729,14 @@
         <td class="feel">&ldquo;When someone asks AI about us, they get the truth.&rdquo;</td>
       </tr>
     </table>
-    <p>In our preliminary testing, most small businesses fall in the No Signal or Low Signal categories. Most business owners are completely unaware of where they stand. <strong>Strong Signal is not theoretical.</strong> It is the difference between a potential customer asking AI for a recommendation and hearing your name, or hearing your competitor&rsquo;s.</p>
+    <p>Most small businesses fall in the No Signal or Low Signal categories, and most owners are unaware of where they stand. <strong>Strong Signal is the difference between a customer hearing your name, or hearing your competitor&rsquo;s.</strong></p>
+</section>
 
-    <div class="pg-footer">
-      <span class="brand">The Invisible Business</span>
-      <span class="right">09</span>
-    </div>
-  </section>
-
-  <!-- ========== SIX DIMENSIONS ========== -->
-  <section class="page">
+  <!-- ========== SIX DIMENSIONS (continues from Signal Strength) ========== -->
+  <section class="page continues">
     <div class="eyebrow">Six Dimensions</div>
     <h2 class="section-title">What we measure when we measure your signal.</h2>
-    <p>Signal Strength is not a single measurement. It is the combined result of how well your business performs across six distinct dimensions. These dimensions form the basis of the <strong>Signal Score</strong>, a proprietary diagnostic methodology developed by Signal &amp; Structure AI that tests AI representation across ChatGPT, Claude, and Gemini.</p>
+    <p>Signal Strength is the combined result of how a business performs across six distinct dimensions. Together they form the basis of the <strong>Signal Score</strong>, which tests AI representation across ChatGPT, Claude, and Gemini.</p>
 
     <table class="dimensions">
       <tr>
@@ -828,13 +788,7 @@
         <td>The ultimate test. When a potential customer asks AI for a recommendation in your category and location, are you in the answer? This dimension measures whether all other signals combine into actual visibility.</td>
       </tr>
     </table>
-    <p>A physical therapy clinic with over 200 five-star reviews scored strong on reputation but had zero discoverability. A landscaping company with detailed service pages scored well on services and identity, but AI consistently placed them in the wrong zip code because of conflicting location data. The framework is designed to pinpoint exactly where your AI visibility breaks down.</p>
-
-    <div class="pg-footer">
-      <span class="brand">The Invisible Business</span>
-      <span class="right">10</span>
-    </div>
-  </section>
+</section>
 
   <!-- ========== WHAT IT MEANS ========== -->
   <section class="page">
@@ -856,12 +810,7 @@
     <h3 class="sub-title">The first-mover advantage</h3>
     <p>Here is the good news: this is early. Most businesses have never asked &ldquo;What does AI say about me?&rdquo; The concept of AI visibility is new enough that the playing field has not yet been defined. Businesses that address this now, that understand their Signal Strength, correct misinformation, and build structured, AI-readable signals, will have a compounding advantage as AI becomes the primary discovery channel.</p>
     <p>Research from Princeton University, Georgia Tech, and IIT Delhi found that adding citations, statistics, and expert context to content can <strong>improve AI search visibility by 30&ndash;40%</strong> (Princeton/Georgia Tech/IIT Delhi, 2024). The window for first-mover advantage will not stay open indefinitely. The time to act is before your competitors realize they need to.</p>
-
-    <div class="pg-footer">
-      <span class="brand">The Invisible Business</span>
-      <span class="right">11</span>
-    </div>
-  </section>
+</section>
 
   <!-- ========== ABOUT + CTA + REFERENCES ========== -->
   <section class="page">
@@ -880,12 +829,7 @@
     <div class="closing">
       <p>You&rsquo;re not broken. You&rsquo;re just not broadcasting. That&rsquo;s fixable.</p>
     </div>
-
-    <div class="pg-footer">
-      <span class="brand">The Invisible Business</span>
-      <span class="right">12</span>
-    </div>
-  </section>
+</section>
 
   <!-- ========== REFERENCES ========== -->
   <section class="page">
@@ -904,12 +848,7 @@
     <hr class="rule">
 
     <p style="font-size:9pt;color:var(--warmgray);margin-top:18pt">Signal Score is a proprietary methodology of Signal &amp; Structure AI. For more information, visit <strong style="color:var(--navy)">signalstructure.ai</strong>. This is a preliminary edition; methodology, dataset, and findings will be updated as additional businesses are added to the study.</p>
-
-    <div class="pg-footer">
-      <span class="brand">The Invisible Business</span>
-      <span class="right">13</span>
-    </div>
-  </section>
+</section>
 
 </body>
 </html>

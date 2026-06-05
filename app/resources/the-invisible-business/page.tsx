@@ -177,21 +177,21 @@ export default function InvisibleBusinessPage() {
           <FadeIn>
             <p className="font-body text-xs font-bold uppercase tracking-[0.22em] text-copper mb-6 flex items-center gap-2">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-copper" />
-              A Signal &amp; Structure AI White Paper
+              White Paper
             </p>
             <p className="font-body uppercase tracking-[0.4em] text-white/55 mb-2">The</p>
             <h1 className="font-display text-6xl lg:text-8xl leading-[0.95] text-white tracking-tight mb-8">
               Invisible<br />Business
             </h1>
             <p className="font-display text-2xl lg:text-3xl text-white/85 leading-snug max-w-3xl mb-10">
-              Why your business exists in the real world but not in AI &mdash; and a framework
+              Why your business exists in the real world but not in AI. A framework
               for understanding AI visibility.
             </p>
             <div className="h-px bg-white/15 max-w-2xl mb-8" />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl text-sm text-white/70 mb-10">
               <div>
                 <span className="font-body text-xs font-bold tracking-[0.12em] uppercase text-copper block mb-1">Author</span>
-                Lenise Kenney<br />Founder, Signal &amp; Structure AI
+                Lenise Kenney<br />Founder
               </div>
               <div>
                 <span className="font-body text-xs font-bold tracking-[0.12em] uppercase text-copper block mb-1">Published</span>
