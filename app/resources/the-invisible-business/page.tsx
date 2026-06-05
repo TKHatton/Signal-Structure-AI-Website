@@ -159,9 +159,9 @@ const dimensions = [
 const causes = [
   { n: '01', t: 'No structured data.', b: 'Your website speaks human, not machine. Most small business websites are built for people to read: compelling copy, clean navigation, beautiful photography. But AI platforms don’t read websites the way humans do. They look for structured data: schema markup, metadata, clearly labeled information in formats machines can parse. Without it, your website is a book written in a language AI does not speak.' },
   { n: '02', t: 'Inconsistent information.', b: 'Conflicting details across the web create noise AI cannot resolve. If your Google Business Profile lists one address, your Yelp page shows another, and your website mentions a third set of services, AI faces a conflict it cannot untangle. It either picks one version (which may be wrong), tries to average them (which produces nonsense), or simply skips you.' },
-  { n: '03', t: 'No third-party validation.', b: 'AI trusts what others say about you more than what you say about yourself. AI weighs third-party mentions, reviews, directory listings, press coverage, and professional citations heavily. If the only source of information about your business is your own website, AI has limited confidence in representing you.' },
-  { n: '04', t: 'Thin or outdated content.', b: 'AI favors substantive, recent, well-organized information. A five-page website last updated in 2022 sends a weak signal. A business that regularly publishes detailed service descriptions, answers common questions, and maintains current information across platforms sends a much stronger one.' },
-  { n: '05', t: 'No AI-specific optimization.', b: 'The rules for being found by Google are not the same as the rules for being represented by AI. Traditional SEO focuses on keywords, backlinks, and page authority. AI visibility depends on entity clarity, content extractability, and multi-platform presence.' },
+  { n: '03', t: 'No third-party validation.', b: 'AI trusts what others say about you more than what you say about yourself. This works the way human trust works: a friend’s recommendation carries more weight than a company’s own advertisement. AI weighs third-party mentions, reviews, directory listings, press coverage, and professional citations heavily. If the only source of information about your business is your own website, AI has limited confidence in representing you.' },
+  { n: '04', t: 'Thin or outdated content.', b: 'AI favors substantive, recent, well-organized information. A five-page website last updated in 2022 sends a weak signal. A business that regularly publishes detailed service descriptions, answers common questions, and maintains current information across platforms sends a much stronger one. Depth and freshness are not just good for marketing. They are how AI decides whether you are worth mentioning.' },
+  { n: '05', t: 'No AI-specific optimization.', b: 'The rules for being found by Google are not the same as the rules for being represented by AI. Traditional SEO focuses on keywords, backlinks, and page authority. AI visibility depends on entity clarity, content extractability, and multi-platform presence. Research shows that 40–60% of the sources cited in AI responses change month to month, but businesses with clear entity definitions and broad, consistent presence show up reliably (Search Engine Land, 2025).' },
 ];
 
 export default function InvisibleBusinessPage() {
@@ -429,6 +429,12 @@ export default function InvisibleBusinessPage() {
                 As far as AI is concerned, your business does not exist. This is already happening millions of
                 times a day, to businesses that have done everything right by traditional standards.
               </p>
+              <p className="font-body text-ink leading-relaxed mb-4">
+                These numbers tell a clear story.{' '}
+                <strong className="text-navy">AI is not replacing search. It is becoming search.</strong>{' '}
+                If your business is not represented in AI&rsquo;s answers, you are losing the
+                highest-converting referral channel available.
+              </p>
 
               <h3 className="font-display text-2xl text-navy mb-3 mt-10">The gap</h3>
               <p className="font-body text-ink leading-relaxed mb-4">
@@ -621,6 +627,16 @@ export default function InvisibleBusinessPage() {
                   </div>
                 ))}
               </div>
+
+              <p className="font-body text-ink leading-relaxed max-w-prose mx-auto mt-10">
+                A physical therapy clinic with over 200 five-star reviews scored strong on
+                reputation but had <strong className="text-navy">zero discoverability</strong>.
+                A landscaping company with detailed service pages scored well on services and
+                identity, but AI consistently placed them in the wrong zip code because of
+                conflicting location data across directories. The framework is designed to
+                pinpoint exactly where your AI visibility breaks down, not just whether it
+                exists.
+              </p>
             </FadeIn>
           </div>
         </section>
