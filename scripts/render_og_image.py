@@ -66,7 +66,7 @@ HTML = """<!doctype html>
     letter-spacing: 0.4em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.45);
-    margin-bottom: -4px;
+    margin-bottom: -18px;
   }
   h1 {
     font-family: 'DM Serif Display', Georgia, serif;
