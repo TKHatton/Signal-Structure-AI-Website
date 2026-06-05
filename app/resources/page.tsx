@@ -10,7 +10,7 @@ import { BOOKING_URL } from '@/lib/constants';
 export const metadata = {
   title: 'Resources | Signal & Structure AI',
   description:
-    'Free signal quiz, Signal Pulse checker, and The Invisible Shift ebook. Tools to understand how AI sees your business.',
+    'Free Signal Pulse checker, AI visibility quiz, and The Invisible Business white paper. Tools to understand how AI sees your business.',
   alternates: {
     canonical: '/resources',
   },
@@ -271,50 +271,53 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* 3. Ebook */}
+      {/* 3. White Paper */}
       <section className="section-padding">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Ebook visual placeholder */}
-              <div className="bg-navy p-12 rounded-lg text-center order-2 lg:order-1">
+              {/* White paper visual */}
+              <Link
+                href="/resources/the-invisible-business"
+                className="bg-navy p-12 rounded-lg text-center order-2 lg:order-1 block group hover:bg-navy-light transition-colors"
+              >
                 <div className="inline-block">
                   <p className="font-body text-copper text-sm tracking-widest uppercase mb-3">
-                    Ebook
+                    White Paper
                   </p>
-                  <h3 className="font-display text-3xl text-white mb-3 max-w-xs">
-                    The Invisible Shift
+                  <p className="font-body text-white/55 uppercase tracking-[0.4em] text-sm mb-1">The</p>
+                  <h3 className="font-display text-4xl text-white mb-3 leading-tight">
+                    Invisible<br />Business
                   </h3>
                   <p className="font-body text-white/70 text-sm mb-6">
-                    How AI Changed Who Gets Found
+                    Why your business exists in the real world but not in AI
                   </p>
                   <div className="w-16 h-0.5 bg-copper mx-auto mb-6" />
                   <p className="font-body text-white/50 text-xs">
                     By Lenise Kenney
                   </p>
                   <p className="font-body text-white/50 text-xs">
-                    Signal & Structure AI
+                    Signal &amp; Structure AI &middot; May 2026
                   </p>
                 </div>
-              </div>
+              </Link>
 
               <div className="order-1 lg:order-2">
-                <SectionLabel>COMING SOON</SectionLabel>
+                <SectionLabel>AVAILABLE NOW</SectionLabel>
                 <h2 className="font-display text-section-heading text-navy mb-4">
-                  The Invisible Shift
+                  The Invisible Business
                 </h2>
                 <p className="font-body text-lg text-warmgray mb-4">
-                  A deeper look at how AI changed who gets found online and what
-                  it means for your business. This is not a technical manual. It
-                  is a strategic guide to understanding the landscape that is
-                  reshaping how customers discover businesses.
+                  A preliminary research white paper introducing the Signal Strength
+                  framework and the six dimensions of AI visibility. Twenty small
+                  businesses across four industries and four U.S. cities, tested against
+                  ChatGPT, Claude, and Gemini.
                 </p>
                 <p className="font-body text-warmgray mb-6">
-                  Inside you will find real examples of what AI gets wrong, why
-                  traditional marketing no longer covers it, what
-                  &ldquo;discoverable&rdquo; actually looks like, and how to
-                  think about measuring your AI presence. Written for business
-                  owners and leaders, not developers.
+                  Inside: what 20 small businesses revealed about AI visibility, the
+                  five causes of AI invisibility, the hallucination problem, and a
+                  framework for measuring where you stand. Written for business owners
+                  and leaders, not developers.
                 </p>
                 <div className="flex items-center gap-2 text-sm text-warmgray mb-2">
                   <svg
@@ -328,7 +331,7 @@ export default function ResourcesPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span>8 chapters on the new AI discovery landscape</span>
+                  <span>Twenty-business dataset across four industries</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-warmgray mb-2">
                   <svg
@@ -342,7 +345,7 @@ export default function ResourcesPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span>Real examples of AI errors affecting businesses</span>
+                  <span>The Signal Strength framework and six dimensions</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-warmgray mb-6">
                   <svg
@@ -358,9 +361,21 @@ export default function ResourcesPage() {
                   </svg>
                   <span>Written for business owners, not developers</span>
                 </div>
-                <p className="font-body text-navy font-semibold mb-4">
-                  Available soon. Join the newsletter to be first to know.
-                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Button href="/resources/the-invisible-business" variant="primary">
+                    Read the White Paper
+                  </Button>
+                  <a
+                    href="/the-invisible-business.pdf"
+                    download
+                    className="inline-flex items-center gap-2 bg-stone hover:bg-stone-dark text-navy font-body font-semibold px-6 py-3 rounded-button transition-all"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16" />
+                    </svg>
+                    Download PDF
+                  </a>
+                </div>
               </div>
             </div>
           </FadeIn>

@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Invisible Business — Signal &amp; Structure AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1B2B4B;
+      --navy-light: #243660;
+      --navy-dark: #131F37;
+      --copper: #C17A3A;
+      --copper-light: #D4923F;
+      --copper-dark: #A66830;
+      --stone: #F5F0EB;
+      --stone-dark: #E5E0DB;
+      --warmgray: #6B7280;
+      --warmgray-light: #9CA3AF;
+      --ink: #1f2532;
+    }
+
+    @page {
+      size: Letter;
+      margin: 0;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 11pt;
+      -webkit-font-smoothing: antialiased;
+      background: #fff;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-weight: 400;
+      color: var(--navy);
+      letter-spacing: -0.005em;
+      margin: 0;
+    }
+
+    .mono { font-family: 'JetBrains Mono', monospace; }
+
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      padding: 0.8in 0.85in;
+      page-break-after: always;
+      position: relative;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    /* === COVER === */
+    .cover {
+      background: var(--navy);
+      color: #fff;
+      padding: 1in 0.85in 0.85in;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+    .cover-inner { position: relative; z-index: 1; }
+
+    .cover-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 9.5pt;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--copper);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cover-eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--copper);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .cover h1 {
+      font-size: 64pt;
+      color: #fff;
+      line-height: 0.98;
+      margin-top: 0.5in;
+      letter-spacing: -0.02em;
+    }
+    .cover .article {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14pt;
+      letter-spacing: 0.4em;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      margin-bottom: -8pt;
+    }
+    .cover .subhead {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 19pt;
+      color: rgba(255,255,255,0.85);
+      max-width: 5.5in;
+      margin-top: 0.35in;
+      line-height: 1.25;
+    }
+    .cover hr {
+      border: 0;
+      height: 1px;
+      background: rgba(255,255,255,0.18);
+      margin: 0.55in 0 0.35in;
+    }
+    .cover .meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.3in;
+      font-size: 10pt;
+      color: rgba(255,255,255,0.7);
+    }
+    .cover .meta strong { color: #fff; font-weight: 500; display: block; margin-bottom: 4px; letter-spacing: 0.08em; text-transform: uppercase; font-size: 8.5pt; color: var(--copper); }
+    .cover .seal {
+      position: absolute;
+      bottom: 0.8in;
+      left: 0.85in;
+      right: 0.85in;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      color: rgba(255,255,255,0.7);
+      font-size: 9pt;
+      letter-spacing: 0.06em;
+    }
+    .seal .brand {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 13pt;
+      color: #fff;
+      letter-spacing: 0;
+    }
+    .seal .right { text-align: right; }
+    .seal .tag {
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 8.5pt;
+      color: var(--copper);
+    }
+
+    /* === SECTION HEADERS === */
+    .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 8.5pt;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--copper);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      background: var(--copper);
+      border-radius: 50%;
+    }
+
+    h2.section-title {
+      font-size: 32pt;
+      line-height: 1.05;
+      margin-bottom: 18pt;
+      letter-spacing: -0.015em;
+    }
+    h3.sub-title {
+      font-size: 19pt;
+      color: var(--navy);
+      margin-top: 26pt;
+      margin-bottom: 10pt;
+      line-height: 1.2;
+    }
+    h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 10.5pt;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-top: 22pt;
+      margin-bottom: 6pt;
+    }
+    p { margin: 0 0 11pt; color: var(--ink); }
+    p strong { font-weight: 700; color: var(--navy); }
+
+    /* === DROP CAP === */
+    .lede::first-letter {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 52pt;
+      line-height: 0.85;
+      float: left;
+      padding: 6pt 8pt 0 0;
+      color: var(--copper);
+    }
+
+    /* === DIVIDERS === */
+    .rule {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(90deg, var(--copper) 0, var(--copper) 64px, var(--stone-dark) 64px, var(--stone-dark) 100%);
+      margin: 22pt 0 18pt;
+    }
+    .rule-thin {
+      border: 0;
+      height: 1px;
+      background: var(--stone-dark);
+      margin: 18pt 0;
+    }
+
+    /* === PULL QUOTE === */
+    .pullquote {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 22pt;
+      line-height: 1.25;
+      color: var(--navy);
+      padding: 22pt 26pt 22pt 38pt;
+      border-left: 3px solid var(--copper);
+      margin: 22pt 0;
+      position: relative;
+    }
+    .pullquote::before {
+      content: "“";
+      position: absolute;
+      left: 14pt;
+      top: 6pt;
+      font-size: 44pt;
+      color: var(--copper);
+      line-height: 1;
+    }
+
+    /* === STAT GRID === */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14pt;
+      margin: 16pt 0 22pt;
+    }
+    .stat {
+      background: var(--stone);
+      padding: 16pt 18pt;
+      border-left: 3px solid var(--copper);
+    }
+    .stat .n {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 28pt;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 4pt;
+    }
+    .stat .l {
+      font-size: 9.5pt;
+      color: var(--warmgray);
+      line-height: 1.35;
+    }
+
+    /* === DATA TABLE === */
+    table.data {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16pt 0 18pt;
+      font-size: 9pt;
+    }
+    table.data th {
+      background: var(--navy);
+      color: #fff;
+      text-align: left;
+      padding: 8pt 9pt;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 8pt;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    table.data td {
+      padding: 7pt 9pt;
+      border-bottom: 1px solid var(--stone-dark);
+      vertical-align: top;
+    }
+    table.data tr:nth-child(even) td { background: rgba(245,240,235,0.45); }
+    table.data tr.category-row td {
+      background: var(--stone);
+      color: var(--copper);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 8.5pt;
+    }
+    table.data td.num {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    /* === FRAMEWORK TABLES === */
+    table.framework {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14pt 0 22pt;
+      font-size: 10pt;
+    }
+    table.framework td {
+      padding: 14pt 16pt;
+      vertical-align: top;
+      border-bottom: 1px solid var(--stone-dark);
+    }
+    table.framework td.level {
+      width: 1.6in;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 9pt;
+      color: var(--copper);
+    }
+    table.framework td.feel {
+      width: 2in;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-style: italic;
+      color: var(--navy);
+      font-size: 10.5pt;
+    }
+
+    table.dimensions {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14pt 0 22pt;
+      font-size: 10pt;
+    }
+    table.dimensions td {
+      padding: 14pt 16pt;
+      vertical-align: top;
+      border-bottom: 1px solid var(--stone-dark);
+    }
+    table.dimensions td.num {
+      width: 0.7in;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 22pt;
+      color: var(--copper);
+      line-height: 1;
+    }
+    table.dimensions td.dim {
+      width: 1.85in;
+    }
+    table.dimensions td.dim .dim-name {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      color: var(--navy);
+      display: block;
+      margin-bottom: 3pt;
+      font-size: 10.5pt;
+    }
+    table.dimensions td.dim .dim-q {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-style: italic;
+      color: var(--warmgray);
+      font-size: 10pt;
+    }
+
+    /* === CALLOUT / FOUNDER STORY === */
+    .callout {
+      background: var(--navy);
+      color: rgba(255,255,255,0.92);
+      padding: 24pt 26pt;
+      margin: 22pt 0;
+      position: relative;
+    }
+    .callout .label {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 8.5pt;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 10pt;
+    }
+    .callout p { color: rgba(255,255,255,0.92); }
+    .callout p strong { color: #fff; }
+
+    /* === CAUSE BLOCKS === */
+    .cause {
+      display: grid;
+      grid-template-columns: 0.8in 1fr;
+      gap: 14pt;
+      margin: 14pt 0;
+      page-break-inside: avoid;
+    }
+    .cause .num {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 38pt;
+      color: var(--copper);
+      line-height: 0.9;
+    }
+    .cause .body h4 {
+      margin-top: 0;
+      text-transform: none;
+      letter-spacing: 0;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 14pt;
+      color: var(--navy);
+      font-weight: 400;
+    }
+
+    /* === REFERENCES === */
+    .refs p {
+      font-size: 9.5pt;
+      color: var(--warmgray);
+      padding-left: 20pt;
+      text-indent: -20pt;
+      margin-bottom: 8pt;
+      line-height: 1.45;
+    }
+    .refs p strong { color: var(--navy); font-weight: 700; }
+
+    /* === FOOTER === */
+    .pg-footer {
+      position: absolute;
+      bottom: 0.4in;
+      left: 0.85in;
+      right: 0.85in;
+      border-top: 1px solid var(--stone-dark);
+      padding-top: 8pt;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 8pt;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--warmgray);
+    }
+    .pg-footer .brand { color: var(--navy); font-weight: 500; }
+    .pg-footer .right { letter-spacing: 0.18em; color: var(--copper); }
+
+    /* === CLOSING === */
+    .closing {
+      background: var(--stone);
+      padding: 28pt 30pt;
+      margin: 26pt 0 18pt;
+      border-left: 3px solid var(--copper);
+    }
+    .closing p {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 18pt;
+      line-height: 1.3;
+      color: var(--navy);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== COVER ========== -->
+  <section class="page cover">
+    <div class="cover-inner">
+      <div class="cover-eyebrow">A SIGNAL &amp; STRUCTURE AI WHITE PAPER</div>
+      <p class="article">The</p>
+      <h1>Invisible<br>Business</h1>
+      <p class="subhead">Why your business exists in the real world but not in AI — and a framework for understanding AI visibility.</p>
+      <hr>
+      <div class="meta">
+        <div>
+          <strong>Author</strong>
+          Lenise Kenney<br>Founder, Signal &amp; Structure AI
+        </div>
+        <div>
+          <strong>Published</strong>
+          May 2026<br>Preliminary Edition
+        </div>
+      </div>
+    </div>
+    <div class="seal">
+      <div class="brand">Signal &amp; Structure AI</div>
+      <div class="right">
+        <div class="tag">signalstructure.ai</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXECUTIVE SUMMARY ========== -->
+  <section class="page">
+    <div class="eyebrow">Executive Summary</div>
+    <h2 class="section-title">Most small businesses are invisible to AI.</h2>
+    <p class="lede">Not because they lack quality, reputation, or customers, but because AI platforms cannot find, parse, or accurately represent them. As AI-powered tools like ChatGPT, Claude, and Gemini become the primary way consumers and professionals discover businesses, a gap has opened between who your business actually is and what AI says about you.</p>
+    <p>For the majority of small businesses, AI either says nothing at all or says something wrong. Both outcomes cost you customers.</p>
+    <p>This paper introduces the <strong>Signal Strength framework</strong> and the <strong>six dimensions of AI visibility</strong>, a diagnostic lens for understanding where your business stands and what&rsquo;s at stake.</p>
+
+    <hr class="rule">
+
+    <div class="eyebrow">At a glance</div>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="n">800M</div>
+        <div class="l">Weekly active users on ChatGPT (OpenAI, 2026)</div>
+      </div>
+      <div class="stat">
+        <div class="n">25%</div>
+        <div class="l">Projected decline in traditional search engine volume by end of 2026 (Gartner, 2026)</div>
+      </div>
+      <div class="stat">
+        <div class="n">800%</div>
+        <div class="l">Year-over-year growth in AI referral traffic (Semrush, 2025)</div>
+      </div>
+      <div class="stat">
+        <div class="n">14%</div>
+        <div class="l">Average conversion rate from AI-referred traffic, vs ~3% for traditional organic search (Previsible, 2025&ndash;26)</div>
+      </div>
+    </div>
+
+    <div class="pg-footer">
+      <span class="brand">The Invisible Business</span>
+      <span class="right">02</span>
+    </div>
+  </section>
+
+  <!-- ========== PRELIMINARY RESEARCH FINDINGS ========== -->
+  <section class="page">
+    <div class="eyebrow">Preliminary Research Findings</div>
+    <h2 class="section-title">What 20 small businesses revealed about AI visibility.</h2>
+    <p>To test the Signal Strength framework against real-world conditions, Signal &amp; Structure AI analyzed 20 small businesses across four industries and four U.S. cities. The businesses represent common local service categories: chiropractic practices, pilates studios, independent realtors, and bed and breakfasts. Cities included Atlanta, Raleigh, Austin, and Chicago.</p>
+    <p>Each business was evaluated against three major AI platforms: ChatGPT, Claude, and Gemini. Businesses are presented without identifying information to protect their privacy; none were clients of Signal &amp; Structure AI at the time of evaluation. Scores reflect the state of each business at the time of testing in early 2026.</p>
+
+    <h3 class="sub-title">What the data showed</h3>
+    <p><strong>Not one business in the study reached Strong Signal.</strong> The highest score recorded was 57 out of 100. The lowest was 33. The mean across all 20 businesses was 49.7, placing the group at the boundary between Low Signal and Weak Signal.</p>
+    <p>That result holds across industry and geography. A chiropractic practice in Atlanta and a bed and breakfast in Chicago scored within a few points of each other. The pattern is not industry-specific or location-specific. It is structural.</p>
+
+    <h3 class="sub-title">The Technical Health paradox</h3>
+    <p>Most businesses scored near-perfect on Technical Health, the category that measures how accessible a website is to AI crawlers. Their sites were technically readable. AI platforms could visit and parse their content without obstruction. Yet overall scores remained in the 33 to 57 range. <strong>Technical accessibility is not AI discoverability.</strong></p>
+
+    <h3 class="sub-title">Structured Data: the universal weakness</h3>
+    <p>Across all 20 businesses and all four industries, Structured Data was the lowest-scoring category without exception. No business scored above 48 out of 100 on this dimension, and the category average was 25. This is the markup that tells AI exactly what a business is, who runs it, what it offers, and where it operates. Without it, AI has to infer. Most of the time, it infers wrong or says nothing.</p>
+
+    <div class="pg-footer">
+      <span class="brand">The Invisible Business</span>
+      <span class="right">03</span>
+    </div>
+  </section>
+
+  <!-- ========== DATASET ========== -->
+  <section class="page">
+    <div class="eyebrow">The Dataset</div>
+    <h2 class="section-title">Twenty businesses, four industries, four cities.</h2>
+    <p>Scores are on a 0&ndash;100 scale. <strong>Structured Data</strong> measures schema markup quality. <strong>Business Identity</strong> measures name, address, and phone consistency. <strong>AI Presence</strong> measures whether AI platforms found and accurately described the business. Businesses are anonymized.</p>
+
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Business Type</th>
+          <th>City</th>
+          <th>Score</th>
+          <th>Structured Data</th>
+          <th>Business Identity</th>
+          <th>AI Presence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="category-row"><td colspan="6">Chiropractic Practices</td></tr>
+        <tr><td>Chiropractic practice</td><td>Atlanta</td><td class="num">56</td><td class="num">20</td><td class="num">60</td><td class="num">100</td></tr>
+        <tr><td>Chiropractic practice</td><td>Atlanta</td><td class="num">33</td><td class="num">25</td><td class="num">30</td><td class="num">100</td></tr>
+        <tr><td>Chiropractic practice</td><td>Austin</td><td class="num">51</td><td class="num">10</td><td class="num">35</td><td class="num">100</td></tr>
+        <tr><td>Chiropractic practice</td><td>Raleigh</td><td class="num">50</td><td class="num">25</td><td class="num">25</td><td class="num">100</td></tr>
+        <tr><td>Chiropractic practice</td><td>Chicago</td><td class="num">54</td><td class="num">25</td><td class="num">50</td><td class="num">100</td></tr>
+
+        <tr class="category-row"><td colspan="6">Pilates Studios</td></tr>
+        <tr><td>Pilates studio</td><td>Atlanta</td><td class="num">39</td><td class="num">10</td><td class="num">35</td><td class="num">56</td></tr>
+        <tr><td>Pilates studio</td><td>Raleigh</td><td class="num">57</td><td class="num">25</td><td class="num">70</td><td class="num">100</td></tr>
+        <tr><td>Pilates studio</td><td>Raleigh</td><td class="num">56</td><td class="num">25</td><td class="num">70</td><td class="num">100</td></tr>
+        <tr><td>Pilates studio</td><td>Chicago</td><td class="num">55</td><td class="num">35</td><td class="num">40</td><td class="num">100</td></tr>
+        <tr><td>Pilates studio</td><td>Austin</td><td class="num">49</td><td class="num">45</td><td class="num">30</td><td class="num">83</td></tr>
+
+        <tr class="category-row"><td colspan="6">Independent Realtors</td></tr>
+        <tr><td>Independent realtor</td><td>Atlanta</td><td class="num">48</td><td class="num">48</td><td class="num">5</td><td class="num">70</td></tr>
+        <tr><td>Independent realtor</td><td>Raleigh</td><td class="num">42</td><td class="num">25</td><td class="num">10</td><td class="num">100</td></tr>
+        <tr><td>Independent realtor</td><td>Austin</td><td class="num">52</td><td class="num">38</td><td class="num">35</td><td class="num">100</td></tr>
+        <tr><td>Independent realtor</td><td>Austin</td><td class="num">49</td><td class="num">28</td><td class="num">45</td><td class="num">100</td></tr>
+        <tr><td>Independent realtor</td><td>Chicago</td><td class="num">47</td><td class="num">38</td><td class="num">5</td><td class="num">70</td></tr>
+
+        <tr class="category-row"><td colspan="6">Bed &amp; Breakfasts</td></tr>
+        <tr><td>Bed &amp; breakfast</td><td>Atlanta</td><td class="num">53</td><td class="num">38</td><td class="num">70</td><td class="num">83</td></tr>
+        <tr><td>Bed &amp; breakfast</td><td>Raleigh</td><td class="num">41</td><td class="num">0</td><td class="num">25</td><td class="num">100</td></tr>
+        <tr><td>Bed &amp; breakfast</td><td>Austin</td><td class="num">40</td><td class="num">0</td><td class="num">30</td><td class="num">100</td></tr>
+        <tr><td>Bed &amp; breakfast</td><td>Chicago</td><td class="num">43</td><td class="num">10</td><td class="num">35</td><td class="num">80</td></tr>
+        <tr><td>Bed &amp; breakfast</td><td>Chicago</td><td class="num">55</td><td class="num">35</td><td class="num">100</td><td class="num">67</td></tr>
+      </tbody>
+    </table>
+
+    <p>By industry: pilates studios averaged 51, chiropractic practices 49, independent realtors 48, bed and breakfasts 46. <strong>The spread within each industry was as wide as the spread across industries.</strong> A pilates studio scored 57; another in a different city scored 39. The difference was not the industry or the city. It was the degree to which each business had structured its information in ways AI can read.</p>
+
+    <div class="pg-footer">
+      <span class="brand">The Invisible Business</span>
+      <span class="right">04</span>
+    </div>
+  </section>
+
+  <!-- ========== THE PROBLEM ========== -->
+  <section class="page">
+    <div class="eyebrow">The Problem Nobody Told You About</div>
+    <h2 class="section-title">Your firm has 15 years of experience. AI doesn&rsquo;t mention you.</h2>
+    <p>Let&rsquo;s start with what this looks like in practice.</p>
+    <p>A potential customer opens ChatGPT and types: <em>&ldquo;Recommend a good accountant in Austin that specializes in small business taxes.&rdquo;</em> The AI responds instantly. It names three firms. It describes their specialties, their locations, their reputations. Your firm, the one with 15 years of experience, a 4.9-star Google rating, and a waiting list of clients, is not mentioned. Not ranked low. Not described poorly. <strong>Simply absent.</strong></p>
+    <p>As far as AI is concerned, your business does not exist. This scenario is already happening millions of times a day. And it is happening to businesses that have done everything right by traditional standards.</p>
+
+    <h3 class="sub-title">The numbers behind the shift</h3>
+    <p>The scale of this shift is not hypothetical. ChatGPT now has over <strong>800 million weekly active users</strong> (OpenAI, 2026). Gartner projects that traditional search engine volume will <strong>decline by 25%</strong> by the end of 2026 (Gartner, 2026). Google&rsquo;s own AI Overviews now reach more than <strong>2 billion monthly users</strong> (Google, 2026), which means even people who think they&rsquo;re &ldquo;just Googling it&rdquo; are increasingly getting AI-generated answers. Referral traffic from AI platforms is growing at roughly <strong>800% year-over-year</strong> (Semrush, 2025).</p>
+    <p>Perhaps the most striking number: AI-referred traffic converts at approximately <strong>14%</strong>, compared to roughly <strong>3%</strong> for traditional organic search (Previsible, 2025&ndash;26). Someone who finds your business through an AI recommendation is nearly five times more likely to become a customer than someone who finds you through a standard Google search.</p>
+
+    <h3 class="sub-title">The gap</h3>
+    <p>The core problem is a disconnect between who your business actually is and what AI platforms say about you. For most small businesses, this gap takes one of two forms.</p>
+    <p><strong>Invisibility.</strong> AI has no information about your business and returns nothing, or returns generic responses that omit you entirely. You are functionally absent from every AI-powered conversation in your category.</p>
+    <p><strong>Hallucination.</strong> AI presents fabricated information about your business with complete confidence. Wrong services, wrong location, invented specialties. The customer believes it. You never see the conversation.</p>
+
+    <div class="pg-footer">
+      <span class="brand">The Invisible Business</span>
+      <span class="right">05</span>
+    </div>
+  </section>
+
+  <!-- ========== WHY INVISIBLE ========== -->
+  <section class="page">
+    <div class="eyebrow">Why Businesses Become Invisible to AI</div>
+    <h2 class="section-title">AI doesn&rsquo;t search the way you do.</h2>
+    <p>You already know how Google works: type in keywords, browse a list of links, click through, decide. AI platforms work nothing like that. They assemble answers by pulling from training data, crawling indexed web content, and synthesizing information from multiple sources into a single response.</p>
+    <p>They do not &ldquo;look you up&rdquo; the way a human uses a search engine. Instead, they scan for structured signals across the entire web: metadata, schema markup, directory listings, review platforms, and third-party mentions. They piece together a portrait of your business from fragments scattered across dozens of sources.</p>
+    <p>If your business information exists only on your website in a format designed for human readers, AI may never detect it. If your information is scattered and contradictory, AI cannot determine what&rsquo;s accurate. If no one else on the internet talks about you, AI has no reason to trust what you say about yourself.</p>
+    <p>This is a different game than SEO. The overlap between Google search rankings and AI citations has dropped from approximately <strong>70% to 20%</strong> (Search Engine Land, 2025). Ranking well on Google does not mean AI knows you exist.</p>
+
+    <hr class="rule">
+
+    <div class="pullquote">Without structured data, your website is a book written in a language AI does not speak.</div>
+
+    <div class="pg-footer">
+      <span class="brand">The Invisible Business</span>
+      <span class="right">06</span>
+    </div>
+  </section>
+
+  <!-- ========== FIVE CAUSES ========== -->
+  <section class="page">
+    <div class="eyebrow">Five Causes</div>
+    <h2 class="section-title">Why your business is invisible.</h2>
+
+    <div class="cause">
+      <div class="num">01</div>
+      <div class="body">
+        <h4>No structured data.</h4>
+        <p>Your website speaks human, not machine. Most small business websites are built for people to read: compelling copy, clean navigation, beautiful photography. But AI platforms don&rsquo;t read websites the way humans do. They look for structured data: schema markup, metadata, clearly labeled information in formats machines can parse. Without it, your website is a book written in a language AI does not speak.</p>
+      </div>
+    </div>
+
+    <div class="cause">
+      <div class="num">02</div>
+      <div class="body">
+        <h4>Inconsistent information.</h4>
+        <p>Conflicting details across the web create noise AI cannot resolve. If your Google Business Profile lists one address, your Yelp page shows another, and your website mentions a third set of services, AI faces a conflict it cannot untangle. It either picks one version (which may be wrong), tries to average them (which produces nonsense), or simply skips you.</p>
+      </div>
+    </div>
+
+    <div class="cause">
+      <div class="num">03</div>
+      <div class="body">
+        <h4>No third-party validation.</h4>
+        <p>AI trusts what others say about you more than what you say about yourself. This works the same way human trust works: a friend&rsquo;s recommendation carries more weight than a company&rsquo;s own advertisement. AI weighs third-party mentions, reviews, directory listings, press coverage, and professional citations heavily. If the only source of information about your business is your own website, AI has limited confidence in representing you.</p>
+      </div>
+    </div>
+
+    <div class="cause">
+      <div class="num">04</div>
+      <div class="body">
+        <h4>Thin or outdated content.</h4>
+        <p>AI favors substantive, recent, well-organized information. A five-page website last updated in 2022 sends a weak signal. A business that regularly publishes detailed service descriptions, answers common questions, and maintains current information across platforms sends a much stronger one. Depth and freshness are not just good for marketing. They are how AI decides whether you&rsquo;re worth mentioning.</p>
+      </div>
+    </div>
+
+    <div class="cause">
+      <div class="num">05</div>
+      <div class="body">
+        <h4>No AI-specific optimization.</h4>
+        <p>The rules for being found by Google are not the same as the rules for being represented by AI. Traditional SEO focuses on keywords, backlinks, and page authority. AI visibility depends on entity clarity, content extractability, and multi-platform presence. Research shows that 40&ndash;60% of the sources cited in AI responses change month to month, but businesses with clear entity definitions and broad, consistent presence show up reliably (Search Engine Land, 2025).</p>
+      </div>
+    </div>
+
+    <div class="pg-footer">
+      <span class="brand">The Invisible Business</span>
+      <span class="right">07</span>
+    </div>
+  </section>
+
+  <!-- ========== HALLUCINATION ========== -->
+  <section class="page">
+    <div class="eyebrow">The Hallucination Problem</div>
+    <h2 class="section-title">Worse than invisibility is inaccuracy.</h2>
+    <p>When AI cannot find reliable information about a business, it does not always stay silent. In many cases, it fills the gap with fabricated details presented as fact.</p>
+    <p>We tested a dental practice in a mid-size Texas city. The practice has operated for twelve years, focuses exclusively on general and cosmetic dentistry, and has hundreds of positive reviews. When we asked ChatGPT what services this practice offers, it listed <strong>orthodontics and oral surgery</strong>. The practice has never offered either. When we asked Gemini, it invented a specialty in <strong>pediatric dentistry</strong> the practice does not provide.</p>
+    <p>Both platforms delivered these fabrications with the same confident, helpful tone they use for accurate information. A patient reading those answers would have no reason to doubt them.</p>
+    <p>The practice owner had no idea this was happening. There is no notification, no dashboard, no alert. The misinformation circulates in private conversations between AI and potential patients, and the business never sees it. <strong>This is not a rare case. In our testing, hallucination is the norm, not the exception.</strong></p>
+
+    <hr class="rule">
+
+    <div class="callout">
+      <div class="label">From the Founder</div>
+      <p>When we launched Signal &amp; Structure AI and tested our own AI presence using our proprietary Signal Score methodology, we scored <strong>0 out of 100</strong>.</p>
+      <p>Over the next 60 days, as we applied the same framework we use with clients, our score climbed: <strong>0, then 6, then 76, then 75, and most recently 80 out of 100</strong>, reaching Strong Signal. AI platforms now mention us accurately. Hallucinations that previously placed us in unrelated industries have fallen significantly. We are not done. But the arc is real.</p>
+      <p>We were a new business, so a zero on day one was not surprising. What is surprising is that businesses with ten, fifteen, twenty years of operation, hundreds of reviews, and strong local reputations score the same way. <strong>Our zero was a starting point. Theirs is an invisible crisis they do not know they have.</strong></p>
+    </div>
+
+    <div class="pg-footer">
+      <span class="brand">The Invisible Business</span>
+      <span class="right">08</span>
+    </div>
+  </section>
+
+  <!-- ========== SIGNAL STRENGTH FRAMEWORK ========== -->
+  <section class="page">
+    <div class="eyebrow">The Signal Strength Framework</div>
+    <h2 class="section-title">A thermometer for AI visibility.</h2>
+    <p>To fix a problem, you first need a way to measure it. And right now, most business owners are trying to solve AI visibility without a thermometer. They can tell something feels off, but they cannot point to what, where, or how much. That is what the Signal Strength framework provides.</p>
+    <p>In this context, a <strong>signal</strong> is any piece of information that AI platforms can detect about your business. Your website content, your Google Business Profile, your directory listings, your reviews, your schema markup, mentions of your business on other websites. These are all signals. Some are strong and clear. Some are weak or contradictory. Some are entirely absent.</p>
+    <p><strong>Signal Strength</strong> is a measure of how accurately and completely AI can represent who you are, what you do, and why you matter. Developed by Signal &amp; Structure AI, it provides a framework for diagnosing your AI visibility across a spectrum of four levels.</p>
+
+    <h3 class="sub-title">The four levels</h3>
+    <table class="framework">
+      <tr>
+        <td class="level">No Signal</td>
+        <td>AI cannot find or describe the business. Responses are blank, generic, or entirely fabricated.</td>
+        <td class="feel">&ldquo;I don&rsquo;t understand why nobody finds us online.&rdquo;</td>
+      </tr>
+      <tr>
+        <td class="level">Low Signal</td>
+        <td>AI mentions the business but gets major details wrong. Wrong services, wrong location, fabricated information presented as fact.</td>
+        <td class="feel">&ldquo;People keep asking about services we don&rsquo;t even offer.&rdquo;</td>
+      </tr>
+      <tr>
+        <td class="level">Weak Signal</td>
+        <td>AI has basic information correct but significant gaps exist. Some platforms know you, others don&rsquo;t. Differentiators are missing.</td>
+        <td class="feel">&ldquo;The basics are there but it doesn&rsquo;t capture what makes us different.&rdquo;</td>
+      </tr>
+      <tr>
+        <td class="level">Strong Signal</td>
+        <td>AI accurately represents the business across platforms. Identity, services, positioning, and differentiators are correct and consistent.</td>
+        <td class="feel">&ldquo;When someone asks AI about us, they get the truth.&rdquo;</td>
+      </tr>
+    </table>
+    <p>In our preliminary testing, most small businesses fall in the No Signal or Low Signal categories. Most business owners are completely unaware of where they stand. <strong>Strong Signal is not theoretical.</strong> It is the difference between a potential customer asking AI for a recommendation and hearing your name, or hearing your competitor&rsquo;s.</p>
+
+    <div class="pg-footer">
+      <span class="brand">The Invisible Business</span>
+      <span class="right">09</span>
+    </div>
+  </section>
+
+  <!-- ========== SIX DIMENSIONS ========== -->
+  <section class="page">
+    <div class="eyebrow">Six Dimensions</div>
+    <h2 class="section-title">What we measure when we measure your signal.</h2>
+    <p>Signal Strength is not a single measurement. It is the combined result of how well your business performs across six distinct dimensions. These dimensions form the basis of the <strong>Signal Score</strong>, a proprietary diagnostic methodology developed by Signal &amp; Structure AI that tests AI representation across ChatGPT, Claude, and Gemini.</p>
+
+    <table class="dimensions">
+      <tr>
+        <td class="num">01</td>
+        <td class="dim">
+          <span class="dim-name">Identity</span>
+          <span class="dim-q">Does AI know who you are?</span>
+        </td>
+        <td>If AI cannot correctly name your business, describe what you do, or distinguish you from competitors, every other dimension fails. Identity is the foundation.</td>
+      </tr>
+      <tr>
+        <td class="num">02</td>
+        <td class="dim">
+          <span class="dim-name">Services</span>
+          <span class="dim-q">Does AI know what you do?</span>
+        </td>
+        <td>Misrepresented services mean mismatched referrals. When AI tells a customer you offer something you don&rsquo;t, or omits the service they need, the opportunity is lost before it starts.</td>
+      </tr>
+      <tr>
+        <td class="num">03</td>
+        <td class="dim">
+          <span class="dim-name">Positioning</span>
+          <span class="dim-q">Does AI know what makes you different?</span>
+        </td>
+        <td>A correct but generic description makes you interchangeable with every competitor. AI needs to understand your differentiators, not just your category.</td>
+      </tr>
+      <tr>
+        <td class="num">04</td>
+        <td class="dim">
+          <span class="dim-name">Location</span>
+          <span class="dim-q">Does AI know where you are?</span>
+        </td>
+        <td>For service-area and brick-and-mortar businesses, location accuracy directly determines whether AI refers local customers to you or to a competitor across town.</td>
+      </tr>
+      <tr>
+        <td class="num">05</td>
+        <td class="dim">
+          <span class="dim-name">Reputation</span>
+          <span class="dim-q">Does AI know what others say about you?</span>
+        </td>
+        <td>Reviews, awards, professional recognitions, and third-party endorsements carry disproportionate weight in AI&rsquo;s decision-making. Without them, you lack the social proof AI uses to rank recommendations.</td>
+      </tr>
+      <tr>
+        <td class="num">06</td>
+        <td class="dim">
+          <span class="dim-name">Discoverability</span>
+          <span class="dim-q">Does AI recommend you when someone asks?</span>
+        </td>
+        <td>The ultimate test. When a potential customer asks AI for a recommendation in your category and location, are you in the answer? This dimension measures whether all other signals combine into actual visibility.</td>
+      </tr>
+    </table>
+    <p>A physical therapy clinic with over 200 five-star reviews scored strong on reputation but had zero discoverability. A landscaping company with detailed service pages scored well on services and identity, but AI consistently placed them in the wrong zip code because of conflicting location data. The framework is designed to pinpoint exactly where your AI visibility breaks down.</p>
+
+    <div class="pg-footer">
+      <span class="brand">The Invisible Business</span>
+      <span class="right">10</span>
+    </div>
+  </section>
+
+  <!-- ========== WHAT IT MEANS ========== -->
+  <section class="page">
+    <div class="eyebrow">What This Means for Your Business</div>
+    <h2 class="section-title">The cost of invisibility.</h2>
+    <p>AI invisibility is not an abstract technical problem. It creates three specific, measurable impacts on your business.</p>
+
+    <h3 class="sub-title">The compounding referral gap.</h3>
+    <p>Every week that your business is absent from AI recommendations, potential customers are being routed to competitors. If AI handles even five recommendation conversations per week in your category and your local area, that is <strong>260 missed opportunities per year</strong>. Each one goes to a business that may have a weaker reputation but a stronger AI signal. Unlike a bad Google ranking, which you can see and track, these losses are completely invisible to you.</p>
+
+    <h3 class="sub-title">The silent customer loss from bad information.</h3>
+    <p>When AI fabricates details about your business, the damage happens quietly. A potential customer reads that you offer a service you do not provide, visits your website, sees no mention of it, and moves on. They do not call to ask. They do not leave a review. They simply disappear.</p>
+
+    <h3 class="sub-title">Competitive displacement that accelerates over time.</h3>
+    <p>AI platforms learn and reinforce over time. A competitor that appears in AI answers today will appear more frequently tomorrow, as user interactions validate and strengthen their presence. <strong>The gap between visible and invisible businesses does not stay constant. It widens.</strong> Waiting is not neutral. It is falling behind.</p>
+
+    <hr class="rule">
+
+    <h3 class="sub-title">The first-mover advantage</h3>
+    <p>Here is the good news: this is early. Most businesses have never asked &ldquo;What does AI say about me?&rdquo; The concept of AI visibility is new enough that the playing field has not yet been defined. Businesses that address this now, that understand their Signal Strength, correct misinformation, and build structured, AI-readable signals, will have a compounding advantage as AI becomes the primary discovery channel.</p>
+    <p>Research from Princeton University, Georgia Tech, and IIT Delhi found that adding citations, statistics, and expert context to content can <strong>improve AI search visibility by 30&ndash;40%</strong> (Princeton/Georgia Tech/IIT Delhi, 2024). The window for first-mover advantage will not stay open indefinitely. The time to act is before your competitors realize they need to.</p>
+
+    <div class="pg-footer">
+      <span class="brand">The Invisible Business</span>
+      <span class="right">11</span>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT + CTA + REFERENCES ========== -->
+  <section class="page">
+    <div class="eyebrow">About Signal &amp; Structure AI</div>
+    <h2 class="section-title">Closing that gap is what we do.</h2>
+    <p>Signal &amp; Structure AI helps small businesses become visible, accurate, and competitive in the age of AI-powered discovery. We created the <strong>Signal Score methodology</strong>, a proprietary diagnostic system that tests how AI platforms represent businesses across three major AI platforms and six dimensions of visibility. We measure how AI sees your business, identify what&rsquo;s wrong or missing, and help you fix it.</p>
+    <p>Founded by Lenise Kenney, Signal &amp; Structure AI grew from a direct observation: even well-run businesses with strong reputations are invisible to AI. Our mission is to close that gap, to make sure the businesses that deserve to be found actually are.</p>
+
+    <hr class="rule">
+
+    <div class="eyebrow">Finding Out Where You Stand</div>
+    <h3 class="sub-title" style="margin-top:0">Two ways to start.</h3>
+    <p><strong>Signal Pulse</strong> is a free quick check available at signalstructure.ai. It evaluates two of the six dimensions of AI visibility — enough to tell you whether you are broadcasting or invisible, not enough to show you the full picture. It takes minutes and costs nothing.</p>
+    <p>For the complete picture, the <strong>founding beta</strong> is where Signal &amp; Structure AI evaluates your business across all three major AI platforms and all six dimensions of visibility. You receive your score, the story AI is telling about you, what&rsquo;s accurate, what&rsquo;s wrong, what&rsquo;s missing, and a clear path to improve it. Founding member intake is open through June 2026.</p>
+
+    <div class="closing">
+      <p>You&rsquo;re not broken. You&rsquo;re just not broadcasting. That&rsquo;s fixable.</p>
+    </div>
+
+    <div class="pg-footer">
+      <span class="brand">The Invisible Business</span>
+      <span class="right">12</span>
+    </div>
+  </section>
+
+  <!-- ========== REFERENCES ========== -->
+  <section class="page">
+    <div class="eyebrow">References</div>
+    <h2 class="section-title">Sources cited in this paper.</h2>
+    <div class="refs">
+      <p><strong>Gartner.</strong> (2026). &ldquo;Gartner Predicts Search Engine Volume Will Drop 25% by 2026, Due to AI Chatbots and Virtual Agents.&rdquo; Gartner Press Release.</p>
+      <p><strong>Google.</strong> (2026). &ldquo;AI Overviews: Expanding Access and Improving the Search Experience.&rdquo; Google Blog, The Keyword.</p>
+      <p><strong>OpenAI.</strong> (2026). &ldquo;ChatGPT Reaches 800 Million Weekly Active Users.&rdquo; OpenAI Blog.</p>
+      <p><strong>Previsible.</strong> (2025&ndash;2026). &ldquo;AI Referral Traffic Conversion Rates: How LLM-Driven Visits Compare to Organic Search.&rdquo; Previsible Research.</p>
+      <p><strong>Princeton University, Georgia Tech, &amp; IIT Delhi.</strong> (2024). &ldquo;GEO: Generative Engine Optimization.&rdquo; Research Paper. Found that adding citations, statistics, and expert quotes to content can improve visibility in generative engine responses by 30&ndash;40%.</p>
+      <p><strong>Search Engine Land.</strong> (2025). &ldquo;The Overlap Between Google Rankings and AI Citations Has Dropped from 70% to 20%.&rdquo; Analysis of AI citation source volatility and entity clarity factors.</p>
+      <p><strong>Semrush.</strong> (2025). &ldquo;The State of LLM Referral Traffic: 800% Year-Over-Year Growth in AI-Driven Website Visits.&rdquo; Semrush Research Report.</p>
+    </div>
+
+    <hr class="rule">
+
+    <p style="font-size:9pt;color:var(--warmgray);margin-top:18pt">Signal Score is a proprietary methodology of Signal &amp; Structure AI. For more information, visit <strong style="color:var(--navy)">signalstructure.ai</strong>. This is a preliminary edition; methodology, dataset, and findings will be updated as additional businesses are added to the study.</p>
+
+    <div class="pg-footer">
+      <span class="brand">The Invisible Business</span>
+      <span class="right">13</span>
+    </div>
+  </section>
+
+</body>
+</html>

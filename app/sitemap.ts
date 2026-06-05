@@ -73,6 +73,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: `${baseUrl}/resources/the-invisible-business`,
+      lastModified: new Date('2026-05-01'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/privacy`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
