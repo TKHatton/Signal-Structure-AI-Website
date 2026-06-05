@@ -325,8 +325,7 @@ export default function InvisibleBusinessPage() {
                 was 49.7, placing the group at the boundary between Low Signal and Weak Signal.
               </p>
               <p className="font-body text-ink leading-relaxed mb-4">
-                That result holds across industry and geography. The pattern is not industry-specific or
-                location-specific. It is structural.
+                That result holds across industry and geography. The pattern is structural.
               </p>
 
               <h3 className="font-display text-2xl text-navy mb-3 mt-10">The Technical Health paradox</h3>
@@ -422,7 +421,7 @@ export default function InvisibleBusinessPage() {
                 that specializes in small business taxes.&rdquo;</em> The AI responds instantly. It names three
                 firms. It describes their specialties, their locations, their reputations. Your firm, the one
                 with 15 years of experience, a 4.9-star Google rating, and a waiting list of clients, is not
-                mentioned. Not ranked low. Not described poorly.{' '}
+                mentioned. Not ranked low or described poorly.{' '}
                 <strong className="text-navy">Simply absent.</strong>
               </p>
               <p className="font-body text-ink leading-relaxed mb-4">
@@ -431,7 +430,7 @@ export default function InvisibleBusinessPage() {
               </p>
               <p className="font-body text-ink leading-relaxed mb-4">
                 These numbers tell a clear story.{' '}
-                <strong className="text-navy">AI is not replacing search. It is becoming search.</strong>{' '}
+                <strong className="text-navy">AI is not replacing search; it is becoming search.</strong>{' '}
                 If your business is not represented in AI&rsquo;s answers, you are losing the
                 highest-converting referral channel available.
               </p>
@@ -674,8 +673,7 @@ export default function InvisibleBusinessPage() {
               <p className="font-body text-ink leading-relaxed mb-8">
                 AI platforms learn and reinforce over time. A competitor that appears in AI answers today will
                 appear more frequently tomorrow.{' '}
-                <strong className="text-navy">The gap between visible and invisible businesses does not stay
-                constant. It widens.</strong> Waiting is not neutral. It is falling behind.
+                <strong className="text-navy">The gap between visible and invisible businesses widens over time.</strong> Waiting is not neutral; it means falling behind.
               </p>
 
               <hr className="border-stone-dark my-10" />
