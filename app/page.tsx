@@ -77,17 +77,16 @@ const organizationSchema = {
   address: {
     '@type': 'PostalAddress',
     '@id': 'https://signalstructure.ai/#address',
-    streetAddress: '506 Ramseur St, Unit 108',
-    addressLocality: 'Durham',
+    addressLocality: 'Pittsboro',
     addressRegion: 'NC',
-    postalCode: '27701',
+    postalCode: '27312',
     addressCountry: 'US',
   },
   areaServed: [
     {
       '@type': 'City',
-      name: 'Durham',
-      sameAs: 'https://en.wikipedia.org/wiki/Durham,_North_Carolina',
+      name: 'Pittsboro',
+      sameAs: 'https://en.wikipedia.org/wiki/Pittsboro,_North_Carolina',
     },
     {
       '@type': 'State',
@@ -117,10 +116,9 @@ const localBusinessSchema = {
   address: { '@id': 'https://signalstructure.ai/#address' },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 35.9907,
-    longitude: -78.8986,
+    latitude: 35.7215,
+    longitude: -79.1770,
   },
-  hasMap: 'https://maps.google.com/?cid=506+Ramseur+St,+Unit+108,+Durham,+NC+27701',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -141,8 +139,8 @@ const localBusinessSchema = {
   areaServed: [
     {
       '@type': 'City',
-      name: 'Durham',
-      sameAs: 'https://en.wikipedia.org/wiki/Durham,_North_Carolina',
+      name: 'Pittsboro',
+      sameAs: 'https://en.wikipedia.org/wiki/Pittsboro,_North_Carolina',
     },
     {
       '@type': 'State',

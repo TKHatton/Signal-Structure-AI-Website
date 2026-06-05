@@ -8,7 +8,7 @@ import { BOOKING_URL, COMPANY_NAME, TAGLINE, ADDRESS } from '@/lib/constants';
 export const metadata = {
   title: 'About | Signal & Structure AI',
   description:
-    'Signal & Structure AI was founded by Lenise Kenney to help businesses become discoverable by AI platforms. Based in Durham, NC.',
+    'Signal & Structure AI was founded by Lenise Kenney to help businesses become discoverable by AI platforms. Based in Pittsboro, NC.',
   alternates: {
     canonical: '/about',
   },
@@ -240,7 +240,7 @@ export default function AboutPage() {
               something about it.
             </h2>
             <p className="font-body text-lg text-warmgray mb-8">
-              {COMPANY_NAME} is founded and run by Lenise, based in Durham, NC.
+              {COMPANY_NAME} is founded and run by Lenise, based in Pittsboro, NC.
             </p>
 
             {/* Lenise */}

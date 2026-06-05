@@ -40,9 +40,9 @@ const faqItems = [
       'Most clients see measurable improvement within 30 to 60 days after implementation. Schema markup and Google Business Profile changes can be picked up by AI within weeks. Content and directory submissions typically take 30 to 90 days to fully propagate across all platforms. We measure progress with before-and-after Signal Score comparisons.',
   },
   {
-    question: 'Do you work with businesses outside of Durham, NC?',
+    question: 'Do you work with businesses outside of North Carolina?',
     answer:
-      'Yes. Signal & Structure AI is based in Durham, North Carolina, but we serve businesses nationwide. All of our work is done remotely, and our services apply to any business that wants to be accurately represented by AI platforms regardless of location.',
+      'Yes. Signal & Structure AI is based in Pittsboro, North Carolina, but we serve businesses nationwide. All of our work is done remotely, and our services apply to any business that wants to be accurately represented by AI platforms regardless of location.',
   },
   {
     question: 'What is the difference between AI discoverability and SEO?',

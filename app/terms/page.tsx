@@ -216,7 +216,7 @@ export default function TermsPage() {
                 These Terms are governed by the laws of the State of North Carolina,
                 United States, without regard to conflict of law principles. Any
                 disputes arising from these Terms or your use of our Services shall be
-                resolved in the courts of Durham County, North Carolina.
+                resolved in the courts of Chatham County, North Carolina.
               </p>
 
               <h2 className="font-display text-navy">Contact Us</h2>
