@@ -20,6 +20,20 @@ export const metadata = {
       'Why your business exists in the real world but not in AI. Twenty businesses tested. Not one reached Strong Signal.',
     url: PAGE_URL,
     type: 'article',
+    images: [
+      {
+        url: 'https://signalstructure.ai/og-invisible-business.png',
+        width: 1200,
+        height: 630,
+        alt: 'The Invisible Business — A White Paper by Signal & Structure AI',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Invisible Business — A White Paper',
+    description: 'Why your business exists in the real world but not in AI. Twenty businesses tested. Not one reached Strong Signal.',
+    images: ['https://signalstructure.ai/og-invisible-business.png'],
   },
 };
 
