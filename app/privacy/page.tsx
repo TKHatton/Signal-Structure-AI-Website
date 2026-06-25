@@ -19,7 +19,7 @@ const privacySchema = {
   description:
     'How Signal & Structure AI collects, uses, and protects your information when you use our AI discoverability tools and services.',
   url: 'https://signalstructure.ai/privacy',
-  dateModified: '2026-05-27',
+  dateModified: '2026-06-24',
   inLanguage: 'en-US',
   isPartOf: { '@id': 'https://signalstructure.ai/#website' },
   publisher: { '@id': 'https://signalstructure.ai/#organization' },
@@ -27,7 +27,7 @@ const privacySchema = {
     '@type': 'Article',
     name: 'Privacy Policy',
     headline: 'Signal & Structure AI Privacy Policy',
-    dateModified: '2026-05-27',
+    dateModified: '2026-06-24',
     author: { '@id': 'https://signalstructure.ai/#organization' },
     about: [
       'data collection',
@@ -80,7 +80,7 @@ export default function PrivacyPage() {
               Privacy Policy
             </h1>
             <p className="font-body text-lg text-white/70">
-              Last updated: May 27, 2026
+              Last updated: June 24, 2026
             </p>
           </FadeIn>
         </div>
@@ -102,8 +102,10 @@ export default function PrivacyPage() {
               <h2 className="font-display text-navy">What We Collect</h2>
               <h3 className="font-display text-navy">Information You Provide</h3>
               <ul>
-                <li><strong>Business information:</strong> When you use our tools (Signal Pulse, AI Visibility Check, Signal Score), you provide a business name and optionally a website URL, location, and industry. This is used solely to check AI platform visibility for that business.</li>
-                <li><strong>Contact information:</strong> When you sign up for our newsletter, book a consultation, or purchase a service, you provide your name and email address.</li>
+                <li><strong>AI Gossip Check and Signal Pulse (free MCP tools):</strong> To run a check we ask for your first name, last name, email address, business name, business website URL, industry, city, and state. Submitting one of these tools means you are also opting in to receive our newsletter and follow-up tips from Signal &amp; Structure AI. Every marketing email includes a one-click unsubscribe link.</li>
+                <li><strong>Signal Advisor (free MCP tool):</strong> Educational Q&amp;A only. No personal information is collected.</li>
+                <li><strong>Signal Watch and Client Knowledge (paid client MCPs):</strong> Used by active clients under a separate service agreement. Information collected during onboarding is governed by that agreement.</li>
+                <li><strong>Contact information:</strong> When you sign up for our newsletter directly, book a consultation, or purchase a service, you provide your name and email address.</li>
                 <li><strong>Event registration:</strong> When you register for one of our talks or workshops, our scheduling provider collects your name, email, and the session you selected so we can send you the meeting link and reminders.</li>
                 <li><strong>Payment information:</strong> Payments are processed by Stripe. We do not store credit card numbers or bank account details on our servers.</li>
               </ul>
@@ -132,37 +134,48 @@ export default function PrivacyPage() {
               </ul>
 
               <h2 className="font-display text-navy">Third-Party Services</h2>
-              <p>We use the following third-party services that may process data on our behalf:</p>
+              <p>We use the following third-party services that may process data on our behalf. All data storage and processing happens on US-based infrastructure.</p>
               <ul>
-                <li><strong>Stripe</strong> for payment processing</li>
-                <li><strong>Supabase</strong> for data storage</li>
-                <li><strong>Railway</strong> for application hosting</li>
-                <li><strong>Netlify</strong> for website hosting</li>
-                <li><strong>OpenAI, Anthropic, Google</strong> and other AI platform APIs to perform discoverability checks</li>
+                <li><strong>Stripe</strong> for payment processing.</li>
+                <li><strong>Supabase</strong> for data storage of leads, scores, and client records.</li>
+                <li><strong>Resend</strong> for sending result emails and newsletter messages.</li>
+                <li><strong>Railway</strong> for application hosting.</li>
+                <li><strong>Netlify</strong> for website hosting.</li>
+                <li><strong>OpenAI, Anthropic, and Google</strong> for the AI platform queries that power our discoverability checks. These platforms receive only your business name and industry so they can answer the questions we ask on your behalf. They never receive your personal name, email address, or any other personal contact information.</li>
               </ul>
               <p>Each of these services has its own privacy policy governing how they handle data.</p>
 
               <h2 className="font-display text-navy">Data Retention</h2>
               <p>
-                Business discoverability check results may be stored to enable historical
-                tracking and trend analysis for paying customers. You may request deletion
-                of your data at any time by contacting us.
+                Leads collected through AI Gossip Check and Signal Pulse are kept for
+                24 months from the date of your last activity, then automatically
+                deleted. Active paying clients are exempt from auto-deletion for the
+                duration of their service agreement. You may request earlier deletion
+                at any time by emailing us at the address below.
+              </p>
+
+              <h2 className="font-display text-navy">Aggregate Research</h2>
+              <p>
+                Signal &amp; Structure AI may use anonymized, aggregated data with no
+                personal identifiers to publish research, reports, and educational
+                content about AI visibility trends across industries. If a specific
+                business is ever named in such a report, we ask that business first.
               </p>
 
               <h2 className="font-display text-navy">Your Rights</h2>
               <p>You have the right to:</p>
               <ul>
-                <li>Request access to the data we hold about you or your business</li>
-                <li>Request correction or deletion of your data</li>
-                <li>Unsubscribe from our newsletter at any time</li>
-                <li>Opt out of non-essential cookies</li>
+                <li>Request access to the data we hold about you or your business.</li>
+                <li>Request correction or full deletion of your data by emailing us at the address below.</li>
+                <li>Unsubscribe from our newsletter at any time using the one-click link included in every marketing email. No reply required.</li>
+                <li>Opt out of non-essential cookies.</li>
               </ul>
 
               <h2 className="font-display text-navy">Children&apos;s Privacy</h2>
               <p>
-                Our services are designed for businesses and are not directed at
-                individuals under the age of 13. We do not knowingly collect personal
-                information from children.
+                Our tools are for business owners and are not intended for users under
+                the age of 18. We do not direct marketing toward children and do not
+                knowingly collect personal information from anyone under 18.
               </p>
 
               <h2 className="font-display text-navy">Changes to This Policy</h2>

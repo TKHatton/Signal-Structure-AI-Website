@@ -19,7 +19,7 @@ const termsSchema = {
   description:
     'Terms of service for Signal & Structure AI tools, MCP servers, Custom GPT, and consulting services.',
   url: 'https://signalstructure.ai/terms',
-  dateModified: '2026-05-27',
+  dateModified: '2026-06-24',
   inLanguage: 'en-US',
   isPartOf: { '@id': 'https://signalstructure.ai/#website' },
   publisher: { '@id': 'https://signalstructure.ai/#organization' },
@@ -27,7 +27,7 @@ const termsSchema = {
     '@type': 'Article',
     name: 'Terms of Service',
     headline: 'Signal & Structure AI Terms of Service',
-    dateModified: '2026-05-27',
+    dateModified: '2026-06-24',
     author: { '@id': 'https://signalstructure.ai/#organization' },
     about: [
       'terms of service',
@@ -80,7 +80,7 @@ export default function TermsPage() {
               Terms of Service
             </h1>
             <p className="font-body text-lg text-white/70">
-              Last updated: May 27, 2026
+              Last updated: June 24, 2026
             </p>
           </FadeIn>
         </div>
@@ -106,8 +106,10 @@ export default function TermsPage() {
                 services. Our Services include:
               </p>
               <ul>
-                <li><strong>Signal Pulse:</strong> A free AI discoverability check that scans whether AI platforms mention a business and analyzes website schema markup.</li>
-                <li><strong>Signal Advisor:</strong> A free educational resource about AI discoverability concepts, schema markup, and platform optimization.</li>
+                <li><strong>AI Gossip Check:</strong> A free public tool that asks ChatGPT, Claude, and Gemini what they say about your business right now and returns the raw verbatim responses. One free check per email address. Requires your name, email, and business details so we can send the results and follow up.</li>
+                <li><strong>Signal Pulse:</strong> A free AI discoverability check that scores whether AI platforms mention a business and analyzes website schema markup. Unlimited per email so you can recheck after fixing issues. Requires your name, email, and business name so we can send your results and follow up.</li>
+                <li><strong>Signal Advisor:</strong> A free educational resource about AI discoverability concepts, schema markup, and platform optimization. No personal information required.</li>
+                <li><strong>Signal Watch and Client Knowledge:</strong> MCP servers provided to active clients as part of their paid service. Use is governed by your service agreement with us in addition to these Terms.</li>
                 <li><strong>AI Presence Program:</strong> Our paid, done-for-you service. We monitor how AI platforms describe a business across multiple platforms each month, report what we find using our proprietary Signal Score, and perform correction work. Includes a client dashboard and a monthly report.</li>
                 <li><strong>Custom AI Tools, MCP Servers, and API Integrations:</strong> Optional add-on work, scoped and priced separately for program clients.</li>
                 <li><strong>Talks and Workshops:</strong> Paid live sessions and presentations about AI discoverability.</li>
@@ -129,7 +131,7 @@ export default function TermsPage() {
                 The Signal Score methodology, scoring weights, category formulas,
                 platform-checking algorithms, and all related proprietary systems are
                 the exclusive intellectual property of {COMPANY_NAME}. Our tools provide
-                scores, insights, and recommendations as output — the underlying
+                scores, insights, and recommendations as output. The underlying
                 methodology is not disclosed and may not be reproduced.
               </p>
               <p>
@@ -146,10 +148,12 @@ export default function TermsPage() {
                 By connecting to our MCP servers, you agree that:
               </p>
               <ul>
-                <li>Free-tier tools (Signal Pulse, Signal Advisor) are provided as-is for informational purposes</li>
-                <li>We may implement rate limits to ensure fair access for all users</li>
-                <li>We reserve the right to modify, suspend, or discontinue any MCP server at any time</li>
-                <li>Results are generated using AI and should not be treated as professional advice without further consultation</li>
+                <li>Free-tier tools (AI Gossip Check, Signal Pulse, Signal Advisor) are provided as-is for informational purposes.</li>
+                <li>Submitting your information through AI Gossip Check or Signal Pulse opts you in to receive our newsletter and follow-up tips. Every marketing email includes a one-click unsubscribe link.</li>
+                <li>AI Gossip Check is limited to one free check per email address. Signal Pulse can be re-run as often as you like.</li>
+                <li>We may implement rate limits to ensure fair access for all users.</li>
+                <li>We reserve the right to modify, suspend, or discontinue any MCP server at any time.</li>
+                <li>Results are generated using AI and should not be treated as professional advice without further consultation.</li>
               </ul>
 
               <h2 className="font-display text-navy">Paid Services</h2>
