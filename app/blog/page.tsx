@@ -4,7 +4,7 @@ import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import SignalDot from '@/components/SignalDot';
-import { BOOKING_URL } from '@/lib/constants';
+import { SKOOL_URL } from '@/lib/constants';
 import { getAllPosts } from '@/lib/blog-posts';
 
 export const metadata = {
@@ -158,8 +158,8 @@ export default function BlogPage() {
             <h2 className="font-display text-section-heading mb-8 text-white">
               Want to know what AI is saying about your business right now?
             </h2>
-            <Button href={BOOKING_URL} variant="primary">
-              Reserve a Spot at My Next Talk
+            <Button href={SKOOL_URL} variant="primary">
+              Join the Community
             </Button>
           </FadeIn>
         </div>

@@ -31,27 +31,6 @@ export const CLIENT_KNOWLEDGE_CHECKOUT_URL = "mailto:hello@signalstructure.ai?su
 // promoted anywhere on the new site.
 export const RESERVE_URL = "https://buy.stripe.com/cNi14m5codyBgWgfqdaAw00";
 
-// Paid talks / webinars — the default call to action across the site.
-// Live Calendly event link for the talk.
-export const WEBINAR_URL = "https://calendly.com/ltkenney13/the-secret-life-of-your-business-according-to-ai";
-export const WEBINAR_PRICE = "$22";
-
-// Next live talk — edit these in one place; the Speaking page flyer reads them.
-export const TALK = {
-  title: "The Secret Life of Your Business, According to AI",
-  subtitle: "What AI is telling people about you, and how to take the wheel. A live, plain-language session.",
-  date: "Tuesday, June 9, 2026",
-  time: "1:00 PM ET",
-  platform: "Live on Google Meet",
-  duration: "About 1 hour",
-  price: WEBINAR_PRICE,
-  url: WEBINAR_URL,
-};
-
-// Legacy alias: generic CTAs that import BOOKING_URL now invite people to a talk,
-// not to buy the beta. Beta uses RESERVE_URL directly on the Services page.
-export const BOOKING_URL = WEBINAR_URL;
-
 // Beta AI Presence Program pricing
 export const BETA_SETUP = "$797";
 export const BETA_MONTHLY = "$297";

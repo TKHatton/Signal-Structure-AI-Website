@@ -5,7 +5,7 @@ import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import SignalDot from '@/components/SignalDot';
 import NewsletterForm from '@/components/NewsletterForm';
-import { BOOKING_URL } from '@/lib/constants';
+import { SKOOL_URL } from '@/lib/constants';
 
 export const metadata = {
   title: 'Resources | Signal & Structure AI',
@@ -474,14 +474,14 @@ export default function ResourcesPage() {
               Want to understand this more deeply?
             </h2>
             <p className="text-white/70 text-hero-subtext mb-8">
-              I run live talks on how AI is describing businesses and what to do
-              about it. No jargon, no hype, just a clear breakdown.
+              The community is where this work actually gets done. A year of
+              weekly working sessions, shared lessons, and direct access to Lenise.
             </p>
-            <Button href={BOOKING_URL} variant="primary" className="mb-4">
-              Reserve a Spot at My Next Talk
+            <Button href={SKOOL_URL} variant="primary" className="mb-4">
+              Join the Community
             </Button>
             <p className="text-white/70 text-sm">
-              Pick a date that works for you.
+              Yearly or monthly, with a twelve-month commitment.
             </p>
           </FadeIn>
         </div>

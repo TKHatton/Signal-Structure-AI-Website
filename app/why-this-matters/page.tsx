@@ -3,7 +3,7 @@ import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import ValueCard from '@/components/ValueCard';
-import { BOOKING_URL } from '@/lib/constants';
+import { SKOOL_URL } from '@/lib/constants';
 
 export const metadata = {
   title: 'Why This Matters | Signal & Structure AI',
@@ -239,8 +239,8 @@ export default function WhyThisMattersPage() {
               AI is giving referrals in your space every day. The question
               is whether your business is one of them.
             </h2>
-            <Button href={BOOKING_URL} variant="primary">
-              Reserve a Spot at My Next Talk
+            <Button href={SKOOL_URL} variant="primary">
+              Join the Community
             </Button>
           </FadeIn>
         </div>

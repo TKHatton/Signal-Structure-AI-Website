@@ -6,7 +6,7 @@ import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import SignalDot from '@/components/SignalDot';
-import { BOOKING_URL } from '@/lib/constants';
+import { SKOOL_URL } from '@/lib/constants';
 import { getPostBySlug, getAllPosts } from '@/lib/blog-posts';
 
 interface BlogPostPageProps {
@@ -152,7 +152,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.cta.text}
               </p>
               <Button href={post.cta.href} variant="primary">
-                {post.cta.buttonLabel || 'Reserve a Spot at My Next Talk'}
+                {post.cta.buttonLabel || 'Join the Community'}
               </Button>
             </div>
           </FadeIn>
@@ -187,8 +187,8 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               AI is already talking about businesses in your industry. Make sure
               it knows yours.
             </h2>
-            <Button href={BOOKING_URL} variant="primary">
-              Reserve a Spot at My Next Talk
+            <Button href={SKOOL_URL} variant="primary">
+              Join the Community
             </Button>
           </FadeIn>
         </div>
