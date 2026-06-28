@@ -254,7 +254,7 @@ export default function HomePage() {
           </FadeIn>
           <FadeIn delay={0.3}>
             <p className="text-white/80 text-hero-subtext max-w-3xl mx-auto mb-10">
-              ChatGPT, Claude, Gemini, and Perplexity are recommending businesses to people every day. We tell you what they&rsquo;re saying about yours, then show you how to fix it. Plain and simple.
+              ChatGPT, Claude, Gemini, Perplexity, and Copilot are recommending businesses to people every day. We tell you what they&rsquo;re saying about yours, then show you how to fix it. Plain and simple.
             </p>
           </FadeIn>
 
@@ -420,7 +420,7 @@ export default function HomePage() {
                 <SectionLabel>THE REPORT</SectionLabel>
                 <h3 className="font-display text-2xl text-navy mb-3 mt-2">See what AI is saying.</h3>
                 <p className="font-body text-warmgray mb-6 leading-relaxed flex-1">
-                  A detailed Signal Score Report on your business. Every platform. Every gap. Every hallucination. Delivered within {REPORT_TURNAROUND}.
+                  Your full AI discoverability scorecard. Every platform. Every gap. Every hallucination. PDF in {REPORT_TURNAROUND}.
                 </p>
                 <div className="mb-6">
                   <div className="font-mono text-3xl font-bold text-navy">{REPORT_PRICE}</div>

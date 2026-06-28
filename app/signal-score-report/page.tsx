@@ -13,7 +13,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Signal Score Report | Signal & Structure AI',
-  description: 'A one-time, detailed report on how AI describes your business. Every platform. Every hallucination. Delivered within 48 hours. $147.',
+  description: 'Your full AI discoverability scorecard. We measure how ChatGPT, Claude, Gemini, Perplexity, and Copilot describe your business right now, score your structured data and citation footprint, and hand back a prioritized list of fixes. PDF in two business days. $147.',
   alternates: {
     canonical: '/signal-score-report',
   },
@@ -34,36 +34,36 @@ const productSchema = {
   '@id': 'https://signalstructure.ai/signal-score-report#service',
   name: 'Signal Score Report',
   provider: { '@id': 'https://signalstructure.ai/#organization' },
-  description: 'A detailed report on how AI platforms describe a business, scored using the Signal Score method. Covers ChatGPT, Claude, Gemini, Perplexity, schema, directories, and the platforms that matter. Delivered within 48 hours.',
+  description: 'Your full AI discoverability scorecard. We measure how ChatGPT, Claude, Gemini, Perplexity, and Copilot describe your business right now, score your website\'s structured data and citation footprint, and hand back a prioritized list of what to fix first. Delivered as a PDF within two business days via email.',
   serviceType: 'AI discoverability audit',
   offers: {
     '@type': 'Offer',
     price: '147',
     priceCurrency: 'USD',
-    description: 'One-time payment. Report delivered within 48 hours.',
+    description: 'One-time payment. PDF delivered within two business days via email.',
   },
 };
 
 const reportSections = [
   {
     title: 'How AI sees you, platform by platform',
-    body: 'ChatGPT, Claude, Gemini, Perplexity. The exact responses they give about your business when someone asks. Side by side, so you can see where they agree, where they differ, and where they are wrong.',
+    body: 'ChatGPT, Claude, Gemini, Perplexity, and Copilot. The exact responses they give about your business when someone asks. Side by side, so you can see where they agree, where they differ, and where they are flat-out wrong.',
   },
   {
     title: 'Your Signal Score, with the breakdown',
     body: 'A 0 to 100 score based on the method Lenise has been refining since early 2026. You see the total and the category scores, so you know which lever moves the most.',
   },
   {
-    title: 'Hallucinations and gaps, listed and explained',
+    title: 'Your structured data and citation footprint',
+    body: 'What schema your site has now, what is missing, and how your business is cited across the directories and sources AI reads from. The pieces that decide whether AI quotes you accurately.',
+  },
+  {
+    title: 'Every hallucination and gap, listed plainly',
     body: 'Every time AI made something up about you. Every time it confused you with someone else. Every time it skipped a service you actually offer. With where each one came from, when we can find it.',
   },
   {
-    title: 'Schema and directory check',
-    body: 'What structured data your site has now, what is missing, and which directories list you accurately. The pieces AI reads from to decide what to say.',
-  },
-  {
-    title: 'A prioritized fix list',
-    body: 'What to do first, second, third. Not a hundred-item to-do list. A short list ranked by impact, so the work you do this month matters next month.',
+    title: 'A prioritized list of what to fix first',
+    body: 'Not a hundred-item to-do list. A short list ranked by impact, so the work you do this month actually changes what AI says next month.',
   },
 ];
 
@@ -122,7 +122,7 @@ export default function SignalScoreReportPage() {
 
                 <div className="bg-white/10 rounded-lg p-4 mb-6">
                   <p className="font-body text-sm text-white">
-                    <span className="text-copper font-semibold">Delivered within {REPORT_TURNAROUND}.</span>{' '}
+                    <span className="text-copper font-semibold">Delivered as a PDF within {REPORT_TURNAROUND} via email.</span>{' '}
                     Every report is reviewed by Lenise before it goes out. Once that QA pass is consistent, delivery moves to immediate.
                   </p>
                 </div>
@@ -130,19 +130,19 @@ export default function SignalScoreReportPage() {
                 <ul className="space-y-2 font-body text-white/80 text-sm mb-8">
                   <li className="flex items-start gap-2">
                     <SignalDot size={5} className="mt-2 flex-shrink-0" />
-                    <span>Live responses from ChatGPT, Claude, Gemini, and Perplexity</span>
+                    <span>Live responses from ChatGPT, Claude, Gemini, Perplexity, and Copilot</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <SignalDot size={5} className="mt-2 flex-shrink-0" />
-                    <span>Your Signal Score with the full breakdown</span>
+                    <span>Your Signal Score, with the full breakdown</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <SignalDot size={5} className="mt-2 flex-shrink-0" />
-                    <span>Every hallucination, listed plainly</span>
+                    <span>Your structured data and citation footprint</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <SignalDot size={5} className="mt-2 flex-shrink-0" />
-                    <span>A short, prioritized fix list</span>
+                    <span>A short, prioritized list of what to fix first</span>
                   </li>
                 </ul>
 
@@ -151,7 +151,7 @@ export default function SignalScoreReportPage() {
                     Order Your Report
                   </Button>
                   <p className="text-center text-white/50 text-xs mt-3">
-                    You will receive a payment link and a short intake form by email.
+                    Secure checkout on Stripe. PDF arrives by email.
                   </p>
                 </div>
               </div>
@@ -166,7 +166,7 @@ export default function SignalScoreReportPage() {
         <div className="relative z-10 max-w-content mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn>
-              <SectionLabel variant="light">WHY 48 HOURS</SectionLabel>
+              <SectionLabel variant="light">WHY TWO BUSINESS DAYS</SectionLabel>
               <h2 className="font-display text-section-heading mb-6">
                 Every report is checked by a person right now.
               </h2>
@@ -175,7 +175,7 @@ export default function SignalScoreReportPage() {
                   The engine pulls the data. Lenise reads it before it leaves the building. AI platforms move fast and sometimes return confusing or contradictory answers, and a person catching those before they hit your inbox keeps the reports accurate and consistent.
                 </p>
                 <p>
-                  As confidence grows, delivery will move to immediate. Until then, 48 hours is the honest number.
+                  As confidence grows, delivery will move to immediate. Until then, two business days is the honest number.
                 </p>
               </div>
             </FadeIn>
@@ -226,10 +226,10 @@ export default function SignalScoreReportPage() {
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-display text-section-heading mb-6 text-white">
-              See what AI is saying about your business.
+              Find out what AI is saying about your business.
             </h2>
             <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-              {REPORT_PRICE}. Delivered within {REPORT_TURNAROUND}. Plain language. Real fixes.
+              {REPORT_PRICE}. PDF delivered within {REPORT_TURNAROUND} via email. Plain language. Real fixes.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button href={REPORT_CHECKOUT_URL} variant="primary">

@@ -6,19 +6,16 @@ export const COMMUNITY_YEARLY = "$497";
 export const COMMUNITY_MONTHLY = "$49";
 export const COMMUNITY_COMMITMENT_MONTHS = 12;
 
-// Signal Score Report: a one-time $147 detailed report on how AI describes
-// a business. 48-hour turnaround while Lenise still QAs every one by hand.
+// Signal Score Report: one-time $147. Delivered as a PDF within two
+// business days via email.
 export const REPORT_PRICE = "$147";
-export const REPORT_TURNAROUND = "48 hours";
-// TODO Lenise: replace with the live Stripe payment link for the report.
-// Until then this falls back to email so no one is left without a way to pay.
-export const REPORT_CHECKOUT_URL = "mailto:hello@signalstructure.ai?subject=Signal%20Score%20Report%20order&body=I%27d%20like%20to%20order%20a%20Signal%20Score%20Report.%20Please%20send%20me%20the%20payment%20link.";
+export const REPORT_TURNAROUND = "two business days";
+export const REPORT_CHECKOUT_URL = "https://buy.stripe.com/3cI5kCdIUfGJgWg4LzaAw01";
 
-// Signal Watch: ongoing monthly monitoring. Cancel any time. Sits on top of
-// the connectors the buyer already has (ChatGPT or Claude).
+// Signal Watch: monthly subscription $26/mo, cancel anytime. Installs as
+// a Claude or ChatGPT tool; access details emailed within two days.
 export const WATCH_PRICE = "$26";
-// TODO Lenise: replace with the live Stripe subscription link for Signal Watch.
-export const WATCH_CHECKOUT_URL = "mailto:hello@signalstructure.ai?subject=Signal%20Watch%20subscription&body=I%27d%20like%20to%20start%20Signal%20Watch.%20Please%20send%20me%20the%20subscription%20link.";
+export const WATCH_CHECKOUT_URL = "https://buy.stripe.com/aFafZgbAMfGJ49u5PDaAw02";
 
 // Client Knowledge: the buyer's official knowledge base, delivered to
 // ChatGPT and Claude as a connector so the platforms answer from real data

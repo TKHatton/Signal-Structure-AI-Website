@@ -14,7 +14,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Signal Watch | Signal & Structure AI',
-  description: 'Ongoing monitoring of how AI describes your business. Check your score and what changed from inside ChatGPT or Claude. $26 per month. Cancel any time.',
+  description: 'Self-serve AI discoverability monitoring. Re-run your Signal Score any time, watch how AI assistants change what they say about you, and track your score over time. Installs as a Claude or ChatGPT tool. $26 per month, cancel anytime.',
   alternates: {
     canonical: '/signal-watch',
   },
@@ -35,7 +35,7 @@ const watchSchema = {
   '@id': 'https://signalstructure.ai/signal-watch#service',
   name: 'Signal Watch',
   provider: { '@id': 'https://signalstructure.ai/#organization' },
-  description: 'Ongoing monitoring of how AI describes a business. Delivered through a Model Context Protocol connector the buyer adds to their ChatGPT or Claude account. Monthly subscription, cancel any time.',
+  description: 'Self-serve AI discoverability monitoring. Re-run your Signal Score any time, watch how AI assistants change what they say about you, and track your score over time. Installs as a Claude or ChatGPT tool; access details emailed within two days after purchase.',
   serviceType: 'AI discoverability monitoring',
   offers: {
     '@type': 'Offer',
@@ -72,13 +72,16 @@ export default function SignalWatchPage() {
             <FadeIn delay={0.1}>
               <div className="bg-white rounded-card shadow-card p-8 h-full">
                 <h2 className="font-display text-2xl text-navy mb-4">What Signal Watch does</h2>
+                <p className="font-body text-warmgray mb-5 leading-relaxed">
+                  Self-serve AI discoverability monitoring. Re-run your Signal Score any time, watch how AI assistants change what they say about you, and track your score over time.
+                </p>
                 <ul className="space-y-3 font-body text-warmgray">
                   {[
-                    'Tracks your Signal Score on a regular cadence so you can see it move',
-                    'Tells you when AI starts saying something different about your business',
-                    'Shows what changed since last month, plainly',
-                    'Lives inside ChatGPT or Claude as a connector you add once',
-                    'Replies to plain questions like "How is my signal?" or "What did AI say about us this month?"',
+                    'Re-run your Signal Score whenever you want, as often as you want',
+                    'See what ChatGPT, Claude, Gemini, Perplexity, and Copilot are saying right now',
+                    'Track your score over time so you can see what worked',
+                    'Get a heads-up when AI starts telling a different story',
+                    'Ask in plain English: "How is my signal?" or "What did AI say about us this month?"',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <SignalDot size={6} className="mt-2 flex-shrink-0" />
@@ -90,7 +93,7 @@ export default function SignalWatchPage() {
                 <div className="mt-8 pt-6 border-t border-stone-dark">
                   <h3 className="font-display text-lg text-navy mb-2">How you use it</h3>
                   <p className="font-body text-sm text-warmgray leading-relaxed">
-                    You add the Signal Watch connector to your ChatGPT or Claude account once. From then on, you ask in plain language. The answer comes from your real data, not the model guessing.
+                    Signal Watch installs as a Claude or ChatGPT tool. Access details get emailed to you within two days of purchase. From then on, you ask in plain language and the answer comes from your real data, not the model guessing.
                   </p>
                 </div>
               </div>
@@ -110,15 +113,15 @@ export default function SignalWatchPage() {
 
                 <div className="bg-white/10 rounded-lg p-4 mb-6">
                   <p className="font-body text-sm text-white mb-2">
-                    <span className="text-copper font-semibold">Works with what you already use.</span>
+                    <span className="text-copper font-semibold">Installs as a Claude or ChatGPT tool.</span>
                   </p>
                   <p className="font-body text-sm text-white/80">
-                    You need a ChatGPT account (any plan that allows connectors) or a Claude account. Setup takes a few minutes and we walk you through it.
+                    Access details get emailed within two days after purchase. Setup is a few minutes and the email walks you through it.
                   </p>
                 </div>
 
                 <p className="font-body text-white/60 text-sm mb-8">
-                  Other connectors are on the way. If a tool you use is missing, write to Lenise and tell her which one.
+                  More connectors on the way. If a tool you use is missing, write to Lenise and tell her which one.
                 </p>
 
                 <div className="mt-auto">
@@ -126,7 +129,7 @@ export default function SignalWatchPage() {
                     Start Signal Watch
                   </Button>
                   <p className="text-center text-white/50 text-xs mt-3">
-                    You will receive a subscription link and the connector setup instructions by email.
+                    Secure checkout on Stripe. Access details by email within two days.
                   </p>
                 </div>
               </div>
