@@ -5,7 +5,7 @@ import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import SignalDot from '@/components/SignalDot';
 import NewsletterForm from '@/components/NewsletterForm';
-import { SKOOL_URL } from '@/lib/constants';
+import { SKOOL_URL, REPORT_PRICE, WATCH_PRICE, CLIENT_KNOWLEDGE_PRICE } from '@/lib/constants';
 
 export const metadata = {
   title: 'Resources | Signal & Structure AI',
@@ -141,6 +141,50 @@ export default function ResourcesPage() {
               business.
             </h1>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Tools & products */}
+      <section className="section-padding bg-stone-dark">
+        <div className="max-w-content mx-auto">
+          <FadeIn className="text-center mb-10">
+            <SectionLabel>TOOLS &amp; REPORTS</SectionLabel>
+            <h2 className="font-display text-section-heading text-navy mb-4">
+              Find out where you stand, then keep it that way.
+            </h2>
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <FadeIn delay={0.1}>
+              <Link href="/signal-score-report" className="block bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-8 h-full">
+                <h3 className="font-display text-2xl text-navy mb-2">Signal Score Report</h3>
+                <p className="font-body text-warmgray text-sm mb-4 leading-relaxed">
+                  The complete picture of how AI describes you. One time, done by hand, in two business days.
+                </p>
+                <span className="font-mono text-navy font-bold">{REPORT_PRICE}</span>
+                <span className="font-body text-warmgray text-sm"> one time</span>
+              </Link>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <Link href="/signal-watch" className="block bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-8 h-full">
+                <h3 className="font-display text-2xl text-navy mb-2">Signal Watch</h3>
+                <p className="font-body text-warmgray text-sm mb-4 leading-relaxed">
+                  The quick snapshot you re-run yourself, inside ChatGPT or Claude. Track your score over time.
+                </p>
+                <span className="font-mono text-navy font-bold">{WATCH_PRICE}</span>
+                <span className="font-body text-warmgray text-sm"> /month</span>
+              </Link>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <Link href="/client-knowledge" className="block bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-8 h-full">
+                <h3 className="font-display text-2xl text-navy mb-2">Client Knowledge</h3>
+                <p className="font-body text-warmgray text-sm mb-4 leading-relaxed">
+                  Feed AI your real information so it answers in your words, not its best guess.
+                </p>
+                <span className="font-mono text-navy font-bold">{CLIENT_KNOWLEDGE_PRICE}</span>
+                <span className="font-body text-warmgray text-sm"> /month</span>
+              </Link>
+            </FadeIn>
+          </div>
         </div>
       </section>
 

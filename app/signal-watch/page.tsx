@@ -58,7 +58,7 @@ export default function SignalWatchPage() {
           <FadeIn>
             <SectionLabel variant="light">SIGNAL WATCH</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              Keep tabs on what AI is saying about you. Right from inside ChatGPT or Claude. Ask any time. Catch the lies as they show up.
+              A quick pulse on how AI describes your business, any time you want it. Self-serve, inside ChatGPT or Claude. Re-run it whenever and watch your score move.
             </h1>
           </FadeIn>
         </div>
@@ -73,12 +73,12 @@ export default function SignalWatchPage() {
               <div className="bg-white rounded-card shadow-card p-8 h-full">
                 <h2 className="font-display text-2xl text-navy mb-4">What Signal Watch does</h2>
                 <p className="font-body text-warmgray mb-5 leading-relaxed">
-                  Self-serve AI discoverability monitoring. Re-run your Signal Score any time, watch how AI assistants change what they say about you, and track your score over time.
+                  Self-serve monitoring you run yourself. It is the quick snapshot, not the deep dive. For the complete, hand-built picture, that is the <Link href="/signal-score-report" className="text-copper hover:text-copper-dark underline underline-offset-2">Signal Score Report</Link>.
                 </p>
                 <ul className="space-y-3 font-body text-warmgray">
                   {[
                     'Re-run your Signal Score whenever you want, as often as you want',
-                    'See what ChatGPT, Claude, Gemini, Perplexity, and Copilot are saying right now',
+                    'See what ChatGPT, Claude, Gemini, Perplexity, and more are saying right now',
                     'Track your score over time so you can see what worked',
                     'Get a heads-up when AI starts telling a different story',
                     'Ask in plain English: "How is my signal?" or "What did AI say about us this month?"',

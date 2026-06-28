@@ -74,7 +74,7 @@ const personSchema = {
     height: 400,
   },
   description:
-    'Founder of Signal & Structure AI. Nearly 20 years as an educator. Author of Protect Your Genius: Using AI Without Diluting Your Voice. Designs the proprietary systems, methodologies, and strategies that power the Signal Score.',
+    'Founder of Signal & Structure AI. Nearly 20 years as an educator. Author of Protect Your Genius: The Art of Using AI Without Deleting Your Voice. Designs the proprietary systems, methodologies, and strategies that power the Signal Score.',
   sameAs: [
     'https://www.linkedin.com/in/lenise-kenney/',
     'https://www.amazon.com/stores/author/B0GY791G6D/about',
@@ -281,7 +281,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   Lenise is also the author of{' '}
-                  <em>Protect Your Genius: Using AI Without Diluting Your Voice</em>,
+                  <em>Protect Your Genius: The Art of Using AI Without Deleting Your Voice</em>,
                   available now. She writes about AI, discoverability,
                   and the building process on her personal blog, Always In Beta.
                 </p>

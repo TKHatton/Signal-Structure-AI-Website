@@ -331,14 +331,10 @@ export default function HomePage() {
               </h2>
               <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
                 <p>
-                  For years, the playbook was simple. Pick the right keywords. Show up on the first page. Wait for clicks.
-                </p>
-                <p>That is not how people find businesses anymore.</p>
-                <p>
-                  Now they open ChatGPT, Claude, or Gemini and ask a full question. AI does not give them a list of links. It gives them a name, a description, and a reason to pick that one over the others.
+                  People do not scroll a page of links anymore. They ask AI a question and get one answer: a name, a reason, a recommendation.
                 </p>
                 <p>
-                  That is a referral. It happens millions of times a day. Most businesses are invisible to it because they are still set up for the old way of being found.
+                  That is a referral. It happens millions of times a day. And most businesses are invisible to it, because they were built for the old way of being found.
                 </p>
               </div>
             </FadeIn>
@@ -388,7 +384,7 @@ export default function HomePage() {
               Four ways to stop being invisible to AI.
             </h2>
             <p className="text-warmgray text-lg max-w-2xl mx-auto">
-              The work is the same. The door is up to you. Learn it in the community, get the one-time report, watch what AI says about you, or feed AI the truth.
+              Same work. Different doors. Pick the one that fits you.
             </p>
           </FadeIn>
 
@@ -491,13 +487,10 @@ export default function HomePage() {
               </h2>
               <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
                 <p>
-                  Being recommended by AI is not a campaign. It is the slow build of a clear, consistent signal across the places AI is reading from. Schema. Directories. Citations. Reviews. Your own words on your own pages.
+                  Being recommended by AI is a slow build. Schema, directories, citations, reviews, your own words. A weekend cannot do it. A year can.
                 </p>
                 <p>
-                  A weekend cannot do that. A month barely starts it. A year is enough time to put the pieces in place, see what AI does with them, and adjust. That is why the community runs on a twelve-month commitment.
-                </p>
-                <p>
-                  You are committing to do the work. We are committing to do it with you.
+                  That is why the community runs on a twelve-month commitment. You commit to the work. We commit to doing it with you.
                 </p>
               </div>
             </FadeIn>
@@ -525,37 +518,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why it happens */}
+      {/* What your Signal Score does for you */}
       <section className="section-padding bg-stone-dark">
         <div className="max-w-content mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <FadeIn>
-              <SectionLabel>WHY IT HAPPENS</SectionLabel>
-              <h2 className="font-display text-section-heading text-navy mb-6">
-                AI is not researching you. It is pattern matching.
-              </h2>
-              <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
-                <p>
-                  AI does not read your website the way a careful person would. It scans for structured information it can quickly pull from. If your information is scattered, inconsistent between platforms, or not organized in a way AI can parse, it does one of two things.
+          <FadeIn className="text-center mb-12">
+            <SectionLabel>WHAT YOUR SIGNAL SCORE DOES FOR YOU</SectionLabel>
+            <h2 className="font-display text-section-heading text-navy mb-4">
+              Three jobs. One score.
+            </h2>
+            <p className="text-warmgray text-lg max-w-2xl mx-auto">
+              Your Signal Score measures how well AI does each of these for your business right now.
+            </p>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <FadeIn delay={0.1}>
+              <div className="bg-white rounded-card shadow-card p-8 h-full">
+                <div className="font-mono text-copper text-sm font-bold mb-3">01</div>
+                <h3 className="font-display text-2xl text-navy mb-3">Get found</h3>
+                <p className="font-body text-warmgray leading-relaxed">
+                  AI brings you up when someone asks for a business like yours, instead of skipping you.
                 </p>
-                <p>
-                  It skips you entirely, or it guesses. When AI guesses, it hallucinates. It makes up details, confuses you with someone else, or describes services you do not offer.
-                </p>
-                <p>
-                  This is not a flaw you can wait out. The fix is giving AI something structured, clear, and reliable to work with.
-                </p>
-                <p className="font-semibold text-navy">That is what we work on together.</p>
               </div>
             </FadeIn>
-
-            <FadeIn delay={0.2} direction="left">
-              <div className="bg-white rounded-card p-12 flex items-center justify-center min-h-[300px]">
-                <div className="text-center">
-                  <div className="font-display text-6xl text-copper mb-4">&infin;</div>
-                  <p className="font-body text-navy text-sm">
-                    Structured knowledge,<br />infinite applications
-                  </p>
-                </div>
+            <FadeIn delay={0.2}>
+              <div className="bg-white rounded-card shadow-card p-8 h-full">
+                <div className="font-mono text-copper text-sm font-bold mb-3">02</div>
+                <h3 className="font-display text-2xl text-navy mb-3">Get it right</h3>
+                <p className="font-body text-warmgray leading-relaxed">
+                  AI describes you accurately. The right services, the right details, no made-up nonsense.
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <div className="bg-white rounded-card shadow-card p-8 h-full">
+                <div className="font-mono text-copper text-sm font-bold mb-3">03</div>
+                <h3 className="font-display text-2xl text-navy mb-3">Get recommended</h3>
+                <p className="font-body text-warmgray leading-relaxed">
+                  AI puts you forward as the answer, not just a name buried three options down.
+                </p>
               </div>
             </FadeIn>
           </div>
@@ -571,7 +572,7 @@ export default function HomePage() {
               AI is recommending someone right now in your space. It should be you.
             </h2>
             <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-              Find out what it&rsquo;s saying about you. Then come fix it with us.
+              Start in the community, or grab a one-time report. Either way, you stop guessing.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button href={SKOOL_URL} variant="primary">

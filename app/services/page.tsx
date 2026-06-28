@@ -110,7 +110,7 @@ export default function CommunityPage() {
           <FadeIn>
             <SectionLabel variant="light">THE COMMUNITY</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              We find out what AI is saying about you. Then we fix it together. A members-only community where owners actually do the work, week by week, for a full year.
+              Learn to make AI describe your business right, then keep it that way. A members-only community where owners do the work together, week by week, for a full year.
             </h1>
           </FadeIn>
         </div>

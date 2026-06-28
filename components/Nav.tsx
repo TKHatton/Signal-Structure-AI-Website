@@ -11,8 +11,7 @@ import { SKOOL_URL, COMPANY_NAME } from '@/lib/constants';
 const mainLinks = [
   { href: '/services', label: 'Community' },
   { href: '/signal-score-report', label: 'Signal Report' },
-  { href: '/signal-watch', label: 'Signal Watch' },
-  { href: '/client-knowledge', label: 'Client Knowledge' },
+  { href: '/resources', label: 'Resources' },
 ];
 
 const aboutLinks = [
@@ -21,23 +20,21 @@ const aboutLinks = [
   { href: '/why-this-matters', label: 'Why This Matters' },
   { href: '/our-approach', label: 'Our Approach' },
   { href: '/speaking', label: 'Speaking' },
-  { href: '/resources', label: 'Resources' },
   { href: '/blog', label: 'Blog' },
 ];
 
 const allLinks = [
-  { href: '/', label: 'Home' },
   { href: '/services', label: 'Community' },
   { href: '/signal-score-report', label: 'Signal Report' },
   { href: '/signal-watch', label: 'Signal Watch' },
   { href: '/client-knowledge', label: 'Client Knowledge' },
   { href: '/signal-pulse', label: 'Free Signal Pulse' },
+  { href: '/resources', label: 'Resources' },
   { href: '/about', label: 'Our Story' },
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/why-this-matters', label: 'Why This Matters' },
   { href: '/our-approach', label: 'Our Approach' },
   { href: '/speaking', label: 'Speaking' },
-  { href: '/resources', label: 'Resources' },
   { href: '/blog', label: 'Blog' },
   { href: '/faq', label: 'FAQ' },
 ];

@@ -7,7 +7,6 @@ import {
   REPORT_PRICE,
   REPORT_TURNAROUND,
   REPORT_CHECKOUT_URL,
-  SKOOL_URL,
 } from '@/lib/constants';
 import Link from 'next/link';
 
@@ -47,7 +46,7 @@ const productSchema = {
 const reportSections = [
   {
     title: 'How AI sees you, platform by platform',
-    body: 'ChatGPT, Claude, Gemini, Perplexity, and Copilot. The exact responses they give about your business when someone asks. Side by side, so you can see where they agree, where they differ, and where they are flat-out wrong.',
+    body: 'ChatGPT, Claude, Gemini, Perplexity, Copilot, and more. The exact responses they give about your business when someone asks. Side by side, so you can see where they agree, where they differ, and where they are flat-out wrong.',
   },
   {
     title: 'Your Signal Score, with the breakdown',
@@ -80,7 +79,7 @@ export default function SignalScoreReportPage() {
           <FadeIn>
             <SectionLabel variant="light">SIGNAL SCORE REPORT</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              Find out exactly what AI is saying about your business behind your back. The full picture, in plain language, in {REPORT_TURNAROUND}.
+              The complete picture of how AI describes your business. Every major AI assistant, scored and explained, in {REPORT_TURNAROUND}.
             </h1>
           </FadeIn>
         </div>
@@ -130,7 +129,7 @@ export default function SignalScoreReportPage() {
                 <ul className="space-y-2 font-body text-white/80 text-sm mb-8">
                   <li className="flex items-start gap-2">
                     <SignalDot size={5} className="mt-2 flex-shrink-0" />
-                    <span>Live responses from ChatGPT, Claude, Gemini, Perplexity, and Copilot</span>
+                    <span>Live responses from ChatGPT, Claude, Gemini, Perplexity, Copilot, and more</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <SignalDot size={5} className="mt-2 flex-shrink-0" />
@@ -182,12 +181,12 @@ export default function SignalScoreReportPage() {
 
             <FadeIn delay={0.2} direction="left">
               <div className="bg-white/10 rounded-card p-8">
-                <h3 className="font-display text-2xl mb-4">Consistent on purpose</h3>
+                <h3 className="font-display text-2xl mb-4">Report or Watch?</h3>
                 <p className="font-body text-white/80 leading-relaxed mb-4">
-                  Reports inside the community all look the same. Same method. Same format. Same scoring. So owners can compare notes, share what worked, and learn from each other.
+                  The <span className="text-white font-semibold">Signal Score Report</span> is the deep, complete picture. Every platform, your full score, your citation footprint, and a fix list. One time, done by hand.
                 </p>
                 <p className="font-body text-white/80 leading-relaxed">
-                  Yours will look the same as theirs. That is the point.
+                  <span className="text-white font-semibold">Signal Watch</span> is the quick snapshot you re-run yourself, month after month, to see if the work is moving the needle. Lighter on purpose. Many people get the Report first, then keep Watch running.
                 </p>
               </div>
             </FadeIn>
@@ -226,22 +225,14 @@ export default function SignalScoreReportPage() {
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-display text-section-heading mb-6 text-white">
-              Find out what AI is saying about your business.
+              See the whole picture.
             </h2>
             <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-              {REPORT_PRICE}. PDF delivered within {REPORT_TURNAROUND} via email. Plain language. Real fixes.
+              {REPORT_PRICE}, one time. PDF in {REPORT_TURNAROUND}. Plain language. Real fixes.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href={REPORT_CHECKOUT_URL} variant="primary">
-                Order Your Report
-              </Button>
-              <Link
-                href={SKOOL_URL}
-                className="font-body text-white/90 hover:text-copper transition-colors underline underline-offset-4 decoration-copper decoration-2"
-              >
-                Or join the community
-              </Link>
-            </div>
+            <Button href={REPORT_CHECKOUT_URL} variant="primary">
+              Order Your Report
+            </Button>
           </FadeIn>
         </div>
       </section>
