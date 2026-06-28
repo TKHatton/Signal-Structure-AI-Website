@@ -2,14 +2,20 @@ import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
-import AddOnCard from '@/components/AddOnCard';
 import SignalDot from '@/components/SignalDot';
-import { RESERVE_URL, BETA_SETUP, BETA_MONTHLY, FULL_SETUP, FULL_MONTHLY, BETA_SPOTS } from '@/lib/constants';
+import {
+  SKOOL_URL,
+  COMMUNITY_YEARLY,
+  COMMUNITY_MONTHLY,
+  COMMUNITY_COMMITMENT_MONTHS,
+  REPORT_PRICE,
+  WATCH_PRICE,
+} from '@/lib/constants';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'The AI Presence Program | Signal & Structure AI',
-  description: 'Done-for-you AI presence management. We monitor ChatGPT, Claude, Gemini, Perplexity, and more every month, show you what they say about your business, and fix what is wrong. Beta founder rate: $797 to start, then $297/month.',
+  title: 'The Community | Signal & Structure AI',
+  description: 'A members-only community for business owners learning AI discoverability together. Yearly or monthly with a twelve-month commitment. Weekly working sessions on Skool.',
   alternates: {
     canonical: '/services',
   },
@@ -23,8 +29,7 @@ const organizationSchema = {
   url: 'https://signalstructure.ai',
   sameAs: [
     'https://www.linkedin.com/company/signal-structure-ai',
-    'https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit',
-    'https://share.google/5Ci2LRrbmjYiQpkCp',
+    'https://www.skool.com/signal-structure-ai-2338/about',
   ],
 };
 
@@ -32,121 +37,103 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'Home',
-      item: 'https://signalstructure.ai',
-    },
-    {
-      '@type': 'ListItem',
-      position: 2,
-      name: 'Services',
-      item: 'https://signalstructure.ai/services',
-    },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://signalstructure.ai' },
+    { '@type': 'ListItem', position: 2, name: 'Community', item: 'https://signalstructure.ai/services' },
   ],
 };
 
-const serviceSchema = {
+const communitySchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  '@id': 'https://signalstructure.ai/services#ai-presence-program',
-  name: 'AI Presence Program',
+  '@id': 'https://signalstructure.ai/services#community',
+  name: 'Signal & Structure AI Community',
   provider: { '@id': 'https://signalstructure.ai/#organization' },
-  description: 'Done-for-you monitoring, reporting, and correction of how AI platforms describe your business. We monitor ChatGPT, Claude, Gemini, Perplexity, and more every month, surface what is being said, and do the work to fix hallucinations and gaps. Includes a live dashboard, monthly report, and your Signal Score with trend tracking.',
-  serviceType: 'AI Presence Management',
-  offers: {
-    '@type': 'Offer',
-    price: '797',
-    priceCurrency: 'USD',
-    description: 'Beta founder rate: $797 to start (build plus first month), then $297/month for as long as you stay in the program.',
-  },
+  description: 'A members-only community for business owners learning AI discoverability together. Weekly working sessions, a shared library of fixes and templates, and direct access to Lenise Kenney. Twelve-month commitment.',
+  serviceType: 'AI discoverability community',
+  offers: [
+    {
+      '@type': 'Offer',
+      price: '497',
+      priceCurrency: 'USD',
+      description: 'Yearly membership. One payment, covers twelve months.',
+    },
+    {
+      '@type': 'Offer',
+      price: '49',
+      priceCurrency: 'USD',
+      description: 'Monthly membership with a twelve-month commitment. $49 per month for twelve months.',
+    },
+  ],
   areaServed: { '@type': 'Country', name: 'United States' },
 };
 
-const addOnSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Custom AI Tools, MCP Servers, and API Integrations',
-  description: 'Custom-built AI tools, Model Context Protocol (MCP) servers, and API integrations that put your business data directly inside the AI platforms your customers use. Priced by scope. Available to program clients as an add-on, not part of the standard package.',
-  provider: { '@id': 'https://signalstructure.ai/#organization' },
-};
-
-const platforms = [
-  'ChatGPT', 'Claude', 'Google Gemini', 'Perplexity',
+const yearMap = [
+  {
+    label: 'Month 1',
+    title: 'You meet your baseline.',
+    body: 'Run your free Signal Pulse, set your goals, and meet the rest of the cohort. We map what AI is already saying about you.',
+  },
+  {
+    label: 'Months 2 to 3',
+    title: 'Foundations go in.',
+    body: 'Schema, citations, the directories that matter, the Google Business Profile work. We do these together, week by week.',
+  },
+  {
+    label: 'Months 4 to 6',
+    title: 'AI starts to notice.',
+    body: 'You see your name appear in places it did not before. We compare notes, share what worked, and tune what did not.',
+  },
+  {
+    label: 'Months 7 to 9',
+    title: 'You become a source.',
+    body: 'Original writing, original answers, original points of view. AI quotes you because nobody else is saying it this way.',
+  },
+  {
+    label: 'Months 10 to 12',
+    title: 'You hold ground.',
+    body: 'You know what to monitor, what to update, and what to leave alone. You finish the year fluent in the work.',
+  },
 ];
 
-export default function ServicesPage() {
+export default function CommunityPage() {
   return (
     <main>
-      {/* JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(addOnSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(communitySchema) }} />
 
-      {/* Section 1: Page Header */}
+      {/* Header */}
       <section className="relative bg-navy text-white">
         <GridTexture />
         <div className="relative z-10 hero-container">
           <FadeIn>
-            <SectionLabel variant="light">THE AI PRESENCE PROGRAM</SectionLabel>
+            <SectionLabel variant="light">THE COMMUNITY</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              One program. We monitor how AI describes your business across ChatGPT, Claude,
-              Gemini, Perplexity, and more — show you what is being said, and fix what is wrong,
-              every month.
+              A members-only community where business owners learn AI discoverability together. A full year of doing the work, with other people doing the same work alongside you.
             </h1>
           </FadeIn>
         </div>
       </section>
 
-      {/* Section 2: Program detail + pricing */}
+      {/* What it is + pricing */}
       <section className="section-padding">
         <div className="max-w-content mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             {/* What you get */}
             <FadeIn delay={0.1}>
               <div className="bg-white rounded-card shadow-card p-8 h-full">
-                <h2 className="font-display text-2xl text-navy mb-2">Month one</h2>
-                <p className="font-body text-sm text-warmgray mb-6">Your foundation report.</p>
-                <ul className="space-y-3 font-body text-warmgray mb-8">
-                  {[
-                    'Full AI presence audit across ChatGPT, Claude, Gemini, Perplexity, and more',
-                    'Your Signal Score, my proprietary 0 to 100 measure, with a category breakdown',
-                    'A plain-language summary of what AI is saying about you',
-                    'Every hallucination and gap identified',
-                    'A prioritized fix list',
-                    'A walkthrough call to review it together',
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <SignalDot size={6} className="mt-2 flex-shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <h2 className="font-display text-2xl text-navy mb-2">Every month after</h2>
-                <p className="font-body text-sm text-warmgray mb-6">Monitoring, fixing, and proof.</p>
+                <h2 className="font-display text-2xl text-navy mb-2">What you get</h2>
+                <p className="font-body text-sm text-warmgray mb-6">
+                  Hosted on Skool. Open whenever you are.
+                </p>
                 <ul className="space-y-3 font-body text-warmgray">
                   {[
-                    'Re-scan across all monitored platforms',
-                    'A live dashboard you can check any time',
-                    'Updated Signal Score with trend tracking',
-                    'New findings flagged since last month',
-                    'Active correction work, not just a report',
-                    'A monthly report that links back to your dashboard',
-                    'Direct access to Lenise for questions',
+                    'Weekly working sessions where we do the discoverability work live, together',
+                    'A shared library of schema, templates, and scripts that grows with the group',
+                    'Posts and threads where you ask, share, and learn from other owners',
+                    'Direct answers from Lenise inside the community',
+                    'The Signal Score method explained, taught, and applied to your business',
+                    'A network of owners learning the same thing at the same time',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <SignalDot size={6} className="mt-2 flex-shrink-0" />
@@ -157,48 +144,40 @@ export default function ServicesPage() {
               </div>
             </FadeIn>
 
-            {/* Founder pricing */}
+            {/* Pricing */}
             <FadeIn delay={0.2} direction="left">
               <div className="bg-navy text-white rounded-card shadow-card p-8 h-full flex flex-col">
-                <div className="inline-flex self-start items-center gap-2 bg-copper/20 text-copper rounded-full px-3 py-1 text-xs font-body font-semibold uppercase tracking-wider mb-6">
-                  Beta Founder Offer · {BETA_SPOTS} spots
-                </div>
-
-                <div className="mb-2">
-                  <span className="font-mono text-5xl font-bold text-copper">{BETA_SETUP}</span>
-                  <span className="font-body text-white/70 ml-2">to start</span>
-                </div>
-                <p className="font-body text-white/70 text-sm mb-6">
-                  Your first payment covers the build and your first month.
+                <SectionLabel variant="light">JOIN</SectionLabel>
+                <p className="font-body text-white/80 mb-6 mt-2">
+                  Pick the way you want to pay. Both come with the same twelve-month commitment.
                 </p>
 
-                <div className="mb-2">
-                  <span className="font-mono text-4xl font-bold text-white">{BETA_MONTHLY}</span>
-                  <span className="font-body text-white/70 ml-2">/month after</span>
-                </div>
-                <p className="font-body text-white/70 text-sm mb-6">
-                  Your recurring service begins after month one.
-                </p>
-
-                <div className="bg-white/10 rounded-lg p-4 mb-6">
-                  <p className="font-body text-sm text-white">
-                    <span className="text-copper font-semibold">Founder rate, locked for life.</span>{' '}
-                    You keep {BETA_MONTHLY}/month for as long as you stay in the program, even when
-                    the price rises to {FULL_SETUP} setup and {FULL_MONTHLY}/month.
+                <div className="bg-white/10 rounded-lg p-6 mb-4">
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <span className="font-mono text-4xl font-bold text-copper">{COMMUNITY_YEARLY}</span>
+                    <span className="font-body text-white/70">per year</span>
+                  </div>
+                  <p className="font-body text-white/70 text-sm">
+                    One payment. Covers all {COMMUNITY_COMMITMENT_MONTHS} months. Simplest option.
                   </p>
                 </div>
 
-                <p className="font-body text-white/60 text-sm mb-8">
-                  Our promise: if your Signal Score does not improve by at least 10 points in your
-                  first 90 days, month three is free.
-                </p>
+                <div className="bg-white/10 rounded-lg p-6 mb-6">
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <span className="font-mono text-4xl font-bold text-white">{COMMUNITY_MONTHLY}</span>
+                    <span className="font-body text-white/70">per month</span>
+                  </div>
+                  <p className="font-body text-white/70 text-sm">
+                    Spread it out. {COMMUNITY_COMMITMENT_MONTHS}-month commitment so the community stays steady.
+                  </p>
+                </div>
 
                 <div className="mt-auto">
-                  <Button href={RESERVE_URL} variant="primary" className="w-full text-center">
-                    Reserve Your Beta Founder Spot
+                  <Button href={SKOOL_URL} variant="primary" className="w-full text-center">
+                    Join on Skool
                   </Button>
                   <p className="text-center text-white/50 text-xs mt-3">
-                    {BETA_SPOTS} founding spots. Once they fill, the founder rate is gone.
+                    Membership is handled on Skool. You will land on the about page to choose your plan.
                   </p>
                 </div>
               </div>
@@ -207,39 +186,37 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Section: What this is worth */}
+      {/* Why a year */}
       <section className="relative bg-navy text-white section-padding-sm">
         <GridTexture />
         <div className="relative z-10 max-w-content mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn>
-              <SectionLabel variant="light">WHAT THIS IS WORTH</SectionLabel>
+              <SectionLabel variant="light">WHY A YEAR</SectionLabel>
               <h2 className="font-display text-section-heading mb-6">
-                One referral you never knew you lost costs more than this.
+                Because AI does not change its mind about you in a week.
               </h2>
               <div className="font-body text-lg text-white/80 leading-relaxed space-y-4">
                 <p>
-                  Every day, someone asks AI who to trust in your field. If your name does not
-                  come up, or comes up wrong, that referral goes to someone else. Quietly. You
-                  never see it happen.
+                  Becoming visible to AI is the long version of becoming known. Schema goes in. Directories get cleaned up. Original writing gets published. Reviews accumulate. Citations link back. Each piece takes time, and the platforms take more time to notice.
                 </p>
                 <p>
-                  Being found and described accurately by AI is worth far more than what this
-                  program costs. The price reflects the founding beta, not the value.
+                  A weekend is not enough. A single month barely starts. A year is enough time to do the work, see AI respond to it, and adjust. That is why the community is built around a twelve-month commitment.
+                </p>
+                <p>
+                  We tried it as a short engagement. It did not help enough people. The slow, shared version helps more.
                 </p>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.2} direction="left">
               <div className="bg-white/10 rounded-card p-8">
-                <h3 className="font-display text-2xl mb-4">A method, not a guess.</h3>
+                <h3 className="font-display text-2xl mb-4">A note on the commitment</h3>
                 <p className="font-body text-white/80 leading-relaxed mb-4">
-                  Signal Score is my proprietary method. I have been building the engine behind
-                  it since early 2026, and I keep refining it. You are not paying for a generic
-                  report you could get anywhere.
+                  The yearly plan is one payment for all twelve months. The monthly plan is twelve consecutive monthly payments.
                 </p>
                 <p className="font-body text-white/80 leading-relaxed">
-                  You are getting a system I built, run personally, and stand behind.
+                  If something changes for you mid-year, write to Lenise. We will handle it like adults. The commitment is real because the work is real, not because we want to trap anyone.
                 </p>
               </div>
             </FadeIn>
@@ -247,99 +224,105 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Section 3: Platforms */}
+      {/* The year, month by month */}
       <section className="section-padding bg-stone-dark">
         <div className="max-w-content mx-auto">
           <FadeIn className="text-center mb-10">
-            <SectionLabel>WHERE WE LOOK</SectionLabel>
+            <SectionLabel>HOW THE YEAR UNFOLDS</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-4">
-              The platforms that matter right now.
+              What twelve months together actually looks like.
             </h2>
             <p className="text-warmgray text-lg max-w-2xl mx-auto">
-              We focus on the AI platforms your customers are actually using today — and we
-              are adding more as the landscape grows.
+              A rough arc, not a rigid plan. The pace bends to the people in the room.
             </p>
           </FadeIn>
 
-          <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
-            {platforms.map((p) => (
-              <span
-                key={p}
-                className="bg-white rounded-full px-4 py-2 font-body text-sm text-navy shadow-card"
-              >
-                {p}
-              </span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
+            {yearMap.map((stage, i) => (
+              <FadeIn key={stage.label} delay={0.1 + i * 0.05}>
+                <div className="bg-white rounded-card shadow-card p-6 h-full">
+                  <div className="text-copper font-body font-semibold text-xs tracking-widest uppercase mb-2">
+                    {stage.label}
+                  </div>
+                  <h3 className="font-display text-lg text-navy mb-2 leading-tight">
+                    {stage.title}
+                  </h3>
+                  <p className="font-body text-sm text-warmgray leading-relaxed">
+                    {stage.body}
+                  </p>
+                </div>
+              </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Section 4: Premium add-on */}
+      {/* Companion offers */}
       <section className="section-padding">
         <div className="max-w-content mx-auto">
-          <FadeIn className="mb-10">
-            <h2 className="font-display text-section-heading text-navy mb-4 text-center">
-              Optional add-on
+          <FadeIn className="text-center mb-10">
+            <SectionLabel>NOT READY FOR A YEAR?</SectionLabel>
+            <h2 className="font-display text-section-heading text-navy mb-4">
+              Start smaller. Come back when you want the room.
             </h2>
-            <p className="text-warmgray text-lg text-center max-w-2xl mx-auto">
-              For program clients who want to go further. Priced by scope, not part of the
-              standard package.
-            </p>
           </FadeIn>
 
-          <div className="max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
-              <AddOnCard
-                title="Custom AI Tools, MCP Servers, and API Integrations"
-                price="By quote"
-                description="Custom-built tools, Model Context Protocol (MCP) servers, and API integrations that put your business data directly inside the AI platforms your customers use. This is the deep, technical work that goes beyond monitoring and correction. Available as an add-on for clients who want it."
-              />
+              <div className="bg-stone-dark rounded-card p-8 h-full flex flex-col">
+                <h3 className="font-display text-2xl text-navy mb-2">Signal Score Report</h3>
+                <p className="font-body text-warmgray mb-6 flex-1">
+                  A one-time, detailed report on how AI describes your business right now. Every platform. Every gap. Delivered within 48 hours.
+                </p>
+                <div className="mb-4">
+                  <span className="font-mono text-3xl font-bold text-navy">{REPORT_PRICE}</span>
+                  <span className="font-body text-warmgray ml-2 text-sm">one time</span>
+                </div>
+                <Link
+                  href="/signal-score-report"
+                  className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2"
+                >
+                  See what is in the report <span>&rarr;</span>
+                </Link>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.2}>
+              <div className="bg-stone-dark rounded-card p-8 h-full flex flex-col">
+                <h3 className="font-display text-2xl text-navy mb-2">Signal Watch</h3>
+                <p className="font-body text-warmgray mb-6 flex-1">
+                  Ongoing monitoring you check from inside ChatGPT or Claude. Ask, see your score, see what changed. Cancel any time.
+                </p>
+                <div className="mb-4">
+                  <span className="font-mono text-3xl font-bold text-navy">{WATCH_PRICE}</span>
+                  <span className="font-body text-warmgray ml-2 text-sm">per month</span>
+                </div>
+                <Link
+                  href="/signal-watch"
+                  className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2"
+                >
+                  See how Signal Watch works <span>&rarr;</span>
+                </Link>
+              </div>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Section 5: Speaking callout */}
-      <section className="section-padding bg-stone-dark">
-        <div className="max-w-content mx-auto">
-          <FadeIn>
-            <div className="bg-white rounded-card shadow-card p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 justify-between">
-              <div>
-                <h2 className="font-display text-2xl text-navy mb-2">
-                  Want this explained to your group?
-                </h2>
-                <p className="font-body text-warmgray max-w-xl">
-                  Lenise speaks to teams, communities, and organizations about how AI is
-                  reshaping the way businesses get found, and what to do about it.
-                </p>
-              </div>
-              <Link
-                href="/speaking"
-                className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2 whitespace-nowrap"
-              >
-                See speaking
-                <span>→</span>
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Section 6: Bottom CTA */}
+      {/* Bottom CTA */}
       <section className="relative bg-navy text-white section-padding">
         <GridTexture />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
-            <h2 className="font-display text-section-heading mb-8 text-white">
-              Protect how AI describes your business.
+            <h2 className="font-display text-section-heading mb-6 text-white">
+              Spend a year doing the work.
             </h2>
-            <Button href={RESERVE_URL} variant="primary" className="mb-4">
-              Reserve Your Beta Founder Spot
-            </Button>
-            <p className="text-white/70 text-sm max-w-2xl mx-auto">
-              {BETA_SPOTS} founding spots, capped because Lenise personally runs every account.
-              Once they fill, the founder rate is gone.
+            <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+              We will be there every week. You will leave fluent in something most owners do not know exists yet.
             </p>
+            <Button href={SKOOL_URL} variant="primary">
+              Join on Skool
+            </Button>
           </FadeIn>
         </div>
       </section>

@@ -6,12 +6,12 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
-import { BOOKING_URL, COMPANY_NAME } from '@/lib/constants';
+import { SKOOL_URL, COMPANY_NAME } from '@/lib/constants';
 
 const mainLinks = [
-  { href: '/services', label: 'Services' },
-  { href: '/resources', label: 'Resources' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/services', label: 'Community' },
+  { href: '/signal-score-report', label: 'Signal Report' },
+  { href: '/signal-watch', label: 'Signal Watch' },
 ];
 
 const aboutLinks = [
@@ -19,16 +19,23 @@ const aboutLinks = [
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/why-this-matters', label: 'Why This Matters' },
   { href: '/our-approach', label: 'Our Approach' },
+  { href: '/speaking', label: 'Speaking' },
+  { href: '/resources', label: 'Resources' },
+  { href: '/blog', label: 'Blog' },
 ];
 
 const allLinks = [
   { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services' },
-  { href: '/resources', label: 'Resources' },
+  { href: '/services', label: 'Community' },
+  { href: '/signal-score-report', label: 'Signal Report' },
+  { href: '/signal-watch', label: 'Signal Watch' },
+  { href: '/signal-pulse', label: 'Free Signal Pulse' },
   { href: '/about', label: 'Our Story' },
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/why-this-matters', label: 'Why This Matters' },
   { href: '/our-approach', label: 'Our Approach' },
+  { href: '/speaking', label: 'Speaking' },
+  { href: '/resources', label: 'Resources' },
   { href: '/blog', label: 'Blog' },
   { href: '/faq', label: 'FAQ' },
 ];
@@ -170,8 +177,8 @@ export default function Nav() {
               </AnimatePresence>
             </div>
 
-            <Button href={BOOKING_URL} variant="primary" className="text-sm whitespace-nowrap">
-              Reserve My Spot
+            <Button href={SKOOL_URL} variant="primary" className="text-sm whitespace-nowrap">
+              Join the Community
             </Button>
           </div>
 
@@ -257,8 +264,8 @@ export default function Nav() {
                   );
                 })}
                 <div className="mt-4">
-                  <Button href={BOOKING_URL} variant="primary" className="w-full text-center">
-                    Reserve My Spot
+                  <Button href={SKOOL_URL} variant="primary" className="w-full text-center">
+                    Join the Community
                   </Button>
                 </div>
               </div>

@@ -2,17 +2,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import SignalDot from './SignalDot';
 import GridTexture from './GridTexture';
-import { COMPANY_NAME, TAGLINE, LOCATION, ADDRESS, EMAIL, LINKEDIN, BOOKING_URL } from '@/lib/constants';
+import { COMPANY_NAME, TAGLINE, LOCATION, ADDRESS, EMAIL, LINKEDIN, SKOOL_URL } from '@/lib/constants';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services' },
-  { href: '/speaking', label: 'Speaking' },
-  { href: '/resources', label: 'Resources' },
+  { href: '/services', label: 'Community' },
+  { href: '/signal-score-report', label: 'Signal Report' },
+  { href: '/signal-watch', label: 'Signal Watch' },
+  { href: '/signal-pulse', label: 'Free Signal Pulse' },
   { href: '/about', label: 'Our Story' },
   { href: '/how-it-works', label: 'How It Works' },
-  { href: '/why-this-matters', label: 'Why This Matters' },
-  { href: '/our-approach', label: 'Our Approach' },
+  { href: '/speaking', label: 'Speaking' },
+  { href: '/resources', label: 'Resources' },
   { href: '/blog', label: 'Blog' },
   { href: '/faq', label: 'FAQ' },
 ];
@@ -58,13 +59,13 @@ export default function Footer() {
               ))}
               <li>
                 <a
-                  href={BOOKING_URL}
+                  href={SKOOL_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-copper hover:text-copper-light transition-colors font-body text-sm font-medium flex items-center gap-2 mt-4"
                 >
                   <SignalDot size={4} />
-                  Reserve My Spot
+                  Join the Community
                 </a>
               </li>
             </ul>
