@@ -10,12 +10,12 @@ export const COMMUNITY_COMMITMENT_MONTHS = 12;
 // business days via email.
 export const REPORT_PRICE = "$147";
 export const REPORT_TURNAROUND = "two business days";
-export const REPORT_CHECKOUT_URL = "https://buy.stripe.com/3cI5kCdIUfGJgWg4LzaAw01";
+export const REPORT_CHECKOUT_URL = "https://buy.stripe.com/28E9AS8oAfGJ8pK5PDaAw05";
 
 // Signal Watch: monthly subscription $26/mo, cancel anytime. Installs as
 // a Claude or ChatGPT tool; access details emailed within two days.
 export const WATCH_PRICE = "$26";
-export const WATCH_CHECKOUT_URL = "https://buy.stripe.com/aFafZgbAMfGJ49u5PDaAw02";
+export const WATCH_CHECKOUT_URL = "https://buy.stripe.com/28E9AS34g0LP6hCa5TaAw06";
 
 // Client Knowledge: the buyer's official knowledge base, delivered to
 // ChatGPT and Claude as a connector so the platforms answer from real data
