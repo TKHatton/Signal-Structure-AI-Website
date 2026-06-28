@@ -20,6 +20,7 @@ const aboutLinks = [
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/why-this-matters', label: 'Why This Matters' },
   { href: '/our-approach', label: 'Our Approach' },
+  { href: '/speaking', label: 'Speaking' },
   { href: '/resources', label: 'Resources' },
   { href: '/blog', label: 'Blog' },
 ];
@@ -35,6 +36,7 @@ const allLinks = [
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/why-this-matters', label: 'Why This Matters' },
   { href: '/our-approach', label: 'Our Approach' },
+  { href: '/speaking', label: 'Speaking' },
   { href: '/resources', label: 'Resources' },
   { href: '/blog', label: 'Blog' },
   { href: '/faq', label: 'FAQ' },

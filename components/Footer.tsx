@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/signal-pulse', label: 'Free Signal Pulse' },
   { href: '/about', label: 'Our Story' },
   { href: '/how-it-works', label: 'How It Works' },
+  { href: '/speaking', label: 'Speaking' },
   { href: '/resources', label: 'Resources' },
   { href: '/blog', label: 'Blog' },
   { href: '/faq', label: 'FAQ' },

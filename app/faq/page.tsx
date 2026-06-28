@@ -172,7 +172,9 @@ export default function FAQPage() {
             <p className="font-body text-lg text-warmgray leading-relaxed mb-8">
               The fastest way to get answers is to see it in action. Run a free
               Signal Pulse check on your site, or join the community and learn the
-              work alongside other owners doing the same thing.
+              work alongside other owners doing the same thing. Lenise also speaks
+              at communities and events about how AI describes businesses; if you
+              run a group that should hear it, the <a className="text-copper hover:text-copper-dark underline underline-offset-2" href="/speaking">speaking page</a> has the details.
             </p>
             <Button href={SKOOL_URL} variant="primary">
               Join the Community
