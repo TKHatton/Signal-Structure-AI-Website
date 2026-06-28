@@ -13,6 +13,7 @@ import {
   REPORT_PRICE,
   REPORT_TURNAROUND,
   WATCH_PRICE,
+  CLIENT_KNOWLEDGE_PRICE,
 } from '@/lib/constants';
 import Link from 'next/link';
 
@@ -111,7 +112,7 @@ const localBusinessSchema = {
     latitude: 35.7215,
     longitude: -79.1770,
   },
-  priceRange: '$19 - $497',
+  priceRange: '$26 - $497',
   currenciesAccepted: 'USD',
   paymentAccepted: 'Credit Card, Invoice',
   areaServed: [{ '@type': 'Country', name: 'United States' }],
@@ -160,7 +161,18 @@ const localBusinessSchema = {
           description: 'Ongoing monitoring of how AI describes a business, delivered through the buyer’s ChatGPT or Claude.',
           provider: { '@id': 'https://signalstructure.ai/#organization' },
         },
-        price: '19',
+        price: '26',
+        priceCurrency: 'USD',
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Client Knowledge',
+          description: 'A private knowledge connector for ChatGPT and Claude. AI answers from the buyer\'s verified business information instead of guessing.',
+          provider: { '@id': 'https://signalstructure.ai/#organization' },
+        },
+        price: '76',
         priceCurrency: 'USD',
       },
     ],
@@ -367,27 +379,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Three ways to work with us */}
+      {/* Four ways to work with us */}
       <section className="section-padding bg-stone-dark">
         <div className="max-w-content mx-auto">
           <FadeIn className="text-center mb-12">
-            <SectionLabel>THREE WAYS IN</SectionLabel>
+            <SectionLabel>FOUR WAYS IN</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-4">
               Pick the door that fits where you are.
             </h2>
             <p className="text-warmgray text-lg max-w-2xl mx-auto">
-              One community to learn alongside other owners. One report when you want a full picture. One quiet monthly tool to keep an eye on it.
+              A community to learn it with other owners. A one-time report. A tool to keep an eye on it. A connector that tells AI the truth in your own words.
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Community */}
             <FadeIn delay={0.1}>
               <div className="bg-navy text-white rounded-card shadow-card p-8 h-full flex flex-col">
                 <SectionLabel variant="light">THE COMMUNITY</SectionLabel>
-                <h3 className="font-display text-2xl mb-3 mt-2">Learn it with other owners.</h3>
+                <h3 className="font-display text-2xl mb-3 mt-2">Learn it together.</h3>
                 <p className="font-body text-white/80 mb-6 leading-relaxed flex-1">
-                  A members-only community on Skool. Weekly working sessions, shared lessons, and the slow work of becoming visible to AI together. A year of practice, not a one-day fix.
+                  A members-only community on Skool. Weekly working sessions. A year of practice, with people doing the same work alongside you.
                 </p>
                 <div className="mb-6">
                   <div className="font-mono text-3xl font-bold text-copper">{COMMUNITY_YEARLY}</div>
@@ -397,7 +409,7 @@ export default function HomePage() {
                   href="/services"
                   className="font-body text-copper hover:text-copper-light transition-colors inline-flex items-center gap-2"
                 >
-                  See how the year unfolds <span>&rarr;</span>
+                  See the community <span>&rarr;</span>
                 </Link>
               </div>
             </FadeIn>
@@ -418,7 +430,7 @@ export default function HomePage() {
                   href="/signal-score-report"
                   className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2"
                 >
-                  See what is in the report <span>&rarr;</span>
+                  See the report <span>&rarr;</span>
                 </Link>
               </div>
             </FadeIn>
@@ -426,10 +438,10 @@ export default function HomePage() {
             {/* Watch */}
             <FadeIn delay={0.3}>
               <div className="bg-white rounded-card shadow-card p-8 h-full flex flex-col">
-                <SectionLabel>THE TOOL</SectionLabel>
+                <SectionLabel>SIGNAL WATCH</SectionLabel>
                 <h3 className="font-display text-2xl text-navy mb-3 mt-2">Keep an eye on it.</h3>
                 <p className="font-body text-warmgray mb-6 leading-relaxed flex-1">
-                  Signal Watch is ongoing monitoring you check from inside ChatGPT or Claude. Ask, see your score, see what changed. Cancel any time.
+                  Ongoing monitoring you check from inside ChatGPT or Claude. Ask, see your score, see what changed.
                 </p>
                 <div className="mb-6">
                   <div className="font-mono text-3xl font-bold text-navy">{WATCH_PRICE}<span className="text-base text-warmgray font-body font-normal">/month</span></div>
@@ -439,7 +451,28 @@ export default function HomePage() {
                   href="/signal-watch"
                   className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2"
                 >
-                  See how Signal Watch works <span>&rarr;</span>
+                  See Signal Watch <span>&rarr;</span>
+                </Link>
+              </div>
+            </FadeIn>
+
+            {/* Client Knowledge */}
+            <FadeIn delay={0.4}>
+              <div className="bg-white rounded-card shadow-card p-8 h-full flex flex-col">
+                <SectionLabel>CLIENT KNOWLEDGE</SectionLabel>
+                <h3 className="font-display text-2xl text-navy mb-3 mt-2">Tell AI the truth.</h3>
+                <p className="font-body text-warmgray mb-6 leading-relaxed flex-1">
+                  A private knowledge connector for ChatGPT and Claude. AI answers from your real information, in your own words, not its best guess.
+                </p>
+                <div className="mb-6">
+                  <div className="font-mono text-3xl font-bold text-navy">{CLIENT_KNOWLEDGE_PRICE}<span className="text-base text-warmgray font-body font-normal">/month</span></div>
+                  <p className="font-body text-warmgray text-sm">cancel any time</p>
+                </div>
+                <Link
+                  href="/client-knowledge"
+                  className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2"
+                >
+                  See Client Knowledge <span>&rarr;</span>
                 </Link>
               </div>
             </FadeIn>

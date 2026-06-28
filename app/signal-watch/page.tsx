@@ -7,13 +7,14 @@ import {
   WATCH_PRICE,
   WATCH_CHECKOUT_URL,
   REPORT_PRICE,
+  CLIENT_KNOWLEDGE_PRICE,
   SKOOL_URL,
 } from '@/lib/constants';
 import Link from 'next/link';
 
 export const metadata = {
   title: 'Signal Watch | Signal & Structure AI',
-  description: 'Ongoing monitoring of how AI describes your business. Check your score and what changed from inside ChatGPT or Claude. $19 per month. Cancel any time.',
+  description: 'Ongoing monitoring of how AI describes your business. Check your score and what changed from inside ChatGPT or Claude. $26 per month. Cancel any time.',
   alternates: {
     canonical: '/signal-watch',
   },
@@ -38,9 +39,9 @@ const watchSchema = {
   serviceType: 'AI discoverability monitoring',
   offers: {
     '@type': 'Offer',
-    price: '19',
+    price: '26',
     priceCurrency: 'USD',
-    description: '$19 per month. Cancel any time.',
+    description: '$26 per month. Cancel any time.',
   },
 };
 
@@ -134,28 +135,28 @@ export default function SignalWatchPage() {
         </div>
       </section>
 
-      {/* Where to start */}
+      {/* Where this fits */}
       <section className="section-padding bg-stone-dark">
         <div className="max-w-content mx-auto">
           <FadeIn className="text-center mb-10">
-            <SectionLabel>NEW TO THIS?</SectionLabel>
+            <SectionLabel>WHERE THIS FITS</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-4">
-              Signal Watch is the tool. Most people start with the report.
+              Signal Watch reads. Client Knowledge answers.
             </h2>
             <p className="text-warmgray text-lg max-w-2xl mx-auto">
-              Signal Watch shows you the trend. The Signal Score Report gives you the full picture once, then Signal Watch keeps an eye on it.
+              Use them together for full coverage. Watch tells you what AI is saying. Client Knowledge tells AI what to say. Start with whichever you need first.
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             <FadeIn delay={0.1}>
               <div className="bg-white rounded-card p-8 h-full flex flex-col">
-                <h3 className="font-display text-2xl text-navy mb-2">Start with the report</h3>
-                <p className="font-body text-warmgray mb-6 flex-1">
-                  The detailed, one-time picture. Then turn on Signal Watch to track what changes.
+                <h3 className="font-display text-xl text-navy mb-2">Signal Score Report</h3>
+                <p className="font-body text-warmgray mb-6 text-sm flex-1">
+                  The one-time, detailed picture. Most people start here, then turn on Signal Watch.
                 </p>
                 <div className="mb-4">
-                  <span className="font-mono text-3xl font-bold text-navy">{REPORT_PRICE}</span>
+                  <span className="font-mono text-2xl font-bold text-navy">{REPORT_PRICE}</span>
                   <span className="font-body text-warmgray ml-2 text-sm">one time</span>
                 </div>
                 <Link
@@ -169,9 +170,28 @@ export default function SignalWatchPage() {
 
             <FadeIn delay={0.2}>
               <div className="bg-white rounded-card p-8 h-full flex flex-col">
-                <h3 className="font-display text-2xl text-navy mb-2">Or join the community</h3>
-                <p className="font-body text-warmgray mb-6 flex-1">
-                  Learn the work alongside other owners and use Signal Watch as part of the practice.
+                <h3 className="font-display text-xl text-navy mb-2">Client Knowledge</h3>
+                <p className="font-body text-warmgray mb-6 text-sm flex-1">
+                  Stop AI from guessing. Give it your real business info to read from when it answers questions about you.
+                </p>
+                <div className="mb-4">
+                  <span className="font-mono text-2xl font-bold text-navy">{CLIENT_KNOWLEDGE_PRICE}</span>
+                  <span className="font-body text-warmgray ml-2 text-sm">per month</span>
+                </div>
+                <Link
+                  href="/client-knowledge"
+                  className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2"
+                >
+                  See Client Knowledge <span>&rarr;</span>
+                </Link>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.3}>
+              <div className="bg-white rounded-card p-8 h-full flex flex-col">
+                <h3 className="font-display text-xl text-navy mb-2">The Community</h3>
+                <p className="font-body text-warmgray mb-6 text-sm flex-1">
+                  Learn the discoverability work alongside other owners. A year of practice, with direct access to Lenise.
                 </p>
                 <div className="mb-4">
                   <span className="font-body text-warmgray text-sm">From $49 a month</span>

@@ -16,9 +16,16 @@ export const REPORT_CHECKOUT_URL = "mailto:hello@signalstructure.ai?subject=Sign
 
 // Signal Watch: ongoing monthly monitoring. Cancel any time. Sits on top of
 // the connectors the buyer already has (ChatGPT or Claude).
-export const WATCH_PRICE = "$19";
+export const WATCH_PRICE = "$26";
 // TODO Lenise: replace with the live Stripe subscription link for Signal Watch.
 export const WATCH_CHECKOUT_URL = "mailto:hello@signalstructure.ai?subject=Signal%20Watch%20subscription&body=I%27d%20like%20to%20start%20Signal%20Watch.%20Please%20send%20me%20the%20subscription%20link.";
+
+// Client Knowledge: the buyer's official knowledge base, delivered to
+// ChatGPT and Claude as a connector so the platforms answer from real data
+// instead of guessing. Monthly subscription.
+export const CLIENT_KNOWLEDGE_PRICE = "$76";
+// TODO Lenise: replace with the live Stripe subscription link for Client Knowledge.
+export const CLIENT_KNOWLEDGE_CHECKOUT_URL = "mailto:hello@signalstructure.ai?subject=Client%20Knowledge%20subscription&body=I%27d%20like%20to%20set%20up%20Client%20Knowledge%20for%20my%20business.%20Please%20send%20me%20the%20subscription%20link%20and%20the%20intake%20questions.";
 
 // Legacy beta link. Kept so old emails or saved links keep resolving; not
 // promoted anywhere on the new site.

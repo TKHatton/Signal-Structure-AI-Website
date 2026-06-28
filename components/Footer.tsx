@@ -9,6 +9,7 @@ const navLinks = [
   { href: '/services', label: 'Community' },
   { href: '/signal-score-report', label: 'Signal Report' },
   { href: '/signal-watch', label: 'Signal Watch' },
+  { href: '/client-knowledge', label: 'Client Knowledge' },
   { href: '/signal-pulse', label: 'Free Signal Pulse' },
   { href: '/about', label: 'Our Story' },
   { href: '/how-it-works', label: 'How It Works' },

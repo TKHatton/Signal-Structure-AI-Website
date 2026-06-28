@@ -10,6 +10,7 @@ import {
   COMMUNITY_COMMITMENT_MONTHS,
   REPORT_PRICE,
   WATCH_PRICE,
+  CLIENT_KNOWLEDGE_PRICE,
 } from '@/lib/constants';
 import Link from 'next/link';
 
@@ -267,7 +268,7 @@ export default function CommunityPage() {
             </h2>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             <FadeIn delay={0.1}>
               <div className="bg-stone-dark rounded-card p-8 h-full flex flex-col">
                 <h3 className="font-display text-2xl text-navy mb-2">Signal Score Report</h3>
@@ -282,7 +283,7 @@ export default function CommunityPage() {
                   href="/signal-score-report"
                   className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2"
                 >
-                  See what is in the report <span>&rarr;</span>
+                  See the report <span>&rarr;</span>
                 </Link>
               </div>
             </FadeIn>
@@ -301,7 +302,26 @@ export default function CommunityPage() {
                   href="/signal-watch"
                   className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2"
                 >
-                  See how Signal Watch works <span>&rarr;</span>
+                  See Signal Watch <span>&rarr;</span>
+                </Link>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.3}>
+              <div className="bg-stone-dark rounded-card p-8 h-full flex flex-col">
+                <h3 className="font-display text-2xl text-navy mb-2">Client Knowledge</h3>
+                <p className="font-body text-warmgray mb-6 flex-1">
+                  A private knowledge connector for ChatGPT and Claude. AI answers from your real business info, in your words, not its best guess.
+                </p>
+                <div className="mb-4">
+                  <span className="font-mono text-3xl font-bold text-navy">{CLIENT_KNOWLEDGE_PRICE}</span>
+                  <span className="font-body text-warmgray ml-2 text-sm">per month</span>
+                </div>
+                <Link
+                  href="/client-knowledge"
+                  className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2"
+                >
+                  See Client Knowledge <span>&rarr;</span>
                 </Link>
               </div>
             </FadeIn>
