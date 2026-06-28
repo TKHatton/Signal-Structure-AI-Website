@@ -80,7 +80,7 @@ export default function SignalScoreReportPage() {
           <FadeIn>
             <SectionLabel variant="light">SIGNAL SCORE REPORT</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              A detailed, plain-language report on how AI describes your business. Delivered within {REPORT_TURNAROUND}.
+              Find out exactly what AI is saying about your business behind your back. The full picture, in plain language, in {REPORT_TURNAROUND}.
             </h1>
           </FadeIn>
         </div>

@@ -249,12 +249,12 @@ export default function HomePage() {
         <div className="relative z-10 hero-container">
           <FadeIn delay={0.1}>
             <h1 className="hero-headline-main text-white mb-6">
-              AI is sending referrals in your industry every day. Is it sending them to you?
+              Find out what AI is saying about your business behind your back.
             </h1>
           </FadeIn>
           <FadeIn delay={0.3}>
             <p className="text-white/80 text-hero-subtext max-w-3xl mx-auto mb-10">
-              Signal &amp; Structure AI is the place to learn how to be found by AI, with people doing the same work alongside you. Join the community, get your Signal Score Report, or turn on Signal Watch.
+              ChatGPT, Claude, Gemini, and Perplexity are recommending businesses to people every day. We tell you what they&rsquo;re saying about yours, then show you how to fix it. Plain and simple.
             </p>
           </FadeIn>
 
@@ -385,10 +385,10 @@ export default function HomePage() {
           <FadeIn className="text-center mb-12">
             <SectionLabel>FOUR WAYS IN</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-4">
-              Pick the door that fits where you are.
+              Four ways to stop being invisible to AI.
             </h2>
             <p className="text-warmgray text-lg max-w-2xl mx-auto">
-              A community to learn it with other owners. A one-time report. A tool to keep an eye on it. A connector that tells AI the truth in your own words.
+              The work is the same. The door is up to you. Learn it in the community, get the one-time report, watch what AI says about you, or feed AI the truth.
             </p>
           </FadeIn>
 
@@ -568,10 +568,10 @@ export default function HomePage() {
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-display text-3xl md:text-4xl mb-6 text-white">
-              AI is recommending someone in your space today. Make it you.
+              AI is recommending someone right now in your space. It should be you.
             </h2>
             <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-              Join the community, or start with a one-time report. Either one gets you in the door.
+              Find out what it&rsquo;s saying about you. Then come fix it with us.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button href={SKOOL_URL} variant="primary">

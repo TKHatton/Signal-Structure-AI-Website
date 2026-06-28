@@ -46,16 +46,16 @@ const inviteHref = `mailto:${EMAIL}?subject=Speaking%20inquiry&body=Hi%20Lenise%
 
 const talks = [
   {
-    title: 'The Secret Life of Your Business, According to AI',
-    summary: 'What AI is already telling people about you when they ask. Where it gets things right. Where it makes things up. What to do about it.',
+    title: 'What AI Is Saying About Your Business Behind Your Back',
+    summary: 'A live look at what ChatGPT, Claude, Gemini, and Perplexity actually tell people when they ask about businesses in the room. Where they get it right. Where they make things up. What to do about it.',
   },
   {
-    title: 'Be Found. Be Accurate. Be Recommended.',
-    summary: 'The three jobs of AI discoverability and the work behind each one. Schema, directories, citations, and the connectors that make AI answer from your real information.',
+    title: 'How to Stop AI From Making Things Up About You',
+    summary: 'The five most common ways AI hallucinates about a real business, the structured fixes that actually work, and how to know in 30 seconds whether your business has the problem.',
   },
   {
-    title: 'Why a Year, Not a Weekend',
-    summary: 'A walk through how AI changes its mind about a business over a full year, why short campaigns do not stick, and what the long version of this work looks like.',
+    title: 'How to Be the Business AI Recommends',
+    summary: 'A practical walk through the work behind being chosen when someone asks AI for a recommendation. Schema, directories, citations, original writing, and the connectors that put your truth in front of the model.',
   },
 ];
 

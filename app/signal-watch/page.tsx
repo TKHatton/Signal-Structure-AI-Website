@@ -58,7 +58,7 @@ export default function SignalWatchPage() {
           <FadeIn>
             <SectionLabel variant="light">SIGNAL WATCH</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              Quiet monthly monitoring of how AI describes you. Check it from inside ChatGPT or Claude, the same way you already ask them anything else.
+              Keep tabs on what AI is saying about you. Right from inside ChatGPT or Claude. Ask any time. Catch the lies as they show up.
             </h1>
           </FadeIn>
         </div>

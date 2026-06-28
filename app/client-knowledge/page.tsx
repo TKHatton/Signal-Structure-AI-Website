@@ -58,7 +58,7 @@ export default function ClientKnowledgePage() {
           <FadeIn>
             <SectionLabel variant="light">CLIENT KNOWLEDGE</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              Give AI the real story about your business so it stops guessing. A private knowledge base ChatGPT and Claude read from when someone asks about you.
+              Stop letting AI make things up about you. Tell it the truth, in your own words, and let it read from there.
             </h1>
           </FadeIn>
         </div>
