@@ -108,9 +108,9 @@ export default function TermsPage() {
                 <li><strong>AI Gossip Check:</strong> A free public tool that asks ChatGPT, Claude, and Gemini what they say about your business right now and returns the raw verbatim responses. One free check per email address. Requires your name, email, and business details so we can send the results and follow up.</li>
                 <li><strong>Signal Pulse:</strong> A free AI discoverability check that scores whether AI platforms mention a business and analyzes website schema markup. Unlimited per email so you can recheck after fixing issues. Requires your name, email, and business name so we can send your results and follow up.</li>
                 <li><strong>Signal Advisor:</strong> A free educational resource about AI discoverability concepts, schema markup, and platform optimization. No personal information required.</li>
-                <li><strong>Signal Watch and Client Knowledge:</strong> MCP servers provided to active clients as part of their paid service. Use is governed by your service agreement with us in addition to these Terms.</li>
-                <li><strong>AI Presence Program:</strong> Our paid, done-for-you service. We monitor how AI platforms describe a business across multiple platforms each month, report what we find using our proprietary Signal Score, and perform correction work. Includes a client dashboard and a monthly report.</li>
-                <li><strong>Custom AI Tools, MCP Servers, and API Integrations:</strong> Optional add-on work, scoped and priced separately for program clients.</li>
+                <li><strong>Signal Score Report:</strong> A paid, one-time report on how AI platforms describe your business, scored with our proprietary Signal Score and delivered as a PDF within two business days.</li>
+                <li><strong>Signal Watch:</strong> A paid monthly subscription that lets you re-check how AI describes your business any time from inside ChatGPT or Claude. Cancel anytime.</li>
+                <li><strong>Custom AI Tools, MCP Servers, and API Integrations:</strong> Optional add-on work, scoped and priced separately.</li>
                 <li><strong>Talks and Workshops:</strong> Paid live sessions and presentations about AI discoverability.</li>
               </ul>
 
@@ -157,16 +157,16 @@ export default function TermsPage() {
 
               <h2 className="font-display text-navy">Paid Services</h2>
               <p>
-                For paid services (the AI Presence Program, add-on work, and talks),
+                For paid services (the Signal Score Report, Signal Watch, add-on work, and talks),
                 the following additional terms apply:
               </p>
               <ul>
                 <li>Payments are processed securely through Stripe. All prices are listed in USD.</li>
-                <li>The AI Presence Program begins with a one-time setup fee that includes your first month, followed by a recurring monthly subscription. You may cancel at any time; access and monitoring continue through the end of the paid billing period.</li>
-                <li>Founder-rate pricing offered during the beta is honored for as long as your subscription remains active and uninterrupted.</li>
+                <li>The Signal Score Report is a one-time purchase. Your report is delivered by email within two business days of payment.</li>
+                <li>Signal Watch is a recurring monthly subscription. You may cancel at any time; access continues through the end of the paid billing period.</li>
                 <li>Talks and workshops are paid per session. If a session is canceled by us, you will be refunded or rebooked.</li>
                 <li>Add-on work (custom AI tools, MCP servers, and API integrations) is quoted and agreed in writing before any work begins.</li>
-                <li>We reserve the right to adjust standard pricing with 30 days notice to active subscribers.</li>
+                <li>We reserve the right to adjust pricing with 30 days notice to active subscribers.</li>
               </ul>
 
               <h2 className="font-display text-navy">Accuracy and Disclaimers</h2>

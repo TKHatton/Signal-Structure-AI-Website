@@ -7,8 +7,6 @@ import {
   WATCH_PRICE,
   WATCH_CHECKOUT_URL,
   REPORT_PRICE,
-  CLIENT_KNOWLEDGE_PRICE,
-  SKOOL_URL,
 } from '@/lib/constants';
 import Link from 'next/link';
 
@@ -147,23 +145,22 @@ export default function SignalWatchPage() {
           <FadeIn className="text-center mb-10">
             <SectionLabel>WHERE THIS FITS</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-4">
-              Signal Watch reads. Client Knowledge answers.
+              Where Signal Watch fits.
             </h2>
             <p className="text-warmgray text-lg max-w-2xl mx-auto">
-              Use them together for full coverage. Watch tells you what AI is saying. Client Knowledge tells AI what to say. Start with whichever you need first.
+              Signal Pulse is the free quick check. The Signal Score Report is the deep, detailed diagnosis. Signal Watch is the ongoing pulse you re-run yourself. Start with whichever you need first.
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <FadeIn delay={0.1}>
               <div className="bg-white rounded-card p-8 h-full flex flex-col">
                 <h3 className="font-display text-xl text-navy mb-2">Signal Score Report</h3>
                 <p className="font-body text-warmgray mb-6 text-sm flex-1">
-                  The one-time, detailed picture. Most people start here, then turn on Signal Watch.
+                  The detailed picture across every major AI platform. Most people start here, then turn on Signal Watch.
                 </p>
                 <div className="mb-4">
                   <span className="font-mono text-2xl font-bold text-navy">{REPORT_PRICE}</span>
-                  <span className="font-body text-warmgray ml-2 text-sm">one time</span>
                 </div>
                 <Link
                   href="/signal-score-report"
@@ -176,37 +173,18 @@ export default function SignalWatchPage() {
 
             <FadeIn delay={0.2}>
               <div className="bg-white rounded-card p-8 h-full flex flex-col">
-                <h3 className="font-display text-xl text-navy mb-2">Client Knowledge</h3>
+                <h3 className="font-display text-xl text-navy mb-2">Signal Pulse</h3>
                 <p className="font-body text-warmgray mb-6 text-sm flex-1">
-                  Stop AI from guessing. Give it your real business info to read from when it answers questions about you.
+                  A free quick check of whether AI can find your business and how it describes you. No account needed.
                 </p>
                 <div className="mb-4">
-                  <span className="font-mono text-2xl font-bold text-navy">{CLIENT_KNOWLEDGE_PRICE}</span>
-                  <span className="font-body text-warmgray ml-2 text-sm">per month</span>
+                  <span className="font-mono text-2xl font-bold text-navy">Free</span>
                 </div>
                 <Link
-                  href="/client-knowledge"
+                  href="/signal-pulse"
                   className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2"
                 >
-                  See Client Knowledge <span>&rarr;</span>
-                </Link>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.3}>
-              <div className="bg-white rounded-card p-8 h-full flex flex-col">
-                <h3 className="font-display text-xl text-navy mb-2">The Community</h3>
-                <p className="font-body text-warmgray mb-6 text-sm flex-1">
-                  Learn the discoverability work alongside other owners. A year of practice, with direct access to Lenise.
-                </p>
-                <div className="mb-4">
-                  <span className="font-body text-warmgray text-sm">From $49 a month</span>
-                </div>
-                <Link
-                  href={SKOOL_URL}
-                  className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2"
-                >
-                  See the community <span>&rarr;</span>
+                  Run a Signal Pulse <span>&rarr;</span>
                 </Link>
               </div>
             </FadeIn>

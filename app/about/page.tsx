@@ -3,7 +3,7 @@ import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
-import { SKOOL_URL, COMPANY_NAME, TAGLINE, ADDRESS } from '@/lib/constants';
+import { COMPANY_NAME, TAGLINE, ADDRESS } from '@/lib/constants';
 
 export const metadata = {
   title: 'About | Signal & Structure AI',
@@ -338,8 +338,8 @@ export default function AboutPage() {
                   our blog
                 </a>{' '}
                 and on LinkedIn. If you want to understand the landscape,
-                start there. If you want to fix your presence, join the
-                AI Presence Program.
+                start there. If you want to fix your presence, get a
+                Signal Score Report.
               </p>
             </div>
           </FadeIn>
@@ -352,7 +352,7 @@ export default function AboutPage() {
           <FadeIn>
             <SectionLabel>WHAT DRIVES US</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-6">
-              Community is the whole point.
+              Independence is the whole point.
             </h2>
             <div className="font-body text-lg text-warmgray leading-relaxed space-y-4 mb-8">
               <p>
@@ -364,10 +364,10 @@ export default function AboutPage() {
               </p>
               <p>
                 We are not interested in creating dependency. We build toward
-                independence. Monthly support when there is a lot to build.
-                Quarterly check-ins once things are stable. The goal is always to
-                get you to a place where your AI presence works for you with
-                minimal effort.
+                independence. The Signal Score Report shows you exactly what to
+                fix, and Signal Watch lets you keep an eye on it yourself. The
+                goal is always to get you to a place where your AI presence works
+                for you with minimal effort.
               </p>
               <p>
                 Discoverability is not just a business metric. It is how
@@ -389,13 +389,13 @@ export default function AboutPage() {
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-display text-section-heading mb-8 text-white">
-              Want to understand how AI is describing your business? Learn it alongside other owners.
+              Want to understand how AI is describing your business? Start with your Signal Score.
             </h2>
-            <Button href={SKOOL_URL} variant="primary" className="mb-4">
-              Join the Community
+            <Button href="/signal-score-report" variant="primary" className="mb-4">
+              Get Your Signal Score
             </Button>
             <p className="text-white/70 text-sm">
-              A members-only community on Skool. A full year of doing the work, together.
+              A full, detailed report on how AI describes your business, delivered within two business days.
             </p>
           </FadeIn>
         </div>

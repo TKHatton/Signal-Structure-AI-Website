@@ -13,6 +13,10 @@ export const metadata = {
   alternates: {
     canonical: '/how-it-works',
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const organizationSchema = {

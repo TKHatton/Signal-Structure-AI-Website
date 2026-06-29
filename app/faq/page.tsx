@@ -3,7 +3,6 @@ import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import FAQAccordion from '@/components/FAQAccordion';
-import { SKOOL_URL } from '@/lib/constants';
 
 export const metadata = {
   title: 'Frequently Asked Questions | Signal & Structure AI',
@@ -17,12 +16,12 @@ const faqItems = [
   {
     question: 'What is a Signal Score?',
     answer:
-      'Your Signal Score is our 0 to 100 measurement of how accurately and consistently AI represents your business. It looks across the leading AI platforms and 6 categories: Schema and Structure, Google Business Profile, NAP Consistency, Content for AI, AI Presence, and Technical Infrastructure. It is the baseline and the trend metric inside the AI Presence Program, so you can see month over month whether AI is describing you better. Most businesses score below 40 before any work is done.',
+      'Your Signal Score is our 0 to 100 measurement of how accurately and consistently AI represents your business. It looks across the leading AI platforms and 6 categories: Schema and Structure, Google Business Profile, NAP Consistency, Content for AI, AI Presence, and Technical Infrastructure. It is the headline number in your Signal Score Report, so you can see exactly where you stand and, when you re-run the report later, whether AI is describing you better. Most businesses score below 40 before any work is done.',
   },
   {
     question: 'How much does Signal & Structure AI cost?',
     answer:
-      'We have one program: AI Presence Management. The beta founder rate is $797 to start, which covers the build and your first month, then $297 per month after that. Your founder rate is locked for as long as you stay in the program, even after the price rises to $997 setup and $497 per month. A custom AI tools, MCP server, and API integration add-on is available to clients by quote.',
+      'There are two paid products and one free tool. The Signal Score Report is a one-time $147 and gives you a full, detailed picture of how AI describes your business, delivered as a PDF within two business days. Signal Watch is $26 per month and lets you re-check how AI describes you any time, right inside ChatGPT or Claude. Signal Pulse is a free quick check you can run on this site in about a minute.',
   },
   {
     question: 'What is AI discoverability?',
@@ -50,14 +49,14 @@ const faqItems = [
       'Traditional SEO optimizes your website for Google keyword rankings. AI discoverability optimizes your entire digital presence for AI platforms that answer questions directly. Google matches keywords to web pages. AI platforms like ChatGPT try to understand your entire business and recommend you in conversation. The strategies overlap in some areas like schema markup, but AI discoverability requires structured knowledge systems, consistent business information across platforms, and direct AI platform integration.',
   },
   {
-    question: 'What AI platforms do you test?',
+    question: 'What AI platforms do you check?',
     answer:
-      'We monitor 13 AI platforms every month: ChatGPT, Google Gemini, Microsoft Copilot, Perplexity, Claude, Meta AI, Grok, Amazon Alexa AI, Apple Intelligence, DeepSeek, You.com, Brave Leo, and Azure AI. Most tools only check three to five. Each platform accesses and processes business information differently, which is why monitoring across all of them matters. We add new platforms as the landscape evolves.',
+      'Your Signal Score Report checks the major AI assistants people actually use to find and evaluate businesses, including ChatGPT, Google Gemini, Microsoft Copilot, Perplexity, and Claude. Each platform accesses and processes business information differently, which is why looking across several of them matters rather than checking just one. We add new platforms as the landscape evolves.',
   },
   {
-    question: 'What happens as my Signal Score improves?',
+    question: 'How often should I check my Signal Score?',
     answer:
-      'The AI Presence Program is ongoing. Each month we re-scan all 13 platforms, do the correction work, update your Signal Score, and send a report that links back to your live dashboard. As your business changes and AI platforms update, we keep your information accurate. We build toward your independence, not your dependency, and your founder rate stays locked for as long as you stay in the program.',
+      'AI keeps changing, and so does how it describes you. We recommend re-running your Signal Score Report at least once a year, and twice a year if you want to watch your progress closely, so you can see your score move as you make changes. In between, Signal Watch lets you check in any time from inside ChatGPT or Claude. The goal is your independence: you can see what is working and keep AI accurate over time.',
   },
 ];
 
@@ -172,13 +171,12 @@ export default function FAQPage() {
             </h2>
             <p className="font-body text-lg text-warmgray leading-relaxed mb-8">
               The fastest way to get answers is to see it in action. Run a free
-              Signal Pulse check on your site, or join the community and learn the
-              work alongside other owners doing the same thing. Lenise also speaks
-              at communities and events about how AI describes businesses; if you
-              run a group that should hear it, the <a className="text-copper hover:text-copper-dark underline underline-offset-2" href="/speaking">speaking page</a> has the details.
+              Signal Pulse check on your site to see how AI describes your business
+              right now. Lenise also speaks at communities and events about how AI
+              describes businesses; if you run a group that should hear it, the <a className="text-copper hover:text-copper-dark underline underline-offset-2" href="/speaking">speaking page</a> has the details.
             </p>
-            <Button href={SKOOL_URL} variant="primary">
-              Join the Community
+            <Button href="/signal-pulse" variant="primary">
+              Run the Free Signal Pulse
             </Button>
           </FadeIn>
         </div>
@@ -193,8 +191,8 @@ export default function FAQPage() {
               AI is already talking about businesses like yours. Make sure it
               is saying the right things.
             </h2>
-            <Button href={SKOOL_URL} variant="primary">
-              Join the Community
+            <Button href="/signal-score-report" variant="primary">
+              Get Your Signal Score
             </Button>
           </FadeIn>
         </div>

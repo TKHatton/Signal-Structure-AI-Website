@@ -20,6 +20,10 @@ export const metadata = {
   alternates: {
     canonical: '/services',
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const organizationSchema = {

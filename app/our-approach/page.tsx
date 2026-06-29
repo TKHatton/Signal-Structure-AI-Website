@@ -10,6 +10,10 @@ export const metadata = {
   alternates: {
     canonical: '/our-approach',
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const organizationSchema = {

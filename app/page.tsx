@@ -30,16 +30,15 @@ const organizationSchema = {
   },
   image: 'https://signalstructure.ai/og-image.png',
   description:
-    'Signal & Structure AI helps business owners get found, accurately represented, and recommended by AI platforms like ChatGPT, Claude, Gemini, and Perplexity. We run a community where owners learn AI discoverability together, plus on-demand reports and ongoing monitoring.',
+    'Signal & Structure AI helps business owners get found, accurately represented, and recommended by AI platforms like ChatGPT, Claude, Gemini, and Perplexity, through on-demand Signal Score reports, ongoing monitoring, and a free AI visibility check.',
   foundingDate: '2025-09',
   founder: { '@id': 'https://signalstructure.ai/about#lenise-kenney' },
   numberOfEmployees: {
     '@type': 'QuantitativeValue',
-    value: 2,
+    value: 1,
   },
   sameAs: [
     'https://www.linkedin.com/company/signal-structure-ai',
-    'https://www.skool.com/signal-structure-ai-2338/about',
     'https://share.google/5Ci2LRrbmjYiQpkCp',
   ],
   aggregateRating: {
@@ -58,7 +57,7 @@ const organizationSchema = {
     'local business AI visibility',
     'ChatGPT business recommendations',
     'AI referral optimization',
-    'AI presence management',
+    'AI presence monitoring',
     'entity authority',
   ],
   slogan: 'Be found. Be accurate. Be recommended.',
@@ -107,13 +106,12 @@ const localBusinessSchema = {
     latitude: 35.7215,
     longitude: -79.1770,
   },
-  priceRange: '$26 - $497',
+  priceRange: '$26 - $147',
   currenciesAccepted: 'USD',
   paymentAccepted: 'Credit Card, Invoice',
   areaServed: [{ '@type': 'Country', name: 'United States' }],
   sameAs: [
     'https://www.linkedin.com/company/signal-structure-ai',
-    'https://www.skool.com/signal-structure-ai-2338/about',
   ],
   aggregateRating: {
     '@type': 'AggregateRating',
@@ -130,19 +128,8 @@ const localBusinessSchema = {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Signal & Structure AI Community',
-          description: 'A members-only community for business owners learning AI discoverability together. Yearly or monthly with a twelve-month commitment.',
-          provider: { '@id': 'https://signalstructure.ai/#organization' },
-        },
-        price: '497',
-        priceCurrency: 'USD',
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
           name: 'Signal Score Report',
-          description: 'A detailed report on how AI platforms describe a business, scored against the Signal Score method. Delivered within 48 hours.',
+          description: 'A detailed report on how AI platforms describe a business, scored against the Signal Score method. Delivered within two business days.',
           provider: { '@id': 'https://signalstructure.ai/#organization' },
         },
         price: '147',
@@ -163,11 +150,11 @@ const localBusinessSchema = {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Client Knowledge',
-          description: 'A private knowledge connector for ChatGPT and Claude. AI answers from the buyer\'s verified business information instead of guessing.',
+          name: 'Signal Pulse',
+          description: 'A free quick check of whether AI platforms can find a business and how they describe it.',
           provider: { '@id': 'https://signalstructure.ai/#organization' },
         },
-        price: '76',
+        price: '0',
         priceCurrency: 'USD',
       },
     ],
@@ -181,7 +168,7 @@ const websiteSchema = {
   name: 'Signal & Structure AI',
   url: 'https://signalstructure.ai',
   description:
-    'AI discoverability community, reports, and monitoring. Help your business get found and recommended by ChatGPT, Claude, Gemini, and Perplexity.',
+    'AI discoverability reports, monitoring, and a free check. Help your business get found and recommended by ChatGPT, Claude, Gemini, and Perplexity.',
   publisher: { '@id': 'https://signalstructure.ai/#organization' },
 };
 
@@ -192,7 +179,7 @@ const webpageSchema = {
   url: 'https://signalstructure.ai',
   name: 'Signal & Structure AI | Be found. Be accurate. Be recommended.',
   description:
-    'AI is recommending businesses in your industry every day. Join the community, get a Signal Score Report, or turn on Signal Watch and stop being invisible.',
+    'AI is recommending businesses in your industry every day. Get a Signal Score Report or turn on Signal Watch and stop being invisible.',
   isPartOf: { '@id': 'https://signalstructure.ai/#website' },
   about: { '@id': 'https://signalstructure.ai/#organization' },
   speakable: {

@@ -5,7 +5,7 @@ import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import SignalDot from '@/components/SignalDot';
 import NewsletterForm from '@/components/NewsletterForm';
-import { SKOOL_URL, REPORT_PRICE, WATCH_PRICE, CLIENT_KNOWLEDGE_PRICE } from '@/lib/constants';
+import { REPORT_PRICE, WATCH_PRICE } from '@/lib/constants';
 
 export const metadata = {
   title: 'Resources | Signal & Structure AI',
@@ -139,10 +139,9 @@ export default function ResourcesPage() {
               <Link href="/signal-score-report" className="block bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-8 h-full">
                 <h3 className="font-display text-2xl text-navy mb-2">Signal Score Report</h3>
                 <p className="font-body text-warmgray text-sm mb-4 leading-relaxed">
-                  The complete picture of how AI describes you. One time, done by hand, in two business days.
+                  The complete picture of how AI describes you. Done by hand, delivered in two business days.
                 </p>
                 <span className="font-mono text-navy font-bold">{REPORT_PRICE}</span>
-                <span className="font-body text-warmgray text-sm"> one time</span>
               </Link>
             </FadeIn>
             <FadeIn delay={0.2}>
@@ -156,13 +155,12 @@ export default function ResourcesPage() {
               </Link>
             </FadeIn>
             <FadeIn delay={0.3}>
-              <Link href="/client-knowledge" className="block bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-8 h-full">
-                <h3 className="font-display text-2xl text-navy mb-2">Client Knowledge</h3>
+              <Link href="/signal-pulse" className="block bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-8 h-full">
+                <h3 className="font-display text-2xl text-navy mb-2">Signal Pulse</h3>
                 <p className="font-body text-warmgray text-sm mb-4 leading-relaxed">
-                  Feed AI your real information so it answers in your words, not its best guess.
+                  A free quick check of whether AI can find your business and how it describes you.
                 </p>
-                <span className="font-mono text-navy font-bold">{CLIENT_KNOWLEDGE_PRICE}</span>
-                <span className="font-body text-warmgray text-sm"> /month</span>
+                <span className="font-mono text-navy font-bold">Free</span>
               </Link>
             </FadeIn>
           </div>
@@ -439,14 +437,14 @@ export default function ResourcesPage() {
               Want to understand this more deeply?
             </h2>
             <p className="text-white/70 text-hero-subtext mb-8">
-              The community is where this work actually gets done. A year of
-              weekly working sessions, shared lessons, and direct access to Lenise.
+              See exactly how AI describes your business right now, then get a
+              prioritized list of what to fix, in your Signal Score Report.
             </p>
-            <Button href={SKOOL_URL} variant="primary" className="mb-4">
-              Join the Community
+            <Button href="/signal-score-report" variant="primary" className="mb-4">
+              Get Your Signal Score
             </Button>
             <p className="text-white/70 text-sm">
-              Yearly or monthly, with a twelve-month commitment.
+              {REPORT_PRICE}. A detailed PDF within two business days.
             </p>
           </FadeIn>
         </div>

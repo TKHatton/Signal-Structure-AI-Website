@@ -18,6 +18,10 @@ export const metadata = {
   alternates: {
     canonical: '/client-knowledge',
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const breadcrumbSchema = {
