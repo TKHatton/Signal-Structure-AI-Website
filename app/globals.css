@@ -79,8 +79,8 @@ h3, h4, h5, h6 {
   }
 
   .inner-page-hero-subtitle {
-    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
-    line-height: 1.4;
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    line-height: 1.25;
     text-align: center;
   }
 
