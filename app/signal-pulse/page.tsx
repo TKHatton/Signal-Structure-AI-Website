@@ -27,7 +27,8 @@ export default function SignalPulsePage() {
     try {
       let res = await fetch(`${API_URL}/api/pulse-check`, opts);
 
-      // Railway free tier sleeps between requests — one automatic retry on cold-start 502
+      // 502 = the engine was asleep/unreachable on the first hit (fails fast).
+      // Give it a few seconds to wake, then try once more.
       if (res.status === 502) {
         await new Promise((r) => setTimeout(r, 5000));
         res = await fetch(`${API_URL}/api/pulse-check`, opts);
@@ -38,8 +39,15 @@ export default function SignalPulsePage() {
         return;
       }
 
+      // 504 = the engine connected but did not finish in time. It already
+      // waited a long while, so don't auto-retry — let the user re-run it.
+      if (res.status === 504) {
+        setError('The check is taking longer than usual right now. Please try again in a moment.');
+        return;
+      }
+
       if (res.status === 502) {
-        setError('We could not reach that URL. Double-check the address and try again.');
+        setError('We could not reach our checking service. Please try again in a moment.');
         return;
       }
 
