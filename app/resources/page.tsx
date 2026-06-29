@@ -272,7 +272,7 @@ export default function ResourcesPage() {
                       Signal Pulse
                     </h2>
                     <p className="font-body text-white/70 mb-1">
-                      A quick vital sign check for your online presence.
+                      Get a quick read on the heartbeat of your business.
                     </p>
                     <p className="font-body text-sm text-white/50">
                       Enter your URL and find out if AI systems can see your business. Free. Instant results.

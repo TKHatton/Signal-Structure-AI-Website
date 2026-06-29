@@ -104,7 +104,7 @@ export default function SignalPulsePage() {
           <FadeIn>
             <SectionLabel variant="light">Signal Pulse</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white mb-4">
-              A quick vital sign check for your online presence.
+              Get a quick read on the heartbeat of your business.
             </h1>
             <p className="font-body text-base sm:text-lg text-white/70 max-w-2xl">
               Find out if AI systems like ChatGPT, Claude, and Gemini
@@ -144,12 +144,10 @@ export default function SignalPulsePage() {
           <FadeIn>
             <SectionLabel>Ready for the Full Picture?</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-4">
-              The Signal Pulse is a vital sign check.
+              Check your Signal Pulse to find out the heartbeat of your business.
             </h2>
             <p className="font-body text-warmgray max-w-2xl mx-auto mb-8">
-              It tells you something is off. The Signal Score Report tells you
-              exactly what and why across every major AI platform, with a prioritized
-              list of what to fix first.
+              It gives you a quick read on the health of your AI presence. If you need something deeper, more like a full body scan, that is the Signal Score Report. We go much further into the overall health of your business online.
             </p>
             <Button href="/signal-score-report" variant="primary">
               See the Signal Score Report
