@@ -87,7 +87,7 @@ export default function PulseForm({ onSubmit, isLoading }: PulseFormProps) {
         )}
       </button>
       <p className="text-xs text-warmgray text-center">
-        Free. No account required. Results in seconds.
+        Free. No account required. Takes up to a minute.
       </p>
     </form>
   );

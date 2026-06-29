@@ -275,7 +275,7 @@ export default function ResourcesPage() {
                       Get a quick read on the heartbeat of your business.
                     </p>
                     <p className="font-body text-sm text-white/50">
-                      Enter your URL and find out if AI systems can see your business. Free. Instant results.
+                      Enter your URL and find out if AI systems can see your business. Free. Takes up to a minute.
                     </p>
                   </div>
                   {/* Arrow */}

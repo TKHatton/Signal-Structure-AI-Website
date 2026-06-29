@@ -8,6 +8,7 @@ import Button from '@/components/Button';
 import PulseForm from '@/components/pulse/PulseForm';
 import PulseResultCard, { PulseResultData } from '@/components/pulse/PulseResultCard';
 import PulseEmailCapture from '@/components/pulse/PulseEmailCapture';
+import PulseLoading from '@/components/pulse/PulseLoading';
 import { API_URL } from '@/lib/constants';
 
 export default function SignalPulsePage() {
@@ -108,7 +109,7 @@ export default function SignalPulsePage() {
             </h1>
             <p className="font-body text-base sm:text-lg text-white/70 max-w-2xl">
               Find out if AI systems like ChatGPT, Claude, and Gemini
-              can find your business. Takes 10 seconds. No account needed.
+              can find your business. Takes up to a minute. No account needed.
             </p>
           </FadeIn>
         </div>
@@ -122,6 +123,8 @@ export default function SignalPulsePage() {
               <PulseForm onSubmit={handleSubmit} isLoading={isLoading} />
             </div>
           </FadeIn>
+
+          {isLoading && <PulseLoading />}
 
           {error && (
             <div className="mt-6 bg-status-red/5 border border-status-red/20 rounded-lg p-4">
