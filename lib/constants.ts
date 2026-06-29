@@ -39,6 +39,7 @@ export const EMAIL = "hello@signalstructure.ai";
 export const PHONE = "(984) 314-3102";
 export const PHONE_HREF = "tel:+19843143102";
 export const LINKEDIN = "https://linkedin.com/company/signal-structure-ai";
+export const PERSONAL_LINKEDIN = "https://www.linkedin.com/in/lenise-kenney/";
 export const LOCATION = "Pittsboro, NC";
 export const ADDRESS = "Pittsboro, NC";
 export const COMPANY_NAME = "Signal & Structure AI";

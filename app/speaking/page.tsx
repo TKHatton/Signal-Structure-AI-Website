@@ -3,7 +3,7 @@ import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import SignalDot from '@/components/SignalDot';
-import { EMAIL, LINKEDIN } from '@/lib/constants';
+import { EMAIL, PERSONAL_LINKEDIN } from '@/lib/constants';
 
 export const metadata = {
   title: 'Speaking | Signal & Structure AI',
@@ -170,7 +170,7 @@ export default function SpeakingPage() {
                 Email Lenise
               </Button>
               <a
-                href={LINKEDIN}
+                href={PERSONAL_LINKEDIN}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-body text-white/90 hover:text-copper transition-colors underline underline-offset-4 decoration-copper decoration-2"

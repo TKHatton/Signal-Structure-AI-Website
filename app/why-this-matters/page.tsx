@@ -3,7 +3,6 @@ import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import ValueCard from '@/components/ValueCard';
-import { SKOOL_URL } from '@/lib/constants';
 
 export const metadata = {
   title: 'Why This Matters | Signal & Structure AI',
@@ -229,21 +228,6 @@ export default function WhyThisMattersPage() {
         </div>
       </section>
 
-      {/* Section 6: Bottom CTA */}
-      <section className="relative bg-navy text-white section-padding">
-        <GridTexture />
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <FadeIn>
-            <h2 className="font-display text-section-heading mb-8 text-white">
-              AI is giving referrals in your space every day. The question
-              is whether your business is one of them.
-            </h2>
-            <Button href={SKOOL_URL} variant="primary">
-              Join the Community
-            </Button>
-          </FadeIn>
-        </div>
-      </section>
     </main>
   );
 }

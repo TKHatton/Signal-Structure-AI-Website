@@ -2,7 +2,7 @@ import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
-import { EMAIL, LINKEDIN } from '@/lib/constants';
+import { EMAIL, PERSONAL_LINKEDIN } from '@/lib/constants';
 
 export const metadata = {
   title: 'Contact | Signal & Structure AI',
@@ -54,10 +54,10 @@ export default function ContactPage() {
                 <SectionLabel>LINKEDIN</SectionLabel>
                 <h2 className="font-display text-2xl text-navy mb-3 mt-2">Send a DM</h2>
                 <p className="font-body text-warmgray leading-relaxed mb-6 flex-1">
-                  Prefer LinkedIn? Connect with Signal &amp; Structure AI and send a direct message.
+                  Prefer LinkedIn? Connect with Lenise directly and send a message.
                 </p>
                 <a
-                  href={LINKEDIN}
+                  href={PERSONAL_LINKEDIN}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center font-body font-semibold text-white bg-navy hover:bg-navy-light transition-colors py-3 px-6 rounded-button text-sm"

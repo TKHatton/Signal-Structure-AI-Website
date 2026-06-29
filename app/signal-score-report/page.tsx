@@ -163,7 +163,7 @@ export default function SignalScoreReportPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn>
               <SectionLabel variant="light">REPORT OR WATCH?</SectionLabel>
-              <h2 className="font-display text-section-heading mb-6">
+              <h2 className="font-display text-section-heading mb-6 text-white">
                 One is the deep dive. One keeps an eye on it.
               </h2>
               <div className="font-body text-lg text-white/80 leading-relaxed space-y-4">
@@ -178,7 +178,7 @@ export default function SignalScoreReportPage() {
 
             <FadeIn delay={0.2} direction="left">
               <div className="bg-white/10 rounded-card p-8">
-                <h3 className="font-display text-2xl mb-4">How often should you check?</h3>
+                <h3 className="font-display text-2xl mb-4 text-white">How often should you check?</h3>
                 <p className="font-body text-white/80 leading-relaxed mb-4">
                   AI changes its mind about your business as the web around you changes. A Signal Score Report at least once a year keeps you current. Twice a year is better, so you can watch your progress as you work to improve your scores.
                 </p>

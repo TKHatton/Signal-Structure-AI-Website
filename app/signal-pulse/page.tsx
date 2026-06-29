@@ -20,12 +20,17 @@ export default function SignalPulsePage() {
     setError('');
     setResult(null);
 
+    const body = JSON.stringify({ business_name: businessName, url });
+    const opts = { method: 'POST', headers: { 'Content-Type': 'application/json' }, body };
+
     try {
-      const res = await fetch(`${API_URL}/api/pulse-check`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ business_name: businessName, url }),
-      });
+      let res = await fetch(`${API_URL}/api/pulse-check`, opts);
+
+      // Railway free tier sleeps between requests — one automatic retry on cold-start 502
+      if (res.status === 502) {
+        await new Promise((r) => setTimeout(r, 5000));
+        res = await fetch(`${API_URL}/api/pulse-check`, opts);
+      }
 
       if (res.status === 429) {
         setError('You have checked several sites recently. Try again in about an hour.');
