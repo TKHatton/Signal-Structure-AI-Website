@@ -58,8 +58,11 @@ export default function ClientKnowledgePage() {
           <FadeIn>
             <SectionLabel variant="light">CLIENT KNOWLEDGE</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              Stop letting AI make things up about you. Tell it the truth, in your own words, and let it read from there.
+              Stop letting AI make things up about you.
             </h1>
+            <p className="inner-page-hero-support text-white/70 max-w-2xl mx-auto mt-4">
+              Tell it the truth, in your own words, and let it read from there.
+            </p>
           </FadeIn>
         </div>
       </section>

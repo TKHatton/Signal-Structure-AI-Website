@@ -69,8 +69,11 @@ export default function HowItWorksPage() {
           <FadeIn>
             <SectionLabel variant="light">HOW IT WORKS</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              The community is where the work happens. The tools carry the result. Here is how it fits together.
+              The community is where the work happens.
             </h1>
+            <p className="inner-page-hero-support text-white/70 max-w-2xl mx-auto mt-4">
+              The tools carry the result. Here is how it fits together.
+            </p>
           </FadeIn>
         </div>
       </section>

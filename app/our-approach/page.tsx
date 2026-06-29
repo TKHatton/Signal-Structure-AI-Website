@@ -64,8 +64,11 @@ export default function OurApproachPage() {
           <FadeIn>
             <SectionLabel variant="light">PHILOSOPHY</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              We teach this work. We do it with you. We do not hide it behind a service so you stay dependent.
+              We teach this work. We do it with you.
             </h1>
+            <p className="inner-page-hero-support text-white/70 max-w-2xl mx-auto mt-4">
+              We do not hide it behind a service so you stay dependent.
+            </p>
           </FadeIn>
         </div>
       </section>

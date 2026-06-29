@@ -136,9 +136,11 @@ export default function FAQPage() {
           <FadeIn>
             <SectionLabel variant="light">COMMON QUESTIONS</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              Everything you need to know about AI discoverability and how
-              Signal & Structure AI helps your business get found.
+              Everything you need to know.
             </h1>
+            <p className="inner-page-hero-support text-white/70 max-w-2xl mx-auto mt-4">
+              About AI discoverability, and how Signal & Structure AI helps your business get found.
+            </p>
           </FadeIn>
         </div>
       </section>

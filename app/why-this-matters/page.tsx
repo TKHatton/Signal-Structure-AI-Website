@@ -56,8 +56,10 @@ export default function WhyThisMattersPage() {
             <SectionLabel variant="light">STRATEGIC CONTEXT</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
               How people find and evaluate businesses has fundamentally changed.
-              Most businesses have not adjusted yet.
             </h1>
+            <p className="inner-page-hero-support text-white/70 max-w-2xl mx-auto mt-4">
+              Most businesses have not adjusted yet.
+            </p>
           </FadeIn>
         </div>
       </section>

@@ -143,9 +143,11 @@ export default function AboutPage() {
           <FadeIn>
             <SectionLabel variant="light">OUR STORY</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              We saw a shift that most businesses have not noticed yet. So we
-              built a company around fixing it.
+              We saw a shift that most businesses have not noticed yet.
             </h1>
+            <p className="inner-page-hero-support text-white/70 max-w-2xl mx-auto mt-4">
+              So we built a company around fixing it.
+            </p>
           </FadeIn>
         </div>
       </section>

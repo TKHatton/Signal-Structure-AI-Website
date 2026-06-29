@@ -58,8 +58,11 @@ export default function SignalWatchPage() {
           <FadeIn>
             <SectionLabel variant="light">SIGNAL WATCH</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              A quick pulse on how AI describes your business, any time you want it. Self-serve, inside ChatGPT or Claude. Re-run it whenever and watch your score move.
+              A quick pulse on how AI describes your business, any time you want it.
             </h1>
+            <p className="inner-page-hero-support text-white/70 max-w-2xl mx-auto mt-4">
+              Self-serve, inside ChatGPT or Claude. Re-run it whenever and watch your score move.
+            </p>
           </FadeIn>
         </div>
       </section>

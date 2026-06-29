@@ -78,8 +78,11 @@ export default function SignalScoreReportPage() {
           <FadeIn>
             <SectionLabel variant="light">SIGNAL SCORE REPORT</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              The complete picture of how AI describes your business. Every major AI assistant, scored and explained, in {REPORT_TURNAROUND}.
+              The complete picture of how AI describes your business.
             </h1>
+            <p className="inner-page-hero-support text-white/70 max-w-2xl mx-auto mt-4">
+              Every major AI assistant, scored and explained, in {REPORT_TURNAROUND}.
+            </p>
           </FadeIn>
         </div>
       </section>

@@ -116,9 +116,11 @@ export default function ResourcesPage() {
           <FadeIn>
             <SectionLabel variant="light">RESOURCES</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              Tools and insights to help you understand how AI sees your
-              business.
+              Tools and insights.
             </h1>
+            <p className="inner-page-hero-support text-white/70 max-w-2xl mx-auto mt-4">
+              To help you understand how AI sees your business.
+            </p>
           </FadeIn>
         </div>
       </section>

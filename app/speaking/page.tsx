@@ -79,8 +79,11 @@ export default function SpeakingPage() {
           <FadeIn>
             <SectionLabel variant="light">SPEAKING</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              Lenise speaks at communities, conferences, and team events about how AI describes businesses, and what to do about it.
+              Lenise speaks at communities, conferences, and team events.
             </h1>
+            <p className="inner-page-hero-support text-white/70 max-w-2xl mx-auto mt-4">
+              About how AI describes businesses, and what to do about it.
+            </p>
           </FadeIn>
         </div>
       </section>
