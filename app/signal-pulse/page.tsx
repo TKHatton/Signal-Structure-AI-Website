@@ -8,7 +8,6 @@ import Button from '@/components/Button';
 import PulseForm from '@/components/pulse/PulseForm';
 import PulseResultCard, { PulseResultData } from '@/components/pulse/PulseResultCard';
 import PulseEmailCapture from '@/components/pulse/PulseEmailCapture';
-import PulseChatPrompt from '@/components/pulse/PulseChatPrompt';
 import { API_URL } from '@/lib/constants';
 
 export default function SignalPulsePage() {
@@ -61,7 +60,6 @@ export default function SignalPulsePage() {
     url: 'https://signalstructure.ai',
     sameAs: [
       'https://www.linkedin.com/company/signal-structure-ai',
-      'https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit',
       'https://share.google/5Ci2LRrbmjYiQpkCp',
     ],
   };
@@ -130,11 +128,6 @@ export default function SignalPulsePage() {
             <div className="mt-8">
               <PulseResultCard result={result} />
               <PulseEmailCapture result={result} />
-              <PulseChatPrompt
-                businessName={result.business_name}
-                url={result.url}
-                signalKey={result.signal_key}
-              />
             </div>
           )}
         </div>
@@ -149,12 +142,12 @@ export default function SignalPulsePage() {
               The Signal Pulse is a vital sign check.
             </h2>
             <p className="font-body text-warmgray max-w-2xl mx-auto mb-8">
-              It tells you something is off. The AI Presence Program tells you
-              exactly what and why across 13 platforms, then does the work to fix it,
-              every month.
+              It tells you something is off. The Signal Score Report tells you
+              exactly what and why across every major AI platform, with a prioritized
+              list of what to fix first.
             </p>
-            <Button href="/services" variant="primary">
-              See how the program works
+            <Button href="/signal-score-report" variant="primary">
+              See the Signal Score Report
             </Button>
           </FadeIn>
         </div>

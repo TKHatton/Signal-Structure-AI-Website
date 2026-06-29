@@ -8,7 +8,6 @@ import {
   REPORT_TURNAROUND,
   REPORT_CHECKOUT_URL,
 } from '@/lib/constants';
-import Link from 'next/link';
 
 export const metadata = {
   title: 'Signal Score Report | Signal & Structure AI',
@@ -57,7 +56,7 @@ const reportSections = [
     body: 'What schema your site has now, what is missing, and how your business is cited across the directories and sources AI reads from. The pieces that decide whether AI quotes you accurately.',
   },
   {
-    title: 'Every hallucination and gap, listed plainly',
+    title: 'Every hallucination and gap, spelled out',
     body: 'Every time AI made something up about you. Every time it confused you with someone else. Every time it skipped a service you actually offer. With where each one came from, when we can find it.',
   },
   {
@@ -113,16 +112,14 @@ export default function SignalScoreReportPage() {
                 <SectionLabel variant="light">ORDER</SectionLabel>
                 <div className="mt-4 mb-2">
                   <span className="font-mono text-5xl font-bold text-copper">{REPORT_PRICE}</span>
-                  <span className="font-body text-white/70 ml-2">one time</span>
                 </div>
                 <p className="font-body text-white/70 text-sm mb-6">
-                  No subscription. No upsell. One detailed report, delivered to your inbox.
+                  No subscription. One detailed report on where your business stands with AI, delivered to your inbox.
                 </p>
 
                 <div className="bg-white/10 rounded-lg p-4 mb-6">
                   <p className="font-body text-sm text-white">
-                    <span className="text-copper font-semibold">Delivered as a PDF within {REPORT_TURNAROUND} via email.</span>{' '}
-                    Every report is reviewed by Lenise before it goes out. Once that QA pass is consistent, delivery moves to immediate.
+                    <span className="text-copper font-semibold">Delivered as a PDF within {REPORT_TURNAROUND} via email.</span>
                   </p>
                 </div>
 
@@ -159,63 +156,38 @@ export default function SignalScoreReportPage() {
         </div>
       </section>
 
-      {/* Why a person reviews it */}
+      {/* Report vs Watch */}
       <section className="relative bg-navy text-white section-padding-sm">
         <GridTexture />
         <div className="relative z-10 max-w-content mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn>
-              <SectionLabel variant="light">WHY TWO BUSINESS DAYS</SectionLabel>
+              <SectionLabel variant="light">REPORT OR WATCH?</SectionLabel>
               <h2 className="font-display text-section-heading mb-6">
-                Every report is checked by a person right now.
+                One is the deep dive. One keeps an eye on it.
               </h2>
               <div className="font-body text-lg text-white/80 leading-relaxed space-y-4">
                 <p>
-                  The engine pulls the data. Lenise reads it before it leaves the building. AI platforms move fast and sometimes return confusing or contradictory answers, and a person catching those before they hit your inbox keeps the reports accurate and consistent.
+                  The <span className="text-white font-semibold">Signal Score Report</span> is the complete picture. Every platform, your full score, your citation footprint, and a prioritized fix list, explained in a way you can actually act on.
                 </p>
                 <p>
-                  As confidence grows, delivery will move to immediate. Until then, two business days is the honest number.
+                  <span className="text-white font-semibold">Signal Watch</span> is the quick snapshot you re-run yourself, month after month, to see whether the work is moving the needle.
                 </p>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.2} direction="left">
               <div className="bg-white/10 rounded-card p-8">
-                <h3 className="font-display text-2xl mb-4">Report or Watch?</h3>
+                <h3 className="font-display text-2xl mb-4">How often should you check?</h3>
                 <p className="font-body text-white/80 leading-relaxed mb-4">
-                  The <span className="text-white font-semibold">Signal Score Report</span> is the deep, complete picture. Every platform, your full score, your citation footprint, and a fix list. One time, done by hand.
+                  AI changes its mind about your business as the web around you changes. A Signal Score Report at least once a year keeps you current. Twice a year is better, so you can watch your progress as you work to improve your scores.
                 </p>
                 <p className="font-body text-white/80 leading-relaxed">
-                  <span className="text-white font-semibold">Signal Watch</span> is the quick snapshot you re-run yourself, month after month, to see if the work is moving the needle. Lighter on purpose. Many people get the Report first, then keep Watch running.
+                  Many owners start with the Report for the full diagnosis, then keep Signal Watch running in between.
                 </p>
               </div>
             </FadeIn>
           </div>
-        </div>
-      </section>
-
-      {/* Cross-sell to community */}
-      <section className="section-padding bg-stone-dark">
-        <div className="max-w-content mx-auto">
-          <FadeIn>
-            <div className="bg-white rounded-card shadow-card p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 justify-between">
-              <div>
-                <SectionLabel>WANT THE FIX, NOT JUST THE REPORT?</SectionLabel>
-                <h2 className="font-display text-2xl text-navy mb-2 mt-2">
-                  The community runs through the fixes together.
-                </h2>
-                <p className="font-body text-warmgray max-w-xl">
-                  A report tells you where you stand. The community walks through the work with you, week by week, for a full year.
-                </p>
-              </div>
-              <Link
-                href="/services"
-                className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2 whitespace-nowrap"
-              >
-                See the community <span>&rarr;</span>
-              </Link>
-            </div>
-          </FadeIn>
         </div>
       </section>
 
@@ -228,7 +200,7 @@ export default function SignalScoreReportPage() {
               See the whole picture.
             </h2>
             <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-              {REPORT_PRICE}, one time. PDF in {REPORT_TURNAROUND}. Plain language. Real fixes.
+              {REPORT_PRICE}. PDF in {REPORT_TURNAROUND}. Explained so you can act on it, with the fixes that actually move your score.
             </p>
             <Button href={REPORT_CHECKOUT_URL} variant="primary">
               Order Your Report

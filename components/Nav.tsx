@@ -6,36 +6,28 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
-import { SKOOL_URL, COMPANY_NAME } from '@/lib/constants';
+import { COMPANY_NAME } from '@/lib/constants';
 
 const mainLinks = [
-  { href: '/services', label: 'Community' },
-  { href: '/signal-score-report', label: 'Signal Report' },
+  { href: '/signal-score-report', label: 'Signal Score' },
+  { href: '/signal-pulse', label: 'Signal Pulse' },
   { href: '/resources', label: 'Resources' },
 ];
 
 const aboutLinks = [
-  { href: '/about', label: 'Our Story' },
-  { href: '/how-it-works', label: 'How It Works' },
   { href: '/why-this-matters', label: 'Why This Matters' },
-  { href: '/our-approach', label: 'Our Approach' },
   { href: '/speaking', label: 'Speaking' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 const allLinks = [
-  { href: '/services', label: 'Community' },
-  { href: '/signal-score-report', label: 'Signal Report' },
+  { href: '/signal-score-report', label: 'Signal Score' },
+  { href: '/signal-pulse', label: 'Signal Pulse' },
   { href: '/signal-watch', label: 'Signal Watch' },
-  { href: '/client-knowledge', label: 'Client Knowledge' },
-  { href: '/signal-pulse', label: 'Free Signal Pulse' },
   { href: '/resources', label: 'Resources' },
-  { href: '/about', label: 'Our Story' },
-  { href: '/how-it-works', label: 'How It Works' },
   { href: '/why-this-matters', label: 'Why This Matters' },
-  { href: '/our-approach', label: 'Our Approach' },
   { href: '/speaking', label: 'Speaking' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
   { href: '/faq', label: 'FAQ' },
 ];
 
@@ -176,8 +168,8 @@ export default function Nav() {
               </AnimatePresence>
             </div>
 
-            <Button href={SKOOL_URL} variant="primary" className="text-sm whitespace-nowrap">
-              Join the Community
+            <Button href="/signal-score-report" variant="primary" className="text-sm whitespace-nowrap">
+              Get Your Signal Score
             </Button>
           </div>
 
@@ -263,8 +255,8 @@ export default function Nav() {
                   );
                 })}
                 <div className="mt-4">
-                  <Button href={SKOOL_URL} variant="primary" className="w-full text-center">
-                    Join the Community
+                  <Button href="/signal-score-report" variant="primary" className="w-full text-center">
+                    Get Your Signal Score
                   </Button>
                 </div>
               </div>

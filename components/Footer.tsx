@@ -1,41 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import GridTexture from './GridTexture';
-import { COMPANY_NAME, TAGLINE, ADDRESS, EMAIL, LINKEDIN, SKOOL_URL } from '@/lib/constants';
-
-const columns = [
-  {
-    heading: 'Start here',
-    links: [
-      { href: '/services', label: 'The Community' },
-      { href: '/signal-score-report', label: 'Signal Score Report' },
-      { href: '/signal-pulse', label: 'Free Signal Pulse' },
-    ],
-  },
-  {
-    heading: 'Tools',
-    links: [
-      { href: '/signal-watch', label: 'Signal Watch' },
-      { href: '/client-knowledge', label: 'Client Knowledge' },
-    ],
-  },
-  {
-    heading: 'Company',
-    links: [
-      { href: '/about', label: 'Our Story' },
-      { href: '/how-it-works', label: 'How It Works' },
-      { href: '/speaking', label: 'Speaking' },
-    ],
-  },
-  {
-    heading: 'More',
-    links: [
-      { href: '/resources', label: 'Resources' },
-      { href: '/blog', label: 'Blog' },
-      { href: '/faq', label: 'FAQ' },
-    ],
-  },
-];
+import { COMPANY_NAME, EMAIL } from '@/lib/constants';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -45,9 +11,10 @@ export default function Footer() {
       <GridTexture opacity={0.04} />
 
       <div className="relative z-10 max-w-content mx-auto px-6 py-16 md:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Brand + contact */}
-          <div className="lg:col-span-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+
+          {/* Brand */}
+          <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <Image
                 src="/images/logo-dark.png"
@@ -58,47 +25,88 @@ export default function Footer() {
               />
               <span className="font-body font-semibold">{COMPANY_NAME}</span>
             </div>
-            <p className="text-white/70 font-body text-sm mb-6 max-w-xs">{TAGLINE}</p>
-            <ul className="space-y-2 text-white/70 font-body text-sm">
+            <p className="text-white/70 font-body text-sm max-w-xs leading-relaxed">
+              Getting your business found, and described correctly, by AI.
+            </p>
+          </div>
+
+          {/* Start Here */}
+          <div>
+            <h3 className="font-body font-semibold text-copper text-sm mb-4">Start Here</h3>
+            <ul className="space-y-2.5">
               <li>
-                <a href={`mailto:${EMAIL}`} className="hover:text-copper transition-colors">
+                <Link href="/signal-score-report" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  Signal Score
+                </Link>
+              </li>
+              <li>
+                <Link href="/signal-pulse" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  Signal Pulse
+                </Link>
+              </li>
+              <li>
+                <Link href="/signal-pulse/quiz" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  Take the Quiz
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Learn */}
+          <div>
+            <h3 className="font-body font-semibold text-copper text-sm mb-4">Learn</h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link href="/resources/the-invisible-business" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  White Paper
+                </Link>
+              </li>
+              <li>
+                <Link href="/resources" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  Resources
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  About
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Work With Me */}
+          <div>
+            <h3 className="font-body font-semibold text-copper text-sm mb-4">Work With Me</h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link href="/signal-watch" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  Signal Watch
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact block */}
+          <div>
+            <ul className="space-y-2.5 pt-0 lg:pt-[2.125rem]">
+              <li>
+                <a href={`mailto:${EMAIL}`} className="text-white/60 hover:text-copper transition-colors font-body text-sm">
                   {EMAIL}
                 </a>
               </li>
               <li>
-                <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="hover:text-copper transition-colors">
-                  LinkedIn
-                </a>
+                <Link href="/" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  signalstructure.ai
+                </Link>
               </li>
-              <li>
-                <a href={SKOOL_URL} target="_blank" rel="noopener noreferrer" className="hover:text-copper transition-colors">
-                  Skool community
-                </a>
-              </li>
-              <li className="text-white/50">{ADDRESS}</li>
             </ul>
           </div>
 
-          {/* Link columns */}
-          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
-            {columns.map((col) => (
-              <div key={col.heading}>
-                <h3 className="font-body font-semibold text-white/90 text-sm mb-4">{col.heading}</h3>
-                <ul className="space-y-2.5">
-                  {col.links.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="text-white/60 hover:text-copper transition-colors font-body text-sm"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Bottom Bar */}

@@ -3,7 +3,7 @@ import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import SignalDot from '@/components/SignalDot';
-import { EMAIL, LINKEDIN, SKOOL_URL } from '@/lib/constants';
+import { EMAIL, LINKEDIN } from '@/lib/constants';
 
 export const metadata = {
   title: 'Speaking | Signal & Structure AI',
@@ -182,32 +182,6 @@ export default function SpeakingPage() {
         </div>
       </section>
 
-      {/* Cross to community */}
-      <section className="section-padding bg-stone-dark">
-        <div className="max-w-content mx-auto">
-          <FadeIn>
-            <div className="bg-white rounded-card shadow-card p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 justify-between">
-              <div>
-                <SectionLabel>WANT TO LEARN THIS YOURSELF?</SectionLabel>
-                <h2 className="font-display text-2xl text-navy mb-2 mt-2">
-                  The community is where the practice happens.
-                </h2>
-                <p className="font-body text-warmgray max-w-xl">
-                  Talks introduce the work. The community is where you actually do it, week by week, alongside other owners.
-                </p>
-              </div>
-              <a
-                href={SKOOL_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2 whitespace-nowrap"
-              >
-                Join the community <span>&rarr;</span>
-              </a>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
     </main>
   );
 }

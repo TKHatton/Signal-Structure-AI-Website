@@ -79,9 +79,9 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     cta: {
-      text: 'Run the free AI Visibility Check and see what AI platforms say about your business.',
-      href: 'https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit',
-      buttonLabel: 'Run the Free AI Visibility Check',
+      text: 'Run the free Signal Pulse and see what AI platforms say about your business.',
+      href: '/signal-pulse',
+      buttonLabel: 'Run the Free Signal Pulse',
     },
     schema: {
       '@context': 'https://schema.org',

@@ -24,7 +24,6 @@ const organizationSchema = {
   sameAs: [
     'https://www.linkedin.com/company/signal-structure-ai',
     'https://www.skool.com/signal-structure-ai-2338/about',
-    'https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit',
     'https://share.google/5Ci2LRrbmjYiQpkCp',
   ],
 };

@@ -14,6 +14,10 @@ export const metadata = {
   alternates: {
     canonical: '/blog',
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const blogPageSchema = {

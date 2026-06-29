@@ -30,6 +30,10 @@ export async function generateMetadata({
     alternates: {
       canonical: `/blog/${params.slug}`,
     },
+    robots: {
+      index: false,
+      follow: false,
+    },
     openGraph: {
       title: post.title,
       description: post.description,

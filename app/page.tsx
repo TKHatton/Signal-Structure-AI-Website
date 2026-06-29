@@ -7,13 +7,9 @@ import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import SignalDot from '@/components/SignalDot';
 import {
-  SKOOL_URL,
-  COMMUNITY_YEARLY,
-  COMMUNITY_MONTHLY,
   REPORT_PRICE,
   REPORT_TURNAROUND,
   WATCH_PRICE,
-  CLIENT_KNOWLEDGE_PRICE,
 } from '@/lib/constants';
 import Link from 'next/link';
 
@@ -44,7 +40,6 @@ const organizationSchema = {
   sameAs: [
     'https://www.linkedin.com/company/signal-structure-ai',
     'https://www.skool.com/signal-structure-ai-2338/about',
-    'https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit',
     'https://share.google/5Ci2LRrbmjYiQpkCp',
   ],
   aggregateRating: {
@@ -249,25 +244,31 @@ export default function HomePage() {
         <div className="relative z-10 hero-container">
           <FadeIn delay={0.1}>
             <h1 className="hero-headline-main text-white mb-6">
-              Find out what AI is saying about your business behind your back.
+              AI is the biggest{' '}
+              <span className="text-[1.3em] leading-none inline-block">GOSSIP</span>
+              {' '}online.
             </h1>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <p className="text-white/80 text-hero-subtext max-w-3xl mx-auto mb-10">
-              ChatGPT, Claude, Gemini, Perplexity, and Copilot are recommending businesses to people every day. We tell you what they&rsquo;re saying about yours, then show you how to fix it. Plain and simple.
+            <p className="text-white/80 text-hero-subtext max-w-3xl mx-auto mb-4">
+              It talks about you behind your back constantly, and you have no idea what it&rsquo;s saying or who&rsquo;s hearing it.
             </p>
           </FadeIn>
-
+          <FadeIn delay={0.4}>
+            <p className="text-white/60 font-body text-base max-w-2xl mx-auto mb-10">
+              Find out what it&rsquo;s saying about you. Don&rsquo;t get left in the dark about your own business.
+            </p>
+          </FadeIn>
           <FadeIn delay={0.5}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href={SKOOL_URL} variant="primary" className="text-lg px-8 py-4">
-                Join the Community
+              <Button href="/signal-score-report" variant="primary" className="text-lg px-8 py-4">
+                Get Your Signal Score
               </Button>
               <Link
-                href="/signal-score-report"
+                href="/signal-pulse"
                 className="font-body text-white/90 hover:text-copper transition-colors text-base underline underline-offset-4 decoration-copper decoration-2"
               >
-                Or get a Signal Score Report. {REPORT_PRICE}.
+                Or run a free Signal Pulse first
               </Link>
             </div>
           </FadeIn>
@@ -379,37 +380,16 @@ export default function HomePage() {
       <section className="section-padding bg-stone-dark">
         <div className="max-w-content mx-auto">
           <FadeIn className="text-center mb-12">
-            <SectionLabel>FOUR WAYS IN</SectionLabel>
+            <SectionLabel>WAYS TO WORK TOGETHER</SectionLabel>
             <h2 className="font-display text-section-heading text-navy mb-4">
-              Four ways to stop being invisible to AI.
+              Two ways to work with me.
             </h2>
             <p className="text-warmgray text-lg max-w-2xl mx-auto">
-              Same work. Different doors. Pick the one that fits you.
+              Different starting points. Same goal. Pick the one that fits you right now.
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Community */}
-            <FadeIn delay={0.1}>
-              <div className="bg-navy text-white rounded-card shadow-card p-8 h-full flex flex-col">
-                <SectionLabel variant="light">THE COMMUNITY</SectionLabel>
-                <h3 className="font-display text-2xl mb-3 mt-2">Learn it together.</h3>
-                <p className="font-body text-white/80 mb-6 leading-relaxed flex-1">
-                  A members-only community on Skool. Weekly working sessions. A year of practice, with people doing the same work alongside you.
-                </p>
-                <div className="mb-6">
-                  <div className="font-mono text-3xl font-bold text-copper">{COMMUNITY_YEARLY}</div>
-                  <p className="font-body text-white/60 text-sm">per year, or {COMMUNITY_MONTHLY}/month for twelve months</p>
-                </div>
-                <Link
-                  href="/services"
-                  className="font-body text-copper hover:text-copper-light transition-colors inline-flex items-center gap-2"
-                >
-                  See the community <span>&rarr;</span>
-                </Link>
-              </div>
-            </FadeIn>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {/* Report */}
             <FadeIn delay={0.2}>
               <div className="bg-white rounded-card shadow-card p-8 h-full flex flex-col">
@@ -452,71 +432,10 @@ export default function HomePage() {
               </div>
             </FadeIn>
 
-            {/* Client Knowledge */}
-            <FadeIn delay={0.4}>
-              <div className="bg-white rounded-card shadow-card p-8 h-full flex flex-col">
-                <SectionLabel>CLIENT KNOWLEDGE</SectionLabel>
-                <h3 className="font-display text-2xl text-navy mb-3 mt-2">Tell AI the truth.</h3>
-                <p className="font-body text-warmgray mb-6 leading-relaxed flex-1">
-                  A private knowledge connector for ChatGPT and Claude. AI answers from your real information, in your own words, not its best guess.
-                </p>
-                <div className="mb-6">
-                  <div className="font-mono text-3xl font-bold text-navy">{CLIENT_KNOWLEDGE_PRICE}<span className="text-base text-warmgray font-body font-normal">/month</span></div>
-                  <p className="font-body text-warmgray text-sm">cancel any time</p>
-                </div>
-                <Link
-                  href="/client-knowledge"
-                  className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2"
-                >
-                  See Client Knowledge <span>&rarr;</span>
-                </Link>
-              </div>
-            </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Why a year */}
-      <section className="section-padding">
-        <div className="max-w-content mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <FadeIn>
-              <SectionLabel>WHY A YEAR</SectionLabel>
-              <h2 className="font-display text-section-heading text-navy mb-6">
-                Trust takes a year. Not a weekend.
-              </h2>
-              <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
-                <p>
-                  Being recommended by AI is a slow build. Schema, directories, citations, reviews, your own words. A weekend cannot do it. A year can.
-                </p>
-                <p>
-                  That is why the community runs on a twelve-month commitment. You commit to the work. We commit to doing it with you.
-                </p>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.2} direction="left">
-              <div className="bg-stone-dark rounded-card p-8">
-                <h3 className="font-display text-2xl text-navy mb-4">What a year together looks like</h3>
-                <ul className="space-y-3 font-body text-warmgray">
-                  {[
-                    'Weekly working sessions where we tackle the work live, together',
-                    'A shared library of fixes, scripts, and templates that grow with the group',
-                    'Direct answers when AI says something wrong about your business',
-                    'A network of owners learning the same thing at the same time',
-                    'Lenise in the room, not behind a contact form',
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <SignalDot size={6} className="mt-2 flex-shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
 
       {/* What your Signal Score does for you */}
       <section className="section-padding bg-stone-dark">
@@ -569,20 +488,20 @@ export default function HomePage() {
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-display text-3xl md:text-4xl mb-6 text-white">
-              AI is recommending someone right now in your space. It should be you.
+              AI is recommending someone right now in your industry. It should be you.
             </h2>
             <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-              Start in the community, or grab a one-time report. Either way, you stop guessing.
+              Get the full picture on what AI says about you, or start free and see where you stand. Either way, you stop guessing.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href={SKOOL_URL} variant="primary">
-                Join the Community
+              <Button href="/signal-score-report" variant="primary">
+                Get Your Signal Score
               </Button>
               <Link
-                href="/signal-score-report"
+                href="/signal-pulse"
                 className="font-body text-white/90 hover:text-copper transition-colors text-base underline underline-offset-4 decoration-copper decoration-2"
               >
-                Get a Signal Score Report. {REPORT_PRICE}.
+                Or run a free Signal Pulse first
               </Link>
             </div>
           </FadeIn>

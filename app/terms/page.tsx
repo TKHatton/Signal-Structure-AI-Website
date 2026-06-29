@@ -5,7 +5,7 @@ import { EMAIL, COMPANY_NAME, ADDRESS } from '@/lib/constants';
 
 export const metadata = {
   title: 'Terms of Service | Signal & Structure AI',
-  description: 'Terms of service for Signal & Structure AI tools, MCP servers, Custom GPT, and consulting services.',
+  description: 'Terms of service for Signal & Structure AI tools, MCP servers, and consulting services.',
   alternates: {
     canonical: '/terms',
   },
@@ -17,7 +17,7 @@ const termsSchema = {
   '@id': 'https://signalstructure.ai/terms/#page',
   name: 'Terms of Service | Signal & Structure AI',
   description:
-    'Terms of service for Signal & Structure AI tools, MCP servers, Custom GPT, and consulting services.',
+    'Terms of service for Signal & Structure AI tools, MCP servers, and consulting services.',
   url: 'https://signalstructure.ai/terms',
   dateModified: '2026-06-24',
   inLanguage: 'en-US',
@@ -89,13 +89,12 @@ export default function TermsPage() {
       {/* Content */}
       <section className="section-padding">
         <div className="max-w-3xl mx-auto">
-          <FadeIn>
-            <div className="prose prose-lg max-w-none font-body text-warmgray">
+          <div className="prose prose-lg max-w-none font-body text-warmgray">
               <h2 className="font-display text-navy">Agreement to Terms</h2>
               <p>
                 By accessing or using the services provided by {COMPANY_NAME} (&quot;we,&quot;
                 &quot;us,&quot; or &quot;our&quot;), including our website at signalstructure.ai,
-                MCP servers, Custom GPT, Signal Engine API, and related tools
+                MCP servers, Signal Engine API, and related tools
                 (collectively, the &quot;Services&quot;), you agree to be bound by these Terms
                 of Service. If you do not agree, do not use our Services.
               </p>
@@ -232,7 +231,6 @@ export default function TermsPage() {
                 <li><strong>Address:</strong> {ADDRESS}</li>
               </ul>
             </div>
-          </FadeIn>
         </div>
       </section>
     </>
