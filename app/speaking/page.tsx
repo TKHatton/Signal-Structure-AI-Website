@@ -1,38 +1,77 @@
-import Image from 'next/image';
 import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import SignalDot from '@/components/SignalDot';
-import { EMAIL, TALK } from '@/lib/constants';
+import { EMAIL, LINKEDIN } from '@/lib/constants';
 
 export const metadata = {
   title: 'Speaking | Signal & Structure AI',
-  description: 'Lenise Kenney speaks to teams, communities, and organizations about how AI is reshaping the way businesses get found.',
-  robots: {
-    index: false,
-    follow: false,
+  description: 'Lenise Kenney speaks at communities, conferences, and team events about AI discoverability: how AI describes your business, what to do about it, and how to be recommended instead of skipped.',
+  alternates: {
+    canonical: '/speaking',
   },
 };
 
-const topics = [
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://signalstructure.ai' },
+    { '@type': 'ListItem', position: 2, name: 'Speaking', item: 'https://signalstructure.ai/speaking' },
+  ],
+};
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': 'https://signalstructure.ai/about#lenise-kenney',
+  name: 'Lenise Kenney',
+  jobTitle: 'Founder',
+  worksFor: { '@id': 'https://signalstructure.ai/#organization' },
+  knowsAbout: [
+    'AI discoverability',
+    'AI search optimization',
+    'schema markup',
+    'structured data',
+    'generative engine optimization',
+    'local business AI visibility',
+  ],
+  sameAs: [
+    'https://www.linkedin.com/company/signal-structure-ai',
+  ],
+};
+
+const inviteHref = `mailto:${EMAIL}?subject=Speaking%20inquiry&body=Hi%20Lenise%2C%0A%0AI%27d%20like%20to%20invite%20you%20to%20speak%20at%3A%0A%0AEvent%2Fcommunity%3A%0ADate%2Frange%3A%0AFormat%20(live%2C%20virtual%2C%20panel%2C%20etc.)%3A%0AAudience%3A%0AWhat%20we%27re%20hoping%20you%27ll%20cover%3A%0A%0AThanks%2C%0A`;
+
+const talks = [
   {
-    title: 'How AI decides who to recommend',
-    body: 'People used to find businesses through search. Now they ask ChatGPT, Gemini, and Claude a question and get a single answer. This talk walks through what changed, why it matters, and how AI actually picks who it names.',
+    title: 'What AI Is Saying About Your Business Behind Your Back',
+    summary: 'A live look at what ChatGPT, Claude, Gemini, and Perplexity actually tell people when they ask about businesses in the room. Where they get it right. Where they make things up. What to do about it.',
   },
   {
-    title: 'What AI is saying about you right now',
-    body: 'A live, plain-language look at how AI describes real businesses, including the hallucinations and gaps most owners never see. Eye-opening, practical, and specific to the room.',
+    title: 'How to Stop AI From Making Things Up About You',
+    summary: 'The five most common ways AI hallucinates about a real business, the structured fixes that actually work, and how to know in 30 seconds whether your business has the problem.',
   },
   {
-    title: 'Protecting your reputation in the age of AI',
-    body: 'For professionals and owners who have spent years building a reputation, this covers the concrete steps to make sure AI describes you accurately, without needing to become technical.',
+    title: 'How to Be the Business AI Recommends',
+    summary: 'A practical walk through the work behind being chosen when someone asks AI for a recommendation. Schema, directories, citations, original writing, and the connectors that put your truth in front of the model.',
   },
+];
+
+const audiences = [
+  'Local business owner communities and chambers',
+  'Founder groups, masterminds, and accelerators',
+  'Conferences and summits on AI, marketing, and small business',
+  'Internal team training for agencies and consultancies',
 ];
 
 export default function SpeakingPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+
       {/* Header */}
       <section className="relative bg-navy text-white">
         <GridTexture />
@@ -40,110 +79,71 @@ export default function SpeakingPage() {
           <FadeIn>
             <SectionLabel variant="light">SPEAKING</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              Bring a clear, grounded conversation about AI and visibility to your group.
+              Lenise speaks at communities, conferences, and team events about how AI describes businesses, and what to do about it.
             </h1>
           </FadeIn>
         </div>
       </section>
 
-      {/* Next talk flyer */}
+      {/* What she covers */}
       <section className="section-padding">
-        <div className="max-w-2xl mx-auto">
-          <FadeIn>
-            <div className="relative bg-navy text-white rounded-card shadow-card-hover overflow-hidden border-4 border-white">
-              <GridTexture opacity={0.05} />
-              <div className="relative z-10 p-8 sm:p-12 text-center">
-                <div className="flex justify-center mb-6">
-                  <div className="bg-white rounded-xl p-2">
-                    <Image
-                      src="/images/logo-light.png"
-                      alt="Signal & Structure AI"
-                      width={56}
-                      height={56}
-                      className="rounded-lg"
-                    />
-                  </div>
+        <div className="max-w-content mx-auto">
+          <FadeIn className="text-center mb-10">
+            <SectionLabel>WHAT SHE COVERS</SectionLabel>
+            <h2 className="font-display text-section-heading text-navy mb-4">
+              Plain language. Real examples. No hype.
+            </h2>
+            <p className="text-warmgray text-lg max-w-2xl mx-auto">
+              Lenise built the engine behind Signal Score and the connectors that feed AI real business information. She talks about what she actually does, with examples your audience can hear themselves in.
+            </p>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {talks.map((t, i) => (
+              <FadeIn key={t.title} delay={0.1 + i * 0.05}>
+                <div className="bg-white rounded-card shadow-card p-6 h-full">
+                  <SectionLabel>TALK</SectionLabel>
+                  <h3 className="font-display text-xl text-navy mb-3 mt-2 leading-tight">
+                    {t.title}
+                  </h3>
+                  <p className="font-body text-sm text-warmgray leading-relaxed">
+                    {t.summary}
+                  </p>
                 </div>
+              </FadeIn>
+            ))}
+          </div>
 
-                <p className="font-body text-copper text-xs font-semibold uppercase tracking-[0.2em] mb-4">
-                  Next Live Talk
-                </p>
-                <h2 className="font-display text-3xl sm:text-4xl mb-3 leading-tight">
-                  {TALK.title}
-                </h2>
-                <p className="font-body text-white/70 max-w-md mx-auto mb-8">
-                  {TALK.subtitle}
-                </p>
-
-                <div className="border-t border-b border-white/15 py-6 mb-8 grid grid-cols-2 gap-y-4 gap-x-6 text-left max-w-sm mx-auto">
-                  <div>
-                    <p className="font-body text-copper text-xs uppercase tracking-wider mb-1">Date</p>
-                    <p className="font-body text-white text-sm">{TALK.date}</p>
-                  </div>
-                  <div>
-                    <p className="font-body text-copper text-xs uppercase tracking-wider mb-1">Time</p>
-                    <p className="font-body text-white text-sm">{TALK.time}</p>
-                  </div>
-                  <div>
-                    <p className="font-body text-copper text-xs uppercase tracking-wider mb-1">Where</p>
-                    <p className="font-body text-white text-sm">{TALK.platform}</p>
-                  </div>
-                  <div>
-                    <p className="font-body text-copper text-xs uppercase tracking-wider mb-1">Length</p>
-                    <p className="font-body text-white text-sm">{TALK.duration}</p>
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <span className="font-mono text-4xl font-bold text-copper">{TALK.price}</span>
-                  <span className="font-body text-white/70 ml-2">per seat</span>
-                </div>
-
-                <Button href={TALK.url} variant="primary" className="px-10">
-                  Reserve your seat
-                </Button>
-              </div>
-            </div>
+          <FadeIn delay={0.3} className="text-center mt-8">
+            <p className="font-body text-sm text-warmgray italic">
+              Each talk can be tailored to your group&rsquo;s industry, format, and length.
+            </p>
           </FadeIn>
         </div>
       </section>
 
-      {/* Intro */}
-      <section className="section-padding pt-0">
+      {/* Audiences */}
+      <section className="section-padding bg-stone-dark">
         <div className="max-w-content mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn>
-              <SectionLabel>WHO IS SPEAKING</SectionLabel>
+              <SectionLabel>WHO SHE SPEAKS TO</SectionLabel>
               <h2 className="font-display text-section-heading text-navy mb-6">
-                Lenise Kenney
+                Owners, teams, and rooms that have to take AI seriously now.
               </h2>
-              <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
-                <p>
-                  Lenise is the founder of Signal &amp; Structure AI and the author of{' '}
-                  <em>Protect Your Genius</em>. She works with businesses on how AI platforms
-                  find, describe, and recommend them.
-                </p>
-                <p>
-                  Her talks are calm and concrete. No hype, no jargon. The goal is for everyone
-                  in the room to leave understanding what is actually happening and what to do
-                  next.
-                </p>
-              </div>
+              <p className="font-body text-lg text-warmgray leading-relaxed">
+                If your group is making decisions about how AI affects their business, the talk is for them. Lenise tailors the angle to whoever is in the room.
+              </p>
             </FadeIn>
 
             <FadeIn delay={0.2} direction="left">
-              <div className="bg-stone-dark rounded-card p-8">
-                <h3 className="font-display text-xl text-navy mb-4">Formats</h3>
+              <div className="bg-white rounded-card shadow-card p-8">
+                <h3 className="font-display text-2xl text-navy mb-4">Audiences</h3>
                 <ul className="space-y-3 font-body text-warmgray">
-                  {[
-                    '20 to 60 minute talks',
-                    'Workshops and working sessions',
-                    'Community sessions and guest appearances',
-                    'Virtual or in person',
-                  ].map((f) => (
-                    <li key={f} className="flex items-start gap-3">
+                  {audiences.map((a) => (
+                    <li key={a} className="flex items-start gap-3">
                       <SignalDot size={6} className="mt-2 flex-shrink-0" />
-                      <span>{f}</span>
+                      <span>{a}</span>
                     </li>
                   ))}
                 </ul>
@@ -153,46 +153,35 @@ export default function SpeakingPage() {
         </div>
       </section>
 
-      {/* Topics */}
-      <section className="section-padding bg-stone-dark">
-        <div className="max-w-content mx-auto">
-          <FadeIn className="text-center mb-12">
-            <SectionLabel>WHAT SHE COVERS</SectionLabel>
-            <h2 className="font-display text-section-heading text-navy">
-              Talks that meet your audience where they are.
-            </h2>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {topics.map((t, i) => (
-              <FadeIn key={t.title} delay={0.1 * (i + 1)}>
-                <div className="bg-white rounded-card shadow-card p-6 h-full">
-                  <h3 className="font-display text-xl text-navy mb-3">{t.title}</h3>
-                  <p className="font-body text-warmgray">{t.body}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
+      {/* Invite */}
       <section className="relative bg-navy text-white section-padding">
         <GridTexture />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
-            <h2 className="font-display text-section-heading mb-8 text-white">
-              Have a group that should hear this?
+            <SectionLabel variant="light">INVITE HER</SectionLabel>
+            <h2 className="font-display text-section-heading mb-6 text-white mt-2">
+              Have a room she should be in? Tell her about it.
             </h2>
-            <Button href={`mailto:${EMAIL}?subject=Speaking%20inquiry`} variant="primary" className="mb-4">
-              Request Lenise to speak
-            </Button>
-            <p className="text-white/70 text-sm">
-              Email {EMAIL} with your group, date, and format, and we will take it from there.
+            <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+              The easiest way is email. The next easiest is a LinkedIn DM. Tell her about the audience, the format, and what you&rsquo;d want covered, and she&rsquo;ll write back.
             </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button href={inviteHref} variant="primary">
+                Email Lenise
+              </Button>
+              <a
+                href={LINKEDIN}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body text-white/90 hover:text-copper transition-colors underline underline-offset-4 decoration-copper decoration-2"
+              >
+                Or DM her on LinkedIn
+              </a>
+            </div>
           </FadeIn>
         </div>
       </section>
+
     </main>
   );
 }

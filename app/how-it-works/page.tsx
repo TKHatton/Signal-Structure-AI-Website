@@ -5,11 +5,11 @@ import Button from '@/components/Button';
 import StepCard from '@/components/StepCard';
 import ValueCard from '@/components/ValueCard';
 import SignalDot from '@/components/SignalDot';
-import { BOOKING_URL } from '@/lib/constants';
+import { SKOOL_URL, REPORT_PRICE, WATCH_PRICE, CLIENT_KNOWLEDGE_PRICE } from '@/lib/constants';
 
 export const metadata = {
   title: 'How It Works | Signal & Structure AI',
-  description: 'Our five-step process: Discovery, Structure, Connection, Testing, and Ongoing management. We organize your business information so AI can find and recommend you.',
+  description: 'How the community works, how the Signal Score Report is built, how Signal Watch and Client Knowledge plug into ChatGPT and Claude. A clear, plain-language walk-through.',
   alternates: {
     canonical: '/how-it-works',
   },
@@ -23,7 +23,7 @@ const organizationSchema = {
   url: 'https://signalstructure.ai',
   sameAs: [
     'https://www.linkedin.com/company/signal-structure-ai',
-    'https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit',
+    'https://www.skool.com/signal-structure-ai-2338/about',
     'https://share.google/5Ci2LRrbmjYiQpkCp',
   ],
 };
@@ -32,18 +32,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'Home',
-      item: 'https://signalstructure.ai',
-    },
-    {
-      '@type': 'ListItem',
-      position: 2,
-      name: 'How It Works',
-      item: 'https://signalstructure.ai/how-it-works',
-    },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://signalstructure.ai' },
+    { '@type': 'ListItem', position: 2, name: 'How It Works', item: 'https://signalstructure.ai/how-it-works' },
   ],
 };
 
@@ -53,134 +43,117 @@ const howToSchema = {
   '@id': 'https://signalstructure.ai/how-it-works/#howto',
   name: 'How Signal & Structure AI Improves Your AI Discoverability',
   description:
-    'A clear process for getting your business into the AI referral conversation and making sure the details are right when it happens.',
-  totalTime: 'P90D',
+    'A clear path from invisible to recommended: join the community, see where you stand, do the work each week, and let the AI tools carry the answer back.',
+  totalTime: 'P365D',
   publisher: { '@id': 'https://signalstructure.ai/#organization' },
   step: [
-    { '@type': 'HowToStep', position: 1, name: 'Discovery and Baseline Assessment', text: 'We learn what your business actually does and how it really operates. We document authentic descriptions, identify customer priorities, and query AI platforms to establish your baseline Signal Score.' },
-    { '@type': 'HowToStep', position: 2, name: 'Information Organization', text: 'We organize your information in a way AI can actually find and use. Your knowledge is structured into categories: Identity, Services, Messaging, Policies, FAQs, and Guardrails.' },
-    { '@type': 'HowToStep', position: 3, name: 'AI Platform Integration', text: 'We connect AI directly to your organized information. Instead of AI piecing together guesses from the internet, it accesses your verified, structured knowledge directly across ChatGPT, Claude, Gemini, and other leading AI platforms.' },
-    { '@type': 'HowToStep', position: 4, name: 'Testing and Verification', text: 'We test every answer against what you told us is actually true. Customer-relevant questions are verified against your ground truth to eliminate hallucinations and inaccuracies.' },
-    { '@type': 'HowToStep', position: 5, name: 'Ongoing Management', text: 'We keep everything current as your business and AI platforms change. Monthly updates, monthly accuracy checks, and quarterly deep audits with strategy reviews.' },
+    { '@type': 'HowToStep', position: 1, name: 'Pick a door', text: 'Join the community, order a Signal Score Report, or turn on Signal Watch. Each is a real way in, no wrong order.' },
+    { '@type': 'HowToStep', position: 2, name: 'See where you stand', text: 'Use the Signal Score Report or a community working session to map what AI is already saying about your business across ChatGPT, Claude, Gemini, and Perplexity.' },
+    { '@type': 'HowToStep', position: 3, name: 'Do the work, week by week', text: 'Inside the community we work through schema, directories, citations, and original writing together. Small, real steps that AI can read.' },
+    { '@type': 'HowToStep', position: 4, name: 'Plug the AI tools in', text: 'Signal Watch monitors how AI is describing you. Client Knowledge feeds AI your real information so it stops guessing. Both run inside ChatGPT or Claude.' },
+    { '@type': 'HowToStep', position: 5, name: 'Hold ground', text: 'Re-check, refine, repeat. AI changes constantly. So does your business. Staying visible is a practice, not a finish line.' },
   ],
 };
 
 export default function HowItWorksPage() {
   return (
     <main>
-      {/* JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
 
-      {/* Section 1: Page Header */}
+      {/* Header */}
       <section className="relative bg-navy text-white">
         <GridTexture />
         <div className="relative z-10 hero-container">
           <FadeIn>
-            <SectionLabel variant="light">OUR PROCESS</SectionLabel>
+            <SectionLabel variant="light">HOW IT WORKS</SectionLabel>
             <h1 className="inner-page-hero-subtitle text-white">
-              A clear process for getting your business into the AI referral
-              conversation and making sure the details are right when it happens.
+              The community is where the work happens. The tools carry the result. Here is how it fits together.
             </h1>
           </FadeIn>
         </div>
       </section>
 
-      {/* Section 2: Intro */}
+      {/* Intro */}
       <section className="section-padding">
         <div className="max-w-prose mx-auto">
           <FadeIn>
             <h2 className="font-display text-section-heading text-navy mb-6 text-center">
-              You do not need more content. You need a different kind of structure.
+              We used to deliver this as a high-touch service. Now we do it together.
             </h2>
             <div className="font-body text-lg text-warmgray leading-relaxed space-y-4">
               <p>
-                The strategies that made you findable on Google do not automatically
-                make you findable by AI.
+                The first version of this work was a done-for-you service. It helped the people we could reach. It also kept the room small.
               </p>
               <p>
-                Google worked on keywords. You put the right words on your page, Google
-                matched them to a search, and you showed up. AI does not work that way.
-                AI tries to understand your entire business and then decides whether to
-                mention you based on how well it can make sense of your information.
+                The community is the bigger room. You learn the discoverability work, you do it on your own business, and there are other owners doing the exact same thing alongside you. The tools, the report, the schema, the citations, the connectors. We work through them together.
               </p>
               <p>
-                Most businesses already have everything AI needs. Services, descriptions,
-                policies, expertise. The information exists. It is just not set up for
-                how AI looks for it.
-              </p>
-              <p>
-                That is what our process fixes.
+                You leave a year fluent in something most owners do not even know exists yet.
               </p>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* Section 3: The Five Steps */}
+      {/* The five steps */}
       <section className="section-padding bg-stone-dark">
         <div className="max-w-content mx-auto space-y-32">
-          {/* Step 1: Discovery */}
+          {/* Step 1 */}
           <StepCard
             stepNumber="01"
             label="STEP 1"
-            headline="We learn what your business actually does and how it really operates."
-            body="We start with the real version of your business. How you actually describe your services when talking to a friend. What your customers care about most. What gets misunderstood. What you wish people knew. We also do something important here: we ask AI about your business right now. We record what it says across multiple platforms. That becomes your baseline. Your 'before' snapshot. If AI is ignoring you, we document that. If AI is getting things wrong, we document exactly what."
+            headline="Pick a door. They all lead to the same room."
+            body="The community is the main door. A one-time Signal Score Report is the second. Signal Watch and Client Knowledge are tools you can run on their own. Most owners start with the report or the community. The rest gets added when it makes sense. Nobody is gatekeeping anything."
+            visual={
+              <div className="bg-white p-6 rounded-card shadow-card">
+                <div className="font-body text-sm font-semibold text-copper mb-4 uppercase tracking-wider">FOUR WAYS IN</div>
+                <div className="space-y-3">
+                  {[
+                    { label: 'Community', sub: '$497/year or $49/mo' },
+                    { label: 'Signal Score Report', sub: `${REPORT_PRICE} one time` },
+                    { label: 'Signal Watch', sub: `${WATCH_PRICE}/month` },
+                    { label: 'Client Knowledge', sub: `${CLIENT_KNOWLEDGE_PRICE}/month` },
+                  ].map((d) => (
+                    <div key={d.label} className="flex items-center justify-between bg-stone rounded p-3">
+                      <div className="font-body text-sm font-semibold text-navy">{d.label}</div>
+                      <div className="font-mono text-xs text-warmgray">{d.sub}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            }
+          />
+
+          {/* Step 2 */}
+          <StepCard
+            stepNumber="02"
+            label="STEP 2"
+            headline="See where you actually stand."
+            body="Before you change anything, you have to know what AI is currently saying about you. A Signal Score Report gives you the full picture in one place: ChatGPT, Claude, Gemini, Perplexity, hallucinations, gaps, schema check, prioritized fix list. Community members can also walk through this together in a working session. You leave with a baseline you can measure against."
             visual={
               <div className="bg-stone p-8 rounded-card shadow-card">
-                <div className="font-body text-sm font-semibold text-copper mb-4 uppercase tracking-wider">
-                  SIGNAL SCORE RESULTS
-                </div>
+                <div className="font-body text-sm font-semibold text-copper mb-4 uppercase tracking-wider">SIGNAL SCORE</div>
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="font-body text-navy">ChatGPT:</span>
-                    <div className="flex items-center gap-3">
-                      <div className="flex gap-1">
-                        <div className="w-3 h-3 bg-copper rounded"></div>
-                        <div className="w-3 h-3 bg-copper rounded"></div>
-                        <div className="w-3 h-3 bg-warmgray-light/30 rounded"></div>
-                        <div className="w-3 h-3 bg-warmgray-light/30 rounded"></div>
-                        <div className="w-3 h-3 bg-warmgray-light/30 rounded"></div>
+                  {[
+                    { p: 'ChatGPT', dots: 2, score: '3.2' },
+                    { p: 'Claude', dots: 1, score: '1.8' },
+                    { p: 'Gemini', dots: 2, score: '2.5' },
+                    { p: 'Perplexity', dots: 3, score: '4.1' },
+                  ].map((r) => (
+                    <div key={r.p} className="flex items-center justify-between">
+                      <span className="font-body text-navy">{r.p}</span>
+                      <div className="flex items-center gap-3">
+                        <div className="flex gap-1">
+                          {[1,2,3,4,5].map(i => (
+                            <div key={i} className={`w-3 h-3 rounded ${i <= r.dots ? 'bg-copper' : 'bg-warmgray-light/30'}`}></div>
+                          ))}
+                        </div>
+                        <span className="font-mono text-navy font-bold">{r.score}</span>
                       </div>
-                      <span className="font-mono text-navy font-bold">3.2</span>
                     </div>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="font-body text-navy">Claude:</span>
-                    <div className="flex items-center gap-3">
-                      <div className="flex gap-1">
-                        <div className="w-3 h-3 bg-copper rounded"></div>
-                        <div className="w-3 h-3 bg-warmgray-light/30 rounded"></div>
-                        <div className="w-3 h-3 bg-warmgray-light/30 rounded"></div>
-                        <div className="w-3 h-3 bg-warmgray-light/30 rounded"></div>
-                        <div className="w-3 h-3 bg-warmgray-light/30 rounded"></div>
-                      </div>
-                      <span className="font-mono text-navy font-bold">1.8</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="font-body text-navy">Gemini:</span>
-                    <div className="flex items-center gap-3">
-                      <div className="flex gap-1">
-                        <div className="w-3 h-3 bg-copper rounded"></div>
-                        <div className="w-3 h-3 bg-copper rounded"></div>
-                        <div className="w-3 h-3 bg-warmgray-light/30 rounded"></div>
-                        <div className="w-3 h-3 bg-warmgray-light/30 rounded"></div>
-                        <div className="w-3 h-3 bg-warmgray-light/30 rounded"></div>
-                      </div>
-                      <span className="font-mono text-navy font-bold">2.5</span>
-                    </div>
-                  </div>
+                  ))}
                 </div>
                 <div className="mt-6 flex items-center gap-2 text-copper text-sm">
                   <SignalDot size={6} />
@@ -188,88 +161,47 @@ export default function HowItWorksPage() {
                 </div>
               </div>
             }
+            reverse
           />
 
-          {/* Step 2: Structure */}
+          {/* Step 3 */}
           <StepCard
-            stepNumber="02"
-            label="STEP 2"
-            headline="We organize your information in a way AI can actually find and use."
-            body="This is the core of what we do. We take everything from the discovery phase and organize it into clear categories. Services, messaging, policies, FAQs, boundaries. This is different from what most businesses have done before. You might already have a great website. But AI does not read it the way a person does. AI looks for structured, consistent information it can quickly pull from and trust. When your information is organized for AI, two things change. AI can find you when someone asks a relevant question. And AI describes you correctly when it does."
+            stepNumber="03"
+            label="STEP 3"
+            headline="Do the work, week by week."
+            body="The community runs weekly working sessions. Schema goes in. Directories get cleaned up. Original writing gets published. Reviews accumulate. Citations link back. We share scripts, templates, and lessons as we go. You are not stuck doing this alone with a long document and a Loom video. Other owners are in the room. So is Lenise."
             visual={
               <div className="bg-white p-8 rounded-card shadow-card">
-                <div className="font-body text-sm font-semibold text-copper mb-6 uppercase tracking-wider text-center">
-                  YOUR KNOWLEDGE SYSTEM
-                </div>
-                <div className="grid grid-cols-3 gap-3">
-                  {['Identity', 'Services', 'Messaging', 'Policies', 'FAQs', 'Guardrails'].map((category) => (
+                <div className="font-body text-sm font-semibold text-copper mb-6 uppercase tracking-wider text-center">WHAT WE WORK ON</div>
+                <div className="grid grid-cols-2 gap-3">
+                  {['Schema', 'Directories', 'Citations', 'GBP', 'Original writing', 'Reviews', 'Site structure', 'Connectors'].map((category) => (
                     <div key={category} className="bg-stone p-3 rounded text-center">
                       <div className="font-body text-xs font-semibold text-navy">{category}</div>
                     </div>
                   ))}
                 </div>
-                <div className="mt-6 flex justify-center">
-                  <div className="w-12 h-12 bg-copper rounded-full flex items-center justify-center">
-                    <SignalDot size={8} className="bg-white" />
-                  </div>
-                </div>
-              </div>
-            }
-            reverse
-          />
-
-          {/* Step 3: Connection */}
-          <StepCard
-            stepNumber="03"
-            label="STEP 3"
-            headline="We connect AI directly to your organized information."
-            body="Once the structure is in place, we plug AI tools into it. Instead of AI scanning the internet and piecing together a guess about your business, it pulls directly from your organized, verified information. This is where you feel the shift. AI stops talking about your business from the outside and starts speaking from the inside. Using your words. Your facts. Your boundaries. And because we build the structure to work across multiple platforms, it is not just one AI tool that can find you. It is all of them."
-            visual={
-              <div className="bg-white p-8 rounded-card shadow-card">
-                <div className="font-body text-sm font-semibold text-copper mb-6 uppercase tracking-wider text-center">
-                  AI PLATFORMS
-                </div>
-                <div className="flex flex-col items-center gap-6">
-                  <div className="grid grid-cols-2 gap-4 w-full">
-                    {['ChatGPT', 'Claude', 'Gemini'].map((platform) => (
-                      <div key={platform} className="bg-stone p-4 rounded text-center font-body text-sm font-semibold text-navy">
-                        {platform}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="text-copper text-2xl">↓</div>
-                  <div className="w-full bg-copper/10 border-2 border-copper p-4 rounded text-center">
-                    <div className="font-body text-sm font-semibold text-navy">Your Knowledge System</div>
-                  </div>
-                </div>
               </div>
             }
           />
 
-          {/* Step 4: Testing */}
+          {/* Step 4 */}
           <StepCard
             stepNumber="04"
             label="STEP 4"
-            headline="We test every answer against what you told us is actually true."
-            body="AI is known for making things up. It hallucinates. It fills in gaps with confident-sounding information that is completely wrong. That is why testing is not optional. We ask AI the same questions your customers would ask. Then we check every answer against the facts you gave us. If AI says you offer a service you do not offer, we fix it. If AI gets your pricing wrong, we fix it. If AI mentions something it should not, we add a guardrail. We also test whether AI recommends you when someone asks for a business in your category. Not just whether it knows about you, but whether it brings you up on its own. You get a scorecard. Accuracy scores. Discoverability scores. A clear picture of exactly where things improved."
+            headline="Plug the AI tools in so the work shows up where it counts."
+            body="Signal Watch sits inside your ChatGPT or Claude and tells you how AI is describing you, month over month. Client Knowledge sits next to it and feeds AI your real business information so it stops guessing. One reads. One answers. Run either alone or stack them. Cancel any time."
             visual={
               <div className="bg-white p-8 rounded-card shadow-card">
-                <div className="grid grid-cols-2 divide-x divide-stone-dark">
-                  <div className="pr-4">
-                    <div className="font-body text-sm font-semibold text-warmgray mb-3 uppercase tracking-wider">BEFORE</div>
-                    <p className="font-body text-sm text-navy mb-3">"They offer..."</p>
-                    <div className="flex items-center gap-2 text-status-red text-xs">
-                      <SignalDot size={6} className="bg-status-red" />
-                      <span className="font-semibold">Hallucination</span>
-                    </div>
+                <div className="font-body text-sm font-semibold text-copper mb-6 uppercase tracking-wider text-center">INSIDE CHATGPT OR CLAUDE</div>
+                <div className="flex flex-col items-center gap-4">
+                  <div className="w-full bg-navy text-white p-4 rounded text-center">
+                    <div className="font-body text-xs uppercase tracking-widest text-copper mb-1">Signal Watch</div>
+                    <div className="font-body text-sm">Reads what AI is saying</div>
                   </div>
-                  <div className="pl-4">
-                    <div className="font-body text-sm font-semibold text-copper mb-3 uppercase tracking-wider">AFTER</div>
-                    <p className="font-body text-sm text-navy mb-3">"They specialize in..."</p>
-                    <div className="flex items-center gap-2 text-status-green text-xs">
-                      <SignalDot size={6} className="bg-status-green" />
-                      <span className="font-semibold">Accurate</span>
-                    </div>
+                  <div className="text-copper text-2xl">+</div>
+                  <div className="w-full bg-copper/10 border-2 border-copper p-4 rounded text-center">
+                    <div className="font-body text-xs uppercase tracking-widest text-copper mb-1">Client Knowledge</div>
+                    <div className="font-body text-sm text-navy">Tells AI what to say</div>
                   </div>
                 </div>
               </div>
@@ -277,22 +209,21 @@ export default function HowItWorksPage() {
             reverse
           />
 
-          {/* Step 5: Ongoing */}
+          {/* Step 5 */}
           <StepCard
             stepNumber="05"
             label="STEP 5"
-            headline="We keep everything current as your business and AI platforms change."
-            body="AI is not a set-it-and-forget-it situation. Two things are constantly changing. Your business changes. New services, pricing updates, team changes. And AI itself changes. New models come out. Platforms update how they find and rank information. Features get added every few weeks. If nobody is paying attention to both of those things, your accuracy and discoverability start slipping. For businesses that want long-term results, we manage this month to month. Updates, checks, and scorecards monthly. A full deep audit with strategy every quarter."
+            headline="Hold ground. AI keeps changing. So does your business."
+            body="No version of this is one-and-done. New AI models arrive. Platforms change how they read sources. Your business adds a service, moves locations, sunsets an offer. The community is where you keep doing the work. The tools are where the work shows up. Together, they keep you visible for the long run."
             visual={
               <div className="bg-white p-8 rounded-card shadow-card">
-                <div className="font-body text-sm font-semibold text-copper mb-6 uppercase tracking-wider text-center">
-                  TIMELINE
-                </div>
+                <div className="font-body text-sm font-semibold text-copper mb-6 uppercase tracking-wider text-center">THE YEAR</div>
                 <div className="space-y-4">
                   {[
-                    { month: 'Month 1', label: 'Updates + Check' },
-                    { month: 'Month 2', label: 'Updates + Check' },
-                    { month: 'Month 3', label: 'Updates + Check + AUDIT', highlight: true },
+                    { month: 'Month 1', label: 'Baseline + onboarding' },
+                    { month: 'Months 2 to 3', label: 'Foundations' },
+                    { month: 'Months 4 to 9', label: 'Practice + measure', highlight: true },
+                    { month: 'Months 10 to 12', label: 'Hold ground' },
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-4">
                       <SignalDot size={8} className={item.highlight ? 'bg-copper' : 'bg-navy'} />
@@ -304,9 +235,6 @@ export default function HowItWorksPage() {
                       </div>
                     </div>
                   ))}
-                  <div className="border-t-2 border-dashed border-stone-dark pt-4 text-center">
-                    <div className="font-body text-xs text-warmgray">Repeating pattern...</div>
-                  </div>
                 </div>
               </div>
             }
@@ -314,58 +242,46 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* Section 4: Why It Matters Block */}
+      {/* Value */}
       <section className="relative bg-navy text-white section-padding">
         <GridTexture />
         <div className="relative z-10 max-w-content mx-auto">
           <FadeIn className="text-center mb-12">
             <h2 className="font-display text-section-heading">
-              What this process protects.
+              What this protects.
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <FadeIn delay={0.1}>
-              <ValueCard
-                title="Your referrals"
-                description="AI recommends you instead of skipping you."
-              />
+              <ValueCard title="Your referrals" description="AI recommends you instead of skipping you." />
             </FadeIn>
             <FadeIn delay={0.2}>
-              <ValueCard
-                title="Your accuracy"
-                description="AI describes you correctly every time."
-              />
+              <ValueCard title="Your accuracy" description="AI describes you correctly, in your own words." />
             </FadeIn>
             <FadeIn delay={0.3}>
-              <ValueCard
-                title="Your reputation"
-                description="No more wrong details floating around."
-              />
+              <ValueCard title="Your time" description="You learn it once, with other owners doing it too." />
             </FadeIn>
             <FadeIn delay={0.4}>
-              <ValueCard
-                title="Your time"
-                description="We manage it so you do not have to."
-              />
+              <ValueCard title="Your edge" description="A year of practice most of your competitors will never do." />
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Section 5: Best For / Not For */}
+      {/* Best for / not for */}
       <section className="section-padding">
         <div className="max-w-content mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <FadeIn>
               <h3 className="font-body text-2xl font-semibold text-navy mb-6">
-                This works best for businesses who:
+                The community works best for owners who:
               </h3>
               <ul className="space-y-4">
                 {[
-                  'Know their reputation matters',
-                  'Are tired of being described wrong or left out entirely',
-                  'Understand that how people find businesses has changed',
+                  'Want to actually learn this, not just buy a result',
+                  'Are tired of being described wrong or left out',
+                  'Will show up for weekly working sessions for a year',
                   'Want a long-term advantage, not a quick trick',
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
@@ -378,13 +294,13 @@ export default function HowItWorksPage() {
 
             <FadeIn delay={0.2}>
               <h3 className="font-body text-2xl font-semibold text-navy mb-6">
-                This is probably not the right fit if you:
+                It is probably not the right fit if you:
               </h3>
               <ul className="space-y-4">
                 {[
-                  'Want overnight visibility hacks',
-                  'Think keywords and a good website are still enough on their own',
-                  'Are not ready to invest in something that actually works',
+                  'Want a one-week visibility hack',
+                  'Will not show up for the work',
+                  'Want someone to do every keystroke for you (we do that for clients separately, contact Lenise)',
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <SignalDot size={7} className="mt-1.5 flex-shrink-0 bg-warmgray" />
@@ -397,7 +313,7 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* Section 6: Bottom CTA */}
+      {/* Bottom CTA */}
       <section className="relative bg-navy text-white section-padding">
         <GridTexture />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
@@ -405,8 +321,8 @@ export default function HowItWorksPage() {
             <h2 className="font-display text-section-heading mb-8 text-white">
               If referrals drive your business, AI should be sending them your way.
             </h2>
-            <Button href={BOOKING_URL} variant="primary">
-              Reserve a Spot at My Next Talk
+            <Button href={SKOOL_URL} variant="primary">
+              Join the Community
             </Button>
           </FadeIn>
         </div>

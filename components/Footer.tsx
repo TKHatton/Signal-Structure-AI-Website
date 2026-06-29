@@ -1,21 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import SignalDot from './SignalDot';
 import GridTexture from './GridTexture';
-import { COMPANY_NAME, TAGLINE, LOCATION, ADDRESS, EMAIL, LINKEDIN, BOOKING_URL } from '@/lib/constants';
-
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services' },
-  { href: '/speaking', label: 'Speaking' },
-  { href: '/resources', label: 'Resources' },
-  { href: '/about', label: 'Our Story' },
-  { href: '/how-it-works', label: 'How It Works' },
-  { href: '/why-this-matters', label: 'Why This Matters' },
-  { href: '/our-approach', label: 'Our Approach' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/faq', label: 'FAQ' },
-];
+import { COMPANY_NAME, EMAIL } from '@/lib/constants';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -24,10 +10,11 @@ export default function Footer() {
     <footer className="relative bg-navy text-white mt-24">
       <GridTexture opacity={0.04} />
 
-      <div className="relative z-10 max-w-content mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* Column 1: Branding */}
-          <div>
+      <div className="relative z-10 max-w-content mx-auto px-6 py-16 md:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+
+          {/* Brand */}
+          <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <Image
                 src="/images/logo-dark.png"
@@ -38,72 +25,92 @@ export default function Footer() {
               />
               <span className="font-body font-semibold">{COMPANY_NAME}</span>
             </div>
-            <p className="text-white/70 font-body text-sm">{TAGLINE}</p>
+            <p className="text-white/70 font-body text-sm max-w-xs leading-relaxed">
+              Getting your business found, and described correctly, by AI.
+            </p>
           </div>
 
-          {/* Column 2: Navigation */}
+          {/* Start Here */}
           <div>
-            <h3 className="font-body font-semibold mb-4">Navigation</h3>
-            <ul className="space-y-2">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-white/70 hover:text-copper transition-colors font-body text-sm flex items-center gap-2"
-                  >
-                    <SignalDot size={4} />
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+            <h3 className="font-body font-semibold text-copper text-sm mb-4">Start Here</h3>
+            <ul className="space-y-2.5">
               <li>
-                <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-copper hover:text-copper-light transition-colors font-body text-sm font-medium flex items-center gap-2 mt-4"
-                >
-                  <SignalDot size={4} />
-                  Reserve My Spot
-                </a>
+                <Link href="/signal-score-report" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  Signal Score
+                </Link>
+              </li>
+              <li>
+                <Link href="/signal-pulse" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  Signal Pulse
+                </Link>
+              </li>
+              <li>
+                <Link href="/signal-pulse/quiz" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  Take the Quiz
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Contact */}
+          {/* Learn */}
           <div>
-            <h3 className="font-body font-semibold mb-4">Contact</h3>
-            <ul className="space-y-3 text-white/70 font-body text-sm">
-              <li className="flex items-start gap-2">
-                <SignalDot size={4} className="mt-1.5" />
-                <span>{ADDRESS}</span>
+            <h3 className="font-body font-semibold text-copper text-sm mb-4">Learn</h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link href="/resources/the-invisible-business" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  White Paper
+                </Link>
               </li>
-              <li className="flex items-start gap-2">
-                <SignalDot size={4} className="mt-1.5" />
-                <a
-                  href={`mailto:${EMAIL}`}
-                  className="hover:text-copper transition-colors"
-                >
+              <li>
+                <Link href="/resources" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  Resources
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  About
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Work With Me */}
+          <div>
+            <h3 className="font-body font-semibold text-copper text-sm mb-4">Work With Me</h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link href="/signal-watch" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  Signal Watch
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact block */}
+          <div>
+            <ul className="space-y-2.5 pt-0 lg:pt-[2.125rem]">
+              <li>
+                <a href={`mailto:${EMAIL}`} className="text-white/60 hover:text-copper transition-colors font-body text-sm">
                   {EMAIL}
                 </a>
               </li>
-              <li className="flex items-start gap-2">
-                <SignalDot size={4} className="mt-1.5" />
-                <a
-                  href={LINKEDIN}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-copper transition-colors"
-                >
-                  LinkedIn
-                </a>
+              <li>
+                <Link href="/" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  signalstructure.ai
+                </Link>
               </li>
             </ul>
           </div>
+
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/50 text-sm font-body">
+        <div className="border-t border-white/10 mt-14 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/50 text-sm font-body">
           <p>&copy; {currentYear} {COMPANY_NAME}. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-copper transition-colors">Privacy Policy</Link>

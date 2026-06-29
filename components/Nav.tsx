@@ -6,30 +6,28 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
-import { BOOKING_URL, COMPANY_NAME } from '@/lib/constants';
+import { COMPANY_NAME } from '@/lib/constants';
 
 const mainLinks = [
-  { href: '/services', label: 'Services' },
+  { href: '/signal-score-report', label: 'Signal Score' },
+  { href: '/signal-pulse', label: 'Signal Pulse' },
   { href: '/resources', label: 'Resources' },
-  { href: '/blog', label: 'Blog' },
 ];
 
 const aboutLinks = [
-  { href: '/about', label: 'Our Story' },
-  { href: '/how-it-works', label: 'How It Works' },
   { href: '/why-this-matters', label: 'Why This Matters' },
-  { href: '/our-approach', label: 'Our Approach' },
+  { href: '/speaking', label: 'Speaking' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 const allLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services' },
+  { href: '/signal-score-report', label: 'Signal Score' },
+  { href: '/signal-pulse', label: 'Signal Pulse' },
+  { href: '/signal-watch', label: 'Signal Watch' },
   { href: '/resources', label: 'Resources' },
-  { href: '/about', label: 'Our Story' },
-  { href: '/how-it-works', label: 'How It Works' },
   { href: '/why-this-matters', label: 'Why This Matters' },
-  { href: '/our-approach', label: 'Our Approach' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/speaking', label: 'Speaking' },
+  { href: '/contact', label: 'Contact' },
   { href: '/faq', label: 'FAQ' },
 ];
 
@@ -170,8 +168,8 @@ export default function Nav() {
               </AnimatePresence>
             </div>
 
-            <Button href={BOOKING_URL} variant="primary" className="text-sm whitespace-nowrap">
-              Reserve My Spot
+            <Button href="/signal-score-report" variant="primary" className="text-sm whitespace-nowrap">
+              Get Your Signal Score
             </Button>
           </div>
 
@@ -257,8 +255,8 @@ export default function Nav() {
                   );
                 })}
                 <div className="mt-4">
-                  <Button href={BOOKING_URL} variant="primary" className="w-full text-center">
-                    Reserve My Spot
+                  <Button href="/signal-score-report" variant="primary" className="w-full text-center">
+                    Get Your Signal Score
                   </Button>
                 </div>
               </div>

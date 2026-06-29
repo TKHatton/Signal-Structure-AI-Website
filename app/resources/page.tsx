@@ -5,7 +5,7 @@ import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import SignalDot from '@/components/SignalDot';
 import NewsletterForm from '@/components/NewsletterForm';
-import { BOOKING_URL } from '@/lib/constants';
+import { SKOOL_URL, REPORT_PRICE, WATCH_PRICE, CLIENT_KNOWLEDGE_PRICE } from '@/lib/constants';
 
 export const metadata = {
   title: 'Resources | Signal & Structure AI',
@@ -92,27 +92,6 @@ const resourcesPageSchema = {
           },
         },
       },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        item: {
-          '@type': 'SoftwareApplication',
-          name: 'AI Visibility Check',
-          description:
-            'Custom GPT that shows you how AI platforms describe your business right now. Free on ChatGPT.',
-          applicationCategory: 'Business Assessment Tool',
-          url: 'https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit',
-          offers: {
-            '@type': 'Offer',
-            price: '0',
-            priceCurrency: 'USD',
-          },
-          provider: {
-            '@type': 'Organization',
-            '@id': 'https://signalstructure.ai/#organization',
-          },
-        },
-      },
     ],
   },
 };
@@ -141,6 +120,50 @@ export default function ResourcesPage() {
               business.
             </h1>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Tools & products */}
+      <section className="section-padding bg-stone-dark">
+        <div className="max-w-content mx-auto">
+          <FadeIn className="text-center mb-10">
+            <SectionLabel>TOOLS &amp; REPORTS</SectionLabel>
+            <h2 className="font-display text-section-heading text-navy mb-4">
+              Find out where you stand, then keep it that way.
+            </h2>
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <FadeIn delay={0.1}>
+              <Link href="/signal-score-report" className="block bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-8 h-full">
+                <h3 className="font-display text-2xl text-navy mb-2">Signal Score Report</h3>
+                <p className="font-body text-warmgray text-sm mb-4 leading-relaxed">
+                  The complete picture of how AI describes you. One time, done by hand, in two business days.
+                </p>
+                <span className="font-mono text-navy font-bold">{REPORT_PRICE}</span>
+                <span className="font-body text-warmgray text-sm"> one time</span>
+              </Link>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <Link href="/signal-watch" className="block bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-8 h-full">
+                <h3 className="font-display text-2xl text-navy mb-2">Signal Watch</h3>
+                <p className="font-body text-warmgray text-sm mb-4 leading-relaxed">
+                  The quick snapshot you re-run yourself, inside ChatGPT or Claude. Track your score over time.
+                </p>
+                <span className="font-mono text-navy font-bold">{WATCH_PRICE}</span>
+                <span className="font-body text-warmgray text-sm"> /month</span>
+              </Link>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <Link href="/client-knowledge" className="block bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-8 h-full">
+                <h3 className="font-display text-2xl text-navy mb-2">Client Knowledge</h3>
+                <p className="font-body text-warmgray text-sm mb-4 leading-relaxed">
+                  Feed AI your real information so it answers in your words, not its best guess.
+                </p>
+                <span className="font-mono text-navy font-bold">{CLIENT_KNOWLEDGE_PRICE}</span>
+                <span className="font-body text-warmgray text-sm"> /month</span>
+              </Link>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -382,66 +405,6 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* 4. AI Visibility Check GPT */}
-      <section className="section-padding bg-stone-dark">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <a
-              href="https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block bg-white rounded-2xl shadow-card hover:shadow-card-hover overflow-hidden group transition-shadow duration-300"
-            >
-              <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 p-8 sm:p-12">
-                {/* Icon */}
-                <div className="w-16 h-16 bg-navy/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-navy/15 transition-colors">
-                  <svg
-                    className="w-8 h-8 text-navy"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 011.037-.443 48.282 48.282 0 005.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
-                    />
-                  </svg>
-                </div>
-                {/* Text */}
-                <div className="text-center sm:text-left flex-1">
-                  <div className="flex items-center gap-2 justify-center sm:justify-start mb-2">
-                    <SignalDot size={6} />
-                    <span className="font-body text-xs font-medium uppercase tracking-[0.08em] text-warmgray">
-                      Free on ChatGPT
-                    </span>
-                  </div>
-                  <h2 className="font-display text-2xl sm:text-3xl text-navy mb-2">
-                    AI Visibility Check
-                  </h2>
-                  <p className="font-body text-warmgray mb-1">
-                    Ask ChatGPT about your business and see exactly what it says.
-                  </p>
-                  <p className="font-body text-sm text-warmgray/70">
-                    A custom GPT that shows you how AI platforms describe your business right now. Try it yourself.
-                  </p>
-                </div>
-                {/* Arrow */}
-                <svg
-                  className="w-6 h-6 text-copper flex-shrink-0 hidden sm:block group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </a>
-          </FadeIn>
-        </div>
-      </section>
-
       {/* Newsletter */}
       <section className="section-padding">
         <div className="max-w-3xl mx-auto text-center">
@@ -474,14 +437,14 @@ export default function ResourcesPage() {
               Want to understand this more deeply?
             </h2>
             <p className="text-white/70 text-hero-subtext mb-8">
-              I run live talks on how AI is describing businesses and what to do
-              about it. No jargon, no hype, just a clear breakdown.
+              The community is where this work actually gets done. A year of
+              weekly working sessions, shared lessons, and direct access to Lenise.
             </p>
-            <Button href={BOOKING_URL} variant="primary" className="mb-4">
-              Reserve a Spot at My Next Talk
+            <Button href={SKOOL_URL} variant="primary" className="mb-4">
+              Join the Community
             </Button>
             <p className="text-white/70 text-sm">
-              Pick a date that works for you.
+              Yearly or monthly, with a twelve-month commitment.
             </p>
           </FadeIn>
         </div>

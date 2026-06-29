@@ -1,27 +1,32 @@
-// Beta Founder Offer — Stripe checkout for the AI Presence Program.
-// Used ONLY on the Services page. Beta is intentionally NOT promoted elsewhere.
+// Skool community: yearly $497 or monthly $49 with a 12-month commitment.
+// Primary CTA across the site. Members get the community, weekly working
+// sessions, and the shared work of becoming visible to AI together.
+export const SKOOL_URL = "https://www.skool.com/signal-structure-ai-2338/about";
+export const COMMUNITY_YEARLY = "$497";
+export const COMMUNITY_MONTHLY = "$49";
+export const COMMUNITY_COMMITMENT_MONTHS = 12;
+
+// Signal Score Report: one-time $147. Delivered as a PDF within two
+// business days via email.
+export const REPORT_PRICE = "$147";
+export const REPORT_TURNAROUND = "two business days";
+export const REPORT_CHECKOUT_URL = "https://buy.stripe.com/28E9AS8oAfGJ8pK5PDaAw05";
+
+// Signal Watch: monthly subscription $26/mo, cancel anytime. Installs as
+// a Claude or ChatGPT tool; access details emailed within two days.
+export const WATCH_PRICE = "$26";
+export const WATCH_CHECKOUT_URL = "https://buy.stripe.com/28E9AS34g0LP6hCa5TaAw06";
+
+// Client Knowledge: the buyer's official knowledge base, delivered to
+// ChatGPT and Claude as a connector so the platforms answer from real data
+// instead of guessing. Monthly subscription.
+export const CLIENT_KNOWLEDGE_PRICE = "$76";
+// TODO Lenise: replace with the live Stripe subscription link for Client Knowledge.
+export const CLIENT_KNOWLEDGE_CHECKOUT_URL = "mailto:hello@signalstructure.ai?subject=Client%20Knowledge%20subscription&body=I%27d%20like%20to%20set%20up%20Client%20Knowledge%20for%20my%20business.%20Please%20send%20me%20the%20subscription%20link%20and%20the%20intake%20questions.";
+
+// Legacy beta link. Kept so old emails or saved links keep resolving; not
+// promoted anywhere on the new site.
 export const RESERVE_URL = "https://buy.stripe.com/cNi14m5codyBgWgfqdaAw00";
-
-// Paid talks / webinars — the default call to action across the site.
-// Live Calendly event link for the talk.
-export const WEBINAR_URL = "https://calendly.com/ltkenney13/the-secret-life-of-your-business-according-to-ai";
-export const WEBINAR_PRICE = "$22";
-
-// Next live talk — edit these in one place; the Speaking page flyer reads them.
-export const TALK = {
-  title: "The Secret Life of Your Business, According to AI",
-  subtitle: "What AI is telling people about you, and how to take the wheel. A live, plain-language session.",
-  date: "Tuesday, June 9, 2026",
-  time: "1:00 PM ET",
-  platform: "Live on Google Meet",
-  duration: "About 1 hour",
-  price: WEBINAR_PRICE,
-  url: WEBINAR_URL,
-};
-
-// Legacy alias: generic CTAs that import BOOKING_URL now invite people to a talk,
-// not to buy the beta. Beta uses RESERVE_URL directly on the Services page.
-export const BOOKING_URL = WEBINAR_URL;
 
 // Beta AI Presence Program pricing
 export const BETA_SETUP = "$797";

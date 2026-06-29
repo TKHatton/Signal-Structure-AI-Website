@@ -89,13 +89,12 @@ export default function PrivacyPage() {
       {/* Content */}
       <section className="section-padding">
         <div className="max-w-3xl mx-auto">
-          <FadeIn>
-            <div className="prose prose-lg max-w-none font-body text-warmgray">
+          <div className="prose prose-lg max-w-none font-body text-warmgray">
               <h2 className="font-display text-navy">Overview</h2>
               <p>
                 {COMPANY_NAME} (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates the website
                 at signalstructure.ai and related AI discoverability tools including
-                our Custom GPT, MCP servers, and Signal Engine API. This Privacy Policy
+                our MCP servers and Signal Engine API. This Privacy Policy
                 explains what information we collect, how we use it, and your choices.
               </p>
 
@@ -195,7 +194,6 @@ export default function PrivacyPage() {
                 <a href={`mailto:${EMAIL}`} className="text-copper hover:underline">{EMAIL}</a>
               </p>
             </div>
-          </FadeIn>
         </div>
       </section>
     </>

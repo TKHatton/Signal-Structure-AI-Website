@@ -3,7 +3,7 @@ import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import FAQAccordion from '@/components/FAQAccordion';
-import { BOOKING_URL } from '@/lib/constants';
+import { SKOOL_URL } from '@/lib/constants';
 
 export const metadata = {
   title: 'Frequently Asked Questions | Signal & Structure AI',
@@ -89,7 +89,6 @@ const organizationSchema = {
   url: 'https://signalstructure.ai',
   sameAs: [
     'https://www.linkedin.com/company/signal-structure-ai',
-    'https://chatgpt.com/g/g-69b9417ed7d88191ad96525762c30baa-signal-check-ai-visibility-audit',
     'https://share.google/5Ci2LRrbmjYiQpkCp',
   ],
 };
@@ -171,11 +170,13 @@ export default function FAQPage() {
             </h2>
             <p className="font-body text-lg text-warmgray leading-relaxed mb-8">
               The fastest way to get answers is to see it in action. Run a free
-              Signal Pulse check on your site, or come to a live talk where I walk
-              through how AI is describing businesses across all 13 platforms.
+              Signal Pulse check on your site, or join the community and learn the
+              work alongside other owners doing the same thing. Lenise also speaks
+              at communities and events about how AI describes businesses; if you
+              run a group that should hear it, the <a className="text-copper hover:text-copper-dark underline underline-offset-2" href="/speaking">speaking page</a> has the details.
             </p>
-            <Button href={BOOKING_URL} variant="primary">
-              Reserve a Spot at My Next Talk
+            <Button href={SKOOL_URL} variant="primary">
+              Join the Community
             </Button>
           </FadeIn>
         </div>
@@ -190,8 +191,8 @@ export default function FAQPage() {
               AI is already talking about businesses like yours. Make sure it
               is saying the right things.
             </h2>
-            <Button href={BOOKING_URL} variant="primary">
-              Reserve a Spot at My Next Talk
+            <Button href={SKOOL_URL} variant="primary">
+              Join the Community
             </Button>
           </FadeIn>
         </div>
