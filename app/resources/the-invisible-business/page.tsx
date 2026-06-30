@@ -4,7 +4,7 @@ import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
-import { RESERVE_URL } from '@/lib/constants';
+import { REPORT_CHECKOUT_URL } from '@/lib/constants';
 
 const PDF_URL = '/the-invisible-business.pdf';
 const PAGE_URL = 'https://signalstructure.ai/resources/the-invisible-business';
@@ -739,8 +739,8 @@ export default function InvisibleBusinessPage() {
                 <Button href="/signal-pulse" variant="primary">
                   Try Signal Pulse (free)
                 </Button>
-                <Button href={RESERVE_URL} variant="secondary">
-                  Reserve a Founding Spot
+                <Button href={REPORT_CHECKOUT_URL} variant="secondary">
+                  Get Your Signal Score Report
                 </Button>
               </div>
             </FadeIn>
