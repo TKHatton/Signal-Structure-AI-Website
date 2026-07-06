@@ -1,6 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
@@ -12,6 +14,8 @@ import {
   WATCH_PRICE,
 } from '@/lib/constants';
 import Link from 'next/link';
+
+const EVENT_HIDE_AFTER = new Date('2026-07-11T00:00:00-04:00');
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -202,6 +206,11 @@ const breadcrumbSchema = {
 };
 
 export default function HomePage() {
+  const [showEvent, setShowEvent] = useState(true);
+  useEffect(() => {
+    if (new Date() >= EVENT_HIDE_AFTER) setShowEvent(false);
+  }, []);
+
   return (
     <main>
       <script
@@ -261,6 +270,49 @@ export default function HomePage() {
           </FadeIn>
         </div>
       </section>
+
+      {/* Upcoming event — auto-hides after July 10 */}
+      {showEvent && (
+        <section className="bg-stone-dark py-8 sm:py-10">
+          <div className="max-w-content mx-auto px-6">
+            <FadeIn>
+              <a
+                href="https://bit.ly/why-ai-lies"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-shadow duration-300 overflow-hidden group"
+              >
+                <div className="flex flex-col sm:flex-row items-stretch">
+                  <div className="relative w-full sm:w-64 md:w-80 aspect-[16/9] sm:aspect-auto flex-shrink-0 bg-navy">
+                    <Image
+                      src="/images/why-ai-lies-banner.png"
+                      alt="Why AI Lies — live Zoom class with Lenise Kenney"
+                      fill
+                      sizes="(max-width: 640px) 100vw, 320px"
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                  <div className="flex-1 p-6 sm:p-8 flex flex-col justify-center">
+                    <div className="font-mono text-copper text-xs font-bold tracking-widest mb-2">
+                      LIVE ZOOM CLASS · THURSDAY JULY 9 · 9:00 AM ET
+                    </div>
+                    <p className="font-display text-xl sm:text-2xl text-navy mb-2 leading-snug">
+                      Come find out what AI is saying about you.
+                    </p>
+                    <p className="font-body text-sm text-warmgray mb-4">
+                      One hour with Lenise on why AI gets your business wrong and how to fix it. Free to attend.
+                    </p>
+                    <span className="font-body text-copper group-hover:text-copper-dark transition-colors inline-flex items-center gap-2 text-sm font-semibold">
+                      Reserve your spot on Eventbrite <span>&rarr;</span>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </FadeIn>
+          </div>
+        </section>
+      )}
 
       {/* Free Signal Pulse */}
       <section className="bg-stone py-10 sm:py-12">
