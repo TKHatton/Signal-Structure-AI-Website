@@ -47,7 +47,7 @@ const personSchema = {
     },
     {
       '@type': 'Occupation',
-      name: 'Global Head of AI Innovation & Applied Learning, She Is AI',
+      name: 'Director of AI Innovation & Applied Learning, She Is AI',
     },
   ],
   knowsAbout: [
