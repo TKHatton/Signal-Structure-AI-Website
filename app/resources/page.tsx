@@ -294,8 +294,118 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* 3. White Paper */}
+      {/* 3. Triangle AI Visibility Study */}
       <section className="section-padding">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <SectionLabel>PUBLISHED JULY 2026</SectionLabel>
+                <h2 className="font-display text-section-heading text-navy mb-4">
+                  The 2026 Triangle AI Visibility Study
+                </h2>
+                <p className="font-body text-lg text-warmgray mb-4">
+                  A benchmark study of how ChatGPT, Claude, Gemini, and Perplexity
+                  identify and describe 52 small businesses across Durham, Raleigh,
+                  Cary, Chapel Hill, Morrisville, and Apex. Not one came through
+                  clearly.
+                </p>
+                <p className="font-body text-warmgray mb-6">
+                  Inside: 208 platform responses tested against verified facts, the
+                  two failure modes AI platforms use when they don&rsquo;t know a
+                  business, industry-level results across five categories, and a full
+                  methodology appendix built for press citation.
+                </p>
+                <div className="flex items-center gap-2 text-sm text-warmgray mb-2">
+                  <svg
+                    className="w-4 h-4 text-copper"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span>52 businesses across six Triangle communities</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-warmgray mb-2">
+                  <svg
+                    className="w-4 h-4 text-copper"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span>Tested against four AI platforms in July 2026</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-warmgray mb-6">
+                  <svg
+                    className="w-4 h-4 text-copper"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span>Aggregated dataset available to journalists on request</span>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <Button href="/resources/triangle-ai-visibility-study" variant="primary">
+                    Read the Study
+                  </Button>
+                  <a
+                    href="/the-2026-triangle-ai-visibility-study.pdf"
+                    download
+                    className="inline-flex items-center gap-2 bg-white hover:bg-stone text-navy font-body font-semibold px-6 py-3 rounded-button transition-all"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16" />
+                    </svg>
+                    Download PDF
+                  </a>
+                </div>
+              </div>
+
+              <Link
+                href="/resources/triangle-ai-visibility-study"
+                className="bg-navy p-12 rounded-lg text-center block group hover:bg-navy-light transition-colors"
+              >
+                <div className="inline-block">
+                  <p className="font-body text-copper text-sm tracking-widest uppercase mb-3">
+                    Benchmark Study
+                  </p>
+                  <p className="font-body text-white/55 uppercase tracking-[0.4em] text-sm mb-1">The 2026</p>
+                  <h3 className="font-display text-4xl text-white mb-3 leading-tight">
+                    Triangle AI<br />Visibility Study
+                  </h3>
+                  <p className="font-body text-white/70 text-sm mb-6">
+                    52 Triangle small businesses. Not one came through clearly.
+                  </p>
+                  <div className="w-16 h-0.5 bg-copper mx-auto mb-6" />
+                  <p className="font-body text-white/50 text-xs">
+                    By Lenise Kenney
+                  </p>
+                  <p className="font-body text-white/50 text-xs">
+                    Signal &amp; Structure AI &middot; July 2026
+                  </p>
+                </div>
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* 4. White Paper */}
+      <section className="section-padding bg-stone-dark">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -400,116 +510,6 @@ export default function ResourcesPage() {
                   </a>
                 </div>
               </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* 4. Triangle AI Visibility Study */}
-      <section className="section-padding bg-stone-dark">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <SectionLabel>PUBLISHED JULY 2026</SectionLabel>
-                <h2 className="font-display text-section-heading text-navy mb-4">
-                  The 2026 Triangle AI Visibility Study
-                </h2>
-                <p className="font-body text-lg text-warmgray mb-4">
-                  A benchmark study of how ChatGPT, Claude, Gemini, and Perplexity
-                  identify and describe 52 small businesses across Durham, Raleigh,
-                  Cary, Chapel Hill, Morrisville, and Apex. Not one came through
-                  clearly.
-                </p>
-                <p className="font-body text-warmgray mb-6">
-                  Inside: 208 platform responses tested against verified facts, the
-                  two failure modes AI platforms use when they don&rsquo;t know a
-                  business, industry-level results across five categories, and a full
-                  methodology appendix built for press citation.
-                </p>
-                <div className="flex items-center gap-2 text-sm text-warmgray mb-2">
-                  <svg
-                    className="w-4 h-4 text-copper"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>52 businesses across six Triangle communities</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-warmgray mb-2">
-                  <svg
-                    className="w-4 h-4 text-copper"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>Tested against four AI platforms in July 2026</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-warmgray mb-6">
-                  <svg
-                    className="w-4 h-4 text-copper"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>Aggregated dataset available to journalists on request</span>
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  <Button href="/resources/triangle-ai-visibility-study" variant="primary">
-                    Read the Study
-                  </Button>
-                  <a
-                    href="/the-2026-triangle-ai-visibility-study.pdf"
-                    download
-                    className="inline-flex items-center gap-2 bg-white hover:bg-stone text-navy font-body font-semibold px-6 py-3 rounded-button transition-all"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16" />
-                    </svg>
-                    Download PDF
-                  </a>
-                </div>
-              </div>
-
-              <Link
-                href="/resources/triangle-ai-visibility-study"
-                className="bg-navy p-12 rounded-lg text-center block group hover:bg-navy-light transition-colors"
-              >
-                <div className="inline-block">
-                  <p className="font-body text-copper text-sm tracking-widest uppercase mb-3">
-                    Benchmark Study
-                  </p>
-                  <p className="font-body text-white/55 uppercase tracking-[0.4em] text-sm mb-1">The 2026</p>
-                  <h3 className="font-display text-4xl text-white mb-3 leading-tight">
-                    Triangle AI<br />Visibility Study
-                  </h3>
-                  <p className="font-body text-white/70 text-sm mb-6">
-                    52 Triangle small businesses. Not one came through clearly.
-                  </p>
-                  <div className="w-16 h-0.5 bg-copper mx-auto mb-6" />
-                  <p className="font-body text-white/50 text-xs">
-                    By Lenise Kenney
-                  </p>
-                  <p className="font-body text-white/50 text-xs">
-                    Signal &amp; Structure AI &middot; July 2026
-                  </p>
-                </div>
-              </Link>
             </div>
           </FadeIn>
         </div>
