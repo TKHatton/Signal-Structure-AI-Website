@@ -652,8 +652,8 @@ export default function TriangleStudyPage() {
 
               <h3 className="font-display text-xl text-navy mb-2 mt-6">Who ran it</h3>
               <p className="font-body text-ink leading-relaxed mb-4">
-                This study was conducted by Signal &amp; Structure AI, a Durham company that works on AI
-                visibility for businesses. We are naming that up front because it matters when reading a
+                This study was conducted by Signal &amp; Structure AI, a Triangle-area company (based in
+                Pittsboro, NC) that works on AI visibility for businesses. We are naming that up front because it matters when reading a
                 vendor-produced benchmark. The aggregated dataset behind every figure in this study is
                 available to journalists and researchers on request.
               </p>
@@ -802,7 +802,7 @@ export default function TriangleStudyPage() {
                 Signal &amp; Structure AI.
               </h2>
               <p className="font-body text-ink leading-relaxed mb-4">
-                Signal &amp; Structure AI is a Durham, NC company that measures how AI platforms find and
+                Signal &amp; Structure AI is based in Pittsboro, NC and measures how AI platforms find and
                 describe businesses. Founded by Lenise Kenney and Julian Bass.
               </p>
               <p className="font-body text-xs text-warmgray mt-10">
