@@ -6,10 +6,13 @@ export const COMMUNITY_YEARLY = "$497";
 export const COMMUNITY_MONTHLY = "$49";
 export const COMMUNITY_COMMITMENT_MONTHS = 12;
 
-// Signal Score Report: one-time $147. Delivered as a PDF within two
-// business days via email.
+// Signal Score Report: one-time $147. Fulfillment is automated (Stripe
+// webhook -> signal-pulse-api background task -> signal-engine full audit
+// -> emailed via Resend), confirmed live 2026-08-25. Real turnaround is
+// minutes, not days -- keep this in sync with routes/score.py in the
+// signal-pulse-api repo if that changes.
 export const REPORT_PRICE = "$147";
-export const REPORT_TURNAROUND = "two business days";
+export const REPORT_TURNAROUND = "minutes";
 export const REPORT_CHECKOUT_URL = "https://buy.stripe.com/28E9AS8oAfGJ8pK5PDaAw05";
 
 // Signal Watch: monthly subscription $26/mo, cancel anytime. Installs as

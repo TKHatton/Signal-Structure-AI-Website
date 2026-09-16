@@ -133,7 +133,7 @@ const localBusinessSchema = {
         itemOffered: {
           '@type': 'Service',
           name: 'Signal Score Report',
-          description: 'A detailed report on how AI platforms describe a business, scored against the Signal Score method. Delivered within two business days.',
+          description: 'A detailed report on how AI platforms describe a business, scored against the Signal Score method. Delivered within minutes.',
           provider: { '@id': 'https://signalstructure.ai/#organization' },
         },
         price: '147',
@@ -343,7 +343,7 @@ export default function HomePage() {
                     Check your signal right now, for free.
                   </p>
                   <p className="font-body text-sm text-warmgray">
-                    Enter your URL and see what AI knows about your business. Takes ten seconds.
+                    A quick read on 2 of the 6 things that decide whether AI gets you right. Takes ten seconds.
                   </p>
                 </div>
                 <svg

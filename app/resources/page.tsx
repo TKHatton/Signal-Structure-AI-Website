@@ -139,7 +139,7 @@ export default function ResourcesPage() {
               <Link href="/signal-score-report" className="block bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-8 h-full">
                 <h3 className="font-display text-2xl text-navy mb-2">Signal Score Report</h3>
                 <p className="font-body text-warmgray text-sm mb-4 leading-relaxed">
-                  The complete picture of how AI describes you. Done by hand, delivered in two business days.
+                  The complete picture of how AI describes you. Automated, delivered within minutes.
                 </p>
                 <span className="font-mono text-navy font-bold">{REPORT_PRICE}</span>
               </Link>
@@ -554,7 +554,7 @@ export default function ResourcesPage() {
               Get Your Signal Score
             </Button>
             <p className="text-white/70 text-sm">
-              {REPORT_PRICE}. A detailed PDF within two business days.
+              {REPORT_PRICE}. A detailed PDF within minutes.
             </p>
           </FadeIn>
         </div>

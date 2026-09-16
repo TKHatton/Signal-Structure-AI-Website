@@ -108,7 +108,7 @@ export default function TermsPage() {
                 <li><strong>AI Gossip Check:</strong> A free public tool that asks ChatGPT, Claude, and Gemini what they say about your business right now and returns the raw verbatim responses. One free check per email address. Requires your name, email, and business details so we can send the results and follow up.</li>
                 <li><strong>Signal Pulse:</strong> A free AI discoverability check that scores whether AI platforms mention a business and analyzes website schema markup. Unlimited per email so you can recheck after fixing issues. Requires your name, email, and business name so we can send your results and follow up.</li>
                 <li><strong>Signal Advisor:</strong> A free educational resource about AI discoverability concepts, schema markup, and platform optimization. No personal information required.</li>
-                <li><strong>Signal Score Report:</strong> A paid, one-time report on how AI platforms describe your business, scored with our proprietary Signal Score and delivered as a PDF within two business days.</li>
+                <li><strong>Signal Score Report:</strong> A paid, one-time report on how AI platforms describe your business, scored with our proprietary Signal Score. Delivery is automated and typically completes within minutes, with a guaranteed maximum of 24 hours.</li>
                 <li><strong>Signal Watch:</strong> A paid monthly subscription that lets you re-check how AI describes your business any time from inside ChatGPT or Claude. Cancel anytime.</li>
                 <li><strong>Custom AI Tools, MCP Servers, and API Integrations:</strong> Optional add-on work, scoped and priced separately.</li>
                 <li><strong>Talks and Workshops:</strong> Paid live sessions and presentations about AI discoverability.</li>
@@ -162,7 +162,7 @@ export default function TermsPage() {
               </p>
               <ul>
                 <li>Payments are processed securely through Stripe. All prices are listed in USD.</li>
-                <li>The Signal Score Report is a one-time purchase. Your report is delivered by email within two business days of payment.</li>
+                <li>The Signal Score Report is a one-time purchase. Delivery is automated: your report is generated and emailed within minutes of payment, with a guaranteed maximum of 24 hours in the rare event of a delay.</li>
                 <li>Signal Watch is a recurring monthly subscription. You may cancel at any time; access continues through the end of the paid billing period.</li>
                 <li>Talks and workshops are paid per session. If a session is canceled by us, you will be refunded or rebooked.</li>
                 <li>Add-on work (custom AI tools, MCP servers, and API integrations) is quoted and agreed in writing before any work begins.</li>
