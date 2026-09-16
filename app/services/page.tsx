@@ -280,7 +280,7 @@ export default function CommunityPage() {
               <div className="bg-stone-dark rounded-card p-8 h-full flex flex-col">
                 <h3 className="font-display text-2xl text-navy mb-2">Signal Score Report</h3>
                 <p className="font-body text-warmgray mb-6 flex-1">
-                  A one-time, detailed report on how AI describes your business right now. Every platform. Every gap. Delivered within 48 hours.
+                  A one-time, detailed report on how AI describes your business right now. Every platform. Every gap. Delivered within minutes.
                 </p>
                 <div className="mb-4">
                   <span className="font-mono text-3xl font-bold text-navy">{REPORT_PRICE}</span>

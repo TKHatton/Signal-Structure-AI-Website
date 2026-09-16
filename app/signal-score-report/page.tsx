@@ -11,7 +11,7 @@ import {
 
 export const metadata = {
   title: 'Signal Score Report | Signal & Structure AI',
-  description: 'Your full AI discoverability scorecard. We measure how ChatGPT, Claude, Gemini, Perplexity, and Copilot describe your business right now, score your structured data and citation footprint, and hand back a prioritized list of fixes. PDF in two business days. $147.',
+  description: 'Your full AI discoverability scorecard. We measure how ChatGPT, Claude, Gemini, Perplexity, and Copilot describe your business right now, score your structured data and citation footprint, and hand back a prioritized list of fixes. PDF in minutes. $147.',
   alternates: {
     canonical: '/signal-score-report',
   },
@@ -32,13 +32,13 @@ const productSchema = {
   '@id': 'https://signalstructure.ai/signal-score-report#service',
   name: 'Signal Score Report',
   provider: { '@id': 'https://signalstructure.ai/#organization' },
-  description: 'Your full AI discoverability scorecard. We measure how ChatGPT, Claude, Gemini, Perplexity, and Copilot describe your business right now, score your website\'s structured data and citation footprint, and hand back a prioritized list of what to fix first. Delivered as a PDF within two business days via email.',
+  description: 'Your full AI discoverability scorecard. We measure how ChatGPT, Claude, Gemini, Perplexity, and Copilot describe your business right now, score your website\'s structured data and citation footprint, and hand back a prioritized list of what to fix first. Delivered as a PDF within minutes via email.',
   serviceType: 'AI discoverability audit',
   offers: {
     '@type': 'Offer',
     price: '147',
     priceCurrency: 'USD',
-    description: 'One-time payment. PDF delivered within two business days via email.',
+    description: 'One-time payment. PDF delivered within minutes via email.',
   },
 };
 

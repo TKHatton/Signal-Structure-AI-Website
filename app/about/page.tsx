@@ -395,7 +395,7 @@ export default function AboutPage() {
               Get Your Signal Score
             </Button>
             <p className="text-white/70 text-sm">
-              A full, detailed report on how AI describes your business, delivered within two business days.
+              A full, detailed report on how AI describes your business, delivered within minutes.
             </p>
           </FadeIn>
         </div>

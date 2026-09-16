@@ -6,10 +6,13 @@ export const COMMUNITY_YEARLY = "$497";
 export const COMMUNITY_MONTHLY = "$49";
 export const COMMUNITY_COMMITMENT_MONTHS = 12;
 
-// Signal Score Report: one-time $147. Delivered as a PDF within two
-// business days via email.
+// Signal Score Report: one-time $147. Fulfillment is automated (Stripe
+// webhook -> signal-pulse-api background task -> signal-engine full audit
+// -> emailed via Resend), confirmed live 2026-08-25. Real turnaround is
+// minutes, not days -- keep this in sync with routes/score.py in the
+// signal-pulse-api repo if that changes.
 export const REPORT_PRICE = "$147";
-export const REPORT_TURNAROUND = "two business days";
+export const REPORT_TURNAROUND = "minutes";
 export const REPORT_CHECKOUT_URL = "https://buy.stripe.com/28E9AS8oAfGJ8pK5PDaAw05";
 
 // Signal Watch: monthly subscription $26/mo, cancel anytime. Installs as
@@ -24,6 +27,32 @@ export const CLIENT_KNOWLEDGE_PRICE = "$76";
 // TODO Lenise: replace with the live Stripe subscription link for Client Knowledge.
 export const CLIENT_KNOWLEDGE_CHECKOUT_URL = "mailto:hello@signalstructure.ai?subject=Client%20Knowledge%20subscription&body=I%27d%20like%20to%20set%20up%20Client%20Knowledge%20for%20my%20business.%20Please%20send%20me%20the%20subscription%20link%20and%20the%20intake%20questions.";
 
+
+// Signal Fix: one-time technical build. Schema, sitemap, GBP setup.
+export const FIX_PRICE = "$650";
+
+// Signal Authority: one-time entity build, page-tiered. Directories,
+// schema, NAP everywhere. Extends and absorbs what Fix used to cover.
+export const AUTHORITY_PRICE_LOW = "$1,500";
+export const AUTHORITY_PRICE_HIGH = "$3,000+";
+
+// Signal Growth: strategy and outlines only, client writes the content.
+// Recurring, six-month minimum. Offered as a downsell when Publish's
+// price is a blocker.
+export const GROWTH_PRICE = "$1,200";
+export const GROWTH_COMMITMENT_MONTHS = 6;
+
+// Signal Publish: full content service, SSAI writes and delivers the
+// articles. Recurring, six-month minimum.
+export const PUBLISH_PRICE_LOW = "$1,800";
+export const PUBLISH_PRICE_HIGH = "$3,000";
+export const PUBLISH_COMMITMENT_MONTHS = 6;
+
+// MCP Setup: gets the business inside ChatGPT and Claude directly.
+// One-time setup plus ongoing (not termed) monthly maintenance.
+export const MCP_SETUP_PRICE_BETA = "$800";
+export const MCP_SETUP_PRICE_STANDARD = "$1,200";
+export const MCP_MAINTENANCE_PRICE = "$170";
 
 export const EMAIL = "hello@signalstructure.ai";
 export const PHONE = "(984) 314-3102";

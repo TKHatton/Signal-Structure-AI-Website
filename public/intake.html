@@ -467,7 +467,7 @@ const CALENDLY_URL    = "https://calendly.com/ltkenney13/30min";
 // ─────────────────────────────────────────────────────────────────────
 // QUESTIONS DATA
 // ─────────────────────────────────────────────────────────────────────
-const SECTIONS = [
+const ALL_SECTIONS = [
   {
     id: "agreements",
     title: "Before We Begin",
@@ -656,6 +656,40 @@ const SECTIONS = [
     ]
   }
 ];
+
+// ─────────────────────────────────────────────────────────────────────
+// PACKAGE TRIMMING
+// ─────────────────────────────────────────────────────────────────────
+// Smaller engagements do not need every section. Signal Fix is a technical
+// build (schema, sitemap, GBP), so the audience/brand/FAQ/goals sections
+// never feed a deliverable. MCP Setup is the same EXCEPT the FAQ section,
+// which is core input for a connector whose whole job is answering
+// questions about the business.
+//
+// The bigger engagements (Authority, Publish, Growth) get every section,
+// because the knowledge structure they build pulls target audience, key
+// differentiators, and FAQ content directly. Trimming those would ship the
+// entity build full of "[REQUIRES CLIENT INPUT]" placeholders.
+//
+// Anything unrecognized falls through to the full form on purpose. An
+// unknown package should never silently collect LESS than we need.
+const PACKAGE_SKIP = {
+  "fix":         ["audience", "brand", "questions", "goals"],
+  "signal-fix":  ["audience", "brand", "questions", "goals"],
+  "mcp":         ["audience", "brand", "goals"],
+  "mcp-setup":   ["audience", "brand", "goals"],
+};
+
+const ACTIVE_PACKAGE = (
+  new URLSearchParams(window.location.search).get("package") || ""
+).trim().toLowerCase();
+
+const SKIPPED_SECTIONS = PACKAGE_SKIP[ACTIVE_PACKAGE] || [];
+
+// Everything downstream (step building, section numbering, the "Section X
+// of Y" counter, and the submit payload) reads SECTIONS, so filtering once
+// here keeps all of them consistent with no other changes.
+const SECTIONS = ALL_SECTIONS.filter(s => !SKIPPED_SECTIONS.includes(s.id));
 
 // ─────────────────────────────────────────────────────────────────────
 // STATE
@@ -1068,6 +1102,10 @@ async function submitForm() {
   const payload = {
     submitted_at: new Date().toISOString(),
     client_name:  clientName || answers["qsig"] || answers["q1"] || "Unknown",
+    // Which form variant they actually filled out. Empty means the full
+    // form. Recorded so a short-form intake is never mistaken later for a
+    // full one that the client left half-answered.
+    package: ACTIVE_PACKAGE || "full",
     answers: {}
   };
 

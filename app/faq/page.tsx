@@ -21,7 +21,7 @@ const faqItems = [
   {
     question: 'How much does Signal & Structure AI cost?',
     answer:
-      'There are two paid products and one free tool. The Signal Score Report is a one-time $147 and gives you a full, detailed picture of how AI describes your business, delivered as a PDF within two business days. Signal Watch is $26 per month and lets you re-check how AI describes you any time, right inside ChatGPT or Claude. Signal Pulse is a free quick check you can run on this site in about a minute.',
+      'There are two paid products and one free tool. The Signal Score Report is a one-time $147 and gives you a full, detailed picture of how AI describes your business, delivered as a PDF within minutes of purchase. Signal Watch is $26 per month and lets you re-check how AI describes you any time, right inside ChatGPT or Claude. Signal Pulse is a free quick check you can run on this site in about a minute, and only looks at two of the six things the full report checks.',
   },
   {
     question: 'What is AI discoverability?',
