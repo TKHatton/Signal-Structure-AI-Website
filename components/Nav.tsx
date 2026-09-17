@@ -10,7 +10,7 @@ import { COMPANY_NAME } from '@/lib/constants';
 
 const mainLinks = [
   { href: '/signal-score-report', label: 'Signal Score' },
-  { href: '/signal-pulse', label: 'Signal Pulse' },
+  { href: '/prompt-pack', label: 'Prompt Pack' },
   { href: '/resources', label: 'Resources' },
 ];
 
@@ -23,7 +23,7 @@ const aboutLinks = [
 
 const allLinks = [
   { href: '/signal-score-report', label: 'Signal Score' },
-  { href: '/signal-pulse', label: 'Signal Pulse' },
+  { href: '/prompt-pack', label: 'Prompt Pack' },
   { href: '/signal-watch', label: 'Signal Watch' },
   { href: '/signal-services', label: 'Signal Services' },
   { href: '/resources', label: 'Resources' },

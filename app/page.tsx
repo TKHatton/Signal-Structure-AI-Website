@@ -261,10 +261,10 @@ export default function HomePage() {
                 Get Your Signal Score
               </Button>
               <Link
-                href="/signal-pulse"
+                href="/prompt-pack"
                 className="font-body text-white/90 hover:text-copper transition-colors text-base underline underline-offset-4 decoration-copper decoration-2"
               >
-                Or run a free Signal Pulse first
+                Or get the free Prompt Pack first
               </Link>
             </div>
           </FadeIn>
@@ -314,12 +314,12 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* Free Signal Pulse */}
+      {/* Free Prompt Pack */}
       <section className="bg-stone py-10 sm:py-12">
         <div className="max-w-content mx-auto px-6">
           <FadeIn>
             <Link
-              href="/signal-pulse"
+              href="/prompt-pack"
               className="block bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-shadow duration-300 overflow-hidden group"
             >
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 p-6 sm:p-8">
@@ -334,16 +334,16 @@ export default function HomePage() {
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M9.348 14.651a3.75 3.75 0 010-5.303m5.304 0a3.75 3.75 0 010 5.303m-7.425 2.122a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.808-3.808-9.98 0-13.789m13.788 0c3.808 3.808 3.808 9.981 0 13.79M12 12h.008v.007H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                      d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"
                     />
                   </svg>
                 </div>
                 <div className="text-center sm:text-left flex-1">
                   <p className="font-display text-lg text-navy mb-1">
-                    Check your signal right now, for free.
+                    Download the free AI Visibility Prompt Pack.
                   </p>
                   <p className="font-body text-sm text-warmgray">
-                    A quick read on 2 of the 6 things that decide whether AI gets you right. Takes ten seconds.
+                    Ten questions to run through ChatGPT, Claude, Perplexity, Gemini, and Copilot. See exactly what a buyer sees.
                   </p>
                 </div>
                 <svg
@@ -537,10 +537,10 @@ export default function HomePage() {
                 Get Your Signal Score
               </Button>
               <Link
-                href="/signal-pulse"
+                href="/prompt-pack"
                 className="font-body text-white/90 hover:text-copper transition-colors text-base underline underline-offset-4 decoration-copper decoration-2"
               >
-                Or run a free Signal Pulse first
+                Or get the free Prompt Pack first
               </Link>
             </div>
           </FadeIn>

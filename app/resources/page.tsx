@@ -10,7 +10,7 @@ import { REPORT_PRICE, WATCH_PRICE } from '@/lib/constants';
 export const metadata = {
   title: 'Resources | Signal & Structure AI',
   description:
-    'Free Signal Pulse checker, AI visibility quiz, and The Invisible Business white paper. Tools to understand how AI sees your business.',
+    'Free AI Visibility Prompt Pack, AI visibility quiz, and The Invisible Business white paper. Tools to understand how AI sees your business.',
   alternates: {
     canonical: '/resources',
   },
@@ -41,7 +41,7 @@ const resourcesPageSchema = {
   '@id': 'https://signalstructure.ai/resources/#page',
   name: 'AI Discoverability Resources | Signal & Structure AI',
   description:
-    'Free tools and resources to help you understand how AI sees your business. Includes Signal Pulse checker, AI visibility quiz, and educational content.',
+    'Free tools and resources to help you understand how AI sees your business. Includes the AI Visibility Prompt Pack, AI visibility quiz, and educational content.',
   url: 'https://signalstructure.ai/resources',
   isPartOf: { '@id': 'https://signalstructure.ai/#website' },
   publisher: { '@id': 'https://signalstructure.ai/#organization' },
@@ -75,12 +75,11 @@ const resourcesPageSchema = {
         '@type': 'ListItem',
         position: 2,
         item: {
-          '@type': 'SoftwareApplication',
-          name: 'Signal Pulse',
+          '@type': 'DigitalDocument',
+          name: 'The AI Visibility Prompt Pack',
           description:
-            'Free tool to check if AI systems can see your business. Enter your URL and get instant results on your AI visibility.',
-          applicationCategory: 'Business Assessment Tool',
-          url: 'https://signalstructure.ai/signal-pulse',
+            'Ten questions to run through ChatGPT, Claude, Perplexity, Gemini, and Copilot to see exactly what a buyer sees.',
+          url: 'https://signalstructure.ai/prompt-pack',
           offers: {
             '@type': 'Offer',
             price: '0',
@@ -155,10 +154,10 @@ export default function ResourcesPage() {
               </Link>
             </FadeIn>
             <FadeIn delay={0.3}>
-              <Link href="/signal-pulse" className="block bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-8 h-full">
-                <h3 className="font-display text-2xl text-navy mb-2">Signal Pulse</h3>
+              <Link href="/prompt-pack" className="block bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-8 h-full">
+                <h3 className="font-display text-2xl text-navy mb-2">Prompt Pack</h3>
                 <p className="font-body text-warmgray text-sm mb-4 leading-relaxed">
-                  A free quick check of whether AI can find your business and how it describes you.
+                  Ten questions to run through ChatGPT, Claude, Perplexity, Gemini, and Copilot yourself.
                 </p>
                 <span className="font-mono text-navy font-bold">Free</span>
               </Link>
@@ -225,12 +224,12 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* 2. Signal Pulse Checker */}
+      {/* 2. AI Visibility Prompt Pack */}
       <section className="section-padding bg-stone-dark">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <Link
-              href="/signal-pulse"
+              href="/prompt-pack"
               className="block bg-navy rounded-2xl overflow-hidden group hover:shadow-xl transition-shadow duration-300"
             >
               <div className="relative p-8 sm:p-12">
@@ -256,7 +255,7 @@ export default function ResourcesPage() {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="M9.348 14.651a3.75 3.75 0 010-5.303m5.304 0a3.75 3.75 0 010 5.303m-7.425 2.122a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.808-3.808-9.98 0-13.789m13.788 0c3.808 3.808 3.808 9.981 0 13.79M12 12h.008v.007H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                        d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"
                       />
                     </svg>
                   </div>
@@ -265,17 +264,17 @@ export default function ResourcesPage() {
                     <div className="flex items-center gap-2 justify-center sm:justify-start mb-2">
                       <SignalDot size={6} />
                       <span className="font-body text-xs font-medium uppercase tracking-[0.08em] text-white/60">
-                        Free Tool
+                        Free Download
                       </span>
                     </div>
                     <h2 className="font-display text-2xl sm:text-3xl text-white mb-2">
-                      Signal Pulse
+                      The AI Visibility Prompt Pack
                     </h2>
                     <p className="font-body text-white/70 mb-1">
-                      Get a quick read on the heartbeat of your business.
+                      Ten questions to run through every major AI platform yourself.
                     </p>
                     <p className="font-body text-sm text-white/50">
-                      Enter your URL and find out if AI systems can see your business. Free. Takes up to a minute.
+                      See exactly what a buyer sees when they ask AI about your business. PDF, no sign-up required.
                     </p>
                   </div>
                   {/* Arrow */}

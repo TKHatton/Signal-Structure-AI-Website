@@ -40,13 +40,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/signal-pulse" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
-                  Signal Pulse
-                </Link>
-              </li>
-              <li>
-                <Link href="/signal-pulse/quiz" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
-                  Take the Quiz
+                <Link href="/prompt-pack" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  Prompt Pack
                 </Link>
               </li>
             </ul>
