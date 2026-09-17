@@ -52,6 +52,11 @@ export default function Footer() {
             <h3 className="font-body font-semibold text-copper text-sm mb-4">Learn</h3>
             <ul className="space-y-2.5">
               <li>
+                <Link href="/book" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
+                  The Book
+                </Link>
+              </li>
+              <li>
                 <Link href="/resources/the-invisible-business" className="text-white/60 hover:text-copper transition-colors font-body text-sm">
                   White Paper
                 </Link>

@@ -5,7 +5,15 @@ import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import SignalDot from '@/components/SignalDot';
 import NewsletterForm from '@/components/NewsletterForm';
-import { REPORT_PRICE, WATCH_PRICE } from '@/lib/constants';
+import Image from 'next/image';
+import {
+  BOOK_AMAZON_URL,
+  BOOK_PRICE,
+  BOOK_SUBTITLE,
+  BOOK_TITLE,
+  REPORT_PRICE,
+  WATCH_PRICE,
+} from '@/lib/constants';
 
 export const metadata = {
   title: 'Resources | Signal & Structure AI',
@@ -133,7 +141,7 @@ export default function ResourcesPage() {
               Find out where you stand, then keep it that way.
             </h2>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <FadeIn delay={0.1}>
               <Link href="/signal-score-report" className="block bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-8 h-full">
                 <h3 className="font-display text-2xl text-navy mb-2">Signal Score Report</h3>
@@ -160,6 +168,15 @@ export default function ResourcesPage() {
                   Ten questions to run through ChatGPT, Claude, Perplexity, Gemini, and Copilot yourself.
                 </p>
                 <span className="font-mono text-navy font-bold">Free</span>
+              </Link>
+            </FadeIn>
+            <FadeIn delay={0.4}>
+              <Link href="/book" className="block bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-8 h-full">
+                <h3 className="font-display text-2xl text-navy mb-2">The Book</h3>
+                <p className="font-body text-warmgray text-sm mb-4 leading-relaxed">
+                  {BOOK_TITLE}. How reputation has changed form six times before, and what AI changes now.
+                </p>
+                <span className="font-mono text-navy font-bold">{BOOK_PRICE}</span>
               </Link>
             </FadeIn>
           </div>
@@ -293,7 +310,55 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* 3. Triangle AI Visibility Study */}
+      {/* 3. The book */}
+      <section className="section-padding bg-stone">
+        <div className="max-w-5xl mx-auto px-6">
+          <FadeIn>
+            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,240px)_1fr] gap-10 lg:gap-14 items-center">
+              <Link href="/book" className="block group">
+                <Image
+                  src="/images/nwom-cover.jpg"
+                  alt={`${BOOK_TITLE}: ${BOOK_SUBTITLE}, by Lenise Kenney`}
+                  width={1024}
+                  height={1536}
+                  className="w-full max-w-[200px] mx-auto lg:max-w-none rounded-lg shadow-card group-hover:shadow-card-hover transition-shadow duration-300"
+                />
+              </Link>
+
+              <div>
+                <SectionLabel>THE BOOK</SectionLabel>
+                <h2 className="font-display text-section-heading text-navy mb-4 mt-2">
+                  {BOOK_TITLE}
+                </h2>
+                <p className="font-body text-lg text-warmgray mb-4">
+                  {BOOK_SUBTITLE}
+                </p>
+                <p className="font-body text-warmgray mb-6 leading-relaxed">
+                  A business book about reputation. Word of mouth has changed form six
+                  times already, and every time the businesses that moved early came out
+                  fine. This traces the pattern from ancient Rome to AI, so the current
+                  shift stops feeling like something nobody has survived before.
+                </p>
+                <div className="flex flex-wrap items-center gap-4">
+                  <Button href="/book" variant="primary">
+                    Read about the book
+                  </Button>
+                  <a
+                    href={BOOK_AMAZON_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2"
+                  >
+                    Get it on Amazon, {BOOK_PRICE} <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* 4. Triangle AI Visibility Study */}
       <section className="section-padding">
         <div className="max-w-5xl mx-auto">
           <FadeIn>

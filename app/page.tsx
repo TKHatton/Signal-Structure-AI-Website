@@ -9,6 +9,10 @@ import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import SignalDot from '@/components/SignalDot';
 import {
+  BOOK_AMAZON_URL,
+  BOOK_PRICE,
+  BOOK_SUBTITLE,
+  BOOK_TITLE,
   REPORT_PRICE,
   REPORT_TURNAROUND,
   WATCH_PRICE,
@@ -515,6 +519,57 @@ export default function HomePage() {
                 <p className="font-body text-warmgray leading-relaxed">
                   AI puts you forward as the answer, not just a name buried three options down.
                 </p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* The book */}
+      <section className="section-padding">
+        <div className="max-w-content mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,260px)_1fr] gap-10 lg:gap-14 items-center">
+            <FadeIn>
+              <Link href="/book" className="block group">
+                <Image
+                  src="/images/nwom-cover.jpg"
+                  alt={`${BOOK_TITLE}: ${BOOK_SUBTITLE}, by Lenise Kenney`}
+                  width={1024}
+                  height={1536}
+                  className="w-full max-w-[220px] mx-auto lg:max-w-none rounded-lg shadow-card group-hover:shadow-card-hover transition-shadow duration-300"
+                />
+              </Link>
+            </FadeIn>
+
+            <FadeIn delay={0.2} direction="left">
+              <SectionLabel>THE BOOK</SectionLabel>
+              <h2 className="font-display text-section-heading text-navy mb-4 mt-2">
+                None of this is the first time.
+              </h2>
+              <div className="font-body text-lg text-warmgray leading-relaxed space-y-4 mb-8">
+                <p>
+                  Word of mouth has changed form six times. Spoken, written, printed,
+                  promoted, reviewed, searched. Every time, the businesses that moved early
+                  came out fine. AI is the seventh turn, not the end of the road.
+                </p>
+                <p>
+                  I wrote {BOOK_TITLE} to show where this pattern comes from, why the
+                  current shift feels new when it is not, and what to do about it before
+                  the decision gets made without you.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row items-center gap-4">
+                <Button href="/book" variant="secondary">
+                  Read about the book
+                </Button>
+                <a
+                  href={BOOK_AMAZON_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-body text-copper hover:text-copper-dark transition-colors inline-flex items-center gap-2"
+                >
+                  Get it on Amazon, {BOOK_PRICE} <span>&rarr;</span>
+                </a>
               </div>
             </FadeIn>
           </div>

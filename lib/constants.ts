@@ -54,6 +54,16 @@ export const MCP_SETUP_PRICE_BETA = "$800";
 export const MCP_SETUP_PRICE_STANDARD = "$1,200";
 export const MCP_MAINTENANCE_PRICE = "$170";
 
+// The New Word of Mouth: Lenise's business book on reputation, published
+// 2026-08. Paperback sells on Amazon (ISBN 9798234163769); the book's own
+// site carries the ebook and bulk orders.
+export const BOOK_TITLE = "The New Word of Mouth";
+export const BOOK_SUBTITLE =
+  "How Fama Built Reputation for 2,000 Years, and How AI Is Its New Voice";
+export const BOOK_PRICE = "$18.99";
+export const BOOK_AMAZON_URL = "https://a.co/d/0b8CVCYW";
+export const BOOK_SITE_URL = "https://newwordofmouth.fyi/";
+
 export const EMAIL = "hello@signalstructure.ai";
 export const PHONE = "(984) 314-3102";
 export const PHONE_HREF = "tel:+19843143102";

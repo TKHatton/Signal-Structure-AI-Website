@@ -16,6 +16,7 @@ const mainLinks = [
 
 const aboutLinks = [
   { href: '/signal-services', label: 'Signal Services' },
+  { href: '/book', label: 'The Book' },
   { href: '/why-this-matters', label: 'Why This Matters' },
   { href: '/speaking', label: 'Speaking' },
   { href: '/contact', label: 'Contact' },
@@ -26,6 +27,7 @@ const allLinks = [
   { href: '/prompt-pack', label: 'Prompt Pack' },
   { href: '/signal-watch', label: 'Signal Watch' },
   { href: '/signal-services', label: 'Signal Services' },
+  { href: '/book', label: 'The Book' },
   { href: '/resources', label: 'Resources' },
   { href: '/why-this-matters', label: 'Why This Matters' },
   { href: '/speaking', label: 'Speaking' },
