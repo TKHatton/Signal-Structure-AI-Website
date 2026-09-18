@@ -13,6 +13,7 @@ import {
   BOOK_PRICE,
   BOOK_SUBTITLE,
   BOOK_TITLE,
+  REPORT_CHECKOUT_URL,
   REPORT_PRICE,
   REPORT_TURNAROUND,
   WATCH_PRICE,
@@ -261,7 +262,7 @@ export default function HomePage() {
           </FadeIn>
           <FadeIn delay={0.5}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/signal-score-report" variant="primary" className="text-lg px-8 py-4">
+              <Button href={REPORT_CHECKOUT_URL} variant="primary" className="text-lg px-8 py-4">
                 Get Your Signal Score
               </Button>
               <Link
@@ -588,7 +589,7 @@ export default function HomePage() {
               Get the full picture on what AI says about you, or start free and see where you stand. Either way, you stop guessing.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/signal-score-report" variant="primary">
+              <Button href={REPORT_CHECKOUT_URL} variant="primary">
                 Get Your Signal Score
               </Button>
               <Link

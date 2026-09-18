@@ -11,6 +11,7 @@ import {
   BOOK_PRICE,
   BOOK_SUBTITLE,
   BOOK_TITLE,
+  REPORT_CHECKOUT_URL,
   REPORT_PRICE,
   WATCH_PRICE,
 } from '@/lib/constants';
@@ -614,7 +615,7 @@ export default function ResourcesPage() {
               See exactly how AI describes your business right now, then get a
               prioritized list of what to fix, in your Signal Score Report.
             </p>
-            <Button href="/signal-score-report" variant="primary" className="mb-4">
+            <Button href={REPORT_CHECKOUT_URL} variant="primary" className="mb-4">
               Get Your Signal Score
             </Button>
             <p className="text-white/70 text-sm">

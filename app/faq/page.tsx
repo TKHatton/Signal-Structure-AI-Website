@@ -3,6 +3,7 @@ import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import FAQAccordion from '@/components/FAQAccordion';
+import { REPORT_CHECKOUT_URL } from '@/lib/constants';
 
 export const metadata = {
   title: 'Frequently Asked Questions | Signal & Structure AI',
@@ -191,7 +192,7 @@ export default function FAQPage() {
               AI is already talking about businesses like yours. Make sure it
               is saying the right things.
             </h2>
-            <Button href="/signal-score-report" variant="primary">
+            <Button href={REPORT_CHECKOUT_URL} variant="primary">
               Get Your Signal Score
             </Button>
           </FadeIn>

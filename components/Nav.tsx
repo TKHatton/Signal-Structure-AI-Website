@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
-import { COMPANY_NAME } from '@/lib/constants';
+import { COMPANY_NAME, REPORT_CHECKOUT_URL } from '@/lib/constants';
 
 const mainLinks = [
   { href: '/signal-score-report', label: 'Signal Score' },
@@ -172,7 +172,7 @@ export default function Nav() {
               </AnimatePresence>
             </div>
 
-            <Button href="/signal-score-report" variant="primary" className="text-sm whitespace-nowrap">
+            <Button href={REPORT_CHECKOUT_URL} variant="primary" className="text-sm whitespace-nowrap">
               Get Your Signal Score
             </Button>
           </div>
@@ -259,7 +259,7 @@ export default function Nav() {
                   );
                 })}
                 <div className="mt-4">
-                  <Button href="/signal-score-report" variant="primary" className="w-full text-center">
+                  <Button href={REPORT_CHECKOUT_URL} variant="primary" className="w-full text-center">
                     Get Your Signal Score
                   </Button>
                 </div>

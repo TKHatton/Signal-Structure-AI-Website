@@ -3,7 +3,7 @@ import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
-import { COMPANY_NAME, TAGLINE, ADDRESS } from '@/lib/constants';
+import { COMPANY_NAME, TAGLINE, ADDRESS, REPORT_CHECKOUT_URL } from '@/lib/constants';
 
 export const metadata = {
   title: 'About | Signal & Structure AI',
@@ -391,7 +391,7 @@ export default function AboutPage() {
             <h2 className="font-display text-section-heading mb-8 text-white">
               Want to understand how AI is describing your business? Start with your Signal Score.
             </h2>
-            <Button href="/signal-score-report" variant="primary" className="mb-4">
+            <Button href={REPORT_CHECKOUT_URL} variant="primary" className="mb-4">
               Get Your Signal Score
             </Button>
             <p className="text-white/70 text-sm">
