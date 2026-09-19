@@ -492,10 +492,7 @@ export default function HomePage() {
               Questions about AI visibility? Ask Signal Advisor.
             </h2>
             <p className="font-body text-lg text-white/80 leading-relaxed mb-8">
-              Signal Advisor is free inside ChatGPT. Ask it, in plain English, how AI finds businesses, what schema markup does, and what makes a business easy for AI to recommend. It is approved and published in OpenAI&apos;s ChatGPT directory.
-            </p>
-            <p className="font-body text-lg text-white/80 leading-relaxed mb-8">
-              Advisor answers general questions. For answers about your own business, get your <Link href="/signal-score-report" className="text-copper hover:text-copper-light underline underline-offset-2">Signal Score</Link>. Want your own business in ChatGPT? That&apos;s MCP Setup.
+              Signal Advisor is free inside ChatGPT. Ask it, in plain English, how AI finds businesses, what schema markup does, and what makes a business easy for AI to recommend. It is approved and published in OpenAI&apos;s ChatGPT directory. Want your own business in there? That&apos;s MCP Setup.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button href={CHATGPT_ADVISOR_URL} variant="primary">
