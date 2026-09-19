@@ -53,6 +53,9 @@ export const PUBLISH_COMMITMENT_MONTHS = 6;
 export const MCP_SETUP_PRICE_BETA = "$800";
 export const MCP_SETUP_PRICE_STANDARD = "$1,200";
 export const MCP_MAINTENANCE_PRICE = "$170";
+// TODO Lenise: replace with the MCP Setup intake form URL once the form exists.
+// Interim: opens an email so no inquiry is lost.
+export const MCP_SETUP_FORM_URL = "mailto:hello@signalstructure.ai?subject=MCP%20Setup%20inquiry&body=Tell%20me%20about%20your%20business%3A%20what%20you%20do%2C%20your%20website%2C%20and%20what%20customers%20ask%20you%20most.";
 
 // The New Word of Mouth: Lenise's business book on reputation, published
 // 2026-08. Paperback sells on Amazon (ISBN 9798234163769); the book's own
