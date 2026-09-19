@@ -13,7 +13,6 @@ import {
   PUBLISH_PRICE_LOW,
   PUBLISH_PRICE_HIGH,
   PUBLISH_COMMITMENT_MONTHS,
-  MCP_SETUP_PRICE_BETA,
   MCP_SETUP_PRICE_STANDARD,
   MCP_MAINTENANCE_PRICE,
   EMAIL,
@@ -94,7 +93,7 @@ const servicesSchema = {
       {
         '@type': 'Offer',
         name: 'MCP Setup',
-        price: '800',
+        price: '1200',
         priceCurrency: 'USD',
         description: 'One-time setup to get the business inside ChatGPT and Claude directly, plus ongoing maintenance.',
       },
@@ -165,9 +164,9 @@ const services = [
     label: 'MCP SETUP',
     name: 'MCP Setup',
     tagline: 'Live inside ChatGPT and Claude.',
-    price: `${MCP_SETUP_PRICE_BETA} beta / ${MCP_SETUP_PRICE_STANDARD} standard`,
+    price: MCP_SETUP_PRICE_STANDARD,
     term: `one time, plus ${MCP_MAINTENANCE_PRICE}/mo maintenance`,
-    description: 'Gets your business set up as a direct connector inside ChatGPT and Claude, so those platforms can answer from your real information instead of guessing. Beta pricing is available while the program is new.',
+    description: 'Gets your business set up as a direct connector inside ChatGPT and Claude, so those platforms can answer from your real information instead of guessing.',
     items: [
       'MCP connector built and configured for your business',
       'Set up inside ChatGPT and Claude directly',

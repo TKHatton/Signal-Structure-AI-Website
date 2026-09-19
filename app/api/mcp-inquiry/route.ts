@@ -11,6 +11,7 @@ type Body = {
   business_name?: string;
   website?: string;
   customers_ask?: string;
+  tired_of?: string;
   idea?: string;
   promo_code?: string;
   company_fax?: string; // honeypot, real visitors never fill this
@@ -46,10 +47,11 @@ export async function POST(req: NextRequest) {
   const business_name = body.business_name?.trim().slice(0, 200);
   const website = body.website?.trim().slice(0, 300) || '';
   const customers_ask = body.customers_ask?.trim().slice(0, 3000);
+  const tired_of = body.tired_of?.trim().slice(0, 3000);
   const idea = body.idea?.trim().slice(0, 3000) || '';
   const promo_code = body.promo_code?.trim().slice(0, 100) || '';
 
-  if (!name || !email || !business_name || !customers_ask) {
+  if (!name || !email || !business_name || !customers_ask || !tired_of) {
     return bad('Missing required fields.');
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -68,6 +70,7 @@ export async function POST(req: NextRequest) {
     ['Business', business_name],
     ['Website', website || 'not given'],
     ['Customers ask most', customers_ask],
+    ['Tired of explaining', tired_of],
     ['Idea already in mind', idea || 'none'],
     ['Promo code', promo_code || 'none'],
   ];
@@ -104,6 +107,53 @@ ${rows
     const detail = await res.text().catch(() => '');
     console.error('mcp-inquiry send failed', res.status, detail);
     return bad('Could not send right now. Please try again.', 502);
+  }
+
+  // Confirmation to the person who filled out the form. Best effort: the
+  // inquiry above already reached hello@, so a failure here must not turn a
+  // successful submission into an error on the page.
+  const firstName = esc(name.split(/\s+/)[0]);
+  const business = esc(business_name);
+  const confirmText = `Hi ${name.split(/\s+/)[0]},
+
+Thanks for telling me about ${business_name}. Your answers are in my inbox, and I read every one.
+
+Next I look at your business and at what you are tired of explaining, then I write back with ideas for what your tool inside ChatGPT could do.
+
+If you think of anything to add, reply to this email. It comes straight to me.
+
+Lenise Kenney
+Signal & Structure AI
+https://signalstructure.ai`;
+  const confirmHtml = `<div style="font-family:Arial,sans-serif;color:#1B2B4B;max-width:520px;line-height:1.6">
+<p>Hi ${firstName},</p>
+<p>Thanks for telling me about ${business}. Your answers are in my inbox, and I read every one.</p>
+<p>Next I look at your business and at what you are tired of explaining, then I write back with ideas for what your tool inside ChatGPT could do.</p>
+<p>If you think of anything to add, reply to this email. It comes straight to me.</p>
+<p style="margin-top:24px"><strong>Lenise Kenney</strong><br><span style="color:#C17A3A">Signal &amp; Structure AI</span><br><a href="https://signalstructure.ai" style="color:#1B2B4B">signalstructure.ai</a></p>
+</div>`;
+
+  try {
+    const confirm = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${key}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: FROM,
+        to: [email],
+        reply_to: TO_EMAIL,
+        subject: 'Your MCP Setup inquiry is in',
+        text: confirmText,
+        html: confirmHtml,
+      }),
+    });
+    if (!confirm.ok) {
+      console.error('mcp-inquiry confirmation failed', confirm.status, await confirm.text().catch(() => ''));
+    }
+  } catch (err) {
+    console.error('mcp-inquiry confirmation error', err);
   }
 
   return NextResponse.json({ ok: true });

@@ -15,6 +15,7 @@ export default function McpSetupForm() {
     business_name: '',
     website: '',
     customers_ask: '',
+    tired_of: '',
     idea: '',
     promo_code: '',
     company_fax: '',
@@ -57,14 +58,14 @@ export default function McpSetupForm() {
           transition={{ duration: 0.3 }}
           className="bg-white rounded-card shadow-card p-8 md:p-10 text-center"
         >
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-status-green/10">
-            <svg className="h-6 w-6 text-status-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
+          <div className="relative mx-auto mb-6 flex h-14 w-14 items-center justify-center" aria-hidden="true">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-copper/30" />
+            <span className="absolute inline-flex h-9 w-9 rounded-full bg-copper/20" />
+            <span className="relative inline-flex h-4 w-4 rounded-full bg-copper" />
           </div>
-          <h3 className="font-display text-2xl text-navy mb-3">Got it. Thank you.</h3>
+          <h3 className="font-display text-3xl text-navy mb-3">Your business just entered the chat.</h3>
           <p className="font-body text-warmgray leading-relaxed">
-            I&apos;ll read what you sent and come back to you by email with ideas for what your MCP could do.
+            I&apos;ll read every word and come back with ideas for what your tool could do. A confirmation is on its way to your inbox now.
           </p>
         </motion.div>
       ) : (
@@ -98,6 +99,14 @@ export default function McpSetupForm() {
           <div>
             <label htmlFor="mcp-ask" className={labelClass}>What do your customers ask you most?</label>
             <textarea id="mcp-ask" required rows={4} value={values.customers_ask} onChange={set('customers_ask')} disabled={isSubmitting} className={inputClass} />
+          </div>
+
+          <div>
+            <label htmlFor="mcp-tired" className={labelClass}>What are you tired of explaining to every customer?</label>
+            <p className="font-body text-xs text-warmgray -mt-1 mb-2">
+              The questions you answer all day. The things you wish they already knew. What you never want to repeat again.
+            </p>
+            <textarea id="mcp-tired" required rows={4} value={values.tired_of} onChange={set('tired_of')} disabled={isSubmitting} className={inputClass} />
           </div>
 
           <div>

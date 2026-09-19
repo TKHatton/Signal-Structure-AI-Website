@@ -50,7 +50,6 @@ export const PUBLISH_COMMITMENT_MONTHS = 6;
 
 // MCP Setup: gets the business inside ChatGPT and Claude directly.
 // One-time setup plus ongoing (not termed) monthly maintenance.
-export const MCP_SETUP_PRICE_BETA = "$800";
 export const MCP_SETUP_PRICE_STANDARD = "$1,200";
 export const MCP_MAINTENANCE_PRICE = "$170";
 
