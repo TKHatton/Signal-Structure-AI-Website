@@ -10,25 +10,27 @@ import { COMPANY_NAME, REPORT_CHECKOUT_URL } from '@/lib/constants';
 
 const mainLinks = [
   { href: '/signal-score-report', label: 'Signal Score' },
-  { href: '/prompt-pack', label: 'Prompt Pack' },
+  { href: '/signal-services', label: 'Services' },
   { href: '/resources', label: 'Resources' },
 ];
 
 const aboutLinks = [
-  { href: '/signal-services', label: 'Signal Services' },
+  { href: '/about', label: 'About Lenise' },
   { href: '/book', label: 'The Book' },
   { href: '/why-this-matters', label: 'Why This Matters' },
   { href: '/speaking', label: 'Speaking' },
-  { href: '/contact', label: 'Contact' },
 ];
+
+// Shown after the About dropdown on desktop.
+const trailingLinks = [{ href: '/contact', label: 'Contact' }];
 
 const allLinks = [
   { href: '/signal-score-report', label: 'Signal Score' },
-  { href: '/prompt-pack', label: 'Prompt Pack' },
+  { href: '/signal-services', label: 'Services' },
   { href: '/signal-watch', label: 'Signal Watch' },
-  { href: '/signal-services', label: 'Signal Services' },
-  { href: '/book', label: 'The Book' },
   { href: '/resources', label: 'Resources' },
+  { href: '/about', label: 'About Lenise' },
+  { href: '/book', label: 'The Book' },
   { href: '/why-this-matters', label: 'Why This Matters' },
   { href: '/speaking', label: 'Speaking' },
   { href: '/contact', label: 'Contact' },
@@ -171,6 +173,24 @@ export default function Nav() {
                 )}
               </AnimatePresence>
             </div>
+
+            {trailingLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`font-body font-medium text-sm relative transition-colors duration-300 ${
+                    isActive ? 'text-copper' : 'text-navy hover:text-copper'
+                  }`}
+                >
+                  {link.label}
+                  {isActive && (
+                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-copper" />
+                  )}
+                </Link>
+              );
+            })}
 
             <Button href={REPORT_CHECKOUT_URL} variant="primary" className="text-sm whitespace-nowrap">
               Get Your Signal Score
