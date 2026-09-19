@@ -53,6 +53,10 @@ export const PUBLISH_COMMITMENT_MONTHS = 6;
 export const MCP_SETUP_PRICE_STANDARD = "$1,200";
 export const MCP_MAINTENANCE_PRICE = "$170";
 
+// Live listings in OpenAI's ChatGPT directory (both approved 2026-09-18).
+export const CHATGPT_PULSE_URL = "https://chatgpt.com/plugins/plugin_asdk_app_6a4000b637448191adffbd1caf6dd878?search=signal+pul";
+export const CHATGPT_ADVISOR_URL = "https://chatgpt.com/plugins/plugin_asdk_app_6a9c6d0645588191bb66d8133266c236";
+
 // The New Word of Mouth: Lenise's business book on reputation, published
 // 2026-08. Paperback sells on Amazon (ISBN 9798234163769); the book's own
 // site carries the ebook and bulk orders.

@@ -13,6 +13,7 @@ import {
   BOOK_PRICE,
   BOOK_SUBTITLE,
   BOOK_TITLE,
+  CHATGPT_PULSE_URL,
   REPORT_CHECKOUT_URL,
   REPORT_PRICE,
   REPORT_TURNAROUND,
@@ -480,6 +481,30 @@ export default function HomePage() {
         </div>
       </section>
 
+
+      {/* Live in ChatGPT */}
+      <section className="relative bg-navy text-white section-padding">
+        <GridTexture />
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
+          <FadeIn>
+            <SectionLabel variant="light">LIVE IN CHATGPT</SectionLabel>
+            <h2 className="font-display text-section-heading text-white mt-2 mb-4">
+              Find us inside ChatGPT.
+            </h2>
+            <p className="font-body text-lg text-white/80 leading-relaxed mb-8">
+              Signal Pulse and Signal Advisor are approved and published in OpenAI&apos;s ChatGPT directory. Try them without leaving the app you already use. Want your own business in there? That&apos;s MCP Setup.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button href={CHATGPT_PULSE_URL} variant="primary">
+                Try Signal Pulse in ChatGPT
+              </Button>
+              <Button href="/mcp-setup" variant="outline">
+                Get your business in ChatGPT
+              </Button>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
 
       {/* What your Signal Score does for you */}
       <section className="section-padding bg-stone-dark">

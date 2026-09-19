@@ -8,11 +8,11 @@ import McpSetupForm from '@/components/McpSetupForm';
 import {
   MCP_SETUP_PRICE_STANDARD,
   MCP_MAINTENANCE_PRICE,
+  CHATGPT_PULSE_URL,
+  CHATGPT_ADVISOR_URL,
 } from '@/lib/constants';
 
 const PAGE_URL = 'https://signalstructure.ai/mcp-setup';
-const PULSE_LISTING_URL = 'https://chatgpt.com/plugins/plugin_asdk_app_6a4000b637448191adffbd1caf6dd878?search=signal+pul';
-const ADVISOR_LISTING_URL = 'https://chatgpt.com/plugins/plugin_asdk_app_6a9c6d0645588191bb66d8133266c236';
 
 const SHORT_ANSWER = `MCP Setup is a service from Signal & Structure AI that gets your business its own tool inside ChatGPT. Lenise Kenney plans what the tool should do, builds it, tests it, hosts it, and submits it to the ChatGPT directory. It costs ${MCP_SETUP_PRICE_STANDARD} one time, plus ${MCP_MAINTENANCE_PRICE} a month for hosting and maintenance.`;
 
@@ -301,8 +301,8 @@ export default function McpSetupPage() {
               Signal Pulse and Signal Advisor, two tools built by Signal &amp; Structure AI, were approved and published in OpenAI&apos;s ChatGPT directory on September 18, 2026. Search &ldquo;Signal Pulse&rdquo; inside ChatGPT and try it yourself.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href={PULSE_LISTING_URL} variant="outline">Signal Pulse in ChatGPT</Button>
-              <Button href={ADVISOR_LISTING_URL} variant="outline">Signal Advisor in ChatGPT</Button>
+              <Button href={CHATGPT_PULSE_URL} variant="outline">Signal Pulse in ChatGPT</Button>
+              <Button href={CHATGPT_ADVISOR_URL} variant="outline">Signal Advisor in ChatGPT</Button>
             </div>
           </FadeIn>
           <FadeIn>
