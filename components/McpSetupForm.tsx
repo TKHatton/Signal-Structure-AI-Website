@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { EMAIL } from '@/lib/constants';
+import { EMAIL, API_URL } from '@/lib/constants';
 
 const inputClass =
   'w-full px-4 py-3 rounded-lg border border-warmgray/30 bg-white font-body text-navy placeholder:text-warmgray/60 focus:outline-none focus:ring-2 focus:ring-copper focus:border-transparent disabled:opacity-50';
@@ -34,7 +34,7 @@ export default function McpSetupForm() {
     setError('');
 
     try {
-      const res = await fetch('/api/mcp-inquiry', {
+      const res = await fetch(`${API_URL}/api/mcp-inquiry`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(values),
