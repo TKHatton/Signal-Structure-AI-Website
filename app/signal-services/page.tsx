@@ -95,7 +95,7 @@ const servicesSchema = {
         name: 'MCP Setup',
         price: '1200',
         priceCurrency: 'USD',
-        description: 'One-time setup to get the business inside ChatGPT and Claude directly, plus ongoing maintenance.',
+        description: 'One-time setup to get the business inside ChatGPT directly, plus ongoing maintenance.',
       },
     ],
   },
@@ -163,13 +163,17 @@ const services = [
     id: 'mcp-setup',
     label: 'MCP SETUP',
     name: 'MCP Setup',
-    tagline: 'Live inside ChatGPT and Claude.',
+    // TODO Lenise: Claude comes back here (tagline, description, items) as soon as the
+    // Claude directory submission is funded. Copy is ChatGPT only until then.
+    tagline: 'Live inside ChatGPT.',
+    href: '/mcp-setup',
+    cta: 'See how MCP Setup works',
     price: MCP_SETUP_PRICE_STANDARD,
     term: `one time, plus ${MCP_MAINTENANCE_PRICE}/mo maintenance`,
-    description: 'Gets your business set up as a direct connector inside ChatGPT and Claude, so those platforms can answer from your real information instead of guessing.',
+    description: 'Gets your business set up as a direct connector inside ChatGPT, so it can answer from your real information instead of guessing.',
     items: [
       'MCP connector built and configured for your business',
-      'Set up inside ChatGPT and Claude directly',
+      'Set up inside ChatGPT directly',
       `${MCP_MAINTENANCE_PRICE} per month ongoing maintenance, not termed`,
     ],
   },
@@ -236,8 +240,8 @@ export default function SignalServicesPage() {
                       <div className="font-mono text-3xl font-bold text-navy mb-1">{service.price}</div>
                       <p className="font-body text-sm text-warmgray mb-6">{service.term}</p>
                     </div>
-                    <Button href={`mailto:${EMAIL}?subject=${encodeURIComponent(service.name)}%20inquiry`} variant="outline" className="w-full text-center">
-                      Ask about {service.name}
+                    <Button href={service.href ?? `mailto:${EMAIL}?subject=${encodeURIComponent(service.name)}%20inquiry`} variant="outline" className="w-full text-center">
+                      {service.cta ?? `Ask about ${service.name}`}
                     </Button>
                   </div>
                 </div>
