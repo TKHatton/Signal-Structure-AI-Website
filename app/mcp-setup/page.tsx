@@ -145,6 +145,7 @@ const included = [
 const examples = [
   'Answer customer questions from your actual services, hours, policies, and prices',
   'Help a customer pick the right service',
+  'Let customers handle routine tasks themselves, like checking or changing a booking',
   'Check whether you serve their area',
   'Collect the details for a quote',
 ];

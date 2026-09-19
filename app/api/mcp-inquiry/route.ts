@@ -70,7 +70,7 @@ export async function POST(req: NextRequest) {
     ['Business', business_name],
     ['Website', website || 'not given'],
     ['Customers ask most', customers_ask],
-    ['Tired of explaining', tired_of],
+    ['Tired of explaining or doing', tired_of],
     ['Idea already in mind', idea || 'none'],
     ['Promo code', promo_code || 'none'],
   ];
@@ -116,9 +116,9 @@ ${rows
   const business = esc(business_name);
   const confirmText = `Hi ${name.split(/\s+/)[0]},
 
-Thanks for telling me about ${business_name}. Your answers are in my inbox, and I read every one.
+Thanks for telling me about ${business_name}. Your answers are in my inbox.
 
-Next I look at your business and at what you are tired of explaining, then I write back with ideas for what your tool inside ChatGPT could do.
+Next I look at your business and at what you are tired of explaining or doing, then I write back with ideas for what your tool inside ChatGPT could do.
 
 If you think of anything to add, reply to this email. It comes straight to me.
 
@@ -127,8 +127,8 @@ Signal & Structure AI
 https://signalstructure.ai`;
   const confirmHtml = `<div style="font-family:Arial,sans-serif;color:#1B2B4B;max-width:520px;line-height:1.6">
 <p>Hi ${firstName},</p>
-<p>Thanks for telling me about ${business}. Your answers are in my inbox, and I read every one.</p>
-<p>Next I look at your business and at what you are tired of explaining, then I write back with ideas for what your tool inside ChatGPT could do.</p>
+<p>Thanks for telling me about ${business}. Your answers are in my inbox.</p>
+<p>Next I look at your business and at what you are tired of explaining or doing, then I write back with ideas for what your tool inside ChatGPT could do.</p>
 <p>If you think of anything to add, reply to this email. It comes straight to me.</p>
 <p style="margin-top:24px"><strong>Lenise Kenney</strong><br><span style="color:#C17A3A">Signal &amp; Structure AI</span><br><a href="https://signalstructure.ai" style="color:#1B2B4B">signalstructure.ai</a></p>
 </div>`;

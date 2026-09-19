@@ -65,7 +65,7 @@ export default function McpSetupForm() {
           </div>
           <h3 className="font-display text-3xl text-navy mb-3">Your business just entered the chat.</h3>
           <p className="font-body text-warmgray leading-relaxed">
-            I&apos;ll read every word and come back with ideas for what your tool could do. A confirmation is on its way to your inbox now.
+            I&apos;ll look into this and get back to you with ideas for what your tool could do. A confirmation is on its way to your inbox now.
           </p>
         </motion.div>
       ) : (
@@ -102,9 +102,9 @@ export default function McpSetupForm() {
           </div>
 
           <div>
-            <label htmlFor="mcp-tired" className={labelClass}>What are you tired of explaining to every customer?</label>
+            <label htmlFor="mcp-tired" className={labelClass}>What are you tired of explaining or doing for every customer?</label>
             <p className="font-body text-xs text-warmgray -mt-1 mb-2">
-              The questions you answer all day. The things you wish they already knew. What you never want to repeat again.
+              The questions you answer all day. The things you wish they already knew. The tasks you handle for each customer that they could do themselves with a little help.
             </p>
             <textarea id="mcp-tired" required rows={4} value={values.tired_of} onChange={set('tired_of')} disabled={isSubmitting} className={inputClass} />
           </div>
@@ -136,7 +136,7 @@ export default function McpSetupForm() {
               {isSubmitting ? 'Sending...' : 'Send it to me'}
             </button>
             <p className="font-body text-xs text-warmgray mt-3">
-              I read every one and reply by email with ideas for what your MCP could do.
+              I&apos;ll reply by email with ideas for what your MCP could do.
             </p>
           </div>
         </motion.form>
