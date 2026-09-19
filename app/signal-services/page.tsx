@@ -2,6 +2,7 @@ import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
+import ServiceFinder from '@/components/ServiceFinder';
 import SignalDot from '@/components/SignalDot';
 import {
   REPORT_PRICE,
@@ -264,21 +265,11 @@ export default function SignalServicesPage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
+      {/* Which one fits: instant-answer finder */}
       <section className="section-padding">
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <FadeIn>
-            <h2 className="font-display text-section-heading mb-6 text-navy">
-              Not sure which one fits.
-            </h2>
-            <p className="text-warmgray mb-8 max-w-2xl mx-auto">
-              Send Lenise your Signal Score results, or just tell her what you are trying to fix. She will point you at the right one.
-            </p>
-            <Button href={`mailto:${EMAIL}?subject=Which%20Signal%20service%20is%20right%20for%20me`} variant="primary">
-              Ask which one fits
-            </Button>
-          </FadeIn>
-        </div>
+        <FadeIn>
+          <ServiceFinder />
+        </FadeIn>
       </section>
     </main>
   );
