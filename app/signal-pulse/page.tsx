@@ -9,7 +9,7 @@ import PulseForm from '@/components/pulse/PulseForm';
 import PulseResultCard, { PulseResultData } from '@/components/pulse/PulseResultCard';
 import PulseEmailCapture from '@/components/pulse/PulseEmailCapture';
 import PulseLoading from '@/components/pulse/PulseLoading';
-import { API_URL, CHATGPT_PULSE_URL } from '@/lib/constants';
+import { API_URL, CHATGPT_ADVISOR_URL } from '@/lib/constants';
 
 export default function SignalPulsePage() {
   const [result, setResult] = useState<PulseResultData | null>(null);
@@ -156,14 +156,14 @@ export default function SignalPulsePage() {
           <FadeIn>
             <SectionLabel variant="light">ALSO IN CHATGPT</SectionLabel>
             <h2 className="font-display text-section-heading text-white mt-2 mb-4">
-              Rather stay in ChatGPT? Signal Pulse lives there too.
+              Questions about your results? Ask Signal Advisor.
             </h2>
             <p className="font-body text-white/80 leading-relaxed mb-8">
-              Signal Pulse is approved and published in OpenAI&apos;s ChatGPT directory. Search &ldquo;Signal Pulse&rdquo; in ChatGPT, or use the button. Want a tool like this for your own business? That&apos;s MCP Setup.
+              Signal Advisor is free inside ChatGPT. Ask it, in plain English, what AI visibility means and how businesses get found. It is approved and published in OpenAI&apos;s ChatGPT directory. Want a tool like this for your own business? That&apos;s MCP Setup.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href={CHATGPT_PULSE_URL} variant="primary">
-                Open Signal Pulse in ChatGPT
+              <Button href={CHATGPT_ADVISOR_URL} variant="primary">
+                Open Signal Advisor in ChatGPT
               </Button>
               <Button href="/mcp-setup" variant="outline">
                 See MCP Setup

@@ -298,11 +298,11 @@ export default function McpSetupPage() {
           <FadeIn>
             <h2 className="font-display text-2xl text-navy mb-4">It&apos;s already working.</h2>
             <p className="font-body text-warmgray leading-relaxed mb-4">
-              Signal Pulse and Signal Advisor, two tools built by Signal &amp; Structure AI, were approved and published in OpenAI&apos;s ChatGPT directory on September 18, 2026. Search &ldquo;Signal Pulse&rdquo; inside ChatGPT and try it yourself.
+              Signal Advisor and Signal Pulse, two tools built by Signal &amp; Structure AI, were approved and published in OpenAI&apos;s ChatGPT directory on September 18, 2026. Search &ldquo;Signal Advisor&rdquo; inside ChatGPT and try it yourself.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href={CHATGPT_PULSE_URL} variant="outline">Signal Pulse in ChatGPT</Button>
               <Button href={CHATGPT_ADVISOR_URL} variant="outline">Signal Advisor in ChatGPT</Button>
+              <Button href={CHATGPT_PULSE_URL} variant="outline">Signal Pulse in ChatGPT</Button>
             </div>
           </FadeIn>
           <FadeIn>
