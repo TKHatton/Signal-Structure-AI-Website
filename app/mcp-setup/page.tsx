@@ -4,10 +4,10 @@ import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import SignalDot from '@/components/SignalDot';
 import FAQAccordion from '@/components/FAQAccordion';
+import McpSetupForm from '@/components/McpSetupForm';
 import {
   MCP_SETUP_PRICE_STANDARD,
   MCP_MAINTENANCE_PRICE,
-  MCP_SETUP_FORM_URL,
 } from '@/lib/constants';
 
 const PAGE_URL = 'https://signalstructure.ai/mcp-setup';
@@ -169,7 +169,7 @@ export default function McpSetupPage() {
               MCP Setup is a done-for-you service from Signal &amp; Structure AI. You don&apos;t need to know what you want built. You just want it done.
             </p>
             <div className="mt-8">
-              <Button href={MCP_SETUP_FORM_URL} variant="primary" className="text-lg px-8 py-4">
+              <Button href="#start" variant="primary" className="text-lg px-8 py-4">
                 Tell me about your business
               </Button>
             </div>
@@ -278,7 +278,7 @@ export default function McpSetupPage() {
                   Larger or more complex builds are quoted after we plan.
                 </p>
                 <div className="mt-auto">
-                  <Button href={MCP_SETUP_FORM_URL} variant="primary" className="w-full text-center">
+                  <Button href="#start" variant="primary" className="w-full text-center">
                     Tell me about your business
                   </Button>
                   <p className="text-center text-white/50 text-xs mt-3">
@@ -324,17 +324,23 @@ export default function McpSetupPage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="relative bg-navy text-white section-padding">
+      {/* Form */}
+      <section id="start" className="relative bg-navy text-white section-padding scroll-mt-16">
         <GridTexture />
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <FadeIn>
-            <h2 className="font-display text-section-heading mb-6 text-white">
-              You just want it done. Start with the form.
+        <div className="relative z-10 max-w-2xl mx-auto">
+          <FadeIn className="text-center mb-8">
+            <SectionLabel variant="light">START HERE</SectionLabel>
+            <h2 className="font-display text-section-heading text-white mt-2 mb-4">
+              You just want it done. Tell me about your business.
             </h2>
-            <Button href={MCP_SETUP_FORM_URL} variant="primary">
-              Tell me about your business
-            </Button>
+            <p className="font-body text-white/70">
+              A few quick answers is all I need to come back with ideas.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="text-navy">
+              <McpSetupForm />
+            </div>
           </FadeIn>
         </div>
       </section>
