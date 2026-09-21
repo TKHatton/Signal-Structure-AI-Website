@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
+        disallow: ['/api/', '/signal-pulse/chat'],
       },
     ],
     sitemap: 'https://signalstructure.ai/sitemap.xml',
