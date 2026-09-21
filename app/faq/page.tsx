@@ -4,14 +4,15 @@ import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import FAQAccordion from '@/components/FAQAccordion';
 import { REPORT_CHECKOUT_URL } from '@/lib/constants';
+import { withSocial } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'Frequently Asked Questions | Signal & Structure AI',
   description: 'Common questions about AI discoverability, Signal Scores, schema markup, pricing, and how Signal & Structure AI helps businesses get found and recommended by AI platforms.',
   alternates: {
     canonical: '/faq',
   },
-};
+});
 
 const faqItems = [
   {

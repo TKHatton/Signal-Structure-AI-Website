@@ -3,16 +3,41 @@ import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import { EMAIL, PERSONAL_LINKEDIN } from '@/lib/constants';
+import { withSocial } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'Contact | Signal & Structure AI',
   description: 'Get in touch with Signal & Structure AI. Email or send a LinkedIn message to connect.',
   alternates: { canonical: '/contact' },
+});
+
+const contactSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ContactPage',
+      '@id': 'https://signalstructure.ai/contact#page',
+      url: 'https://signalstructure.ai/contact',
+      name: 'Contact Signal & Structure AI',
+      about: { '@id': 'https://signalstructure.ai/#organization' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://signalstructure.ai' },
+        { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://signalstructure.ai/contact' },
+      ],
+    },
+  ],
 };
 
 export default function ContactPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
       {/* Header */}
       <section className="relative bg-navy text-white">
         <GridTexture />

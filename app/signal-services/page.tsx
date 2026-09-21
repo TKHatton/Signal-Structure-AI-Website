@@ -19,14 +19,15 @@ import {
   EMAIL,
 } from '@/lib/constants';
 import Link from 'next/link';
+import { withSocial } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'Signal Services | Signal & Structure AI',
   description: 'Beyond the Signal Score: technical builds, entity builds, ongoing content, and MCP setup to get an AI-accurate, AI-visible business built and kept that way.',
   alternates: {
     canonical: '/signal-services',
   },
-};
+});
 
 const organizationSchema = {
   '@context': 'https://schema.org',

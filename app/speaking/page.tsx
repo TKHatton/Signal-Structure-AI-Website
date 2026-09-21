@@ -4,14 +4,15 @@ import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import SignalDot from '@/components/SignalDot';
 import { EMAIL, PERSONAL_LINKEDIN } from '@/lib/constants';
+import { withSocial } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'Speaking | Signal & Structure AI',
   description: 'Lenise Kenney speaks at communities, conferences, and team events about AI discoverability: how AI describes your business, what to do about it, and how to be recommended instead of skipped.',
   alternates: {
     canonical: '/speaking',
   },
-};
+});
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',

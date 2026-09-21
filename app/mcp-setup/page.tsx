@@ -11,18 +11,19 @@ import {
   CHATGPT_PULSE_URL,
   CHATGPT_ADVISOR_URL,
 } from '@/lib/constants';
+import { withSocial } from '@/lib/seo';
 
 const PAGE_URL = 'https://signalstructure.ai/mcp-setup';
 
 const SHORT_ANSWER = `MCP Setup is a service from Signal & Structure AI that gets your business its own tool inside ChatGPT. Lenise Kenney plans what the tool should do, builds it, tests it, hosts it, and submits it to the ChatGPT directory. It costs ${MCP_SETUP_PRICE_STANDARD} one time, plus ${MCP_MAINTENANCE_PRICE} a month for hosting and maintenance.`;
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'MCP Setup: Put Your Business Inside ChatGPT | Signal & Structure AI',
   description: `MCP Setup gets your business its own tool inside ChatGPT. Lenise Kenney plans, builds, tests, hosts, and submits it. ${MCP_SETUP_PRICE_STANDARD} plus ${MCP_MAINTENANCE_PRICE} a month.`,
   alternates: {
     canonical: '/mcp-setup',
   },
-};
+});
 
 const faqItems = [
   {

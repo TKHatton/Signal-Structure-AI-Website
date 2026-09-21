@@ -30,6 +30,13 @@ export const metadata = {
     type: 'book',
     images: ['/images/nwom-cover.jpg'],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The New Word of Mouth, by Lenise Kenney',
+    description:
+      'Word of mouth never disappeared. It changed form. A business book about reputation in the age of AI.',
+    images: ['/images/nwom-cover.jpg'],
+  },
 };
 
 const breadcrumbSchema = {

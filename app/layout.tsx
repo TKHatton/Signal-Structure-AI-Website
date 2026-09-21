@@ -46,7 +46,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${COMPANY_NAME} | ${TAGLINE}`,
     description: 'We monitor how AI describes your business across 13 platforms, show you what they say, and fix what is wrong.',
+    url: '/',
+    siteName: COMPANY_NAME,
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${COMPANY_NAME} | ${TAGLINE}`,
+    description: 'We monitor how AI describes your business across 13 platforms, show you what they say, and fix what is wrong.',
   },
 };
 

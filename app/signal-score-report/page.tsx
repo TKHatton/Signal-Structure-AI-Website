@@ -8,14 +8,15 @@ import {
   REPORT_TURNAROUND,
   REPORT_CHECKOUT_URL,
 } from '@/lib/constants';
+import { withSocial } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'Signal Score Report | Signal & Structure AI',
   description: 'Your full AI discoverability scorecard. We measure how ChatGPT, Claude, Gemini, Perplexity, and Copilot describe your business right now, score your structured data and citation footprint, and hand back a prioritized list of fixes. PDF in minutes. $147.',
   alternates: {
     canonical: '/signal-score-report',
   },
-};
+});
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',

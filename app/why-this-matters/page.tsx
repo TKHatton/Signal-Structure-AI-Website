@@ -3,14 +3,15 @@ import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import ValueCard from '@/components/ValueCard';
+import { withSocial } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'Why This Matters | Signal & Structure AI',
   description: 'People stopped Googling and started asking AI. If your business is not structured for AI, you are invisible to the new referral system. Here is why and how to fix it.',
   alternates: {
     canonical: '/why-this-matters',
   },
-};
+});
 
 const organizationSchema = {
   '@context': 'https://schema.org',

@@ -4,15 +4,16 @@ import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
 import { COMPANY_NAME, TAGLINE, ADDRESS, REPORT_CHECKOUT_URL } from '@/lib/constants';
+import { withSocial } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'About | Signal & Structure AI',
   description:
     'Signal & Structure AI was founded by Lenise Kenney to help businesses become discoverable by AI platforms. Based in Pittsboro, NC.',
   alternates: {
     canonical: '/about',
   },
-};
+});
 
 const personSchema = {
   '@context': 'https://schema.org',

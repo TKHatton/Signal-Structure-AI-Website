@@ -15,15 +15,16 @@ import {
   REPORT_PRICE,
   WATCH_PRICE,
 } from '@/lib/constants';
+import { withSocial } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'Resources | Signal & Structure AI',
   description:
     'Free AI Visibility Prompt Pack, AI visibility quiz, and The Invisible Business white paper. Tools to understand how AI sees your business.',
   alternates: {
     canonical: '/resources',
   },
-};
+});
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',

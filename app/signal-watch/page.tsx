@@ -9,14 +9,15 @@ import {
   REPORT_PRICE,
 } from '@/lib/constants';
 import Link from 'next/link';
+import { withSocial } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'Signal Watch | Signal & Structure AI',
   description: 'Self-serve AI discoverability monitoring. Re-run your Signal Score any time, watch how AI assistants change what they say about you, and track your score over time. Installs as a Claude or ChatGPT tool. $26 per month, cancel anytime.',
   alternates: {
     canonical: '/signal-watch',
   },
-};
+});
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',

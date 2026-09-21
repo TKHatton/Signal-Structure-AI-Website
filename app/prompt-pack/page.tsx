@@ -21,6 +21,13 @@ export const metadata = {
     description: 'Ten questions. Five AI platforms. Fifty answers about what AI is really saying about your business.',
     url: PAGE_URL,
     type: 'website',
+    images: ['/og-image.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The AI Visibility Prompt Pack',
+    description: 'Ten questions. Five AI platforms. Fifty answers about what AI is really saying about your business.',
+    images: ['/og-image.png'],
   },
 };
 

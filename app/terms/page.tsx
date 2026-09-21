@@ -2,14 +2,15 @@ import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import { EMAIL, COMPANY_NAME, ADDRESS } from '@/lib/constants';
+import { withSocial } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'Terms of Service | Signal & Structure AI',
   description: 'Terms of service for Signal & Structure AI tools, MCP servers, and consulting services.',
   alternates: {
     canonical: '/terms',
   },
-};
+});
 
 const termsSchema = {
   '@context': 'https://schema.org',

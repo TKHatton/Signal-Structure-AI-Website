@@ -2,14 +2,15 @@ import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import { EMAIL, COMPANY_NAME, ADDRESS } from '@/lib/constants';
+import { withSocial } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'Privacy Policy | Signal & Structure AI',
   description: 'How Signal & Structure AI collects, uses, and protects your information when you use our AI discoverability tools and services.',
   alternates: {
     canonical: '/privacy',
   },
-};
+});
 
 const privacySchema = {
   '@context': 'https://schema.org',
