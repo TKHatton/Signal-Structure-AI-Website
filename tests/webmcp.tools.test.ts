@@ -262,6 +262,16 @@ describe('start_signal_score without requestUserInteraction', () => {
     vi.unstubAllGlobals();
     expect(asked.length).toBeLessThan(140);
   });
+
+  it('treats a rejected requestUserInteraction (Chrome declining its own prompt) as cancelled, not an error', async () => {
+    const c = {
+      requestUserInteraction: vi.fn(async () => {
+        throw new Error('User declined');
+      }),
+    } as unknown as ModelContextClient;
+    const out = (await tools.start_signal_score.execute({}, c)) as Out;
+    expect(out).toEqual({ cancelled: true });
+  });
 });
 
 describe('recommend_service reason', () => {

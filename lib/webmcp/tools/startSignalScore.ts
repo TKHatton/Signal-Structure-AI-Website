@@ -27,12 +27,20 @@ export const startSignalScore: ModelContextToolDefinition = {
 
     const ask = () => window.confirm(question);
     // requestUserInteraction is the spec's way to pause for the human. If this
-    // browser build does not provide it, ask directly. Either way the link is
-    // only returned after a yes.
-    const accepted =
-      typeof client?.requestUserInteraction === 'function'
-        ? await client.requestUserInteraction(ask)
-        : ask();
+    // browser build does not provide it, ask directly. Chrome's real prompt is
+    // its own permission UI, not a plain yes/no: declining it can reject the
+    // call instead of resolving to false. Either path, and any other failure
+    // here, is treated as a decline, never as an error that leaks past this
+    // function. The link is only ever returned after a clean yes.
+    let accepted: unknown;
+    try {
+      accepted =
+        typeof client?.requestUserInteraction === 'function'
+          ? await client.requestUserInteraction(ask)
+          : ask();
+    } catch {
+      accepted = false;
+    }
     if (!accepted) return { cancelled: true };
 
     return {
