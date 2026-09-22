@@ -50,7 +50,7 @@ The WebMCP tools let an AI agent working inside the visitor's browser ask the si
 - **Secrets storage:** Netlify environment variables only (`SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, and `NEXT_PUBLIC_API_URL`, which is public by design). The Supabase service key is read only inside the server route `app/api/pulse-lead/route.ts` and never reaches the browser. Nothing secret is committed.
 - **Secret scanning:** the global git pre-commit hook runs a secret scan on every commit.
 - **Personal data stored:** Signal Pulse lead capture writes first name, last name, email, business name, business URL, and the Pulse result to Supabase `pulse_leads`, so Lenise can follow up on a check the visitor asked for. Newsletter sign-ups go to the signal-pulse-api. The WebMCP tools store nothing and send nothing.
-- **Tenant isolation:** ➖ N/A. There are no accounts or per-user data on the site.
+- **Tenant isolation:** ➖ N/A. There are no accounts or per-user data on the site. `pulse_leads` has RLS enabled with no policies (confirmed 2026-09-22), so only the server-side service key can touch it.
 - **Encryption:** TLS via Netlify with HSTS (`max-age=31536000`, verified 2026-09-21). At rest is handled by Supabase.
 - **Retention & deletion:** ⬜ no written retention period for `pulse_leads`. Deletion on request is manual in Supabase.
 
@@ -152,7 +152,7 @@ Every WebMCP result goes straight into the visitor's AI assistant, and every too
 - [x] DMARC moved to `p=quarantine` on 2026-09-21 (DNS is in Netlify; the registrar is Porkbun)
 - [ ] Make sure `dmarc@signalstructure.ai` exists so the daily DMARC reports land somewhere
 - [x] Two-factor login on GitHub, Netlify, Supabase, Stripe, Google, and Porkbun (the domain registrar), 2026-09-22
-- [ ] Confirm `pulse_leads` in Supabase has RLS on with no anon read or write
+- [x] `pulse_leads` in Supabase has RLS enabled with no policies, so the public key cannot read or write it; the site writes with the server-only service key (confirmed 2026-09-22)
 - [ ] Renew `security.txt` before 2027-09-21
 - [ ] Rate limit on `/api/pulse-lead`
 - [ ] Retention period for `pulse_leads`
