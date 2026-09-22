@@ -1,0 +1,218 @@
+{
+ "undefined|undefined|undefined": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "undefined|undefined|me": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "undefined|undefined|you": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "undefined|know|undefined": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "undefined|know|me": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "undefined|know|you": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "undefined|fix|undefined": {
+  "best": "fix",
+  "next": "authority"
+ },
+ "undefined|fix|me": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "undefined|fix|you": {
+  "best": "fix",
+  "next": "authority"
+ },
+ "undefined|content|undefined": {
+  "best": "publish",
+  "next": "growth"
+ },
+ "undefined|content|me": {
+  "best": "growth",
+  "next": "publish"
+ },
+ "undefined|content|you": {
+  "best": "publish",
+  "next": "growth"
+ },
+ "undefined|chat|undefined": {
+  "best": "mcp",
+  "next": null
+ },
+ "undefined|chat|me": {
+  "best": "mcp",
+  "next": null
+ },
+ "undefined|chat|you": {
+  "best": "mcp",
+  "next": null
+ },
+ "undefined|track|undefined": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "undefined|track|me": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "undefined|track|you": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "no|undefined|undefined": {
+  "best": "score",
+  "next": "watch"
+ },
+ "no|undefined|me": {
+  "best": "score",
+  "next": "watch"
+ },
+ "no|undefined|you": {
+  "best": "score",
+  "next": "watch"
+ },
+ "no|know|undefined": {
+  "best": "score",
+  "next": "watch"
+ },
+ "no|know|me": {
+  "best": "score",
+  "next": "watch"
+ },
+ "no|know|you": {
+  "best": "score",
+  "next": "watch"
+ },
+ "no|fix|undefined": {
+  "best": "score",
+  "next": "fix"
+ },
+ "no|fix|me": {
+  "best": "score",
+  "next": "watch"
+ },
+ "no|fix|you": {
+  "best": "score",
+  "next": "fix"
+ },
+ "no|content|undefined": {
+  "best": "score",
+  "next": "publish"
+ },
+ "no|content|me": {
+  "best": "score",
+  "next": "growth"
+ },
+ "no|content|you": {
+  "best": "score",
+  "next": "publish"
+ },
+ "no|chat|undefined": {
+  "best": "mcp",
+  "next": "score"
+ },
+ "no|chat|me": {
+  "best": "mcp",
+  "next": "score"
+ },
+ "no|chat|you": {
+  "best": "mcp",
+  "next": "score"
+ },
+ "no|track|undefined": {
+  "best": "score",
+  "next": "watch"
+ },
+ "no|track|me": {
+  "best": "score",
+  "next": "watch"
+ },
+ "no|track|you": {
+  "best": "score",
+  "next": "watch"
+ },
+ "yes|undefined|undefined": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "yes|undefined|me": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "yes|undefined|you": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "yes|know|undefined": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "yes|know|me": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "yes|know|you": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "yes|fix|undefined": {
+  "best": "fix",
+  "next": "authority"
+ },
+ "yes|fix|me": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "yes|fix|you": {
+  "best": "fix",
+  "next": "authority"
+ },
+ "yes|content|undefined": {
+  "best": "publish",
+  "next": "growth"
+ },
+ "yes|content|me": {
+  "best": "growth",
+  "next": "publish"
+ },
+ "yes|content|you": {
+  "best": "publish",
+  "next": "growth"
+ },
+ "yes|chat|undefined": {
+  "best": "mcp",
+  "next": null
+ },
+ "yes|chat|me": {
+  "best": "mcp",
+  "next": null
+ },
+ "yes|chat|you": {
+  "best": "mcp",
+  "next": null
+ },
+ "yes|track|undefined": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "yes|track|me": {
+  "best": "watch",
+  "next": "fix"
+ },
+ "yes|track|you": {
+  "best": "watch",
+  "next": "fix"
+ }
+}

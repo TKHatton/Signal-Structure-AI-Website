@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { DM_Serif_Display, DM_Sans, JetBrains_Mono } from 'next/font/google';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import WebMcpProvider from '@/components/WebMcpProvider';
 import './globals.css';
 import { COMPANY_NAME, TAGLINE } from '@/lib/constants';
 
@@ -65,6 +66,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSerifDisplay.variable} ${dmSans.variable} ${jetBrainsMono.variable}`}>
       <body className="font-body">
+        <WebMcpProvider />
         <Nav />
         {children}
         <Footer />
