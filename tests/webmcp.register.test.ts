@@ -67,6 +67,27 @@ describe('syncToolSurface', () => {
     expect([...mc.live].sort()).toEqual(['ask_advisor', 'get_business_facts', 'get_services']);
   });
 
+  it('one failing tool does not stop the others from registering', async () => {
+    const live = new Set<string>();
+    vi.stubGlobal('document', {
+      modelContext: {
+        registerTool: async (t: { name: string }) => {
+          if (t.name === 'get_business_facts') throw new Error('duplicate name');
+          live.add(t.name);
+        },
+      },
+    });
+    const res = await syncToolSurface('/services');
+    expect([...live].sort()).toEqual([
+      'ask_advisor',
+      'get_services',
+      'recommend_service',
+      'start_signal_score',
+    ]);
+    expect(res.registered).toBe(true);
+    expect(res.failed).toEqual(['get_business_facts']);
+  });
+
   it('swallows a registerTool failure so the page keeps working', async () => {
     vi.stubGlobal('document', {
       modelContext: {

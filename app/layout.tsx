@@ -30,7 +30,7 @@ const jetBrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://signalstructure.ai'),
   title: `${COMPANY_NAME} | ${TAGLINE}`,
-  description: 'Signal & Structure AI helps businesses be found, be accurate, and be recommended in AI-generated results. We monitor 13 AI platforms including ChatGPT, Claude, and Gemini, show you what they say about your business, and fix what is wrong.',
+  description: 'Signal & Structure AI helps businesses be found, be accurate, and be recommended in AI-generated results. We monitor 5 AI platforms (ChatGPT, Claude, Gemini, Perplexity, and Copilot), show you what they say about your business, and fix what is wrong.',
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: `${COMPANY_NAME} | ${TAGLINE}`,
-    description: 'We monitor how AI describes your business across 13 platforms, show you what they say, and fix what is wrong.',
+    description: 'We monitor how AI describes your business across 5 AI platforms, show you what they say, and fix what is wrong.',
     url: '/',
     siteName: COMPANY_NAME,
     type: 'website',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: `${COMPANY_NAME} | ${TAGLINE}`,
-    description: 'We monitor how AI describes your business across 13 platforms, show you what they say, and fix what is wrong.',
+    description: 'We monitor how AI describes your business across 5 AI platforms, show you what they say, and fix what is wrong.',
   },
 };
 

@@ -244,6 +244,51 @@ describe('start_signal_score', () => {
   });
 });
 
+describe('start_signal_score without requestUserInteraction', () => {
+  it('falls back to a plain confirm and still gates the URL', async () => {
+    vi.stubGlobal('window', { confirm: () => false });
+    const declined = (await tools.start_signal_score.execute({}, {} as ModelContextClient)) as Out;
+    vi.stubGlobal('window', { confirm: () => true });
+    const accepted = (await tools.start_signal_score.execute({}, undefined as unknown as ModelContextClient)) as Out;
+    vi.unstubAllGlobals();
+    expect(declined).toEqual({ cancelled: true });
+    expect(accepted.checkout_url).toBe(C.REPORT_CHECKOUT_URL);
+  });
+
+  it('caps a long business name in the question', async () => {
+    let asked = '';
+    vi.stubGlobal('window', { confirm: (m: string) => ((asked = m), true) });
+    await tools.start_signal_score.execute({ business_name: 'x'.repeat(500) }, {} as ModelContextClient);
+    vi.unstubAllGlobals();
+    expect(asked.length).toBeLessThan(140);
+  });
+});
+
+describe('recommend_service reason', () => {
+  it('explains the pick using the answers given', async () => {
+    const noScore = await run('recommend_service', { known: 'no', goal: 'fix', who: 'you' });
+    expect(noScore.reason).toMatch(/do not have a Signal Score yet/);
+    expect(noScore.reason).toMatch(/Signal Fix/);
+
+    const diy = await run('recommend_service', { known: 'yes', goal: 'content', who: 'me' });
+    expect(diy.reason).toMatch(/yourself/);
+    expect(diy.reason).toMatch(/Signal Growth/);
+
+    const chat = await run('recommend_service', { known: 'yes', goal: 'chat' });
+    expect(chat.reason).toMatch(/ChatGPT/);
+  });
+
+  it('gives a reason for every combination', async () => {
+    for (const known of ['no', 'yes'])
+      for (const goal of ['know', 'fix', 'content', 'chat', 'track'])
+        for (const who of [undefined, 'me', 'you']) {
+          const out = await run('recommend_service', { known, goal, ...(who ? { who } : {}) });
+          expect(out.reason.length).toBeGreaterThan(30);
+          expect(out.reason).toContain(out.best.name);
+        }
+  });
+});
+
 describe('no paid API or network in tool modules', () => {
   const walk = (dir: string): string[] =>
     readdirSync(dir).flatMap((f) => {

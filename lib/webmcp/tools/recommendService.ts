@@ -14,6 +14,31 @@ const oneOf = (name: string, value: unknown, allowed: string[], optional = false
   }
 };
 
+/** A plain-language reason built from the answers, naming the pick. */
+export function reasonFor(a: Answers, bestName: string, nextName: string | null): string {
+  const then = nextName ? ` After that, ${nextName}.` : '';
+  if (a.goal === 'chat') {
+    const first = a.known === 'no' ? ' Get a Signal Score too, so you know what AI says about you today.' : '';
+    return `You want customers using your business inside ChatGPT, so ${bestName} is the fit.${first}`;
+  }
+  if (a.known === 'no') {
+    const how =
+      a.goal === 'fix' || a.goal === 'content'
+        ? a.who === 'me'
+          ? ' Since you want to do the work yourself,'
+          : ' Since you want it done for you,'
+        : '';
+    const next = nextName ? `${how ? `${how} ${nextName} comes next.` : ` After that, ${nextName}.`}` : '';
+    return `You do not have a Signal Score yet, so ${bestName} comes first. Every other step builds on it.${next}`;
+  }
+  if (a.goal === 'fix' || a.goal === 'content') {
+    const what = a.goal === 'fix' ? 'fix what AI gets wrong' : 'keep showing up with fresh content';
+    const who = a.who === 'me' ? 'do it yourself' : 'have it done for you';
+    return `You have a Signal Score and want to ${what}, and you want to ${who}, so ${bestName} is the fit.${then}`;
+  }
+  return `You already have a Signal Score, so ${bestName} lets you see whether your changes move what AI says about you.${then}`;
+}
+
 // Uses the same recommend() as the Service Finder on the site, so the two
 // always give the same answer.
 export const recommendService: ModelContextToolDefinition = {
@@ -49,10 +74,12 @@ export const recommendService: ModelContextToolDefinition = {
     oneOf('who', input.who, WHO, true);
     const answers = input as Answers;
     const { best, next } = recommend(answers);
+    const bestInfo = describeService(best);
+    const nextInfo = next ? describeService(next) : null;
     return {
-      best: describeService(best),
-      next: next ? describeService(next) : null,
-      reason: describeService(best).why,
+      best: bestInfo,
+      next: nextInfo,
+      reason: reasonFor(answers, bestInfo.name, nextInfo?.name ?? null),
       source_url: `${SITE}/signal-services`,
       as_of: AS_OF,
     };

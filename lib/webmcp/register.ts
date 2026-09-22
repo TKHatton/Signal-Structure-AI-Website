@@ -6,8 +6,10 @@ let activeController: AbortController | null = null;
 export type ToolSurface = {
   /** The tools this page exposes, whether or not the browser supports WebMCP. */
   tools: string[];
-  /** True only if a modelContext existed and the tools were registered on it. */
+  /** True if a modelContext existed and at least one tool registered on it. */
   registered: boolean;
+  /** Tools the browser refused. Each one fails alone, so the rest still register. */
+  failed: string[];
 };
 
 function findModelContext(): ModelContext | undefined {
@@ -28,21 +30,25 @@ function findModelContext(): ModelContext | undefined {
 export async function syncToolSurface(pathname: string): Promise<ToolSurface> {
   const names = toolsForPath(pathname);
 
-  try {
-    const modelContext = findModelContext();
-    if (!modelContext) return { tools: names, registered: false };
+  const none = { tools: names, registered: false, failed: [] as string[] };
 
-    activeController?.abort();
-    const controller = new AbortController();
-    activeController = controller;
+  const modelContext = findModelContext();
+  if (!modelContext) return none;
 
-    const definitions = buildToolDefinitions();
-    for (const name of names) {
-      if (controller.signal.aborted) return { tools: names, registered: false };
+  activeController?.abort();
+  const controller = new AbortController();
+  activeController = controller;
+
+  const definitions = buildToolDefinitions();
+  const failed: string[] = [];
+  for (const name of names) {
+    if (controller.signal.aborted) return none;
+    try {
       await modelContext.registerTool(definitions[name], { signal: controller.signal });
+    } catch {
+      failed.push(name);
     }
-    return { tools: names, registered: !controller.signal.aborted };
-  } catch {
-    return { tools: names, registered: false };
   }
+  if (controller.signal.aborted) return none;
+  return { tools: names, registered: failed.length < names.length, failed };
 }
