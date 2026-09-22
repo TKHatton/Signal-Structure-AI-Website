@@ -109,7 +109,7 @@ Every WebMCP result goes straight into the visitor's AI assistant, and every too
 | A prompt injection reaches a visitor's AI through a tool result | Low | Medium | Tools return only text from this repo (rule 1) | ✅ |
 | Another site frames a page and tricks someone into approving checkout | Low | Medium | `frame-ancestors 'self'` and `X-Frame-Options: SAMEORIGIN` | ✅ |
 | Email spoofed from @signalstructure.ai | Medium | Medium | DMARC `p=quarantine` (2026-09-21); Resend and Google Workspace mail both verified passing first | ✅ |
-| Account takeover (GitHub, Netlify, domain registrar) | Low | High | Two-factor login on every account; domain has transfer and delete locks at Porkbun | 🟡 two-factor on, Porkbun still to confirm |
+| Account takeover (GitHub, Netlify, domain registrar) | Low | High | Two-factor login on every account; domain has transfer and delete locks at Porkbun | ✅ |
 | Spam or junk rows through `/api/pulse-lead` | Medium | Low | Field checks only | 🟡 rate limit owed |
 | Exploit of an unpatched Next.js advisory | Low | High | Hosting and config avoid the critical paths | 🟡 upgrade owed |
 | Leaked Supabase service key | Low | High | Server-only env var, secret scan on commit | ✅ |
@@ -151,7 +151,7 @@ Every WebMCP result goes straight into the visitor's AI assistant, and every too
 - [ ] Switch the full CSP from report-only to enforced, after a week of clean consoles
 - [x] DMARC moved to `p=quarantine` on 2026-09-21 (DNS is in Netlify; the registrar is Porkbun)
 - [ ] Make sure `dmarc@signalstructure.ai` exists so the daily DMARC reports land somewhere
-- [ ] Two-factor login: on for GitHub, Netlify, Supabase, Stripe, and Google (2026-09-21); still to turn on at Porkbun, the domain registrar
+- [x] Two-factor login on GitHub, Netlify, Supabase, Stripe, Google, and Porkbun (the domain registrar), 2026-09-22
 - [ ] Confirm `pulse_leads` in Supabase has RLS on with no anon read or write
 - [ ] Renew `security.txt` before 2027-09-21
 - [ ] Rate limit on `/api/pulse-lead`
