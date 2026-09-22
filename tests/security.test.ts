@@ -54,8 +54,10 @@ describe('security headers', () => {
   });
 
   it('the report-only policy allows the Signal Pulse API the site calls', async () => {
+    // Same address the pages use: the env var on Netlify, else the code default.
+    const { API_URL } = await import('@/lib/constants');
     const h = await headersFor();
-    expect(h['content-security-policy-report-only']).toContain('https://signal-pulse-api.up.railway.app');
+    expect(h['content-security-policy-report-only']).toContain(new URL(API_URL).origin);
   });
 });
 
