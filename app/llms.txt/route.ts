@@ -23,7 +23,7 @@ Scores are on a 0-100 scale. Signal Pulse is a quick scan (schema and AI presenc
 
 ## Products
 
-- [Signal Pulse](${BASE}/signal-pulse): Free quick check of how visible a business is to AI systems. Also available in ChatGPT: ${CHATGPT_PULSE_URL}
+- [Signal Pulse](${BASE}/signal-pulse): Free quick check of how visible a business is to AI systems. Also available in ChatGPT: ${CHATGPT_PULSE_URL.split('?')[0]}
 - [Signal Score Report](${BASE}/signal-score-report): Full AI discoverability scorecard as a PDF, ${REPORT_PRICE}. Measures what major AI platforms say about the business, scores structured data and citations, and lists prioritized fixes.
 - [Signal Watch](${BASE}/signal-watch): Ongoing monitoring, ${WATCH_PRICE} per month, cancel anytime. Runs inside Claude or ChatGPT and tracks the score over time.
 - [Signal Advisor](${CHATGPT_ADVISOR_URL}): Free educational Q&A tool in ChatGPT about AI discoverability and schema markup. General answers only, not personalized.

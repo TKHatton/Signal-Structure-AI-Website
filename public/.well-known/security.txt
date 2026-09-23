@@ -1,0 +1,4 @@
+Contact: mailto:hello@signalstructure.ai
+Expires: 2027-09-21T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://signalstructure.ai/.well-known/security.txt
