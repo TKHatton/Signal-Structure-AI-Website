@@ -14,6 +14,82 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'zero-to-75-signal-score',
+    title: 'Our Signal Score Went From 0 to 75. Here Is What Moved It.',
+    date: '2026-05-08',
+    author: 'Signal & Structure AI',
+    pillar: 'Company & Culture',
+    description:
+      'Sixty days ago our Signal Score was zero. Here is exactly what we did, what moved the number, and what is still broken even at Strong Signal.',
+    readTime: '5 min read',
+    content: [
+      'Sixty days ago, we asked ChatGPT, Claude, Gemini, and Perplexity about our own business. None of them knew who we were. Two of them described a different company entirely.',
+      'Today our Signal Score™ is 75 out of 100. Strong Signal.',
+    ],
+    sections: [
+      {
+        heading: 'Where We Started',
+        paragraphs: [
+          'Our first post in this series covered the zero. Every one of our six scoring categories came back at zero or near zero. The website existed. AI could not make sense of it.',
+          'A few platforms went further than just missing us. They filled the gap with a guess, and the guess was an existing company called Signal AI, based in London, that has nothing to do with us. When AI cannot find accurate information, it does not stay quiet. It reaches for the closest match and presents it with full confidence.',
+          'That is the part that should worry any business owner reading this. Invisible is bad. Confidently wrong is worse.',
+        ],
+      },
+      {
+        heading: 'What We Actually Did',
+        paragraphs: [
+          'We did not buy ads. We did not run SEO tricks. We fixed the specific gaps our own audit found, in this order.',
+          'Schema markup on every page. This is the structured data that tells AI what a page is about, not just what it says. Before, AI had to guess at our business name, location, and services from plain text. After, it could read the answer directly.',
+          'Claimed and built out our Google Business Profile. A blank or unclaimed profile gives AI almost nothing to work with. A complete one gives it a verified name, address, phone number, hours, and category.',
+          'Fixed NAP consistency. Our business name, address, and phone number now match exactly across every platform where we appear. Before, small variations, an old suite number here, a shortened business name there, made it harder for AI to confirm we were the same business across sources.',
+          'Rewrote our website content so AI could parse it cleanly. Not for humans reading it differently, but so the underlying structure separated facts like services and location from general marketing language.',
+          'Submitted directly to Bing Webmaster Tools. ChatGPT’s web results lean on Bing. If Bing has not indexed you, ChatGPT has a harder time finding you no matter what else you fix.',
+          'None of this is complicated. All of it took time we had to actually spend.',
+        ],
+      },
+      {
+        heading: 'What Is Still Broken',
+        paragraphs: [
+          'Here is the part we are not going to smooth over. Even at a 75, AI still gets things wrong about us.',
+          'Across the four platforms we test, our overall hallucination rate is 77.8%. Claude describes us accurately. ChatGPT and Gemini still invent services we do not offer and point to a website that is not ours.',
+          'A Strong Signal score does not mean AI has stopped guessing. It means the platforms can now find us, describe most of what we do correctly, and recommend us when asked. The remaining gap still costs us accuracy, and closing it is slower work than the first 75 points. We are not finished. We are going to keep testing and keep publishing what we find.',
+        ],
+      },
+      {
+        heading: 'What This Means for You',
+        paragraphs: [
+          'If your business has never been tested against AI platforms, you do not know which of these two problems you have. Maybe AI cannot find you at all. Maybe AI finds you and gets the details wrong. Either one costs you customers who never see an accurate answer about your business.',
+          'The fixes that moved our score from 0 to 75 are not exotic. Schema markup, a complete Google Business Profile, consistent contact information, content AI can parse, and getting indexed where the platforms actually look. Every business can do this work. Most have not started.',
+        ],
+      },
+    ],
+    cta: {
+      text: 'Run the free Signal Pulse and see where your business stands right now.',
+      href: '/signal-pulse',
+      buttonLabel: 'Run the Free Signal Pulse',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      '@id': 'https://signalstructure.ai/blog/zero-to-75-signal-score#article',
+      headline: 'Our Signal Score Went From 0 to 75. Here Is What Moved It.',
+      description: 'Sixty days ago our Signal Score was zero. Here is exactly what we did, what moved the number, and what is still broken even at Strong Signal.',
+      datePublished: '2026-05-08',
+      dateModified: '2026-05-08',
+      author: { '@id': 'https://signalstructure.ai/about#lenise-kenney' },
+      publisher: { '@id': 'https://signalstructure.ai/#organization' },
+      isPartOf: { '@id': 'https://signalstructure.ai/blog/#blog' },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': 'https://signalstructure.ai/blog/zero-to-75-signal-score',
+      },
+      keywords: ['Signal Score', 'AI visibility', 'case study', 'hallucination rate', 'AI discoverability journey'],
+      articleSection: 'Company & Culture',
+      wordCount: 900,
+      inLanguage: 'en-US',
+    },
+  },
+  {
     slug: 'free-5-minute-ai-visibility-check',
     title: 'The Free 5-Minute AI Visibility Check You Can Do Right Now',
     date: '2026-04-01',
