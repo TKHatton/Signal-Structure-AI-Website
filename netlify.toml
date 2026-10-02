@@ -9,8 +9,8 @@
 # signalstructure.ai/circle so visitors stay on the main domain.
 [[redirects]]
   from = "/circle"
-  to = "/circle/"
-  status = 301
+  to = "https://impact-circle-signal.netlify.app/"
+  status = 200
   force = true
 
 [[redirects]]
