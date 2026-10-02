@@ -4,3 +4,17 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Impact Circle sign-up page, served from its own Netlify site but shown at
+# signalstructure.ai/circle so visitors stay on the main domain.
+[[redirects]]
+  from = "/circle"
+  to = "/circle/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/circle/*"
+  to = "https://impact-circle-signal.netlify.app/:splat"
+  status = 200
+  force = true
