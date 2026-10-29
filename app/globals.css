@@ -14,37 +14,49 @@ html {
 }
 
 body {
-  background-color: #F5F0EB;
-  color: #6B7280;
+  background-color: #EEF0FA;
+  color: #5E6278;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2 {
-  color: #1B2B4B;
+  color: #161A3F;
   font-family: 'DM Serif Display', serif;
   font-weight: 400;
 }
 
 h3, h4, h5, h6 {
-  color: #1B2B4B;
+  color: #161A3F;
   font-family: 'DM Sans', sans-serif;
   font-weight: 600;
 }
 
 ::selection {
-  background-color: rgba(193, 122, 58, 0.2);
-  color: #1B2B4B;
+  background-color: rgba(216, 240, 122, 0.45);
+  color: #161A3F;
 }
+
+/* Primary buttons on light backgrounds: Night with glowing text. */
+.bg-copper.text-white { background-color: #161A3F; color: #D8F07A; }
+.bg-copper.text-white:hover { background-color: #262C66; }
+
+/* On dark sections the accent becomes the firefly glow, which only reads on dark. */
+.bg-navy .text-copper,
+.bg-navy .text-copper-light,
+.bg-navy .text-copper-dark { color: #D8F07A; }
+.bg-navy .border-copper { border-color: #D8F07A; }
+.bg-navy .bg-copper { background-color: #D8F07A; color: #161A3F; }
+.bg-navy .bg-copper:hover { background-color: #E4F59A; }
 
 /* Smooth scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5F0EB;
+  background: #EEF0FA;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C17A3A;
+  background: #9BA2D6;
   border-radius: 4px;
 }
 

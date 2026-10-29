@@ -8,25 +8,30 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // Night Signal palette (chosen 2026-10-29). Token names are kept from the
+      // old navy/copper/stone palette so every page picks up the new colors
+      // without touching each class name.
       colors: {
         navy: {
-          DEFAULT: '#1B2B4B',
-          light: '#243660',
-          dark: '#131F37',
+          DEFAULT: '#161A3F', // Night
+          light: '#262C66',
+          dark: '#0E1130',
         },
         copper: {
-          DEFAULT: '#C17A3A',
-          light: '#D4923F',
-          dark: '#A66830',
+          DEFAULT: '#5C6B12', // Firefly Deep: readable accent on light backgrounds
+          light: '#6E8016',
+          dark: '#48540D',
         },
         stone: {
-          DEFAULT: '#F5F0EB',
-          dark: '#E5E0DB',
+          DEFAULT: '#EEF0FA', // Mist
+          dark: '#DFE2F2',
         },
         warmgray: {
-          DEFAULT: '#6B7280',
-          light: '#9CA3AF',
+          DEFAULT: '#5E6278',
+          light: '#9A9DB3',
         },
+        firefly: '#D8F07A', // the glow, used on dark backgrounds
+        dusk: '#9BA2D6',
         status: {
           green: '#2D8A5E',
           red: '#C4423C',
@@ -52,10 +57,10 @@ const config: Config = {
         '120': '30rem',   // 480px
       },
       boxShadow: {
-        'card': '0 4px 12px rgba(27, 43, 75, 0.08)',
-        'card-hover': '0 8px 24px rgba(27, 43, 75, 0.12)',
-        'button': '0 2px 8px rgba(193, 122, 58, 0.2)',
-        'button-hover': '0 4px 12px rgba(193, 122, 58, 0.3)',
+        'card': '0 4px 12px rgba(22, 26, 63, 0.08)',
+        'card-hover': '0 8px 24px rgba(22, 26, 63, 0.12)',
+        'button': '0 2px 8px rgba(92, 107, 18, 0.2)',
+        'button-hover': '0 4px 12px rgba(92, 107, 18, 0.3)',
       },
       borderRadius: {
         'card': '12px',
