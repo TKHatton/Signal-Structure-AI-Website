@@ -20,7 +20,7 @@ HTML = """<!doctype html>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     width: 1200px; height: 630px; overflow: hidden;
-    background: #1B2B4B;
+    background: #161A3F;
     font-family: 'DM Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     position: relative;
@@ -49,7 +49,7 @@ HTML = """<!doctype html>
     font-weight: 700;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #C17A3A;
+    color: #D8F07A;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -58,7 +58,7 @@ HTML = """<!doctype html>
   .eyebrow::before {
     content: "";
     width: 6px; height: 6px;
-    background: #C17A3A;
+    background: #D8F07A;
     border-radius: 50%;
   }
   .article {
@@ -103,7 +103,7 @@ HTML = """<!doctype html>
   .stat .n {
     font-family: 'DM Serif Display', Georgia, serif;
     font-size: 28px;
-    color: #C17A3A;
+    color: #D8F07A;
     line-height: 1;
   }
   .stat .l {
