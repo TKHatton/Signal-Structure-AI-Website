@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "what-is-aeo",
     title: "What is AEO? Simplified",
-    date: '2026-11-10',
+    date: '2026-11-09',
     author: 'Lenise Kenney',
     pillar: 'Signal & Static',
     description:
@@ -73,8 +73,8 @@ export const blogPosts: BlogPost[] = [
       '@id': "https://signalstructure.ai/blog/what-is-aeo#article",
       headline: "What is AEO? Simplified",
       description: "AEO, or answer engine optimization, means making sure AI tools like ChatGPT can find your business, understand what you do, and trust it enough to say your name. Here it is in plain words, with one thing to try this week.",
-      datePublished: '2026-11-10',
-      dateModified: '2026-11-10',
+      datePublished: '2026-11-09',
+      dateModified: '2026-11-09',
       author: { '@id': 'https://signalstructure.ai/about#lenise-kenney' },
       publisher: { '@id': 'https://signalstructure.ai/#organization' },
       isPartOf: { '@id': 'https://signalstructure.ai/blog/#blog' },
