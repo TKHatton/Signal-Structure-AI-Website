@@ -122,6 +122,7 @@ export default function BlogPage() {
                             month: 'long',
                             day: 'numeric',
                             year: 'numeric',
+                            timeZone: 'UTC',
                           })}
                         </span>
                         <span className="text-warmgray-light">|</span>

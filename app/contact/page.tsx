@@ -2,12 +2,12 @@ import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
-import { EMAIL, PERSONAL_LINKEDIN } from '@/lib/constants';
+import { BOOKING_URL, EMAIL, PERSONAL_LINKEDIN } from '@/lib/constants';
 import { withSocial } from '@/lib/seo';
 
 export const metadata = withSocial({
   title: 'Contact | Signal & Structure AI',
-  description: 'Get in touch with Signal & Structure AI. Email or send a LinkedIn message to connect.',
+  description: 'Get in touch with Signal & Structure AI. Book a free 20-minute call, send an email, or message Lenise on LinkedIn.',
   alternates: { canonical: '/contact' },
 });
 
@@ -61,6 +61,20 @@ export default function ContactPage() {
           </FadeIn>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <FadeIn delay={0.05} className="sm:col-span-2">
+              <div className="bg-white rounded-card shadow-card p-8 flex flex-col h-full">
+                <SectionLabel>BOOK A CALL</SectionLabel>
+                <h2 className="font-display text-2xl text-navy mb-3 mt-2">Talk it through with Lenise</h2>
+                <p className="font-body text-warmgray leading-relaxed mb-6 flex-1">
+                  Curious about AEO, or wondering what AI says about your business? Book a free 20-minute chat. Already have your Signal Score? Book your Signal Score Review on the same page.
+                </p>
+                <div>
+                  <Button href={BOOKING_URL} variant="primary">
+                    See open times
+                  </Button>
+                </div>
+              </div>
+            </FadeIn>
             <FadeIn delay={0.1}>
               <div className="bg-white rounded-card shadow-card p-8 flex flex-col h-full">
                 <SectionLabel>EMAIL</SectionLabel>

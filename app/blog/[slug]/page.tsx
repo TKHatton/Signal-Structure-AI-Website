@@ -104,6 +104,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   month: 'long',
                   day: 'numeric',
                   year: 'numeric',
+                  timeZone: 'UTC',
                 })}
               </span>
               <span className="text-white/30">|</span>

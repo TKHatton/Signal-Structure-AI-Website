@@ -67,6 +67,8 @@ export const BOOK_PRICE = "$18.99";
 export const BOOK_AMAZON_URL = "https://a.co/d/0b8CVCYW";
 export const BOOK_SITE_URL = "https://newwordofmouth.fyi/";
 
+// Lenise's booking page (self-hosted Cal.diy). Lists every call type she offers.
+export const BOOKING_URL = "https://booking.lenisekenney.com/lenise";
 export const EMAIL = "hello@signalstructure.ai";
 export const PHONE = "(984) 314-3102";
 export const PHONE_HREF = "tel:+19843143102";

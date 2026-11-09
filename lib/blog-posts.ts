@@ -14,6 +14,81 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "what-is-aeo",
+    title: "What is AEO? Simplified",
+    date: '2026-11-10',
+    author: 'Lenise Kenney',
+    pillar: 'Signal & Static',
+    description:
+      "AEO, or answer engine optimization, means making sure AI tools like ChatGPT can find your business, understand what you do, and trust it enough to say your name. Here it is in plain words, with one thing to try this week.",
+    readTime: '4 min read',
+    content: [
+      "Here's an example, not a client. Tasha runs a gift shop in downtown Durham, and two weeks before tax season she realizes she needs a bookkeeper. She doesn't open Google. She opens ChatGPT on her laptop between customers and types, \"Who's a good bookkeeper for a small retail shop in Durham?\"",
+      "It gives her three names. She calls the first one and books a meeting that afternoon.",
+      "Every other bookkeeper in Durham just lost a client they'll never know existed. Nobody ranked lower or got a bad review. They weren't in the answer, and that was the whole contest.",
+      "That's what AEO is about. It stands for answer engine optimization, and it means making sure AI tools like ChatGPT, Gemini, Claude and Perplexity can find your business, understand what you do, and trust what they find enough to say your name when someone asks.",
+      "I think of it like a store. SEO gets your product on the shelf. AEO is the clerk, the one people turn to and ask, \"Which one would you get?\" Being on the shelf still counts, but more of your customers are skipping the aisle and going straight to the clerk.",
+      "I'll admit I'm one of them. I used to Google everything. Now when I need something, I ask AI first, and I'm the person who studies how those answers get put together. If my habit changed, your customers' habits did too.",
+    ],
+    sections: [
+      {
+        heading: "The signal: check with your customer's question, not your business name",
+        paragraphs: [
+          "Typing \"What do you know about Smith Bookkeeping?\" tells you whether an AI tool knows you exist. It's a fine place to start, and it's where most people stop. Your customers don't ask that, though. They ask who to hire, and that's the question that decides who gets the call.",
+          "So when you check, type what a new customer would type: the service, the town, maybe the situation they're in. Then read the names that come back as if you were Tasha with ten minutes before the next customer walks in.",
+        ],
+      },
+      {
+        heading: "The static: \"AEO is SEO with a new name, so my SEO person has it covered\"",
+        paragraphs: [
+          "Your SEO person might be great. A search engine ranks pages, and they're good at helping your pages rank. An AI tool works differently. It reads across your website, your reviews, the directories you forgot you joined, and the places people talk about local businesses, and then it decides what it believes about you. When those sources disagree, or barely mention you, it doesn't flag a problem. It just recommends someone it feels surer about.",
+          "Good SEO helps here. It isn't the whole job anymore, and nobody sends you a notice when the job changed.",
+        ],
+      },
+      {
+        heading: "What this looks like",
+        paragraphs: [
+          "This summer I tested 52 small businesses across the Triangle, in Durham, Raleigh, Cary, Chapel Hill, Morrisville and Apex, against four AI tools. None of them reached the top visibility tier, and ten of the 52 couldn't be identified by any of the four.",
+          "These were working businesses with customers and websites. AI just didn't have enough to go on.",
+        ],
+      },
+      {
+        heading: "Try this week",
+        paragraphs: [
+          "Pick the one question a new customer asks before hiring someone like you. Type it into two different AI tools and write down every business they name, in order.",
+          "If you're on the list, notice what the AI said about you and whether you'd hire that version of yourself. If you're not, that's useful too. You found it out on a Tuesday instead of from a client who went somewhere else.",
+          "I'll take a list of names on a notepad over guessing any day. Next week we'll look at how AI decides which names make that list.",
+          "Signal & Static. One signal to add, one static to remove, every week.",
+        ],
+      },
+    ],
+    cta: {
+      text: "If you want the full picture of what AI says about your business, that is what the Signal Score is for.",
+      href: '/signal-score-report',
+      buttonLabel: 'Get Your Signal Score',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      '@id': "https://signalstructure.ai/blog/what-is-aeo#article",
+      headline: "What is AEO? Simplified",
+      description: "AEO, or answer engine optimization, means making sure AI tools like ChatGPT can find your business, understand what you do, and trust it enough to say your name. Here it is in plain words, with one thing to try this week.",
+      datePublished: '2026-11-10',
+      dateModified: '2026-11-10',
+      author: { '@id': 'https://signalstructure.ai/about#lenise-kenney' },
+      publisher: { '@id': 'https://signalstructure.ai/#organization' },
+      isPartOf: { '@id': 'https://signalstructure.ai/blog/#blog' },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': "https://signalstructure.ai/blog/what-is-aeo",
+      },
+      keywords: ['what is AEO', 'answer engine optimization', 'AEO vs SEO', 'how to show up in ChatGPT', 'AI visibility', 'Signal & Static'],
+      articleSection: 'Signal & Static',
+      wordCount: 592,
+      inLanguage: 'en-US',
+    },
+  },
+  {
     slug: 'zero-to-75-signal-score',
     title: 'Our Signal Score Went From 0 to 75. Here Is What Moved It.',
     date: '2026-05-08',

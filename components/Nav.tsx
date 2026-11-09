@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
-import { COMPANY_NAME, REPORT_CHECKOUT_URL } from '@/lib/constants';
+import { BOOKING_URL, COMPANY_NAME, REPORT_CHECKOUT_URL } from '@/lib/constants';
 
 const mainLinks = [
   { href: '/signal-score-report', label: 'Signal Score' },
@@ -172,6 +172,15 @@ export default function Nav() {
               </AnimatePresence>
             </div>
 
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body font-medium text-sm text-navy hover:text-copper transition-colors duration-300 whitespace-nowrap"
+            >
+              Book a Call
+            </a>
+
             <Button href={REPORT_CHECKOUT_URL} variant="primary" className="text-sm whitespace-nowrap">
               Get Your Signal Score
             </Button>
@@ -258,9 +267,12 @@ export default function Nav() {
                     </Link>
                   );
                 })}
-                <div className="mt-4">
+                <div className="mt-4 flex flex-col gap-3">
                   <Button href={REPORT_CHECKOUT_URL} variant="primary" className="w-full text-center">
                     Get Your Signal Score
+                  </Button>
+                  <Button href={BOOKING_URL} variant="outline" className="w-full text-center">
+                    Book a Call
                   </Button>
                 </div>
               </div>
