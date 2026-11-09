@@ -67,8 +67,10 @@ export const BOOK_PRICE = "$18.99";
 export const BOOK_AMAZON_URL = "https://a.co/d/0b8CVCYW";
 export const BOOK_SITE_URL = "https://newwordofmouth.fyi/";
 
-// Lenise's booking page (self-hosted Cal.diy). Lists every call type she offers.
-export const BOOKING_URL = "https://booking.lenisekenney.com/lenise";
+// Lenise's booking links (self-hosted Cal.diy). Always link one call type
+// directly; the bare /lenise page lists every brand's calls together.
+export const BOOKING_URL = "https://booking.lenisekenney.com/lenise/aeo-chat"; // First Signal, free 20 min
+export const REVIEW_BOOKING_URL = "https://booking.lenisekenney.com/lenise/30min"; // Signal Score Review
 export const EMAIL = "hello@signalstructure.ai";
 export const PHONE = "(984) 314-3102";
 export const PHONE_HREF = "tel:+19843143102";

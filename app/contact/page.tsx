@@ -2,12 +2,12 @@ import SectionLabel from '@/components/SectionLabel';
 import FadeIn from '@/components/FadeIn';
 import GridTexture from '@/components/GridTexture';
 import Button from '@/components/Button';
-import { BOOKING_URL, EMAIL, PERSONAL_LINKEDIN } from '@/lib/constants';
+import { BOOKING_URL, EMAIL, REVIEW_BOOKING_URL, PERSONAL_LINKEDIN } from '@/lib/constants';
 import { withSocial } from '@/lib/seo';
 
 export const metadata = withSocial({
   title: 'Contact | Signal & Structure AI',
-  description: 'Get in touch with Signal & Structure AI. Book a free 20-minute call, send an email, or message Lenise on LinkedIn.',
+  description: 'Get in touch with Signal & Structure AI. Book First Signal, a free 20-minute AI check, send an email, or message Lenise on LinkedIn.',
   alternates: { canonical: '/contact' },
 });
 
@@ -66,11 +66,14 @@ export default function ContactPage() {
                 <SectionLabel>BOOK A CALL</SectionLabel>
                 <h2 className="font-display text-2xl text-navy mb-3 mt-2">Talk it through with Lenise</h2>
                 <p className="font-body text-warmgray leading-relaxed mb-6 flex-1">
-                  Curious about AEO, or wondering what AI says about your business? Book a free 20-minute chat. Already have your Signal Score? Book your Signal Score Review on the same page.
+                  Curious about AEO, or wondering whether AI tools recommend you? Book First Signal, a free 20-minute AI check. Bring the one question a new customer asks, and we'll see who AI names. Already have your Signal Score? Book your Signal Score Review.
                 </p>
-                <div>
+                <div className="flex flex-wrap gap-3">
                   <Button href={BOOKING_URL} variant="primary">
-                    See open times
+                    Book First Signal (free)
+                  </Button>
+                  <Button href={REVIEW_BOOKING_URL} variant="outline">
+                    Book a Signal Score Review
                   </Button>
                 </div>
               </div>
