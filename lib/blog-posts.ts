@@ -14,6 +14,81 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-ai-decides-who-to-recommend",
+    title: "How Does AI Decide Who to Recommend? Simplified",
+    date: '2026-11-16',
+    author: 'Lenise Kenney',
+    pillar: 'Signal & Static',
+    description:
+      "AI tools don't keep a ranked list of businesses. Every time a customer asks, they look things up and name the ones they feel surest about. Here's how that works, the free listing most small businesses skip, and one thing to try this week.",
+    readTime: '4 min read',
+    content: [
+      "Last week's example, Tasha, asked ChatGPT for a bookkeeper and got three names. If she'd asked the same question again after lunch, she could easily have gotten a different three.",
+      "I learned this the annoying way. In May, while I was building the Signal Score, I ran the same business through it twice and got two different scores. Nothing about the business had changed between runs. The AI part of the check just didn't answer the same way twice, and I had to rebuild that piece so one lucky or unlucky answer couldn't decide anyone's score.",
+      "AI tools don't keep a ranked list of businesses somewhere, waiting to be read off. Every time a customer asks, the tool goes looking. For a question like \"Who's a good bookkeeper in Durham?\" ChatGPT, Gemini, Copilot and Perplexity can all search the web right then, read what comes back, and name the businesses they feel surest about. Ask again, and the search, the reading and the answer can all come out a little different.",
+      "So nobody owns the top spot. What you can change is how often your name comes up.",
+    ],
+    sections: [
+      {
+        heading: "The signal: be listed on both search engines these tools borrow from",
+        paragraphs: [
+          "When an AI tool looks something up, it doesn't search the whole internet by itself. It borrows a search engine. Google's AI answers pull from Google's own search index, and Google says a complete Business Profile helps you show up in them. Microsoft's Copilot pulls from Bing. ChatGPT says it uses \"third-party search providers,\" and news reports name Bing as one of them.",
+          "Picture a substitute teacher calling roll. She can only call the names on the sheet the office gave her. You can be the sharpest kid in the room, and if the office left you off that sheet, she's never calling your name.",
+          "Most owners set up Google years ago and never thought about Bing. Bing Places for Business is free. If your Google Business Profile is already verified, Bing can import it, and Microsoft says a new listing usually takes 7 to 12 days to go live. That's a good reason to start this week.",
+        ],
+      },
+      {
+        heading: "The static: \"I asked ChatGPT once and came up third, so I'm number three\"",
+        paragraphs: [
+          "One answer is one answer. Treating it like a ranking is like weighing yourself the morning after Thanksgiving and calling that your weight for the year. The scale didn't lie to you. You just caught it on an unusual day.",
+          "Be careful with anyone selling you a guaranteed spot in ChatGPT, too. When the list changes almost every time someone asks, a promised spot on it doesn't mean much.",
+        ],
+      },
+      {
+        heading: "What this looks like",
+        paragraphs: [
+          "In January, Rand Fishkin of SparkToro published a study he ran with Patrick O'Donnell of Gumshoe, a company that tracks AI answers. They had 600 volunteers ask ChatGPT, Claude and Google's AI the same 12 questions, close to 3,000 times in all. One of the questions asked for Volvo dealers in Los Angeles.",
+          "The answers almost never matched. Fishkin put the odds of ChatGPT or Google's AI giving the same list twice in 100 tries at less than 1 in 100. Getting the same list in the same order was closer to 1 in 1,000. His advice was to stop paying attention to where a brand lands on the list and to watch how often it shows up across many tries.",
+          "It's the same lesson I ran into in May, and it changed how I check every business since.",
+        ],
+      },
+      {
+        heading: "Try this week",
+        paragraphs: [
+          "Take the customer question you used last week. Ask it in ChatGPT five times, opening a new chat each time, and make a tally mark every time your business is named.",
+          "Three out of five tells you far more than \"third.\" Zero out of five tells you exactly where to start.",
+          "I'd rather know my odds than hold on to a ranking that changes every time someone asks. Next week is about your one clear sentence, the line that helps AI describe you the same way every time.",
+          "Signal & Static. One signal to add, one static to remove, every week.",
+        ],
+      },
+    ],
+    cta: {
+      text: "If you want the full picture of what AI says about your business, that is what the Signal Score is for.",
+      href: '/signal-score-report',
+      buttonLabel: 'Get Your Signal Score',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      '@id': "https://signalstructure.ai/blog/how-ai-decides-who-to-recommend#article",
+      headline: "How Does AI Decide Who to Recommend? Simplified",
+      description: "AI tools don't keep a ranked list of businesses. Every time a customer asks, they look things up and name the ones they feel surest about. Here's how that works, the free listing most small businesses skip, and one thing to try this week.",
+      datePublished: '2026-11-16',
+      dateModified: '2026-11-16',
+      author: { '@id': 'https://signalstructure.ai/about#lenise-kenney' },
+      publisher: { '@id': 'https://signalstructure.ai/#organization' },
+      isPartOf: { '@id': 'https://signalstructure.ai/blog/#blog' },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': "https://signalstructure.ai/blog/how-ai-decides-who-to-recommend",
+      },
+      keywords: ['how does AI decide who to recommend', 'how ChatGPT recommends businesses', 'why AI gives different answers', 'Bing Places for Business', 'AI visibility', 'Signal & Static'],
+      articleSection: 'Signal & Static',
+      wordCount: 655,
+      inLanguage: 'en-US',
+    },
+  },
+  {
     slug: "what-is-aeo",
     title: "What is AEO? Simplified",
     date: '2026-11-09',
