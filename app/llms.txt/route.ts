@@ -32,6 +32,7 @@ Scores are on a 0-100 scale. Signal Pulse is a quick scan (schema and AI presenc
 
 ## Research and reading
 
+- [The Fine Print of ChatGPT's Business Hub (white paper)](${BASE}/resources/chatgpt-business-hub-fine-print): November 2026 plain-language reading by Lenise Kenney of OpenAI's Businesses in ChatGPT Terms, the terms behind ChatGPT's Business Hub, compared with Google, Yelp, Apple, Bing and Meta. Covers the website release (Sections 10.1 and 10.2), Covered Claims, profile removal and AI opt-outs.
 - [The 2026 Triangle AI Visibility Study](${BASE}/resources/triangle-ai-visibility-study): July 2026 benchmark of how four AI platforms describe 52 small businesses across the NC Triangle.
 - [The Invisible Business (white paper)](${BASE}/resources/the-invisible-business): Why a business can exist in the real world but not in AI, and a six-dimension framework for AI visibility.
 - [${BOOK_TITLE}](${BASE}/book): ${BOOK_SUBTITLE}. Business book by Lenise Kenney.

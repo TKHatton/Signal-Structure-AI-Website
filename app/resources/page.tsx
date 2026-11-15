@@ -470,6 +470,60 @@ export default function ResourcesPage() {
         </div>
       </section>
 
+      {/* New white paper: Business Hub fine print */}
+      <section className="section-padding">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <SectionLabel>NEW &middot; NOVEMBER 2026</SectionLabel>
+                <h2 className="font-display text-section-heading text-navy mb-4">
+                  The Fine Print of ChatGPT&rsquo;s Business Hub
+                </h2>
+                <p className="font-body text-lg text-warmgray mb-4">
+                  What businesses agree to when they claim a profile in ChatGPT, read line by line and compared
+                  with Google, Yelp, Apple, Bing and Meta.
+                </p>
+                <p className="font-body text-warmgray mb-6">
+                  Inside: the website release in Section 10, the three rings of a Covered Claim, why a published
+                  profile cannot be removed, what it means for your clients, and twelve questions to ask before you
+                  claim. A plain reading, not legal advice.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Button href="/resources/chatgpt-business-hub-fine-print" variant="primary">
+                    Read the White Paper
+                  </Button>
+                  <a
+                    href="/chatgpt-business-hub-fine-print.pdf"
+                    download
+                    className="inline-flex items-center gap-2 bg-stone hover:bg-stone-dark text-navy font-body font-semibold px-6 py-3 rounded-button transition-all"
+                  >
+                    Download PDF
+                  </a>
+                </div>
+              </div>
+              <Link
+                href="/resources/chatgpt-business-hub-fine-print"
+                className="bg-navy p-12 rounded-lg text-center block group hover:bg-navy-light transition-colors"
+              >
+                <div className="inline-block">
+                  <p className="font-body text-firefly text-sm tracking-widest uppercase mb-3">White Paper</p>
+                  <h3 className="font-display text-4xl text-white mb-3 leading-tight">
+                    <span className="text-firefly">The fine print</span>
+                    <br />
+                    of ChatGPT&rsquo;s Business Hub
+                  </h3>
+                  <p className="font-body text-white/70 text-sm mb-6">0 of 5 other platforms ask for this.</p>
+                  <div className="w-16 h-0.5 bg-firefly mx-auto mb-6" />
+                  <p className="font-body text-white/50 text-xs">By Lenise Kenney</p>
+                  <p className="font-body text-white/50 text-xs">Signal &amp; Structure AI &middot; November 2026</p>
+                </div>
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* 4. White Paper */}
       <section className="section-padding bg-stone-dark">
         <div className="max-w-5xl mx-auto">

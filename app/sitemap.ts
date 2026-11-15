@@ -99,6 +99,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: `${baseUrl}/resources/chatgpt-business-hub-fine-print`,
+      lastModified: new Date('2026-11-15'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/resources/the-invisible-business`,
       lastModified: new Date('2026-05-01'),
       changeFrequency: 'monthly',
