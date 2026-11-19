@@ -14,6 +14,83 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "describe-your-business-in-one-sentence",
+    title: "How Do You Describe Your Business in One Sentence? Simplified",
+    date: '2026-11-23',
+    author: 'Lenise Kenney',
+    pillar: 'Signal & Static',
+    description:
+      "AI tools describe your business from the words they find about you. One plain sentence, used the same way everywhere, gives them something to repeat. How to write it, where it goes first, and the slogan habit that gets in the way.",
+    readTime: '4 min read',
+    content: [
+      "The next time you sit down to a big family dinner, somebody is going to ask what you do. You'll answer between bites, and it'll probably come out a little different than it did the last time they asked.",
+      "That's fine at dinner. Your cousin will ask again next time.",
+      "Online, it works against you. When a customer asks ChatGPT or Gemini about your business, the tool builds its answer out of the words it finds about you: your website, your Google listing, your LinkedIn, the directories you signed up for years ago. If every one of those says something a little different, AI has to stitch a description together from the pieces. One clear sentence, used the same way everywhere, gives it something to repeat.",
+    ],
+    sections: [
+      {
+        heading: "The signal: write one plain sentence that says who you help, what you do and where, then put it first",
+        paragraphs: [
+          "Here's an example business, made up for this issue. Say you run Pine Street Bookkeeping in Sanford. Your sentence could be: \"Pine Street Bookkeeping does monthly books and tax prep for small businesses in Sanford, North Carolina.\"",
+          "Nothing fancy. It answers the three things a customer types into a search box: what kind of help, for whom, and near where.",
+          "Then use that sentence word for word as the first line in the places AI reads most: the top of your homepage, the first line of your Google Business Profile description, and the opening of your LinkedIn and Facebook pages. Google's own guidelines say the Business Profile description should give \"useful information on services and products offered,\" and they don't allow links. Your sentence fits that exactly.",
+          "Think of giving a delivery driver your address. If your order form says \"Suite 200,\" your text says \"around back\" and your sign says \"the blue building,\" the package might show up. It might also end up next door. One version of the directions, everywhere, and the driver doesn't have to guess.",
+        ],
+      },
+      {
+        heading: "The static: the clever slogan in the spot where your sentence should go",
+        paragraphs: [
+          "\"Where vision meets results.\" \"Your partner in possibility.\" They sound nice on a banner. Nobody has ever opened ChatGPT and typed, \"Who's the best where-vision-meets-results near me?\"",
+          "When a slogan sits at the top of your homepage, it's often the first thing AI reads about you, and it tells the tool nothing it can pass along. If you love your slogan, keep it. Put it on the mugs. Just let the plain sentence go first.",
+        ],
+      },
+      {
+        heading: "What this looks like",
+        paragraphs: [
+          "I had to do this for myself this fall. I rebuilt my LinkedIn profile around AEO, the service I sell, and then realized that isn't who I am. It covered one service and left out the books, the teaching and the builds.",
+          "The line I kept coming back to was the plain one: I make complicated things simple. It isn't clever. It's true across everything I do, and that's what makes it repeatable. For the business, the sentence is just as plain: Signal & Structure AI helps small businesses show up when customers ask ChatGPT, Gemini, Claude and Perplexity who to hire.",
+          "Neither one would win a slogan contest. Both are easy to say back.",
+        ],
+      },
+      {
+        heading: "Try this week",
+        paragraphs: [
+          "1. Fill in the blanks: [Business name] helps [who] with [what] in [where]. Use the words your customers use, not the words in your industry.",
+          "2. Read it out loud. If it takes a breath in the middle, cut it down.",
+          "3. Paste it as the first line of your homepage and your Google Business Profile description.",
+          "Then try it the next time family or friends ask what you do. If somebody can say it back to you correctly, it's ready.",
+          "I'd rather be easy to describe than impressive and hard to repeat. Next week is about writing the answer AI quotes, the part that comes right after your sentence.",
+          "Signal & Static. One signal to add, one static to remove, every week.",
+        ],
+      },
+    ],
+    cta: {
+      text: "If you want the full picture of what AI says about your business, that is what the Signal Score is for.",
+      href: '/signal-score-report',
+      buttonLabel: 'Get Your Signal Score',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      '@id': "https://signalstructure.ai/blog/describe-your-business-in-one-sentence#article",
+      headline: "How Do You Describe Your Business in One Sentence? Simplified",
+      description: "AI tools describe your business from the words they find about you. One plain sentence, used the same way everywhere, gives them something to repeat. How to write it, where it goes first, and the slogan habit that gets in the way.",
+      datePublished: '2026-11-23',
+      dateModified: '2026-11-23',
+      author: { '@id': 'https://signalstructure.ai/about#lenise-kenney' },
+      publisher: { '@id': 'https://signalstructure.ai/#organization' },
+      isPartOf: { '@id': 'https://signalstructure.ai/blog/#blog' },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': "https://signalstructure.ai/blog/describe-your-business-in-one-sentence",
+      },
+      keywords: ['describe your business in one sentence', 'business description for AI', 'Google Business Profile description', 'how to show up in ChatGPT', 'AI visibility', 'Signal & Static'],
+      articleSection: 'Signal & Static',
+      wordCount: 650,
+      inLanguage: 'en-US',
+    },
+  },
+  {
     slug: "how-ai-decides-who-to-recommend",
     title: "How Does AI Decide Who to Recommend? Simplified",
     date: '2026-11-16',
