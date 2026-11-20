@@ -1,0 +1,25 @@
+# Publishes the week's blog post on its date.
+# The site is static and blog posts carry their Monday date, so a post pushed
+# early stays hidden. This pushes an empty commit every Monday at 5 AM Eastern
+# (10:00 UTC; 6 AM during daylight time), which makes Netlify rebuild and show it.
+name: Monday blog publish
+
+on:
+  schedule:
+    - cron: '0 10 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Empty commit to trigger the Netlify build
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "Monday rebuild: publish this week's blog post"
+          git push

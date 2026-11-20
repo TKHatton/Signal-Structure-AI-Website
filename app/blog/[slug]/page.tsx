@@ -13,6 +13,9 @@ interface BlogPostPageProps {
   params: { slug: string };
 }
 
+// Only posts that are live at build time get a page; others 404 until the next build.
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({ slug: post.slug }));

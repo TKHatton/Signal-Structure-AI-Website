@@ -640,12 +640,28 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
+// Today's date (YYYY-MM-DD) in Eastern time, where the blog's Mondays are set.
+export function todayInEastern(now: Date = new Date()): string {
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/New_York',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(now);
+}
+
+// A post goes live on its date. The site is static, so a post pushed early
+// stays hidden until a build on or after that date (the weekly Monday rebuild).
+export function isPublished(post: Pick<BlogPost, 'date'>, now: Date = new Date()): boolean {
+  return post.date <= todayInEastern(now);
+}
+
 export function getPostBySlug(slug: string): BlogPost | undefined {
-  return blogPosts.find((post) => post.slug === slug);
+  return blogPosts.find((post) => post.slug === slug && isPublished(post));
 }
 
 export function getAllPosts(): BlogPost[] {
-  return [...blogPosts].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+  return blogPosts
+    .filter((post) => isPublished(post))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
