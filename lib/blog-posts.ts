@@ -23,9 +23,9 @@ export const blogPosts: BlogPost[] = [
       "AI tools describe your business from the words they find about you. One plain sentence, used the same way everywhere, gives them something to repeat. How to write it, where it goes first, and the slogan habit that gets in the way.",
     readTime: '4 min read',
     content: [
-      "The next time you sit down to a big family dinner, somebody is going to ask what you do. You'll answer between bites, and it'll probably come out a little different than it did the last time they asked.",
-      "That's fine at dinner. Your cousin will ask again next time.",
-      "Online, it works against you. When a customer asks ChatGPT or Gemini about your business, the tool builds its answer out of the words it finds about you: your website, your Google listing, your LinkedIn, the directories you signed up for years ago. If every one of those says something a little different, AI has to stitch a description together from the pieces. One clear sentence, used the same way everywhere, gives it something to repeat.",
+      "I don't ask people what they do for work anymore. Being told I was permanently disabled changed how I approach social interactions, especially meeting someone new. The question \"So, what do you do for work?\" comes up almost every time, and for a long stretch it was the one question I dreaded. Now I ask people what they do for fun. You learn more about someone that way anyway.",
+      "So there's some irony in this week's lesson. The question I skip is the one your business has to answer well, because customers ask it about you all the time, and more and more, they ask AI.",
+      "In person, a fuzzy answer is fine. The other person can ask a follow-up. AI can't. When a customer asks ChatGPT or Gemini about your business, the tool builds its answer out of the words it finds about you: your website, your Google listing, your LinkedIn, the directories you signed up for years ago. If every one of those says something a little different, AI has to stitch a description together from the pieces. One clear sentence, used the same way everywhere, gives it something to repeat.",
     ],
     sections: [
       {
@@ -47,8 +47,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "What this looks like",
         paragraphs: [
-          "I had to do this for myself this fall. I rebuilt my LinkedIn profile around AEO, the service I sell, and then realized that isn't who I am. It covered one service and left out the books, the teaching and the builds.",
-          "The line I kept coming back to was the plain one: I make complicated things simple. It isn't clever. It's true across everything I do, and that's what makes it repeatable. For the business, the sentence is just as plain: Signal & Structure AI helps small businesses show up when customers ask ChatGPT, Gemini, Claude and Perplexity who to hire.",
+          "I've had to write mine more than once. This fall I rebuilt my LinkedIn profile around AEO, the service I sell, and it left out the books, the teaching and the builds. The line I kept coming back to was the plain one: I make complicated things simple. For the business, it's just as plain: Signal & Structure AI helps small businesses show up when customers ask ChatGPT, Gemini, Claude and Perplexity who to hire.",
           "Neither one would win a slogan contest. Both are easy to say back.",
         ],
       },
@@ -58,7 +57,7 @@ export const blogPosts: BlogPost[] = [
           "1. Fill in the blanks: [Business name] helps [who] with [what] in [where]. Use the words your customers use, not the words in your industry.",
           "2. Read it out loud. If it takes a breath in the middle, cut it down.",
           "3. Paste it as the first line of your homepage and your Google Business Profile description.",
-          "Then try it the next time family or friends ask what you do. If somebody can say it back to you correctly, it's ready.",
+          "Then say it out loud the next time someone asks what you do. If they can say it back to you correctly, it's ready.",
           "I'd rather be easy to describe than impressive and hard to repeat. Next week is about writing the answer AI quotes, the part that comes right after your sentence.",
           "Signal & Static. One signal to add, one static to remove, every week.",
         ],
