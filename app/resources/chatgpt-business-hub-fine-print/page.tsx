@@ -148,7 +148,7 @@ export default function FinePrintPage() {
               White Paper &middot; November 2026 edition
             </p>
             <h1 className="font-display text-5xl lg:text-7xl leading-[0.98] text-white tracking-tight mb-8">
-              <span className="text-firefly">The fine print</span>
+              <span className="text-firefly">The Fine Print</span>
               <br />
               of ChatGPT&rsquo;s Business Hub
             </h1>

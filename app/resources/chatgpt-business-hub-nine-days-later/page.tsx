@@ -144,9 +144,9 @@ export default function NineDaysLaterPage() {
               Companion paper &middot; November 2026
             </p>
             <h1 className="font-display text-5xl lg:text-7xl leading-[0.98] text-white tracking-tight mb-8">
-              The price of a <span className="text-firefly">blue check</span>,
+              The Price of a <span className="text-firefly">Blue Check</span>,
               <br />
-              nine days later
+              Nine Days Later
             </h1>
             <p className="font-display text-2xl lg:text-3xl text-white/85 leading-snug max-w-3xl mb-10">
               What changed in OpenAI&rsquo;s Businesses in ChatGPT Terms between the versions dated November 9 and
