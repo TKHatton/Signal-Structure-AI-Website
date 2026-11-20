@@ -134,114 +134,6 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Companion paper: nine days later */}
-      <section className="section-padding bg-stone">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <SectionLabel>NEW &middot; NOVEMBER 20, 2026</SectionLabel>
-                <h2 className="font-display text-section-heading text-navy mb-4">
-                  The Price of a Blue Check, Nine Days Later
-                </h2>
-                <p className="font-body text-lg text-warmgray mb-4">
-                  OpenAI updated its Businesses in ChatGPT Terms on November 18, 2026. This companion paper sets the
-                  two versions side by side.
-                </p>
-                <p className="font-body text-warmgray mb-6">
-                  Inside: what was removed, the new release tied to Business Agents, the wider definition of
-                  Customer Data, and how the new wording compares with Google, Yelp, Apple, Bing and Meta. A plain
-                  reading, not legal advice.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <Button href="/resources/chatgpt-business-hub-nine-days-later" variant="primary">
-                    Read the Companion Paper
-                  </Button>
-                  <a
-                    href="/chatgpt-business-hub-nine-days-later.pdf"
-                    download
-                    className="inline-flex items-center gap-2 bg-white hover:bg-stone-dark text-navy font-body font-semibold px-6 py-3 rounded-button transition-all"
-                  >
-                    Download PDF
-                  </a>
-                </div>
-              </div>
-              <Link
-                href="/resources/chatgpt-business-hub-nine-days-later"
-                className="bg-navy p-12 rounded-lg text-center block group hover:bg-navy-light transition-colors"
-              >
-                <div className="inline-block">
-                  <p className="font-body text-firefly text-sm tracking-widest uppercase mb-3">Companion Paper</p>
-                  <h3 className="font-display text-4xl text-white mb-3 leading-tight">
-                    The Price of a <span className="text-firefly">Blue Check</span>,
-                    <br />
-                    Nine Days Later
-                  </h3>
-                  <p className="font-body text-white/70 text-sm mb-6">What changed between November 9 and November 18.</p>
-                  <div className="w-16 h-0.5 bg-firefly mx-auto mb-6" />
-                  <p className="font-body text-white/50 text-xs">By Lenise Kenney</p>
-                  <p className="font-body text-white/50 text-xs">Signal &amp; Structure AI &middot; November 2026</p>
-                </div>
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* New white paper: Business Hub fine print */}
-      <section className="section-padding">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <SectionLabel>NOVEMBER 2026 &middot; UPDATED NOVEMBER 20</SectionLabel>
-                <h2 className="font-display text-section-heading text-navy mb-4">
-                  The Fine Print of ChatGPT&rsquo;s Business Hub
-                </h2>
-                <p className="font-body text-lg text-warmgray mb-4">
-                  What businesses agree to when they claim a profile in ChatGPT, read line by line and compared
-                  with Google, Yelp, Apple, Bing and Meta.
-                </p>
-                <p className="font-body text-warmgray mb-6">
-                  The record of the version dated November 9, 2026: the website release in Section 10, the three rings
-                  of a Covered Claim, what it means for your clients, and twelve questions to ask. OpenAI changed
-                  these terms on November 18; see the companion paper above. A plain reading, not legal advice.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <Button href="/resources/chatgpt-business-hub-fine-print" variant="primary">
-                    Read the White Paper
-                  </Button>
-                  <a
-                    href="/chatgpt-business-hub-fine-print.pdf"
-                    download
-                    className="inline-flex items-center gap-2 bg-stone hover:bg-stone-dark text-navy font-body font-semibold px-6 py-3 rounded-button transition-all"
-                  >
-                    Download PDF
-                  </a>
-                </div>
-              </div>
-              <Link
-                href="/resources/chatgpt-business-hub-fine-print"
-                className="bg-navy p-12 rounded-lg text-center block group hover:bg-navy-light transition-colors"
-              >
-                <div className="inline-block">
-                  <p className="font-body text-firefly text-sm tracking-widest uppercase mb-3">White Paper</p>
-                  <h3 className="font-display text-4xl text-white mb-3 leading-tight">
-                    <span className="text-firefly">The Fine Print</span>
-                    <br />
-                    of ChatGPT&rsquo;s Business Hub
-                  </h3>
-                  <p className="font-body text-white/70 text-sm mb-6">The November 9, 2026 version, read line by line.</p>
-                  <div className="w-16 h-0.5 bg-firefly mx-auto mb-6" />
-                  <p className="font-body text-white/50 text-xs">By Lenise Kenney</p>
-                  <p className="font-body text-white/50 text-xs">Signal &amp; Structure AI &middot; November 2026</p>
-                </div>
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
       {/* Tools & products */}
       <section className="section-padding bg-stone-dark">
         <div className="max-w-content mx-auto">
@@ -468,13 +360,149 @@ export default function ResourcesPage() {
         </div>
       </section>
 
+      {/* White papers & reports */}
+      <section className="pt-20 pb-4 bg-white">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <FadeIn>
+            <SectionLabel>WHITE PAPERS &amp; REPORTS</SectionLabel>
+            <h2 className="font-display text-section-heading text-navy mb-4">The Research</h2>
+            <p className="font-body text-lg text-warmgray max-w-2xl mx-auto">
+              Plain-language papers and studies on how AI platforms describe businesses, and the terms behind them.
+              Free to read, download and share with credit.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Companion paper: nine days later */}
+      <section className="section-padding bg-stone">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <SectionLabel>COMPANION PAPER &middot; NOVEMBER 20, 2026</SectionLabel>
+                <h2 className="font-display text-section-heading text-navy mb-4">
+                  The Price of a Blue Check, Nine Days Later
+                </h2>
+                <p className="font-body text-lg text-warmgray mb-4">
+                  OpenAI updated its Businesses in ChatGPT Terms on November 18, 2026. This companion paper sets the
+                  two versions side by side.
+                </p>
+                <p className="font-body text-warmgray mb-6">
+                  Inside: what was removed, the new release tied to Business Agents, the wider definition of
+                  Customer Data, and how the new wording compares with Google, Yelp, Apple, Bing and Meta. A plain
+                  reading, not legal advice.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Button href="/resources/chatgpt-business-hub-nine-days-later" variant="primary">
+                    Read the Companion Paper
+                  </Button>
+                  <a
+                    href="/chatgpt-business-hub-nine-days-later.pdf"
+                    download
+                    className="inline-flex items-center gap-2 bg-white hover:bg-stone-dark text-navy font-body font-semibold px-6 py-3 rounded-button transition-all"
+                  >
+                    Download PDF
+                  </a>
+                  <a
+                    href="/chatgpt-business-hub-nine-days-later-one-pager.pdf"
+                    download
+                    className="inline-flex items-center gap-2 bg-white hover:bg-stone-dark text-navy font-body font-semibold px-6 py-3 rounded-button border border-navy/15 transition-all"
+                  >
+                    One-Page Summary
+                  </a>
+                </div>
+              </div>
+              <Link
+                href="/resources/chatgpt-business-hub-nine-days-later"
+                className="bg-navy p-12 rounded-lg text-center block group hover:bg-navy-light transition-colors"
+              >
+                <div className="inline-block">
+                  <p className="font-body text-firefly text-sm tracking-widest uppercase mb-3">Companion Paper</p>
+                  <h3 className="font-display text-4xl text-white mb-3 leading-tight">
+                    The Price of a <span className="text-firefly">Blue Check</span>,
+                    <br />
+                    Nine Days Later
+                  </h3>
+                  <p className="font-body text-white/70 text-sm mb-6">What changed between November 9 and November 18.</p>
+                  <div className="w-16 h-0.5 bg-firefly mx-auto mb-6" />
+                  <p className="font-body text-white/50 text-xs">By Lenise Kenney</p>
+                  <p className="font-body text-white/50 text-xs">Signal &amp; Structure AI &middot; November 2026</p>
+                </div>
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* New white paper: Business Hub fine print */}
+      <section className="section-padding">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <SectionLabel>WHITE PAPER &middot; NOVEMBER 2026 &middot; UPDATED NOVEMBER 20</SectionLabel>
+                <h2 className="font-display text-section-heading text-navy mb-4">
+                  The Fine Print of ChatGPT&rsquo;s Business Hub
+                </h2>
+                <p className="font-body text-lg text-warmgray mb-4">
+                  What businesses agree to when they claim a profile in ChatGPT, read line by line and compared
+                  with Google, Yelp, Apple, Bing and Meta.
+                </p>
+                <p className="font-body text-warmgray mb-6">
+                  The record of the version dated November 9, 2026: the website release in Section 10, the three rings
+                  of a Covered Claim, what it means for your clients, and twelve questions to ask. OpenAI changed
+                  these terms on November 18; see the companion paper above. A plain reading, not legal advice.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Button href="/resources/chatgpt-business-hub-fine-print" variant="primary">
+                    Read the White Paper
+                  </Button>
+                  <a
+                    href="/chatgpt-business-hub-fine-print.pdf"
+                    download
+                    className="inline-flex items-center gap-2 bg-stone hover:bg-stone-dark text-navy font-body font-semibold px-6 py-3 rounded-button transition-all"
+                  >
+                    Download PDF
+                  </a>
+                  <a
+                    href="/chatgpt-business-hub-fine-print-one-pager.pdf"
+                    download
+                    className="inline-flex items-center gap-2 bg-white hover:bg-stone-dark text-navy font-body font-semibold px-6 py-3 rounded-button border border-navy/15 transition-all"
+                  >
+                    One-Page Summary
+                  </a>
+                </div>
+              </div>
+              <Link
+                href="/resources/chatgpt-business-hub-fine-print"
+                className="bg-navy p-12 rounded-lg text-center block group hover:bg-navy-light transition-colors"
+              >
+                <div className="inline-block">
+                  <p className="font-body text-firefly text-sm tracking-widest uppercase mb-3">White Paper</p>
+                  <h3 className="font-display text-4xl text-white mb-3 leading-tight">
+                    <span className="text-firefly">The Fine Print</span>
+                    <br />
+                    of ChatGPT&rsquo;s Business Hub
+                  </h3>
+                  <p className="font-body text-white/70 text-sm mb-6">The November 9, 2026 version, read line by line.</p>
+                  <div className="w-16 h-0.5 bg-firefly mx-auto mb-6" />
+                  <p className="font-body text-white/50 text-xs">By Lenise Kenney</p>
+                  <p className="font-body text-white/50 text-xs">Signal &amp; Structure AI &middot; November 2026</p>
+                </div>
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* 4. Triangle AI Visibility Study */}
       <section className="section-padding">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <SectionLabel>PUBLISHED JULY 2026</SectionLabel>
+                <SectionLabel>STUDY &middot; JULY 2026</SectionLabel>
                 <h2 className="font-display text-section-heading text-navy mb-4">
                   The 2026 Triangle AI Visibility Study
                 </h2>
@@ -610,7 +638,7 @@ export default function ResourcesPage() {
               </Link>
 
               <div className="order-1 lg:order-2">
-                <SectionLabel>AVAILABLE NOW</SectionLabel>
+                <SectionLabel>WHITE PAPER</SectionLabel>
                 <h2 className="font-display text-section-heading text-navy mb-4">
                   The Invisible Business
                 </h2>

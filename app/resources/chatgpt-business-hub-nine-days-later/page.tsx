@@ -215,6 +215,29 @@ export default function NineDaysLaterPage() {
         </div>
       </section>
 
+      {/* ===== ONE-PAGE SUMMARY ===== */}
+      <section className="bg-white">
+        <div className="max-w-5xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <a href="/chatgpt-business-hub-nine-days-later-one-pager.pdf" download className="block shadow-lg rounded-lg overflow-hidden border border-navy/10 hover:shadow-xl transition-shadow">
+            <img src="/images/nine-days-later/one-pager.png" alt="One-page summary of The Price of a Blue Check, Nine Days Later" className="w-full h-auto block" />
+          </a>
+          <div>
+            <p className="font-body text-xs font-bold uppercase tracking-[0.2em] text-navy mb-2">One-Page Summary</p>
+            <h2 className="font-display text-4xl text-navy leading-tight mb-4">The Whole Paper on One Page</h2>
+            <p className="font-body text-ink leading-relaxed mb-6">
+              The key findings, the comparison and the questions to ask, on a single page to save, print or share.
+            </p>
+            <a
+              href="/chatgpt-business-hub-nine-days-later-one-pager.pdf"
+              download
+              className="inline-flex items-center gap-2 bg-navy hover:bg-navy-light text-white font-body font-semibold px-6 py-3 rounded-button transition-all"
+            >
+              Download the One-Page Summary (PDF)
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ===== THE PAPER ===== */}
       <article id="read" className="nd-paper bg-white pb-20" dangerouslySetInnerHTML={{ __html: PAPER_HTML }} />
 

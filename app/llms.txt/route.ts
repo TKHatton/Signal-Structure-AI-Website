@@ -32,7 +32,8 @@ Scores are on a 0-100 scale. Signal Pulse is a quick scan (schema and AI presenc
 
 ## Research and reading
 
-- [The Fine Print of ChatGPT's Business Hub (white paper)](${BASE}/resources/chatgpt-business-hub-fine-print): November 2026 plain-language reading by Lenise Kenney of OpenAI's Businesses in ChatGPT Terms, the terms behind ChatGPT's Business Hub, compared with Google, Yelp, Apple, Bing and Meta. Covers the website release (Sections 10.1 and 10.2), Covered Claims, profile removal and AI opt-outs.
+- [The Price of a Blue Check, Nine Days Later (companion paper)](${BASE}/resources/chatgpt-business-hub-nine-days-later): November 20, 2026 comparison by Lenise Kenney of the November 9 and November 18, 2026 versions of OpenAI's Businesses in ChatGPT Terms. The November 18 version removed the promise not to sue, the release of claims known or unknown and the Covered Claim definition, added a release tied to Business Agents and widened Customer Data. Includes a comparison with Google, Yelp, Apple, Bing and Meta.
+- [The Fine Print of ChatGPT's Business Hub (white paper)](${BASE}/resources/chatgpt-business-hub-fine-print): November 2026 plain-language reading by Lenise Kenney of the version of OpenAI's Businesses in ChatGPT Terms dated November 9, 2026, compared with Google, Yelp, Apple, Bing and Meta. OpenAI updated the terms on November 18, 2026; this paper stays online as the record of the earlier version.
 - [The 2026 Triangle AI Visibility Study](${BASE}/resources/triangle-ai-visibility-study): July 2026 benchmark of how four AI platforms describe 52 small businesses across the NC Triangle.
 - [The Invisible Business (white paper)](${BASE}/resources/the-invisible-business): Why a business can exist in the real world but not in AI, and a six-dimension framework for AI visibility.
 - [${BOOK_TITLE}](${BASE}/book): ${BOOK_SUBTITLE}. Business book by Lenise Kenney.
