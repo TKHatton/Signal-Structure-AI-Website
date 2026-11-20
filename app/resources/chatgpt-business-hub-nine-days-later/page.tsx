@@ -37,7 +37,7 @@ export const metadata = {
 const faqs: { q: string; a: string }[] = [
   {
     q: 'When did OpenAI change the Businesses in ChatGPT Terms?',
-    a: 'The earlier version is dated November 9, 2026. The current version is dated November 18, 2026. This paper compares them paragraph by paragraph. It does not know why the terms changed, and OpenAI has not said.',
+    a: 'The earlier version is dated November 9, 2026. The current version is dated November 18, 2026. This paper compares them paragraph by paragraph. OpenAI told Digiday the earlier version was “not intended to cover this scenario.” This paper does not suggest any article caused the change.',
   },
   {
     q: 'What was removed from the ChatGPT Business Hub terms?',
@@ -75,7 +75,7 @@ const articleSchema = {
   isAccessibleForFree: true,
   datePublished: '2026-11-20',
   dateModified: '2026-11-20',
-  version: '1.0',
+  version: '1.1',
   url: PAGE_URL,
   mainEntityOfPage: PAGE_URL,
   image: OG_IMAGE,
