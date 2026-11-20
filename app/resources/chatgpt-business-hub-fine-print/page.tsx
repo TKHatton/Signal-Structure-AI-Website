@@ -35,36 +35,32 @@ export const metadata = {
 
 const faqs: { q: string; a: string }[] = [
   {
-    q: 'What do you agree to when you claim your business in ChatGPT?',
-    a: "You accept OpenAI's Businesses in ChatGPT Terms. The Business Hub start screen says “By continuing, you accept OpenAI's Businesses in ChatGPT Terms,” with no checkbox. The terms include a promise not to sue over “Covered Claims” (Section 10.1), a release of those claims (10.2), and terms that survive after you leave (10.3).",
+    q: 'Did OpenAI change the Businesses in ChatGPT Terms?',
+    a: "Yes. OpenAI posted a version dated November 18, 2026. It no longer includes the promise not to sue (Section 10.1), the release of claims known or unknown (Section 10.2) or the definition of “Covered Claim.” It adds a narrower release tied to Business Agents and widens the definition of “Customer Data.” This white paper describes the version dated November 9, 2026. The companion paper, The Price of a Blue Check, Nine Days Later, compares the two versions.",
   },
   {
-    q: 'What is the website release in the ChatGPT Business Hub terms?',
-    a: "The website release is the name this white paper by Lenise Kenney of Signal & Structure AI gives to Sections 10.1 and 10.2 of the Businesses in ChatGPT Terms. Together they ask a business to promise never to sue OpenAI over a “Covered Claim” and to release those claims, known or unknown. A Covered Claim includes claims about content on the business's own websites, published “at any time prior to or during” the terms.",
+    q: 'What did the November 9 version ask businesses to agree to?',
+    a: "The version dated November 9, 2026 included a promise not to sue over “Covered Claims” (Section 10.1), a release of those claims, known or unknown, with a waiver of California Civil Code Section 1542 (Section 10.2), and a section that survives after the terms end (Section 10.3). A Covered Claim included claims about content on the business's own websites, published “at any time prior to or during” the terms.",
+  },
+  {
+    q: 'What is the website release this paper describes?',
+    a: "The website release is the name this white paper by Lenise Kenney of Signal & Structure AI gives to Sections 10.1 and 10.2 of the version dated November 9, 2026. Those sections are not in the version dated November 18, 2026.",
   },
   {
     q: 'Can I delete my ChatGPT business profile?',
-    a: "OpenAI's help center says only unpublished draft profiles can be deleted, and that support is “unable to delete, unpublish, or hide a published profile.” Section 4.1 also lets OpenAI keep a listing “regardless of whether you claim, manage, or cease managing it.”",
+    a: "OpenAI's help center says only unpublished draft profiles can be deleted. As read on November 20, 2026, it says support is “unable to delete, unpublish, or hide a published profile as part of a business setup or ownership request.” Section 4.1 lets OpenAI keep a listing “regardless of whether you claim, manage, or cease managing it.”",
   },
   {
     q: "Does 'Affiliates' in the ChatGPT Business Hub terms include my affiliate marketers?",
-    a: "On the terms' own definition, no. Section 11 defines an Affiliate as an entity that “directly or indirectly controls, is controlled by, or is under common control with” the business, such as a parent, subsidiary or sister company. People in an affiliate or referral program are not controlled by the business. Content you have rights in that they post on their own sites still falls under ring (c) of a Covered Claim.",
-  },
-  {
-    q: 'Does Business Hub give OpenAI access to the chatbot on my website?',
-    a: "Nothing in the Businesses in ChatGPT Terms gives OpenAI access to private conversations in a chatbot on your own website. Conversations with your Business Agent inside ChatGPT stay with OpenAI, and businesses do not receive them. Whether a Covered Claim reaches what people type into your own chatbot, the terms do not say.",
-  },
-  {
-    q: 'Is ChatGPT Business Hub different from Google Business Profile?',
-    a: "In the documents reviewed for this paper, Google's Business Profile terms contain no release or promise not to sue, and Google lets a business end its terms by removing the profile content and managers. None of Google, Yelp, Apple, Bing or Meta asks a business to release claims about its own website content.",
+    a: "On the terms' own definition, no. Section 11 defines an Affiliate as an entity that “directly or indirectly controls, is controlled by, or is under common control with” the business, such as a parent, subsidiary or sister company. People in an affiliate or referral program are not controlled by the business.",
   },
   {
     q: 'Does a product feed override my AI opt-outs?',
-    a: "Section 3(c) says that if a business provides a Product Feed and has reserved text and data mining rights, “such rights will have no effect with respect to OpenAI or its Affiliates.” The clause names all of the business's websites and its Affiliates' websites.",
+    a: "In both the November 9 and November 18 versions, Section 3(c) says that if a business provides a Product Feed and has reserved text and data mining rights, “such rights will have no effect with respect to OpenAI or its Affiliates.” The clause names the business's websites and its Affiliates' websites.",
   },
   {
     q: 'Should I claim my business in ChatGPT?',
-    a: "This paper does not tell anyone to claim or not to claim. It gives the questions to ask first, such as what has been on your website since it launched, whether you own other companies the terms would count as Affiliates, and whether you have written permission for client photos and testimonials. It is not legal advice.",
+    a: "This paper does not tell anyone to claim or not to claim. It gives questions to ask first. It is a plain reading by a non-lawyer and is not legal advice.",
   },
 ];
 
@@ -80,8 +76,8 @@ const articleSchema = {
   inLanguage: 'en-US',
   isAccessibleForFree: true,
   datePublished: '2026-11-15',
-  dateModified: '2026-11-15',
-  version: '1.0',
+  dateModified: '2026-11-20',
+  version: '1.1',
   url: PAGE_URL,
   mainEntityOfPage: PAGE_URL,
   image: OG_IMAGE,
@@ -178,6 +174,16 @@ export default function FinePrintPage() {
                 <br />
                 Verified November 15, 2026
               </div>
+            </div>
+            <div className="max-w-3xl bg-firefly text-navy rounded-lg px-5 py-4 mb-8">
+              <p className="font-body text-xs font-bold uppercase tracking-[0.18em] mb-1">Update &middot; November 20, 2026</p>
+              <p className="font-body text-sm leading-relaxed">
+                OpenAI updated these terms on November 18, 2026. This paper describes the November 9 version and
+                stays online as the record of it.{' '}
+                <Link href="/resources/chatgpt-business-hub-nine-days-later" className="font-semibold underline">
+                  Read what changed
+                </Link>
+              </p>
             </div>
             <div className="flex flex-wrap gap-3">
               <a
