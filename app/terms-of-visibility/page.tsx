@@ -38,6 +38,13 @@ const CHANGES: Change[] = [
   {
     date: 'Nov 24, 2026',
     kind: 'Changed',
+    platform: 'Google Workspace',
+    text: 'publishes a new AI Tools Addendum for Gmail, Drive and Calendar access. AI agents must connect through Google’s MCP servers, with technical enforcement from February 1, 2027. Limits on keeping data now reach people’s own mail and files, and Google says it is not responsible for outside agents.',
+    link: { href: 'https://workspace.google.com/terms/ai-tools/', label: 'Google’s terms', external: true },
+  },
+  {
+    date: 'Nov 24, 2026',
+    kind: 'Changed',
     platform: 'Google Cloud',
     text: 'adds Section 17 to its Service Specific Terms: rules for AI agents that connect to your cloud account. Google says it is not responsible for what an outside agent does. Starts January 1, 2027.',
     link: { href: 'https://cloud.google.com/terms/service-terms', label: 'Google’s terms', external: true },
