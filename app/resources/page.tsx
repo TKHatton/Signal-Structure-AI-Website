@@ -370,6 +370,13 @@ export default function ResourcesPage() {
               Plain-language papers and studies on how AI platforms describe businesses, and the terms behind them.
               Free to read, download and share with credit.
             </p>
+            <p className="font-body text-base text-warmgray max-w-2xl mx-auto mt-4">
+              Platform terms updates and the papers on them now live together at{' '}
+              <Link href="/terms-of-visibility" className="text-navy font-semibold underline underline-offset-4">
+                Terms of Visibility
+              </Link>
+              .
+            </p>
           </FadeIn>
         </div>
       </section>

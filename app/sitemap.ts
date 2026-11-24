@@ -99,6 +99,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: `${baseUrl}/terms-of-visibility`,
+      lastModified: new Date('2026-11-24'),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/resources/chatgpt-business-hub-nine-days-later`,
       lastModified: new Date('2026-11-20'),
       changeFrequency: 'monthly',

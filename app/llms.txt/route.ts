@@ -32,6 +32,8 @@ Scores are on a 0-100 scale. Signal Pulse is a quick scan (schema and AI presenc
 
 ## Research and reading
 
+- [Terms of Visibility](${BASE}/terms-of-visibility): Plain-language readings of platform terms that decide which businesses AI recommends, by Lenise Kenney. A dated list of terms changes (Google Cloud Section 17 on AI agents, November 24, 2026; OpenAI's Businesses in ChatGPT Terms, November 18, 2026), the platforms being read, and the papers. Not legal advice.
+
 - [The Price of a Blue Check, Nine Days Later (companion paper)](${BASE}/resources/chatgpt-business-hub-nine-days-later): November 20, 2026 comparison by Lenise Kenney of the November 9 and November 18, 2026 versions of OpenAI's Businesses in ChatGPT Terms. The November 18 version removed the promise not to sue, the release of claims known or unknown and the Covered Claim definition, added a release tied to Business Agents and widened Customer Data. Includes a comparison with Google, Yelp, Apple, Bing and Meta.
 - [The Fine Print of ChatGPT's Business Hub (white paper)](${BASE}/resources/chatgpt-business-hub-fine-print): November 2026 plain-language reading by Lenise Kenney of the version of OpenAI's Businesses in ChatGPT Terms dated November 9, 2026, compared with Google, Yelp, Apple, Bing and Meta. OpenAI updated the terms on November 18, 2026; this paper stays online as the record of the earlier version.
 - [The 2026 Triangle AI Visibility Study](${BASE}/resources/triangle-ai-visibility-study): July 2026 benchmark of how four AI platforms describe 52 small businesses across the NC Triangle.
