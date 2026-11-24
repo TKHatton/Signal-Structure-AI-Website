@@ -89,7 +89,7 @@ export default function TermsOfVisibilityPage() {
             <p className="m-0 text-sm font-bold tracking-[0.12em] uppercase text-[#9BA2D6]">
               Terms of Visibility · platform terms, read in plain words
             </p>
-            <h1 className={`${heading} m-0 text-[40px] md:text-[64px] leading-[1.02]`}>
+            <h1 className={`${heading} m-0 text-[32px] sm:text-[48px] md:text-[64px] leading-[1.02] break-words`}>
               The fine print that decides <span className="text-[#FFC61A]">who AI recommends.</span>
             </h1>
             <p className="m-0 text-lg leading-relaxed text-[#C5CAEC] max-w-2xl">
